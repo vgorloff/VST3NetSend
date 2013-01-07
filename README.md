@@ -37,7 +37,7 @@ System requirements:
 Using:
 ---
 
-Download binary and copy it to "/Library/Audio/Plug-Ins/VST3" folder.  
+[Download binary](http://code.google.com/p/vst3netsend/downloads/list) and copy it to "/Library/Audio/Plug-Ins/VST3" folder.  
 Launch Cubase/Nuendo® and add instance to insert slot: ***Tools -> M2M VST3NetSend***.
 
 Troubleshooting:
