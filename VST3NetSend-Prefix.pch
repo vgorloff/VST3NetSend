@@ -1,0 +1,47 @@
+//
+// Prefix header for all source files of the 'VST3NetSend' target in the 'VST3NetSend' project
+//
+
+#ifdef __OBJC__
+
+    #import <Cocoa/Cocoa.h>
+
+#endif
+
+
+#ifdef __cplusplus
+
+//    #include <CoreAudio/CoreAudio.h>
+    #include <AudioUnit/AudioUnit.h>
+    #include <AudioToolbox/AudioToolbox.h>
+
+    // Core Audio SDK
+    #include "CAStreamBasicDescription.h"
+    #include "AUOutputBL.h"
+
+    #include <cassert>
+    #include <vector>
+    #include <string>
+
+    // VST3 SDK
+    #include "pluginterfaces/vst/vsttypes.h"
+#pragma GCC diagnostic ignored "-Wnon-virtual-dtor"
+    #include "public.sdk/source/main/pluginfactoryvst3.h"
+#pragma GCC diagnostic ignored "-Wshorten-64-to-32"
+    #include "public.sdk/source/vst/vsteditcontroller.h"
+#pragma GCC diagnostic warning "-Wshorten-64-to-32"
+    #include "public.sdk/source/vst/vstaudioeffect.h"
+    #include "pluginterfaces/vst/ivstparameterchanges.h"
+    #include "pluginterfaces/base/ibstream.h"
+    #include "base/source/fstreamer.h"
+#pragma GCC diagnostic warning "-Wnon-virtual-dtor"
+
+    #include "CommonDefinitions.h"
+    #include "Utilities.h"
+    #include "NetSendView.h"
+    #include "NetSendParameterState.h"
+    #include "NetSendController.h"
+    #include "NetSendAU.h"
+    #include "NetSendProcessor.h"
+
+#endif

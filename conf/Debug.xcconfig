@@ -1,0 +1,15 @@
+//
+//  Debug.xcconfig
+//  VST3NetSend
+//
+//  Created by Vlad Gorloff on 06.01.13.
+//  Copyright (c) 2013 Vlad Gorloff. All rights reserved.
+//
+
+DEBUG_INFORMATION_FORMAT = dwarf
+COPY_PHASE_STRIP = NO
+GCC_OPTIMIZATION_LEVEL = 0
+GCC_PREPROCESSOR_DEFINITIONS = DEBUG=1 DEVELOPMENT=1 $(inherited)
+GCC_GENERATE_TEST_COVERAGE_FILES = YES
+GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES
+
