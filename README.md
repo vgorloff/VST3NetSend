@@ -52,7 +52,7 @@ Information for developers:
 To build plugin the following tools, libs and SDKs needed:  
   
 * [Xcode](https://itunes.apple.com/en/app/xcode/id497799835?mt=12)
-* [Core Audio SDK](go to https://developer.apple.com/downloads) (search for CoreAudio)
+* [Core Audio SDK](https://developer.apple.com/downloads) (search for CoreAudio, then download package from Feb 16, 2012)
 * [VST3 SDK](http://www.steinberg.net/en/company/developer.html)
 
 In Xcode go to _**Preferences -> Locations -> Source Trees**_ and set the following settings:  
