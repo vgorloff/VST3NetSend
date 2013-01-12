@@ -57,8 +57,8 @@ To build plugin the following tools, libs and SDKs needed:
 
 In Xcode go to _**Preferences -> Locations -> Source Trees**_ and set the following settings:  
 
-* GV\_COREAUDIO\_SDK - path to Core Audio SDK (i.e. /Volumes/Data/SDK/CoreAudio)
-* GV\_VST\_SDK - path to VST3 SDK (i.e. /Volumes/Data/SDK/VST3)
+* `GV_COREAUDIO_SDK` - path to Core Audio SDK (i.e. /Volumes/Data/SDK/CoreAudio)
+* `GV_VST_SDK` - path to VST3 SDK (i.e. /Volumes/Data/SDK/VST3)
 
 Now you are ready to build. Have a fun!
 
