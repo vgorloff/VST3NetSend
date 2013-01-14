@@ -34,12 +34,13 @@ tresult PLUGIN_API NetSendController::initialize (FUnknown* context)
 
 IPlugView * PLUGIN_API NetSendController::createView (FIDString name)
 {
-//    if (ConstString(name) == ViewType::kEditor)
-//    {
-//        NetSendView* ui = new NetSendView(this); /// @todo \b FIXME: GV: 2012.11.23 \n It is possible to pass size here
-//        assert(ui != nullptr);
-//        return ui;
-//    }
+    if (ConstString(name) == ViewType::kEditor)
+    {
+        ViewRect defaultSize = ViewRect(0, 0, GV_UI_WIDTH, GV_UI_HEIGHT);
+        NetSendView* ui = new NetSendView(this, &defaultSize); /// @todo \b FIXME: GV: 2012.11.23 \n It is possible to pass size here
+        assert(ui != nullptr);
+        return ui;
+    }
     return 0;
 }
 

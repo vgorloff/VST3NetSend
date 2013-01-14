@@ -41,4 +41,6 @@ public:
 
 GV_NAMESPACE_END
 
+typedef GV::NetSendController GVNetSendVST3Controller;
+
 #endif /* defined(__VST3NetSend__VST3Controller__) */

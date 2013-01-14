@@ -6,12 +6,15 @@
 
     #import <Cocoa/Cocoa.h>
 
+    #import "CommonDefinitions.h"
+    #import "GVNetSendViewController.h"
+    #import "GVNetSendViewProxy.h"
+
 #endif
 
 
 #ifdef __cplusplus
 
-//    #include <CoreAudio/CoreAudio.h>
     #include <AudioUnit/AudioUnit.h>
     #include <AudioToolbox/AudioToolbox.h>
 

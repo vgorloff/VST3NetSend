@@ -9,17 +9,23 @@
 #ifndef VST3NetSend_CommonDefinitions_h
 #define VST3NetSend_CommonDefinitions_h
 
-#define GV_PLUGIN_NAME  "M2M VST3NetSend"
-#define GV_VENDOR       "M2M Audio"
-#define GV_EMAIL        "mailto:info@m2maudio.com"
-#define GV_URL          "http://m2maudio.com"
+#define GV_PLUGIN_NAME  "WL VST3NetSend"
+#define GV_VENDOR       "WaveLabs Audio"
+#define GV_EMAIL        "mailto:info@wavelabs.com.ua"
+#define GV_URL          "http://wavelabs.com.ua"
 
 #define GV_FULL_VERSION_STR   "1.0.0.1" /// @todo \b FIXME: GV: 2013.01.07 \n This should be centralized and synced with bundle version.
 
 #define GV_MAX_NUM_CHANNELS 8
 
+// Next two defines should be in sync with view dimensions in XIB-file.
+#define GV_UI_WIDTH 400
+#define GV_UI_HEIGHT 200
+
 #define GV_NAMESPACE_BEGIN namespace GV {
 #define GV_NAMESPACE_END   }
+
+#ifndef __OBJC__
 
 GV_NAMESPACE_BEGIN
 
@@ -67,5 +73,7 @@ static const int GVPrintLogLevel = ASL_LEVEL_WARNING;
         printf("%s %s:%d %s: %s\n", prefix, __gv_log_file_name, __LINE__, __func__, __gv_log_message_string); \
     } \
 }
+
+#endif
 
 #endif

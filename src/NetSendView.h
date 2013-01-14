@@ -9,6 +9,12 @@
 #ifndef __VST3NetSend__NetSendView__
 #define __VST3NetSend__NetSendView__
 
+#ifdef __OBJC__
+@class GVNetSendViewProxy;
+#else
+typedef struct objc_object GVNetSendViewProxy;
+#endif
+
 GV_NAMESPACE_BEGIN
 
 using namespace Steinberg;
@@ -26,11 +32,17 @@ public:
     virtual tresult PLUGIN_API attached (void* parent, Steinberg::FIDString type);
     virtual tresult PLUGIN_API removed ();
     virtual tresult PLUGIN_API canResize ();
+    
+    virtual tresult PLUGIN_API getSize (ViewRect* size);
+	virtual tresult PLUGIN_API onSize (ViewRect* newSize);
 
     NetSendView& operator=(const NetSendView&) = delete;
     NetSendView(const NetSendView&) = delete;
     NetSendView& operator=(NetSendView&&) = delete;
     NetSendView(NetSendView&&) = delete;
+
+private:
+    GVNetSendViewProxy* mViewProxy;
 
 };
 

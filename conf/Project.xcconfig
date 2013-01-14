@@ -8,7 +8,7 @@
 
 
 // Build settings ==================================================
-PRODUCT_NAME                = M2MNetSend
+PRODUCT_NAME                = VST3NetSend
 ARCHS                       = $(ARCHS_STANDARD_64_BIT)
 SDKROOT                     = macosx
 VALID_ARCHS                 = x86_64
@@ -17,9 +17,12 @@ ONLY_ACTIVE_ARCH            = NO
 MACOSX_DEPLOYMENT_TARGET    = 10.7
 GENERATE_PKGINFO_FILE       = YES
 INFOPLIST_FILE              = VST3NetSend-Info.plist
-INSTALL_PATH                = /Library/Audio/Plug-Ins/VST3
+INSTALL_PATH                = /Library/Audio/Plug-Ins/VST3/WaveLabs
 WRAPPER_EXTENSION           = vst3
 COMBINE_HIDPI_IMAGES        = YES
+
+// Custom settings =================================================
+GV_BUNDLE_ID = ua.com.wavelabs.$(PRODUCT_NAME)
 
 
 // Compiller settings ==============================================
@@ -33,6 +36,7 @@ GCC_PRECOMPILE_PREFIX_HEADER    = YES
 ALWAYS_SEARCH_USER_PATHS        = NO
 GCC_PREFIX_HEADER               = VST3NetSend-Prefix.pch
 HEADER_SEARCH_PATHS             = $(GV_VST_SDK) $(GV_COREAUDIO_SDK)
+GCC_PREPROCESSOR_DEFINITIONS_NOT_USED_IN_PRECOMPS = GV_BUNDLE_ID=\"$(GV_BUNDLE_ID)\" $(inherited)
 
 
 // Compiller Warnings ==============================================
