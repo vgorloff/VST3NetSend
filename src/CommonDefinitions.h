@@ -19,8 +19,8 @@
 #define GV_MAX_NUM_CHANNELS 8
 
 // Next two defines should be in sync with view dimensions in XIB-file.
-#define GV_UI_WIDTH 400
-#define GV_UI_HEIGHT 200
+#define GV_UI_WIDTH 358
+#define GV_UI_HEIGHT 218
 
 #define GV_NAMESPACE_BEGIN namespace GV {
 #define GV_NAMESPACE_END   }
