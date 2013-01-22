@@ -23,6 +23,7 @@
 		D547B03216A436C1008D3B9C /* GVNetSendViewProxy.mm in Sources */ = {isa = PBXBuildFile; fileRef = D547B03116A436C1008D3B9C /* GVNetSendViewProxy.mm */; };
 		D547B03516A4461F008D3B9C /* VST3NetSendView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D547B03416A4461F008D3B9C /* VST3NetSendView.xib */; };
 		D547B03916A449B6008D3B9C /* GVNetSendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D547B03816A449B5008D3B9C /* GVNetSendViewController.m */; };
+		D5B8CFA916AE9ACA00DA59DD /* GVNetSendModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D5B8CFA816AE9ACA00DA59DD /* GVNetSendModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,6 +64,8 @@
 		D547B03416A4461F008D3B9C /* VST3NetSendView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VST3NetSendView.xib; sourceTree = "<group>"; };
 		D547B03716A449B5008D3B9C /* GVNetSendViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GVNetSendViewController.h; sourceTree = "<group>"; };
 		D547B03816A449B5008D3B9C /* GVNetSendViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GVNetSendViewController.m; sourceTree = "<group>"; };
+		D5B8CFA716AE9ACA00DA59DD /* GVNetSendModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GVNetSendModel.h; sourceTree = "<group>"; };
+		D5B8CFA816AE9ACA00DA59DD /* GVNetSendModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GVNetSendModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,12 +140,14 @@
 				CE966E92169A007B0000E00A /* NetSendController.h */,
 				CE966E9E169A20580000E00A /* NetSendView.mm */,
 				CE966E9F169A20580000E00A /* NetSendView.h */,
+				CE966F29169A5C470000E00A /* NetSendParameterState.cpp */,
+				CE966F2A169A5C470000E00A /* NetSendParameterState.h */,
 				D547B03116A436C1008D3B9C /* GVNetSendViewProxy.mm */,
 				D547B03016A436C1008D3B9C /* GVNetSendViewProxy.h */,
 				D547B03816A449B5008D3B9C /* GVNetSendViewController.m */,
 				D547B03716A449B5008D3B9C /* GVNetSendViewController.h */,
-				CE966F29169A5C470000E00A /* NetSendParameterState.cpp */,
-				CE966F2A169A5C470000E00A /* NetSendParameterState.h */,
+				D5B8CFA816AE9ACA00DA59DD /* GVNetSendModel.m */,
+				D5B8CFA716AE9ACA00DA59DD /* GVNetSendModel.h */,
 			);
 			path = src;
 			sourceTree = "<group>";
@@ -296,6 +301,7 @@
 				CE966F2E169A68380000E00A /* AUOutputBL.cpp in Sources */,
 				D547B03216A436C1008D3B9C /* GVNetSendViewProxy.mm in Sources */,
 				D547B03916A449B6008D3B9C /* GVNetSendViewController.m in Sources */,
+				D5B8CFA916AE9ACA00DA59DD /* GVNetSendModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

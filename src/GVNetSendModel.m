@@ -6,8 +6,38 @@
 //  Copyright (c) 2013 Vlad Gorloff. All rights reserved.
 //
 
-#import "GVNetSendModel.h"
-
 @implementation GVNetSendModel
+
+-(void) privateInit
+{
+    self.status = @"";
+    self.dataFormat = @0;
+    self.port = @0;
+    self.bonjourName = @"";
+    self.password = @"";
+}
+
+- (id)init
+{
+    self = [super init];
+    if (self) {
+        [self privateInit];
+    }
+    return self;
+}
+
+-(void) privateDealloc
+{
+    self.status = nil;
+    self.dataFormat = nil;
+    self.port = nil;
+    self.bonjourName = nil;
+    self.password = nil;
+}
+
+- (void)dealloc
+{
+    [self privateDealloc];
+}
 
 @end

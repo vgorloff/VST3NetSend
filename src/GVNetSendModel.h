@@ -6,8 +6,12 @@
 //  Copyright (c) 2013 Vlad Gorloff. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-
 @interface GVNetSendModel : NSObject
+
+@property NSString* status;
+@property NSNumber* dataFormat;
+@property NSNumber* port;
+@property NSString* bonjourName;
+@property NSString* password;
 
 @end
