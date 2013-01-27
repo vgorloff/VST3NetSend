@@ -9,22 +9,6 @@
 
 GV_NAMESPACE_BEGIN
 
-NSRect NSRectFromViewRect(ViewRect rect)
-{
-    int32 w = rect.getWidth();
-    int32 h = rect.getHeight();
-    NSRect result = NSMakeRect(rect.left, rect.top, w, h);
-    return result;
-}
-
-//bool isZeroViewRect(ViewRect rect)
-//{
-//    int32 w = rect.getWidth();
-//    int32 h = rect.getHeight();
-//    bool result = (w <= 0 || h <= 0);
-//    return result;
-//}
-
 NetSendView::NetSendView (EditController* controller, ViewRect* size)
 : EditorView(controller, size)
 , mViewProxy(nil)
@@ -42,18 +26,9 @@ tresult PLUGIN_API NetSendView::attached (void* ptr, Steinberg::FIDString type)
         return Steinberg::kResultFalse;
     }
     
-    mViewProxy = [[GVNetSendViewProxy alloc] init];
+    mViewProxy = [[GVNetSendViewProxy alloc] initWithView:this];
     assert(mViewProxy != nil);
-    
-    NSString*           bundleName   = @GV_BUNDLE_ID;
-    NSBundle*           pluginBundle = [NSBundle bundleWithIdentifier:bundleName];
-    assert(pluginBundle != nil);
-    
-    NSView* parent = (__bridge NSView*)ptr;
-    NSRect rect = NSRectFromViewRect(getRect());
-    EditController* myVst3Controller = getController();
-    [mViewProxy loadUi:pluginBundle forView:parent withFrame:rect withVST3Controller:myVst3Controller];
-
+    [mViewProxy attachToSuperview:(__bridge NSView*)ptr];
     tresult result = CPluginView::attached(ptr, type);
     assert(result == kResultOk);
     return result;
@@ -90,6 +65,30 @@ Steinberg::tresult PLUGIN_API NetSendView::onSize (ViewRect* newSize)
 {
     Steinberg::tresult result = Steinberg::Vst::EditorView::onSize(newSize);
     return result;
+}
+
+void NetSendView::notifyParameterChanges(unsigned int index)
+{
+    switch (index) {
+        case kGVStatusParameter:
+        {
+            ParamValue normValue = getController()->getParamNormalized(index);
+            NSString* newStatus = (normValue > 0.5f) ? @"On" : @"Off";
+            mViewProxy.status = newStatus;
+            break;
+        }
+
+        default:
+            break;
+    }
+}
+
+void NetSendView::handleStateChanges(const NetSendProcessorState& state)
+{
+    mViewProxy.port = [NSNumber numberWithInt:state.port];
+    mViewProxy.bonjourName = [NSString stringWithUTF8String:state.bonjourName];
+    mViewProxy.password = [NSString stringWithUTF8String:state.password];
+    notifyParameterChanges(kGVStatusParameter);
 }
 
 GV_NAMESPACE_END

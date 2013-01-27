@@ -10,13 +10,13 @@ GV_NAMESPACE_BEGIN
 
 NetSendController::NetSendController()
 : EditController()
+, mView(nullptr)
 {
-
 }
 
 NetSendController::~NetSendController()
 {
-    
+    mView = nullptr;
 }
 
 tresult PLUGIN_API NetSendController::initialize (FUnknown* context)
@@ -37,31 +37,55 @@ IPlugView * PLUGIN_API NetSendController::createView (FIDString name)
     if (ConstString(name) == ViewType::kEditor)
     {
         ViewRect defaultSize = ViewRect(0, 0, GV_UI_WIDTH, GV_UI_HEIGHT);
-        NetSendView* ui = new NetSendView(this, &defaultSize); /// @todo \b FIXME: GV: 2012.11.23 \n It is possible to pass size here
-        assert(ui != nullptr);
-        return ui;
+        mView = new NetSendView(this, &defaultSize); /// @todo \b FIXME: GV: 2012.11.23 \n It is possible to pass size here
+        assert(mView != nullptr);
+        return mView;
     }
     return 0;
 }
 
-//tresult PLUGIN_API WavemeterController::setComponentState (IBStream* state)
-//{
-//    WavemeterParameterState gps;
-//    tresult                 result = gps.setState(state);
-//    if (result == kResultTrue)
-//    {
-//        setParameterNormalized(kGVLevelParameter, gps.gain, true, true);
-//        setParameterNormalized(kGVTimeParameter, gps.time, true, true);
-//        setParameterNormalized(kGVChannel01Active, gps.ch01Active, true, true);
-//        setParameterNormalized(kGVChannel02Active, gps.ch02Active, true, true);
-//        setParameterNormalized(kGVChannel03Active, gps.ch03Active, true, true);
-//        setParameterNormalized(kGVChannel04Active, gps.ch04Active, true, true);
-//        setParameterNormalized(kGVChannel05Active, gps.ch05Active, true, true);
-//        setParameterNormalized(kGVChannel06Active, gps.ch06Active, true, true);
-//        setParameterNormalized(kGVChannel07Active, gps.ch07Active, true, true);
-//        setParameterNormalized(kGVChannel08Active, gps.ch08Active, true, true);
-//    }
-//    return result;
-//}
+tresult PLUGIN_API NetSendController::setComponentState (IBStream* state)
+{
+    NetSendProcessorState gps;
+    tresult                 result = gps.setState(state);
+    if (result == kResultTrue) {
+        mParams = gps;
+        setParamNormalized(kGVStatusParameter, gps.status);
+        if (mView != nullptr) {
+            mView->handleStateChanges(gps);
+        }
+    }
+    return result;
+}
+
+
+
+tresult PLUGIN_API NetSendController::setParamNormalized (ParamID tag, ParamValue value)
+{
+    if (mView != nullptr) {
+        mView->notifyParameterChanges(tag);
+    }
+    
+    tresult result = EditController::setParamNormalized(tag, value);
+    return result;
+}
+
+
+void NetSendController::editorAttached (EditorView* editor)
+{
+    if (mView != nullptr) {
+        mView->handleStateChanges(mParams);
+    }
+}
+
+void NetSendController::editorRemoved (EditorView* editor)
+{
+
+}
+
+void NetSendController::editorDestroyed (EditorView* editor)
+{
+    mView = nullptr;
+}
 
 GV_NAMESPACE_END

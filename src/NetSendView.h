@@ -27,14 +27,17 @@ public:
     explicit NetSendView(EditController* controller, ViewRect* size = 0);
     virtual ~NetSendView();
 
-    // VST3 SDK methods
+    // IPlugView methods
     virtual tresult PLUGIN_API isPlatformTypeSupported (Steinberg::FIDString type);
     virtual tresult PLUGIN_API attached (void* parent, Steinberg::FIDString type);
     virtual tresult PLUGIN_API removed ();
     virtual tresult PLUGIN_API canResize ();
-    
     virtual tresult PLUGIN_API getSize (ViewRect* size);
 	virtual tresult PLUGIN_API onSize (ViewRect* newSize);
+
+    // Custom
+    void notifyParameterChanges(unsigned int index);
+    void handleStateChanges(const NetSendProcessorState& state);
 
     NetSendView& operator=(const NetSendView&) = delete;
     NetSendView(const NetSendView&) = delete;

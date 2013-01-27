@@ -9,7 +9,7 @@
 #ifndef VST3NetSend_CommonDefinitions_h
 #define VST3NetSend_CommonDefinitions_h
 
-#define GV_PLUGIN_NAME  "WL VST3NetSend"
+#define GV_PLUGIN_NAME  "WaveLabs VST3NetSend"
 #define GV_VENDOR       "WaveLabs Audio"
 #define GV_EMAIL        "mailto:info@wavelabs.com.ua"
 #define GV_URL          "http://wavelabs.com.ua"
@@ -25,18 +25,19 @@
 #define GV_NAMESPACE_BEGIN namespace GV {
 #define GV_NAMESPACE_END   }
 
-#ifndef __OBJC__
-
-GV_NAMESPACE_BEGIN
-
 enum NetSendParameters
 {
     kGVBypassParameter = UINT16_MAX,
-    kGVStatusParameter,
+    kGVStatusParameter = 0,
     kGVNumParameters,
+
+    kGVDataFormat,
+    kGVPort,
+    kGVBonjourName,
+    kGVPassword
 };
 
-GV_NAMESPACE_END
+#ifndef __OBJC__
 
 // See default filters in "/etc/asl.conf"
 #include <asl.h>

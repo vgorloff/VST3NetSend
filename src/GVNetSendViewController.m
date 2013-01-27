@@ -8,8 +8,7 @@
 
 @interface GVNetSendViewController ()
 {
-    GVNetSendModel* _model;
-    NSObjectController* _modelController;
+    
 }
 
 @end
@@ -46,6 +45,9 @@
 -(void) awakeFromNib
 {
     [self setupBindings];
+
+    GVIntegerFormatter* formatter = [[GVIntegerFormatter alloc] init];
+    [self.port.cell setFormatter:formatter];
 }
 
 -(void) setupBindings

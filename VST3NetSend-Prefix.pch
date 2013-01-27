@@ -7,6 +7,7 @@
     #import <Cocoa/Cocoa.h>
 
     #import "CommonDefinitions.h"
+    #import "GVIntegerFormatter.h"
     #import "GVNetSendModel.h"
     #import "GVNetSendViewController.h"
     #import "GVNetSendViewProxy.h"
@@ -28,6 +29,7 @@
     #include <string>
 
     // VST3 SDK
+    #include "pluginterfaces/base/ustring.h"
     #include "pluginterfaces/vst/vsttypes.h"
 #pragma GCC diagnostic ignored "-Wnon-virtual-dtor"
     #include "public.sdk/source/main/pluginfactoryvst3.h"
@@ -42,8 +44,8 @@
 
     #include "CommonDefinitions.h"
     #include "Utilities.h"
+    #include "NetSendProcessorState.h"
     #include "NetSendView.h"
-    #include "NetSendParameterState.h"
     #include "NetSendController.h"
     #include "NetSendAU.h"
     #include "NetSendProcessor.h"

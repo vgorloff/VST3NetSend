@@ -8,36 +8,26 @@
 
 @implementation GVNetSendModel
 
--(void) privateInit
-{
-    self.status = @"";
-    self.dataFormat = @0;
-    self.port = @0;
-    self.bonjourName = @"";
-    self.password = @"";
-}
-
 - (id)init
 {
     self = [super init];
     if (self) {
-        [self privateInit];
+        self.status = @"";
+        self.dataFormat = @0;
+        self.port = @0;
+        self.bonjourName = @"";
+        self.password = @"";
     }
     return self;
 }
 
--(void) privateDealloc
+- (void)dealloc
 {
     self.status = nil;
     self.dataFormat = nil;
     self.port = nil;
     self.bonjourName = nil;
     self.password = nil;
-}
-
-- (void)dealloc
-{
-    [self privateDealloc];
 }
 
 @end

@@ -22,15 +22,22 @@ public:
     NetSendProcessor();
     virtual ~NetSendProcessor();
 
-    // VST3 SDK methods
+    // IPluginBase methods
     tresult PLUGIN_API initialize (FUnknown* context);
     tresult PLUGIN_API terminate ();
+    
+    // IAudioProcessor
     tresult PLUGIN_API setBusArrangements (SpeakerArrangement* inputs, int32 numIns, SpeakerArrangement* outputs, int32 numOuts);
-    tresult PLUGIN_API setActive (TBool state);
     tresult PLUGIN_API process (ProcessData& data);
-//    tresult PLUGIN_API setState (IBStream* state);
-//    tresult PLUGIN_API getState (IBStream* state);
     tresult PLUGIN_API setupProcessing (ProcessSetup& setup);
+
+    // IComponent
+    tresult PLUGIN_API setActive (TBool state);
+    tresult PLUGIN_API setState (IBStream* state);
+    tresult PLUGIN_API getState (IBStream* state);
+
+    // IConnectionPoint
+    virtual tresult PLUGIN_API notify (IMessage* message);
 
     static FUnknown* createInstance (void*) {
         return (IAudioProcessor*)new NetSendProcessor();
@@ -47,7 +54,7 @@ private:
 
 private:
     std::unique_ptr<NetSendAU>  mAU;
-    NetSendParameterState       mParams;
+    NetSendProcessorState       mParams;
 
 };
 

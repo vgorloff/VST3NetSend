@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE59890C16B49693000FB4EE /* GVIntegerFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = CE59890B16B49693000FB4EE /* GVIntegerFormatter.m */; };
 		CE966E97169A007B0000E00A /* NetSendController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE966E91169A007B0000E00A /* NetSendController.cpp */; };
 		CE966E98169A007B0000E00A /* NetSendFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE966E93169A007B0000E00A /* NetSendFactory.cpp */; };
 		CE966E99169A007B0000E00A /* NetSendProcessor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE966E94169A007B0000E00A /* NetSendProcessor.cpp */; };
@@ -17,7 +18,7 @@
 		CE966F19169A32A70000E00A /* AudioUnit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE966F17169A32960000E00A /* AudioUnit.framework */; };
 		CE966F1C169A33B20000E00A /* Utilities.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE966F1A169A33B10000E00A /* Utilities.cpp */; };
 		CE966F28169A57610000E00A /* CAStreamBasicDescription.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE966F26169A57610000E00A /* CAStreamBasicDescription.cpp */; };
-		CE966F2B169A5C480000E00A /* NetSendParameterState.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE966F29169A5C470000E00A /* NetSendParameterState.cpp */; };
+		CE966F2B169A5C480000E00A /* NetSendProcessorState.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE966F29169A5C470000E00A /* NetSendProcessorState.cpp */; };
 		CE966F2E169A68380000E00A /* AUOutputBL.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE966F2C169A68380000E00A /* AUOutputBL.cpp */; };
 		CE966F32169A98630000E00A /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE966F30169A985C0000E00A /* AudioToolbox.framework */; };
 		D547B03216A436C1008D3B9C /* GVNetSendViewProxy.mm in Sources */ = {isa = PBXBuildFile; fileRef = D547B03116A436C1008D3B9C /* GVNetSendViewProxy.mm */; };
@@ -37,6 +38,8 @@
 		CE0534691699F6260013307E /* Project.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Project.xcconfig; sourceTree = "<group>"; };
 		CE05346A1699F6330013307E /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
 		CE05346B1699F6430013307E /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
+		CE59890A16B49693000FB4EE /* GVIntegerFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GVIntegerFormatter.h; sourceTree = "<group>"; };
+		CE59890B16B49693000FB4EE /* GVIntegerFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GVIntegerFormatter.m; sourceTree = "<group>"; };
 		CE966E8B169A00090000E00A /* README.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		CE966E90169A007B0000E00A /* CommonDefinitions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonDefinitions.h; sourceTree = "<group>"; };
 		CE966E91169A007B0000E00A /* NetSendController.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NetSendController.cpp; sourceTree = "<group>"; };
@@ -54,8 +57,8 @@
 		CE966F1B169A33B20000E00A /* Utilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utilities.h; sourceTree = "<group>"; };
 		CE966F26169A57610000E00A /* CAStreamBasicDescription.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CAStreamBasicDescription.cpp; path = PublicUtility/CAStreamBasicDescription.cpp; sourceTree = "<group>"; };
 		CE966F27169A57610000E00A /* CAStreamBasicDescription.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CAStreamBasicDescription.h; path = PublicUtility/CAStreamBasicDescription.h; sourceTree = "<group>"; };
-		CE966F29169A5C470000E00A /* NetSendParameterState.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NetSendParameterState.cpp; sourceTree = "<group>"; };
-		CE966F2A169A5C470000E00A /* NetSendParameterState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetSendParameterState.h; sourceTree = "<group>"; };
+		CE966F29169A5C470000E00A /* NetSendProcessorState.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NetSendProcessorState.cpp; sourceTree = "<group>"; };
+		CE966F2A169A5C470000E00A /* NetSendProcessorState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetSendProcessorState.h; sourceTree = "<group>"; };
 		CE966F2C169A68380000E00A /* AUOutputBL.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AUOutputBL.cpp; path = PublicUtility/AUOutputBL.cpp; sourceTree = "<group>"; };
 		CE966F2D169A68380000E00A /* AUOutputBL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AUOutputBL.h; path = PublicUtility/AUOutputBL.h; sourceTree = "<group>"; };
 		CE966F30169A985C0000E00A /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
@@ -134,20 +137,22 @@
 				CE966E93169A007B0000E00A /* NetSendFactory.cpp */,
 				CE966E94169A007B0000E00A /* NetSendProcessor.cpp */,
 				CE966E95169A007B0000E00A /* NetSendProcessor.h */,
+				CE966F29169A5C470000E00A /* NetSendProcessorState.cpp */,
+				CE966F2A169A5C470000E00A /* NetSendProcessorState.h */,
 				CE966F04169A2D310000E00A /* NetSendAU.cpp */,
 				CE966F05169A2D310000E00A /* NetSendAU.h */,
 				CE966E91169A007B0000E00A /* NetSendController.cpp */,
 				CE966E92169A007B0000E00A /* NetSendController.h */,
 				CE966E9E169A20580000E00A /* NetSendView.mm */,
 				CE966E9F169A20580000E00A /* NetSendView.h */,
-				CE966F29169A5C470000E00A /* NetSendParameterState.cpp */,
-				CE966F2A169A5C470000E00A /* NetSendParameterState.h */,
 				D547B03116A436C1008D3B9C /* GVNetSendViewProxy.mm */,
 				D547B03016A436C1008D3B9C /* GVNetSendViewProxy.h */,
 				D547B03816A449B5008D3B9C /* GVNetSendViewController.m */,
 				D547B03716A449B5008D3B9C /* GVNetSendViewController.h */,
 				D5B8CFA816AE9ACA00DA59DD /* GVNetSendModel.m */,
 				D5B8CFA716AE9ACA00DA59DD /* GVNetSendModel.h */,
+				CE59890A16B49693000FB4EE /* GVIntegerFormatter.h */,
+				CE59890B16B49693000FB4EE /* GVIntegerFormatter.m */,
 			);
 			path = src;
 			sourceTree = "<group>";
@@ -296,12 +301,13 @@
 				CE966EA0169A20580000E00A /* NetSendView.mm in Sources */,
 				CE966F06169A2D310000E00A /* NetSendAU.cpp in Sources */,
 				CE966F1C169A33B20000E00A /* Utilities.cpp in Sources */,
-				CE966F2B169A5C480000E00A /* NetSendParameterState.cpp in Sources */,
+				CE966F2B169A5C480000E00A /* NetSendProcessorState.cpp in Sources */,
 				CE966F28169A57610000E00A /* CAStreamBasicDescription.cpp in Sources */,
 				CE966F2E169A68380000E00A /* AUOutputBL.cpp in Sources */,
 				D547B03216A436C1008D3B9C /* GVNetSendViewProxy.mm in Sources */,
 				D547B03916A449B6008D3B9C /* GVNetSendViewController.m in Sources */,
 				D5B8CFA916AE9ACA00DA59DD /* GVNetSendModel.m in Sources */,
+				CE59890C16B49693000FB4EE /* GVIntegerFormatter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

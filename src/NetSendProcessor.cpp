@@ -66,6 +66,60 @@ tresult PLUGIN_API NetSendProcessor::setActive (TBool state)
     return AudioEffect::setActive(state);
 }
 
+tresult PLUGIN_API NetSendProcessor::setState (IBStream* state)
+{
+    NetSendProcessorState gps;
+    tresult                 result = gps.setState(state);
+    if (result == kResultTrue)
+    {
+        mParams = gps;
+//        syncDspParameters();
+    }
+    return result;
+}
+
+tresult PLUGIN_API NetSendProcessor::getState (IBStream* state)
+{
+    return mParams.getState(state);
+}
+
+tresult PLUGIN_API NetSendProcessor::notify (IMessage* message)
+{
+    if (message == nullptr) {
+        return kInvalidArgument;
+    }
+
+    if (!strcmp(message->getMessageID(), kGVPortMsgId)) {
+        int64 value = 0;
+        if (message->getAttributes()->getInt(kGVPortMsgId, value) == kResultOk) {
+            mParams.port = value;
+            return kResultOk;
+        }
+    }
+
+    if (!strcmp(message->getMessageID(), kGVBonjourNameMsgId)) {
+        String128 string;
+        UString s (string, tStrBufferSize(String128));
+        if (message->getAttributes()->getString(kGVBonjourNameMsgId, string, tStrBufferSize(String128)) == kResultOk) {
+            memset(mParams.bonjourName, 0, 128);
+            s.toAscii(const_cast<char*>(mParams.bonjourName), 128);
+            return kResultOk;
+        }
+    }
+
+    if (!strcmp(message->getMessageID(), kGVPasswordMsgId)) {
+        String128 string;
+        UString s (string, tStrBufferSize(String128));
+        if (message->getAttributes()->getString(kGVPasswordMsgId, string, tStrBufferSize(String128)) == kResultOk) {
+            memset(mParams.password, 0, 128);
+            s.toAscii(const_cast<char*>(mParams.password), 128);
+            return kResultOk;
+        }
+    }
+    
+    return AudioEffect::notify(message);
+}
+
 tresult PLUGIN_API NetSendProcessor::setupProcessing (ProcessSetup& setup)
 {
     mAU->SetupProcessing(setup);
@@ -152,6 +206,12 @@ void NetSendProcessor::updateParameters(IParameterChanges* paramChanges)
             case kGVBypassParameter:
                 if (paramQueue->getPoint(numPoints - 1, offsetSamples, value) == kResultTrue) {
                     mParams.bypass = (value > 0.5f) ? 1 : 0;
+                }
+                break;
+
+            case kGVStatusParameter:
+                if (paramQueue->getPoint(numPoints - 1, offsetSamples, value) == kResultTrue) {
+                    mParams.status = (value > 0.5f) ? 1 : 0;
                 }
                 break;
         }

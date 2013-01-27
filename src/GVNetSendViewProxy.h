@@ -7,11 +7,14 @@
 //
 
 @interface GVNetSendViewProxy : NSObject
-{
-@public
-    GVNetSendViewController* viewController;
-}
 
--(void) loadUi:(NSBundle*)bundle forView:(NSView*)view withFrame:(NSRect)rect withVST3Controller:(void*)ctrl;
+@property NSString* status;
+@property NSNumber* dataFormat;
+@property NSNumber* port;
+@property NSString* bonjourName;
+@property NSString* password;
+
+- (id)initWithView:(void*)editView;
+-(void) attachToSuperview:(NSView*)superview;
 
 @end
