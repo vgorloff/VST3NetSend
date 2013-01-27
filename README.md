@@ -18,14 +18,7 @@ Features:
 
 1. Supports any sample rate and audio buffer size.
 2. CPU safe.
-
-Limitations:
----
-
-1. In current version plugin does not provide any user interface (standard plugin UI is used).
-2. Plugin does not save/restore presets.
-3. Port number, Bonjour service name and Stream format currently hardcoded to default values.
-4. Project still in alpha version, but it is quite stable .)
+3. Fully utilize features of original AUNetSend audio plugin.
 
 System requirements:
 ---
@@ -34,11 +27,19 @@ System requirements:
 * 64-bit VST3 host application (DAW).
 * Gigabit LAN connection between computers.
 
+Future plans:
+---
+
+* Skin support
+* Streaming to several clients simultaneously
+* Multichannel support (>2 channels if possible)
+* VST2 64-bit version (maybe)
+
 Using:
 ---
 
 [Download binary](http://code.google.com/p/vst3netsend/downloads/list) and copy it to "/Library/Audio/Plug-Ins/VST3" folder.  
-Launch Cubase/Nuendo® and add instance to insert slot: ***Tools -> M2M VST3NetSend***.
+Launch Cubase/Nuendo® and add instance to insert slot: ***Tools -> WaveLabs VST3NetSend***.
 
 Troubleshooting:
 ---
@@ -60,5 +61,24 @@ In Xcode go to _**Preferences -> Locations -> Source Trees**_ and set the follow
 * `GV_COREAUDIO_SDK` - path to Core Audio SDK (i.e. /Volumes/Data/SDK/CoreAudio)
 * `GV_VST_SDK` - path to VST3 SDK (i.e. /Volumes/Data/SDK/VST3)
 
-Now you are ready to build. Have a fun!
+Now you are ready to build.
+
+History:
+---
+
+v1.0.2 - RC1 (current).
+
+* All features from original AUNetSend audio plugin now supported.
+* GUI added. MVC wired using Cocoa bindings.
+* Added connection status fetching timer.
+
+v1.0.1 - Beta version.
+
+* Plugin without UI.
+* Hardcoded parameters.
+
+v1.0.0 - Alpha version.
+
+* Plugin listed in VST3 host but does not doing anything.
+
 

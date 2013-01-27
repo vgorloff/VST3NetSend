@@ -24,7 +24,8 @@ NSRect NSRectFromViewRect(Steinberg::ViewRect rect)
     NetSendController* _editController;
     NetSendView* _editView;
 
-    NSString* _status;
+    NSNumber* _status;
+    NSNumber* _connectionFlag;
     NSNumber* _dataFormat;
     NSNumber* _port;
     NSString* _bonjourName;
@@ -40,7 +41,8 @@ NSRect NSRectFromViewRect(Steinberg::ViewRect rect)
     self = [super init];
     if (self)
     {
-        _status = @"";
+        _status = @0;
+        _connectionFlag = @0;
         _dataFormat = @0;
         _port = @0;
         _bonjourName = @"";
@@ -69,6 +71,7 @@ NSRect NSRectFromViewRect(Steinberg::ViewRect rect)
     _editController = nullptr;
 
     _status = nil;
+    _connectionFlag = nil;
     _dataFormat = nil;
     _port = nil;
     _bonjourName = nil;
@@ -77,15 +80,20 @@ NSRect NSRectFromViewRect(Steinberg::ViewRect rect)
 
 -(void) setupBindings
 {
+    NSDictionary* bindingOptions = [NSDictionary dictionaryWithObject:@"" forKey:NSNullPlaceholderBindingOption];
     [self bind:@"status" toObject:_viewController->_modelController withKeyPath:@"selection.status" options:nil];
+    [self bind:@"connectionFlag" toObject:_viewController->_modelController withKeyPath:@"selection.connectionFlag" options:nil];
+    [self bind:@"dataFormat" toObject:_viewController->_modelController withKeyPath:@"selection.dataFormat" options:nil];
     [self bind:@"port" toObject:_viewController->_modelController withKeyPath:@"selection.port" options:nil];
-    [self bind:@"bonjourName" toObject:_viewController->_modelController withKeyPath:@"selection.bonjourName" options:nil];
-    [self bind:@"password" toObject:_viewController->_modelController withKeyPath:@"selection.password" options:nil];
+    [self bind:@"bonjourName" toObject:_viewController->_modelController withKeyPath:@"selection.bonjourName" options:bindingOptions];
+    [self bind:@"password" toObject:_viewController->_modelController withKeyPath:@"selection.password" options:bindingOptions];
 }
 
 -(void) removeBindings
 {
     [self unbind:@"status"];
+    [self unbind:@"connectionFlag"];
+    [self unbind:@"dataFormat"];
     [self unbind:@"port"];
     [self unbind:@"bonjourName"];
     [self unbind:@"password"];
@@ -99,18 +107,40 @@ NSRect NSRectFromViewRect(Steinberg::ViewRect rect)
     
 }
 
--(void) setStatus:(NSString *)value {
+-(void) setStatus:(NSNumber *)value {
     _status = value;
     [self propagateValue:value forBinding:@"status"];
 }
 
--(NSString *)status {
+-(NSNumber *)status {
     return _status;
 }
 
+-(void) setConnectionFlag:(NSNumber *) value {
+    _connectionFlag = value;
+    [self propagateValue:value forBinding:@"connectionFlag"];
+    ParamValue valueNormalized = value.doubleValue;
+    // Automation routine. See DemoGain vst3 for example.
+    _editController->beginEdit(kGVConnectionFlagParameter);
+    _editController->setParamNormalized(kGVConnectionFlagParameter, valueNormalized);
+    _editController->performEdit(kGVConnectionFlagParameter, valueNormalized);
+    _editController->endEdit(kGVConnectionFlagParameter);
+
+}
+
+-(NSNumber*) connectionFlag {
+    return _connectionFlag;
+}
 
 -(void) setDataFormat:(NSNumber *)value {
     _dataFormat = value;
+    [self propagateValue:value forBinding:@"dataFormat"];
+    OPtr<IMessage> message = _editController->allocateMessage();
+    if (message) {
+        message->setMessageID(kGVDataFormatMsgId);
+        message->getAttributes()->setInt(kGVDataFormatMsgId, value.longValue);
+        _editController->sendMessage(message);
+    }
 }
 
 -(NSNumber*) dataFormat {

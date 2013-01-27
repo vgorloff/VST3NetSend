@@ -11,13 +11,17 @@ GV_NAMESPACE_BEGIN
 NetSendProcessor::NetSendProcessor()
 : AudioEffect()
 , mAU(new NetSendAU())
+, mTimer(nullptr)
 {
     setControllerClass(NetSendControllerUID);
 }
 
 NetSendProcessor::~NetSendProcessor()
 {
-    
+    if (mTimer != nullptr) {
+        mTimer->release();
+        mTimer = nullptr;
+    }
 }
 
 #pragma mark VST3 SDK methods
@@ -53,16 +57,23 @@ tresult PLUGIN_API NetSendProcessor::setActive (TBool state)
         return kResultFalse;
     }
 
-    if (state) // Became Active
-    {
-        
+    mAU->SetActive(state);
+    
+    if (state)
+    { // Became Active
+        if(mTimer == nullptr) {
+            mTimer = Timer::create (this, 500); // 500ms 2Hz
+            onTimer(mTimer); // Forsing callback method call.
+        }
     }
-    else // Became inactive
-    {
-        
+    else
+    { // Became inactive
+        if (mTimer != nullptr) {
+            mTimer->release();
+            mTimer = nullptr;
+        }
     }
 
-    mAU->SetActive(state);
     return AudioEffect::setActive(state);
 }
 
@@ -70,10 +81,13 @@ tresult PLUGIN_API NetSendProcessor::setState (IBStream* state)
 {
     NetSendProcessorState gps;
     tresult                 result = gps.setState(state);
-    if (result == kResultTrue)
-    {
+    if (result == kResultTrue) {
         mParams = gps;
-//        syncDspParameters();
+        mAU->setTransmissionFormatIndex((UInt32)mParams.dataFormat);
+        mAU->setPortNum((UInt32)mParams.port);
+        mAU->setServiceName(mParams.bonjourName);
+        mAU->setPassword(mParams.password);
+        mAU->setDisconnect(mParams.connectionFlag);
     }
     return result;
 }
@@ -89,10 +103,20 @@ tresult PLUGIN_API NetSendProcessor::notify (IMessage* message)
         return kInvalidArgument;
     }
 
+    if (!strcmp(message->getMessageID(), kGVDataFormatMsgId)) {
+        int64 value = 0;
+        if (message->getAttributes()->getInt(kGVDataFormatMsgId, value) == kResultOk) {
+            mParams.dataFormat = value;
+            mAU->setTransmissionFormatIndex((UInt32)value);
+            return kResultOk;
+        }
+    }
+
     if (!strcmp(message->getMessageID(), kGVPortMsgId)) {
         int64 value = 0;
         if (message->getAttributes()->getInt(kGVPortMsgId, value) == kResultOk) {
             mParams.port = value;
+            mAU->setPortNum((UInt32)value);
             return kResultOk;
         }
     }
@@ -103,6 +127,7 @@ tresult PLUGIN_API NetSendProcessor::notify (IMessage* message)
         if (message->getAttributes()->getString(kGVBonjourNameMsgId, string, tStrBufferSize(String128)) == kResultOk) {
             memset(mParams.bonjourName, 0, 128);
             s.toAscii(const_cast<char*>(mParams.bonjourName), 128);
+            mAU->setServiceName(mParams.bonjourName);
             return kResultOk;
         }
     }
@@ -113,6 +138,7 @@ tresult PLUGIN_API NetSendProcessor::notify (IMessage* message)
         if (message->getAttributes()->getString(kGVPasswordMsgId, string, tStrBufferSize(String128)) == kResultOk) {
             memset(mParams.password, 0, 128);
             s.toAscii(const_cast<char*>(mParams.password), 128);
+            mAU->setPassword(mParams.password);
             return kResultOk;
         }
     }
@@ -209,9 +235,10 @@ void NetSendProcessor::updateParameters(IParameterChanges* paramChanges)
                 }
                 break;
 
-            case kGVStatusParameter:
+            case kGVConnectionFlagParameter:
                 if (paramQueue->getPoint(numPoints - 1, offsetSamples, value) == kResultTrue) {
-                    mParams.status = (value > 0.5f) ? 1 : 0;
+                    mParams.connectionFlag = (value > 0.5f) ? 1 : 0;
+                    mAU->setDisconnect(mParams.connectionFlag);
                 }
                 break;
         }
@@ -230,6 +257,19 @@ void NetSendProcessor::processBypass(ProcessData& data)
         if (in[i] != out[i]) {
             memcpy (out[i], in[i], sampleFrames * sizeof (float));
         }
+    }
+}
+
+// Thread: Main
+void NetSendProcessor::onTimer (Timer* timer)
+{
+    OPtr<IMessage> message = allocateMessage();
+    if (message)
+    {
+        long status = mAU->getStatus();
+        message->setMessageID(kGVStatusMsgId);
+        message->getAttributes()->setInt(kGVStatusMsgId, status);
+        sendMessage(message);
     }
 }
 

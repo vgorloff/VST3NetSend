@@ -16,10 +16,12 @@ using namespace Steinberg::Vst;
 
 static const FUID           NetSendControllerUID(0x050cf160, 0x362e4416, 0xb215cd57, 0x8dc5d5d8);
 
+static const FIDString      kGVStatusMsgId       = "status";
 static const FIDString      kGVDataFormatMsgId       = "dataFormat";
 static const FIDString      kGVPortMsgId       = "port";
 static const FIDString      kGVBonjourNameMsgId       = "bonjourName";
 static const FIDString      kGVPasswordMsgId       = "password";
+
 
 
 class NetSendController : public EditController {
@@ -40,6 +42,9 @@ public:
     virtual void editorAttached (EditorView* /*editor*/);
     virtual void editorDestroyed (EditorView* /*editor*/);
     virtual void editorRemoved (EditorView* /*editor*/);
+
+    // IConnectionPoint
+    virtual tresult PLUGIN_API notify (IMessage* message);
 
     static FUnknown* createInstance (void*) {
         return (IEditController*)new NetSendController();

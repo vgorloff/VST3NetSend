@@ -16,7 +16,7 @@ using namespace Steinberg::Vst;
 
 static const FUID           NetSendProcessorUID(0x60ed7185, 0x786a4eb7, 0xb8007a46, 0x4cc95357);
 
-class NetSendProcessor : public AudioEffect {
+class NetSendProcessor : public AudioEffect, public ITimerCallback {
 
 public:
     NetSendProcessor();
@@ -35,6 +35,9 @@ public:
     tresult PLUGIN_API setActive (TBool state);
     tresult PLUGIN_API setState (IBStream* state);
     tresult PLUGIN_API getState (IBStream* state);
+
+    // ITimerCallback
+    virtual void onTimer (Timer* timer); 
 
     // IConnectionPoint
     virtual tresult PLUGIN_API notify (IMessage* message);
@@ -55,6 +58,7 @@ private:
 private:
     std::unique_ptr<NetSendAU>  mAU;
     NetSendProcessorState       mParams;
+    Timer* mTimer;
 
 };
 

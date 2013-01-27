@@ -9,6 +9,8 @@
 #ifndef __VST3NetSend__NetSendAU__
 #define __VST3NetSend__NetSendAU__
 
+typedef unsigned long     NetSendAUStatusBits;
+
 GV_NAMESPACE_BEGIN
 
 class NetSendAU
@@ -19,15 +21,21 @@ public:
     NetSendAU ();
     virtual ~NetSendAU ();
 
-    NetSendAU& operator =(const NetSendAU&) = delete;
-    NetSendAU (const NetSendAU&)            = delete;
-    NetSendAU& operator =(NetSendAU&&)      = delete;
-    NetSendAU (NetSendAU&&)                 = delete;
-
     void SetupProcessing (ProcessSetup& setup);
     void SetActive (TBool state);
     void SetNumChannels(UInt32 numChannels);
     void Render(ProcessData& data);
+    void setPortNum(UInt32 port);
+    void setServiceName(const char* name);
+    void setPassword(const char* pwd);
+    void setTransmissionFormatIndex(UInt32 format);
+    void setDisconnect(UInt32 flag);
+    long getStatus();
+
+    NetSendAU& operator =(const NetSendAU&) = delete;
+    NetSendAU (const NetSendAU&)            = delete;
+    NetSendAU& operator =(NetSendAU&&)      = delete;
+    NetSendAU (NetSendAU&&)                 = delete;
 
 private:
 
@@ -35,7 +43,6 @@ private:
 
     static OSStatus VST3Renderer(void* ref, AudioUnitRenderActionFlags* ioActionFlags, const AudioTimeStamp* inTimeStamp, UInt32 inBusNumber, UInt32 frames, AudioBufferList* ioData);
 
-    void setupDefaultParameters();
     void setupStreamFormat(float sampleRate, UInt32 blockSize, UInt32 numChannels);
     void setupRenderCallback();
 
@@ -43,10 +50,10 @@ private:
 
     enum ComponentStatus
     {
-        kUnknown = -1,
-        kInitialized,
-        kActive,
-        kErrorsPresent
+        kUnknown       = 0,
+        kInitialized   = (1u << 0),
+        kActive        = (1u << 1),
+        kErrorsPresent = (1u << 2)
     };
 
     struct RenderInfo
@@ -58,7 +65,7 @@ private:
 
     AudioUnit                   mAU;
     AudioTimeStamp              mTimeStamp;
-    ComponentStatus             mStatus;
+    NetSendAUStatusBits         mStatus;
     std::unique_ptr<AUOutputBL> mBufferList;
     RenderInfo                  mRenderInfo;
 

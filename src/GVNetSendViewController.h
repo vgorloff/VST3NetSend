@@ -14,6 +14,7 @@
 }
 
 @property (weak) IBOutlet NSTextField*       status;
+@property (weak) IBOutlet NSButton*          connectionFlag;
 @property (weak) IBOutlet NSPopUpButton*     dataFormat;
 @property (weak) IBOutlet NSTextField*       port;
 @property (weak) IBOutlet NSTextField*       bonjourName;

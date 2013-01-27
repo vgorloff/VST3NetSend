@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		CE59890C16B49693000FB4EE /* GVIntegerFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = CE59890B16B49693000FB4EE /* GVIntegerFormatter.m */; };
+		CE6A1FD916B5AE4800FBB78F /* GVSolidBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = CE6A1FD816B5AE4800FBB78F /* GVSolidBackgroundView.m */; };
+		CE6A1FDD16B5B45E00FBB78F /* GVConnectionFlagTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = CE6A1FDC16B5B45E00FBB78F /* GVConnectionFlagTransformer.m */; };
+		CE6A1FE016B5C9FE00FBB78F /* GVConnectionStatusTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = CE6A1FDF16B5C9FE00FBB78F /* GVConnectionStatusTransformer.m */; };
 		CE966E97169A007B0000E00A /* NetSendController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE966E91169A007B0000E00A /* NetSendController.cpp */; };
 		CE966E98169A007B0000E00A /* NetSendFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE966E93169A007B0000E00A /* NetSendFactory.cpp */; };
 		CE966E99169A007B0000E00A /* NetSendProcessor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE966E94169A007B0000E00A /* NetSendProcessor.cpp */; };
@@ -40,6 +43,12 @@
 		CE05346B1699F6430013307E /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
 		CE59890A16B49693000FB4EE /* GVIntegerFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GVIntegerFormatter.h; sourceTree = "<group>"; };
 		CE59890B16B49693000FB4EE /* GVIntegerFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GVIntegerFormatter.m; sourceTree = "<group>"; };
+		CE6A1FD716B5AE4800FBB78F /* GVSolidBackgroundView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GVSolidBackgroundView.h; sourceTree = "<group>"; };
+		CE6A1FD816B5AE4800FBB78F /* GVSolidBackgroundView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GVSolidBackgroundView.m; sourceTree = "<group>"; };
+		CE6A1FDB16B5B45E00FBB78F /* GVConnectionFlagTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GVConnectionFlagTransformer.h; sourceTree = "<group>"; };
+		CE6A1FDC16B5B45E00FBB78F /* GVConnectionFlagTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GVConnectionFlagTransformer.m; sourceTree = "<group>"; };
+		CE6A1FDE16B5C9FE00FBB78F /* GVConnectionStatusTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GVConnectionStatusTransformer.h; sourceTree = "<group>"; };
+		CE6A1FDF16B5C9FE00FBB78F /* GVConnectionStatusTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GVConnectionStatusTransformer.m; sourceTree = "<group>"; };
 		CE966E8B169A00090000E00A /* README.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		CE966E90169A007B0000E00A /* CommonDefinitions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonDefinitions.h; sourceTree = "<group>"; };
 		CE966E91169A007B0000E00A /* NetSendController.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NetSendController.cpp; sourceTree = "<group>"; };
@@ -153,6 +162,12 @@
 				D5B8CFA716AE9ACA00DA59DD /* GVNetSendModel.h */,
 				CE59890A16B49693000FB4EE /* GVIntegerFormatter.h */,
 				CE59890B16B49693000FB4EE /* GVIntegerFormatter.m */,
+				CE6A1FD716B5AE4800FBB78F /* GVSolidBackgroundView.h */,
+				CE6A1FD816B5AE4800FBB78F /* GVSolidBackgroundView.m */,
+				CE6A1FDB16B5B45E00FBB78F /* GVConnectionFlagTransformer.h */,
+				CE6A1FDC16B5B45E00FBB78F /* GVConnectionFlagTransformer.m */,
+				CE6A1FDE16B5C9FE00FBB78F /* GVConnectionStatusTransformer.h */,
+				CE6A1FDF16B5C9FE00FBB78F /* GVConnectionStatusTransformer.m */,
 			);
 			path = src;
 			sourceTree = "<group>";
@@ -308,6 +323,9 @@
 				D547B03916A449B6008D3B9C /* GVNetSendViewController.m in Sources */,
 				D5B8CFA916AE9ACA00DA59DD /* GVNetSendModel.m in Sources */,
 				CE59890C16B49693000FB4EE /* GVIntegerFormatter.m in Sources */,
+				CE6A1FD916B5AE4800FBB78F /* GVSolidBackgroundView.m in Sources */,
+				CE6A1FDD16B5B45E00FBB78F /* GVConnectionFlagTransformer.m in Sources */,
+				CE6A1FE016B5C9FE00FBB78F /* GVConnectionStatusTransformer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

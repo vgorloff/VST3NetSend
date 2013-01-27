@@ -8,7 +8,8 @@
 
 @interface GVNetSendModel : NSObject
 
-@property NSString* status;
+@property NSNumber* status;
+@property NSNumber* connectionFlag;
 @property NSNumber* dataFormat;
 @property NSNumber* port;
 @property NSString* bonjourName;

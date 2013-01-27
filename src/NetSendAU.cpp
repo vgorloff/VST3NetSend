@@ -16,6 +16,8 @@ GV_NAMESPACE_BEGIN
 #define CheckStatusAndLogError(status, message) CheckConditionAndLogError(status == noErr, message)
 #define CheckStatusAndReturnOnError(status) CheckConditionAndReturnOnError (status == noErr) 
 
+#define VerifyStatusBitAndReturnOnError(bit) assert(mStatus & bit); if (mStatus & bit == false) {return;}
+
 #define WarnSetProperty "Unable to set AUNetSend property"
 #define WarnGetProperty "Unable to get AUNetSend property"
 
@@ -55,8 +57,13 @@ NetSendAU::NetSendAU()
     streamFormat.SetAUCanonical(mNumChannels, false);
     streamFormat.mSampleRate = mSampleRate;
     mBufferList.reset(new AUOutputBL(streamFormat, mMaxSamplesPerBlock));
+
+    // Default parameters
+    setTransmissionFormatIndex(kAUNetSendPresetFormat_PCMFloat32);
+    setPortNum(52800);
+    setServiceName(GV_PLUGIN_NAME);
+    setPassword("");
     
-    setupDefaultParameters();
     setupStreamFormat(streamFormat.mSampleRate, mMaxSamplesPerBlock, mNumChannels);
     setupRenderCallback();
 
@@ -72,45 +79,70 @@ NetSendAU::~NetSendAU()
     mStatus = kUnknown;
 }
 
-void NetSendAU::setupDefaultParameters()
+void NetSendAU::setPortNum(UInt32 port)
 {
-    assert(mStatus == kInitialized);
-    if (mStatus != kInitialized) {
-        return;
-    }
-
-	OSStatus status;
-    
-	UInt32 format = kAUNetSendPresetFormat_PCMFloat32;
-	status = AudioUnitSetProperty( mAU, kAUNetSendProperty_TransmissionFormatIndex, kAudioUnitScope_Global, 0, &format, sizeof(format));
-    CheckStatusAndLogError(status, WarnSetProperty "TransmissionFormatIndex");
-    CheckStatusAndReturnOnError(status);
-
-    UInt32 port = 52800;
-    status = AudioUnitSetProperty(mAU, kAUNetSendProperty_PortNum, kAudioUnitScope_Global, 0, &port, sizeof(port));
+    VerifyStatusBitAndReturnOnError(kInitialized);
+    OSStatus status = AudioUnitSetProperty(mAU, kAUNetSendProperty_PortNum, kAudioUnitScope_Global, 0, &port, sizeof(port));
     CheckStatusAndLogError(status, WarnSetProperty "PortNum");
     CheckStatusAndReturnOnError(status);
+}
 
-    CFStringRef serviceName = CFStringCreateWithCString(kCFAllocatorDefault, GV_PLUGIN_NAME, kCFStringEncodingASCII);
+void NetSendAU::setServiceName(const char* name)
+{
+    VerifyStatusBitAndReturnOnError(kInitialized);
+    CFStringRef serviceName = CFStringCreateWithCString(kCFAllocatorDefault, name, kCFStringEncodingASCII);
     assert(serviceName != nullptr);
-    status = AudioUnitSetProperty(mAU, kAUNetSendProperty_ServiceName, kAudioUnitScope_Global, 0, &serviceName, sizeof(CFStringRef));
+    OSStatus status = AudioUnitSetProperty(mAU, kAUNetSendProperty_ServiceName, kAudioUnitScope_Global, 0, &serviceName, sizeof(CFStringRef));
     CheckStatusAndLogError(status, WarnSetProperty "ServiceName");
     CheckStatusAndReturnOnError(status);
+}
 
-    CFStringRef password = CFStringCreateWithCString(kCFAllocatorDefault, "", kCFStringEncodingASCII); // Empty password
+void NetSendAU::setPassword(const char* pwd)
+{
+    VerifyStatusBitAndReturnOnError(kInitialized);
+    CFStringRef password = CFStringCreateWithCString(kCFAllocatorDefault, pwd, kCFStringEncodingASCII); // Empty password
     assert(password != nullptr);
-    status = AudioUnitSetProperty(mAU, kAUNetSendProperty_Password, kAudioUnitScope_Global, 0, &password, sizeof(CFStringRef));
+    OSStatus status = AudioUnitSetProperty(mAU, kAUNetSendProperty_Password, kAudioUnitScope_Global, 0, &password, sizeof(CFStringRef));
     CheckStatusAndLogError(status, WarnSetProperty "Password");
     CheckStatusAndReturnOnError(status);
 }
 
+void NetSendAU::setTransmissionFormatIndex(UInt32 format)
+{
+    VerifyStatusBitAndReturnOnError(kInitialized);
+    
+    CheckConditionAndLogError(format >= 0 && format < kAUNetSendNumPresetFormats, "Incorrect TransmissionFormatIndex");
+    CheckConditionAndReturnOnError(format >= 0 && format < kAUNetSendNumPresetFormats);
+
+	OSStatus status = AudioUnitSetProperty( mAU, kAUNetSendProperty_TransmissionFormatIndex, kAudioUnitScope_Global, 0, &format, sizeof(format));
+    CheckStatusAndLogError(status, WarnSetProperty "TransmissionFormatIndex");
+    CheckStatusAndReturnOnError(status);
+}
+
+void NetSendAU::setDisconnect(UInt32 flag)
+{
+    VerifyStatusBitAndReturnOnError(kInitialized);
+    OSStatus status = AudioUnitSetProperty(mAU, kAUNetSendProperty_Disconnect, kAudioUnitScope_Global, 0, &flag, sizeof(flag));
+    CheckStatusAndLogError(status, WarnSetProperty "Disconnect");
+    CheckStatusAndReturnOnError(status);
+}
+
+long NetSendAU::getStatus()
+{
+    Float32 result = -1;
+    assert(mStatus & kInitialized);
+    if (mStatus & kInitialized == false) {
+        return result;
+    }
+    
+    OSStatus err = AudioUnitGetParameter(mAU, kAUNetSendParam_Status, kAudioUnitScope_Global, 0, &result);
+    CheckConditionAndLogError(err == noErr, "Unable to get connection status");
+    return result;
+}
+
 void NetSendAU::SetupProcessing (ProcessSetup& setup)
 {
-    assert(mStatus == kInitialized);
-    if (mStatus != kInitialized) {
-        return;
-    }
-
+    VerifyStatusBitAndReturnOnError(kInitialized);
     mSampleRate = setup.sampleRate;
     mMaxSamplesPerBlock = setup.maxSamplesPerBlock;
     setupStreamFormat(mSampleRate, mMaxSamplesPerBlock, mNumChannels);
@@ -118,52 +150,42 @@ void NetSendAU::SetupProcessing (ProcessSetup& setup)
 
 void NetSendAU::SetNumChannels(UInt32 numChannels)
 {
-    assert(mStatus == kInitialized);
-    if (mStatus != kInitialized) {
-        return;
-    }
-    
+    VerifyStatusBitAndReturnOnError(kInitialized);
     mNumChannels = numChannels;
     setupStreamFormat(mSampleRate, mMaxSamplesPerBlock, mNumChannels);
 }
 
 void NetSendAU::SetActive (TBool state)
 {
-    assert(mStatus == kInitialized || mStatus == kActive);
-    if (! (mStatus == kInitialized || mStatus == kActive)) {
-        return;
-    }
+    VerifyStatusBitAndReturnOnError(kInitialized);
 
     OSStatus status;
     
     if (state) // Became Active
     {
-        if (mStatus == kActive) {
-            return;
+        if (mStatus & kActive) {
+            return; // Already active
         }
         status = AudioUnitInitialize(mAU);
         CheckStatusAndLogError(status, "Unable to initialize AUNetSend instance");
         CheckStatusAndReturnOnError(status);
-        mStatus = kActive;
+        mStatus |= kActive;
     }
     else // Became inactive
     {
-        if (mStatus == kInitialized) {
-            return;
+        if (mStatus & kActive == false) {
+            return; // Already inactive
         }
         status = AudioUnitUninitialize(mAU);
         CheckStatusAndLogError(status, "Unable to uninitialize AUNetSend instance");
         CheckStatusAndReturnOnError(status);
-        mStatus = kInitialized;
+        mStatus &= ~kActive;
     }
 }
 
 void NetSendAU::setupStreamFormat(float sampleRate, UInt32 blockSize, UInt32 numChannels)
 {
-    assert(mStatus == kInitialized);
-    if (mStatus != kInitialized) {
-        return;
-    }
+    VerifyStatusBitAndReturnOnError(kInitialized);
 
     CAStreamBasicDescription streamFormat;
 	UInt32 propertySize ;
@@ -204,10 +226,7 @@ void NetSendAU::setupStreamFormat(float sampleRate, UInt32 blockSize, UInt32 num
 
 void NetSendAU::setupRenderCallback()
 {
-    assert(mStatus == kInitialized);
-    if (mStatus != kInitialized) {
-        return;
-    }
+    VerifyStatusBitAndReturnOnError(kInitialized);
     
     AURenderCallbackStruct callback;
 	OSStatus status ;
@@ -221,10 +240,7 @@ void NetSendAU::setupRenderCallback()
 
 void NetSendAU::Render(ProcessData& data)
 {
-    assert(mStatus == kActive);
-    if (mStatus != kActive) {
-        return;
-    }
+    VerifyStatusBitAndReturnOnError(kActive);
 
     AudioUnitRenderActionFlags actionFlags ;
 	OSStatus status ;

@@ -12,7 +12,8 @@
 {
     self = [super init];
     if (self) {
-        self.status = @"";
+        self.status = @0;
+        self.connectionFlag = @0;
         self.dataFormat = @0;
         self.port = @0;
         self.bonjourName = @"";
@@ -24,6 +25,7 @@
 - (void)dealloc
 {
     self.status = nil;
+    self.connectionFlag = nil;
     self.dataFormat = nil;
     self.port = nil;
     self.bonjourName = nil;

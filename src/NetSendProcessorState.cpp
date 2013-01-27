@@ -16,7 +16,7 @@ const uint64 NetSendProcessorState::currentParamStateVersion = 0;
 NetSendProcessorState::NetSendProcessorState()
 {
     bypass = 0;
-    status = 0;
+    connectionFlag = 0;
     dataFormat = 0;
     port = 52800;
     memset(bonjourName, 0, 128);
@@ -42,7 +42,7 @@ tresult NetSendProcessorState::setState (IBStream* stream)
     if (!s.readInt8(bypass))
         return kResultFalse;
 
-    if (!s.readInt8(status))
+    if (!s.readInt8(connectionFlag))
         return kResultFalse;
 
     if (!s.readInt8(dataFormat))
@@ -97,7 +97,7 @@ tresult NetSendProcessorState::getState (IBStream* stream)
     if (!s.writeInt8(bypass))
         return kResultFalse;
 
-    if (!s.writeInt8(status))
+    if (!s.writeInt8(connectionFlag))
         return kResultFalse;
 
     if (!s.writeInt8(dataFormat))

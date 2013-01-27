@@ -23,7 +23,7 @@ public:
     static const uint64 currentParamStateVersion;
 
     int8                bypass;
-    int8                status;
+    int8                connectionFlag;
     int8                dataFormat;
     int64               port;
     char8 bonjourName[128];

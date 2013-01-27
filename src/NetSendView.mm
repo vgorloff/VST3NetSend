@@ -6,12 +6,11 @@
 //  Copyright (c) 2013 Vlad Gorloff. All rights reserved.
 //
 
-
 GV_NAMESPACE_BEGIN
 
 NetSendView::NetSendView (EditController* controller, ViewRect* size)
-: EditorView(controller, size)
-, mViewProxy(nil)
+    : EditorView(controller, size)
+    , mViewProxy(nil)
 {
 }
 
@@ -25,7 +24,7 @@ tresult PLUGIN_API NetSendView::attached (void* ptr, Steinberg::FIDString type)
     if (isPlatformTypeSupported(type) != Steinberg::kResultTrue) {
         return Steinberg::kResultFalse;
     }
-    
+
     mViewProxy = [[GVNetSendViewProxy alloc] initWithView:this];
     assert(mViewProxy != nil);
     [mViewProxy attachToSuperview:(__bridge NSView*)ptr];
@@ -51,44 +50,47 @@ tresult PLUGIN_API NetSendView::isPlatformTypeSupported (Steinberg::FIDString ty
     return Steinberg::kInvalidArgument;
 }
 
-tresult PLUGIN_API NetSendView::canResize ()
+void NetSendView::notifyParameterChanges (unsigned int index)
 {
-    return kResultFalse;
-}
-
-Steinberg::tresult PLUGIN_API NetSendView::getSize (ViewRect* size)
-{
-    return Steinberg::Vst::EditorView::getSize(size);
-}
-
-Steinberg::tresult PLUGIN_API NetSendView::onSize (ViewRect* newSize)
-{
-    Steinberg::tresult result = Steinberg::Vst::EditorView::onSize(newSize);
-    return result;
-}
-
-void NetSendView::notifyParameterChanges(unsigned int index)
-{
-    switch (index) {
-        case kGVStatusParameter:
+    switch (index)
+    {
+        case kGVConnectionFlagParameter:
         {
             ParamValue normValue = getController()->getParamNormalized(index);
-            NSString* newStatus = (normValue > 0.5f) ? @"On" : @"Off";
-            mViewProxy.status = newStatus;
+            NSNumber*  connectionFlag = (normValue > 0.5f) ? [NSNumber numberWithBool:TRUE]: [NSNumber numberWithBool:FALSE];
+            if ([connectionFlag compare:mViewProxy.connectionFlag] != NSOrderedSame) { // Preverting infinite loop
+                mViewProxy.connectionFlag = connectionFlag;
+            }
             break;
         }
-
-        default:
-            break;
     }
 }
 
-void NetSendView::handleStateChanges(const NetSendProcessorState& state)
+void NetSendView::setConnectionStatus(int64 stat)
 {
-    mViewProxy.port = [NSNumber numberWithInt:state.port];
-    mViewProxy.bonjourName = [NSString stringWithUTF8String:state.bonjourName];
-    mViewProxy.password = [NSString stringWithUTF8String:state.password];
-    notifyParameterChanges(kGVStatusParameter);
+    NSNumber* status = [NSNumber numberWithFloat:stat];
+    mViewProxy.status = status;
+}
+
+void NetSendView::handleStateChanges (const NetSendProcessorState& state)
+{
+    NSNumber* dataFormat  = [NSNumber numberWithInt:state.dataFormat];
+    NSNumber* port        = [NSNumber numberWithFloat:state.port];
+    NSString* bonjourName = [NSString stringWithUTF8String:state.bonjourName];
+    NSString* password    = [NSString stringWithUTF8String:state.password];
+    
+    if ([dataFormat compare:mViewProxy.dataFormat] != NSOrderedSame) {
+        mViewProxy.dataFormat  = dataFormat;
+    }
+    if ([port compare:mViewProxy.port] != NSOrderedSame) {
+        mViewProxy.port  = port;
+    }
+    if ([bonjourName compare:mViewProxy.bonjourName] != NSOrderedSame) {
+        mViewProxy.bonjourName = bonjourName;
+    }
+    if ([password compare:mViewProxy.password] != NSOrderedSame) {
+        mViewProxy.password = password;
+    }
 }
 
 GV_NAMESPACE_END

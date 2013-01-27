@@ -27,7 +27,7 @@ tresult PLUGIN_API NetSendController::initialize (FUnknown* context)
     }
 
     parameters.addParameter(STR16("Bypass"), 0, 1, 0, ParameterInfo::kCanAutomate | ParameterInfo::kIsBypass, NetSendParameters::kGVBypassParameter);
-    parameters.addParameter(STR16("Connection"), 0, 1, 0, ParameterInfo::kCanAutomate, NetSendParameters::kGVStatusParameter);
+    parameters.addParameter(STR16("Disconnect"), 0, 1, 0, ParameterInfo::kCanAutomate, NetSendParameters::kGVConnectionFlagParameter);
 
     return kResultTrue;
 }
@@ -37,7 +37,7 @@ IPlugView * PLUGIN_API NetSendController::createView (FIDString name)
     if (ConstString(name) == ViewType::kEditor)
     {
         ViewRect defaultSize = ViewRect(0, 0, GV_UI_WIDTH, GV_UI_HEIGHT);
-        mView = new NetSendView(this, &defaultSize); /// @todo \b FIXME: GV: 2012.11.23 \n It is possible to pass size here
+        mView = new NetSendView(this, &defaultSize);
         assert(mView != nullptr);
         return mView;
     }
@@ -48,9 +48,10 @@ tresult PLUGIN_API NetSendController::setComponentState (IBStream* state)
 {
     NetSendProcessorState gps;
     tresult                 result = gps.setState(state);
-    if (result == kResultTrue) {
+    if (result == kResultTrue)
+    {
         mParams = gps;
-        setParamNormalized(kGVStatusParameter, gps.status);
+        setParamNormalized(kGVConnectionFlagParameter, gps.connectionFlag);
         if (mView != nullptr) {
             mView->handleStateChanges(gps);
         }
@@ -58,24 +59,21 @@ tresult PLUGIN_API NetSendController::setComponentState (IBStream* state)
     return result;
 }
 
-
-
 tresult PLUGIN_API NetSendController::setParamNormalized (ParamID tag, ParamValue value)
 {
+    tresult result = EditController::setParamNormalized(tag, value);
     if (mView != nullptr) {
         mView->notifyParameterChanges(tag);
     }
-    
-    tresult result = EditController::setParamNormalized(tag, value);
     return result;
 }
 
 
 void NetSendController::editorAttached (EditorView* editor)
 {
-    if (mView != nullptr) {
-        mView->handleStateChanges(mParams);
-    }
+    assert(mView != nullptr);
+    mView->notifyParameterChanges(kGVConnectionFlagParameter);
+    mView->handleStateChanges(mParams);
 }
 
 void NetSendController::editorRemoved (EditorView* editor)
@@ -86,6 +84,27 @@ void NetSendController::editorRemoved (EditorView* editor)
 void NetSendController::editorDestroyed (EditorView* editor)
 {
     mView = nullptr;
+}
+
+tresult PLUGIN_API NetSendController::notify (IMessage* message)
+{
+    if (message == nullptr) {
+        return kInvalidArgument;
+    }
+
+    if (mView == nullptr) {
+        return kNotInitialized;
+    }
+
+    if (!strcmp(message->getMessageID(), kGVStatusMsgId)) {
+        int64 value = 0;
+        if (message->getAttributes()->getInt(kGVStatusMsgId, value) == kResultOk) {
+            mView->setConnectionStatus(value);
+            return kResultOk;
+        }
+    }
+
+    return EditController::notify(message);
 }
 
 GV_NAMESPACE_END
