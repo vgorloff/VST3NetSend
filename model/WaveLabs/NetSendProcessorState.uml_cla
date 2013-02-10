@@ -1,0 +1,117 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes'?>
+<xmi:XMI xmi:version='2.1' xmlns:xmi='http://schema.omg.org/spec/XMI/2.1' xmlns:uml='http://schema.omg.org/spec/UML/2.1.1/uml.xml'>
+ <documentation exporter='Oracle JDeveloper' exporterVersion='11.1.2.3.0'/>
+ <uml:Class xmi:uuid='urn:uuid:0d11926d-d83f-4cc8-b254-84d6d1038a4e'
+   isAbstract='false'
+   isActive='false'
+   isLeaf='false'
+   name='NetSendProcessorState'
+   visibility='public'>
+  <ownedAttribute xmi:uuid='urn:uuid:911ffbed-f686-4c81-9b14-aa6616b5ef40'
+    isDerived='false'
+    isDerivedUnion='false'
+    isLeaf='false'
+    isOrdered='false'
+    isReadOnly='false'
+    isStatic='false'
+    isUnique='true'
+    name='currentParamStateVersion'
+    aggregation='none'
+    visibility='public'>
+   <lowerValue xmi:type='uml:LiteralInteger' xmi:uuid='urn:uuid:e20065f3-00e2-401a-af6f-af90c40e7fbb'
+     value='1'
+     visibility='public'/>
+   <upperValue xmi:type='uml:LiteralUnlimitedNatural' xmi:uuid='urn:uuid:d89a7512-9604-4c1d-9896-fe3beace5d1e'
+     value='1'
+     visibility='public'/>
+  </ownedAttribute>
+  <ownedAttribute xmi:uuid='urn:uuid:7c347a5c-92f5-44c5-884d-6bce68b97500'
+    isDerived='false'
+    isDerivedUnion='false'
+    isLeaf='false'
+    isOrdered='false'
+    isReadOnly='false'
+    isStatic='false'
+    isUnique='true'
+    name='bypass'
+    aggregation='none'
+    visibility='public'>
+   <lowerValue xmi:type='uml:LiteralInteger' xmi:uuid='urn:uuid:055f857e-faeb-4c4f-8463-703ee17d3756'
+     value='1'
+     visibility='public'/>
+   <upperValue xmi:type='uml:LiteralUnlimitedNatural' xmi:uuid='urn:uuid:9687db83-c4a5-4da1-b1f2-410d28de8f11'
+     value='1'
+     visibility='public'/>
+  </ownedAttribute>
+  <ownedAttribute xmi:uuid='urn:uuid:b467207d-f23c-4e88-a20b-b3e28bdda79e'
+    isDerived='false'
+    isDerivedUnion='false'
+    isLeaf='false'
+    isOrdered='false'
+    isReadOnly='false'
+    isStatic='false'
+    isUnique='true'
+    name='status'
+    aggregation='none'
+    visibility='public'>
+   <lowerValue xmi:type='uml:LiteralInteger' xmi:uuid='urn:uuid:91db2efc-1c8d-4182-9760-755b9899c2fd'
+     value='1'
+     visibility='public'/>
+   <upperValue xmi:type='uml:LiteralUnlimitedNatural' xmi:uuid='urn:uuid:b138f7c1-0feb-47f1-b531-9e66a4547f8b'
+     value='1'
+     visibility='public'/>
+  </ownedAttribute>
+  <ownedOperation xmi:uuid='urn:uuid:e4ff57fb-0bad-4d8c-9b68-6cb408ab8658'
+    isAbstract='false'
+    isLeaf='false'
+    isQuery='false'
+    isStatic='false'
+    name='setState'
+    concurrency='sequential'
+    visibility='public'>
+   <ownedParameter xmi:uuid='urn:uuid:712de0ee-8723-494f-bbda-3fffa0b77e5c'
+     isException='false'
+     isOrdered='false'
+     isStream='false'
+     isUnique='true'
+     name='s'
+     direction='in'>
+    <type href='mof:/IBStream:uml:Type'/>
+   </ownedParameter>
+   <ownedParameter xmi:uuid='urn:uuid:5677cbe9-d271-4df4-9ee9-a9ba555c9f10'
+     isException='false'
+     isOrdered='false'
+     isStream='false'
+     isUnique='true'
+     direction='return'>
+    <type href='mof:/void:uml:Type'/>
+   </ownedParameter>
+  </ownedOperation>
+  <ownedOperation xmi:uuid='urn:uuid:bd5c4700-e49c-4c12-b713-5d0819716932'
+    isAbstract='false'
+    isLeaf='false'
+    isQuery='false'
+    isStatic='false'
+    name='getState'
+    concurrency='sequential'
+    visibility='public'>
+   <ownedParameter xmi:uuid='urn:uuid:00c997a7-a18b-4802-a2c9-05b84e5c7c0f'
+     isException='false'
+     isOrdered='false'
+     isStream='false'
+     isUnique='true'
+     name='s'
+     direction='in'>
+    <type href='mof:/IBStream:uml:Type'/>
+   </ownedParameter>
+   <ownedParameter xmi:uuid='urn:uuid:39f61dc5-106d-4997-a093-54a2149a2308'
+     isException='false'
+     isOrdered='false'
+     isStream='false'
+     isUnique='true'
+     direction='return'>
+    <type href='mof:/void:uml:Type'/>
+   </ownedParameter>
+  </ownedOperation>
+ </uml:Class>
+</xmi:XMI>

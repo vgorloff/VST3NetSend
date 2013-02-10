@@ -6,12 +6,9 @@ VST3 version of Mac OS X system-supplied AUNetSend audio plugin.
 Purpose and Auditory:
 ---
 
-***AUNetSend*** - is an audio plugin that streams audio data over a network. Used in conjunction with the AUNetReceive generator audio unit.  
-***VST3NetSend*** - is a VST3 version of plugin which provide similar functionality as AUNetSend.  
-It could be used with Cubase/Nuendo® (by Steinberg®) as it at the moment does not support AU standard.  
+***AUNetSend*** - is an audio plugin that streams audio data over a network. Used in conjunction with the AUNetReceive generator audio unit. ***VST3NetSend*** - is a VST3 version of plugin which provide similar functionality as AUNetSend. It could be used with Cubase/Nuendo® (by Steinberg®) as it at the moment does not support AU standard.  
   
-This might be useful for Musicians, Audio engineers.  
-***Typical use cases***: Audio data interchange between audio Applications; Streaming audio data between computers in Local Area Network.
+This might be useful for Musicians, Audio engineers. *Typical use cases*: Audio data interchange between audio Applications; Streaming audio data between computers in Local Area Network.
 
 Features:
 ---
@@ -35,7 +32,7 @@ Future plans:
 * Multichannel support (>2 channels if possible)
 * VST2 64-bit version (maybe)
 
-Using:
+Usage:
 ---
 
 [Download binary](http://code.google.com/p/vst3netsend/downloads/list) and copy it to "/Library/Audio/Plug-Ins/VST3" folder.  

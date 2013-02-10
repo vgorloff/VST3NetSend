@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes'?>
+<xmi:XMI xmi:version='2.1' xmlns:xmi='http://schema.omg.org/spec/XMI/2.1' xmlns:uml='http://schema.omg.org/spec/UML/2.1.1/uml.xml'>
+ <documentation exporter='Oracle JDeveloper' exporterVersion='11.1.2.3.0'/>
+ <uml:Association xmi:uuid='urn:uuid:1b13a115-baff-49c9-a030-bfe1af4de944'
+   isAbstract='false'
+   isDerived='false'
+   isLeaf='false'
+   name='Controller-Model'
+   visibility='public'>
+  <memberEnd href='urn:uuid:e59fdc6f-c564-49ee-bb02-fc03a41a2fb6'/>
+  <memberEnd href='urn:uuid:54996cc0-b40f-4cf0-ae42-0948b7e5fd4d'/>
+  <navigableOwnedEnd href='urn:uuid:54996cc0-b40f-4cf0-ae42-0948b7e5fd4d'/>
+  <ownedEnd xmi:uuid='urn:uuid:e59fdc6f-c564-49ee-bb02-fc03a41a2fb6'
+    isDerived='false'
+    isDerivedUnion='false'
+    isLeaf='false'
+    isOrdered='false'
+    isReadOnly='false'
+    isStatic='false'
+    isUnique='true'
+    name='endGVNetSendViewController'
+    aggregation='none'>
+   <association href='urn:uuid:1b13a115-baff-49c9-a030-bfe1af4de944'/>
+   <type href='urn:uuid:2c8bb761-e71d-45a0-b706-b7468f1e4540'/>
+   <lowerValue xmi:type='uml:LiteralInteger' xmi:uuid='urn:uuid:38b9879b-22f6-4b81-9bb3-e1888c6a4d1b'
+     value='1'
+     visibility='public'/>
+   <upperValue xmi:type='uml:LiteralUnlimitedNatural' xmi:uuid='urn:uuid:97e7df11-60c1-4546-829a-cc2fe40937dc'
+     value='1'
+     visibility='public'/>
+  </ownedEnd>
+  <ownedEnd xmi:uuid='urn:uuid:54996cc0-b40f-4cf0-ae42-0948b7e5fd4d'
+    isDerived='false'
+    isDerivedUnion='false'
+    isLeaf='false'
+    isOrdered='false'
+    isReadOnly='false'
+    isStatic='false'
+    isUnique='true'
+    name='endGVNetSendModel'
+    aggregation='composite'>
+   <association href='urn:uuid:1b13a115-baff-49c9-a030-bfe1af4de944'/>
+   <type href='urn:uuid:db7bb788-820e-4208-b1e8-2e221a829fae'/>
+   <lowerValue xmi:type='uml:LiteralInteger' xmi:uuid='urn:uuid:4f0cdbd7-75a9-46b9-bff1-3f30b2ae2d53'
+     value='0'
+     visibility='public'/>
+   <upperValue xmi:type='uml:LiteralUnlimitedNatural' xmi:uuid='urn:uuid:6155071b-b03d-49bc-b316-4405f0d73ab2'
+     value='*'
+     visibility='public'/>
+  </ownedEnd>
+ </uml:Association>
+</xmi:XMI>

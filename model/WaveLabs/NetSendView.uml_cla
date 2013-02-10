@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes'?>
+<xmi:XMI xmi:version='2.1' xmlns:xmi='http://schema.omg.org/spec/XMI/2.1' xmlns:uml='http://schema.omg.org/spec/UML/2.1.1/uml.xml'>
+ <documentation exporter='Oracle JDeveloper' exporterVersion='11.1.2.3.0'/>
+ <uml:Class xmi:uuid='urn:uuid:64a5be5e-ce7a-4efa-aebc-32166860f4da'
+   isAbstract='false'
+   isActive='false'
+   isLeaf='false'
+   name='NetSendView'
+   visibility='public'>
+  <generalization xmi:uuid='urn:uuid:83c44d0d-c863-4138-a28b-ec4f8e48249f'>
+   <general href='urn:uuid:f9edf5a4-4bb6-43a6-9f99-854c206f645f'/>
+  </generalization>
+  <ownedAttribute xmi:uuid='urn:uuid:e9c58fe2-ebc0-4a65-8223-ca208df2dfde'
+    isDerived='false'
+    isDerivedUnion='false'
+    isLeaf='false'
+    isOrdered='false'
+    isReadOnly='false'
+    isStatic='false'
+    isUnique='true'
+    name='mViewProxy'
+    aggregation='none'
+    visibility='private'>
+   <type href='urn:uuid:cd7281d1-dfe0-4454-b8c2-227f853d5acf'/>
+   <lowerValue xmi:type='uml:LiteralInteger' xmi:uuid='urn:uuid:ea773c3a-251d-4ec7-a631-77e8f4e1c1e6'
+     value='1'
+     visibility='public'/>
+   <upperValue xmi:type='uml:LiteralUnlimitedNatural' xmi:uuid='urn:uuid:df2da6ee-8aa7-4098-9c31-6e36b73bce97'
+     value='1'
+     visibility='public'/>
+  </ownedAttribute>
+ </uml:Class>
+</xmi:XMI>

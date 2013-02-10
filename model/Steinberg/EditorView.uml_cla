@@ -1,0 +1,72 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes'?>
+<xmi:XMI xmi:version='2.1' xmlns:xmi='http://schema.omg.org/spec/XMI/2.1' xmlns:uml='http://schema.omg.org/spec/UML/2.1.1/uml.xml'>
+ <documentation exporter='Oracle JDeveloper' exporterVersion='11.1.2.3.0'/>
+ <uml:Class xmi:uuid='urn:uuid:f9edf5a4-4bb6-43a6-9f99-854c206f645f'
+   isAbstract='false'
+   isActive='false'
+   isLeaf='false'
+   name='EditorView'
+   visibility='public'>
+  <clientDependency href='urn:uuid:2fe832ac-3a7c-4544-9115-7ab5a0eed02f'/>
+  <interfaceRealization xmi:uuid='urn:uuid:2fe832ac-3a7c-4544-9115-7ab5a0eed02f'
+    visibility='public'>
+   <contract href='urn:uuid:402d08b7-f402-481f-8d96-37b745b44c65'/>
+   <client href='urn:uuid:f9edf5a4-4bb6-43a6-9f99-854c206f645f'/>
+   <supplier href='urn:uuid:402d08b7-f402-481f-8d96-37b745b44c65'/>
+  </interfaceRealization>
+  <ownedAttribute xmi:uuid='urn:uuid:1dd43bcb-1c89-450d-a9cc-2e34e23680bf'
+    isDerived='false'
+    isDerivedUnion='false'
+    isLeaf='false'
+    isOrdered='false'
+    isReadOnly='false'
+    isStatic='false'
+    isUnique='true'
+    name='controller'
+    aggregation='none'
+    visibility='private'>
+   <type href='mof:/EditController:uml:Type'/>
+   <lowerValue xmi:type='uml:LiteralInteger' xmi:uuid='urn:uuid:3fbf8348-6358-4016-a7dd-ab63053a0aac'
+     value='1'
+     visibility='public'/>
+   <upperValue xmi:type='uml:LiteralUnlimitedNatural' xmi:uuid='urn:uuid:062d8b33-fe0d-4990-80e9-a333e676661b'
+     value='1'
+     visibility='public'/>
+  </ownedAttribute>
+  <ownedOperation xmi:uuid='urn:uuid:676b7b26-0fb7-4890-8409-415e680f442f'
+    isAbstract='false'
+    isLeaf='false'
+    isQuery='false'
+    isStatic='false'
+    name='EditorView'
+    concurrency='sequential'
+    visibility='public'>
+   <ownedParameter xmi:uuid='urn:uuid:1d6e6b4a-ab24-4871-8aaa-87d192df6b52'
+     isException='false'
+     isOrdered='false'
+     isStream='false'
+     isUnique='true'
+     name='ctrl'
+     direction='in'>
+    <type href='mof:/EditController:uml:Type'/>
+   </ownedParameter>
+   <ownedParameter xmi:uuid='urn:uuid:4996713a-4edc-4c17-9b70-755dc81ff69d'
+     isException='false'
+     isOrdered='false'
+     isStream='false'
+     isUnique='true'
+     name='rect'
+     direction='in'>
+    <type href='mof:/ViewRect:uml:Type'/>
+   </ownedParameter>
+   <ownedParameter xmi:uuid='urn:uuid:d09db813-8a6c-4ecb-a27c-d56845739645'
+     isException='false'
+     isOrdered='false'
+     isStream='false'
+     isUnique='true'
+     direction='return'>
+    <type href='mof:/void:uml:Type'/>
+   </ownedParameter>
+  </ownedOperation>
+ </uml:Class>
+</xmi:XMI>
