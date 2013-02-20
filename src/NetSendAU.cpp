@@ -16,7 +16,7 @@ GV_NAMESPACE_BEGIN
 #define CheckStatusAndLogError(status, message) CheckConditionAndLogError(status == noErr, message)
 #define CheckStatusAndReturnOnError(status) CheckConditionAndReturnOnError (status == noErr) 
 
-#define VerifyStatusBitAndReturnOnError(bit) assert(mStatus & bit); if (mStatus & bit == false) {return;}
+#define VerifyStatusBitAndReturnOnError(bit) assert(mStatus & bit); if ((mStatus & bit) == false) {return;}
 
 #define WarnSetProperty "Unable to set AUNetSend property"
 #define WarnGetProperty "Unable to get AUNetSend property"
@@ -72,7 +72,8 @@ NetSendAU::NetSendAU()
 NetSendAU::~NetSendAU()
 {
     OSStatus status;
-
+    
+    SetActive(0);
     status = AudioComponentInstanceDispose(mAU);
     CheckStatusAndLogError(status, "Unable to dispose AUNetSend instance");
 
@@ -173,7 +174,7 @@ void NetSendAU::SetActive (TBool state)
     }
     else // Became inactive
     {
-        if (mStatus & kActive == false) {
+        if ((mStatus & kActive) == false) {
             return; // Already inactive
         }
         status = AudioUnitUninitialize(mAU);
