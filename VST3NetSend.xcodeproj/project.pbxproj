@@ -256,7 +256,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = GV;
-				LastUpgradeCheck = 0450;
+				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = "Vlad Gorloff";
 			};
 			buildConfigurationList = CE0534491699F5690013307E /* Build configuration list for PBXProject "VST3NetSend" */;
