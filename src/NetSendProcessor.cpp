@@ -8,15 +8,15 @@
 
 GV_NAMESPACE_BEGIN
 
-NetSendProcessor::NetSendProcessor()
-: AudioEffect()
-, mAU(new NetSendAU())
-, mTimer(nullptr)
+NetSendProcessor::NetSendProcessor ()
+    : AudioEffect()
+    , mAU(new NetSendAU())
+    , mTimer(nullptr)
 {
     setControllerClass(NetSendControllerUID);
 }
 
-NetSendProcessor::~NetSendProcessor()
+NetSendProcessor::~NetSendProcessor ()
 {
     if (mTimer != nullptr) {
         mTimer->release();
@@ -52,22 +52,22 @@ tresult PLUGIN_API NetSendProcessor::setActive (TBool state)
         return kResultFalse;
     }
 
-    int32              numChannels = SpeakerArr::getChannelCount(arr);
+    int32 numChannels = SpeakerArr::getChannelCount(arr);
     if (numChannels == 0) {
         return kResultFalse;
     }
 
     mAU->SetActive(state);
-    
+
     if (state)
-    { // Became Active
-        if(mTimer == nullptr) {
-            mTimer = Timer::create (this, 500); // 500ms 2Hz
-            onTimer(mTimer); // Forsing callback method call.
+    {   // Became Active
+        if (mTimer == nullptr) {
+            mTimer = Timer::create(this, 500); // 500ms 2Hz
+            onTimer(mTimer);                   // Forsing callback method call.
         }
     }
     else
-    { // Became inactive
+    {   // Became inactive
         if (mTimer != nullptr) {
             mTimer->release();
             mTimer = nullptr;
@@ -80,7 +80,7 @@ tresult PLUGIN_API NetSendProcessor::setActive (TBool state)
 tresult PLUGIN_API NetSendProcessor::setState (IBStream* state)
 {
     NetSendProcessorState gps;
-    tresult                 result = gps.setState(state);
+    tresult               result = gps.setState(state);
     if (result == kResultTrue) {
         mParams = gps;
         mAU->setTransmissionFormatIndex((UInt32)mParams.dataFormat);
@@ -123,7 +123,7 @@ tresult PLUGIN_API NetSendProcessor::notify (IMessage* message)
 
     if (!strcmp(message->getMessageID(), kGVBonjourNameMsgId)) {
         String128 string;
-        UString s (string, tStrBufferSize(String128));
+        UString   s(string, tStrBufferSize(String128));
         if (message->getAttributes()->getString(kGVBonjourNameMsgId, string, tStrBufferSize(String128)) == kResultOk) {
             memset(mParams.bonjourName, 0, 128);
             s.toAscii(const_cast<char*>(mParams.bonjourName), 128);
@@ -134,7 +134,7 @@ tresult PLUGIN_API NetSendProcessor::notify (IMessage* message)
 
     if (!strcmp(message->getMessageID(), kGVPasswordMsgId)) {
         String128 string;
-        UString s (string, tStrBufferSize(String128));
+        UString   s(string, tStrBufferSize(String128));
         if (message->getAttributes()->getString(kGVPasswordMsgId, string, tStrBufferSize(String128)) == kResultOk) {
             memset(mParams.password, 0, 128);
             s.toAscii(const_cast<char*>(mParams.password), 128);
@@ -142,7 +142,7 @@ tresult PLUGIN_API NetSendProcessor::notify (IMessage* message)
             return kResultOk;
         }
     }
-    
+
     return AudioEffect::notify(message);
 }
 
@@ -154,9 +154,19 @@ tresult PLUGIN_API NetSendProcessor::setupProcessing (ProcessSetup& setup)
 
 tresult PLUGIN_API NetSendProcessor::setBusArrangements (SpeakerArrangement* inputs, int32 numIns, SpeakerArrangement* outputs, int32 numOuts)
 {
-    // we only support one in and output bus and these buses must have the same number of channels
-    if (numIns == 1 && numOuts == 1 && inputs[0] == outputs[0] && inputs[0] == SpeakerArr::kStereo) {
-        mAU->SetNumChannels(SpeakerArr::getChannelCount(inputs[0]));
+    if ( !(numIns == 1 && numOuts == 1) ) {  // checking one input and one output bus
+        return kResultFalse;
+    }
+
+    if ( !(inputs[0] == outputs[0]) ) { // checking that buses must have the same number of channels
+        return kResultFalse;
+    }
+
+    int32 numChannels = SpeakerArr::getChannelCount(inputs[0]);
+    // Original AU support 1x1 and up to 8x8 channels, but not support 3x3 (auval -64 -v aufx nsnd appl)
+    if (numChannels > 0 && numChannels <= 8 && numChannels != 3) 
+    { 
+        mAU->SetNumChannels(numChannels);
         return AudioEffect::setBusArrangements(inputs, numIns, outputs, numOuts);
     }
 
@@ -214,7 +224,7 @@ tresult PLUGIN_API NetSendProcessor::process (ProcessData& data)
 
 #pragma mark Helper methods
 
-void NetSendProcessor::updateParameters(IParameterChanges* paramChanges)
+void NetSendProcessor::updateParameters (IParameterChanges* paramChanges)
 {
     int32 numParamsChanged = paramChanges->getParameterCount();
     // for each parameter which are some changes in this audio block:
@@ -224,38 +234,38 @@ void NetSendProcessor::updateParameters(IParameterChanges* paramChanges)
         if (!paramQueue)
             continue;
 
-        int32      offsetSamples;
-        ParamValue value;
-        int32      numPoints = paramQueue->getPointCount();
+        int32             offsetSamples;
+        ParamValue        value;
+        int32             numPoints = paramQueue->getPointCount();
         switch (paramQueue->getParameterId())
         {
-            case kGVBypassParameter:
-                if (paramQueue->getPoint(numPoints - 1, offsetSamples, value) == kResultTrue) {
-                    mParams.bypass = (value > 0.5f) ? 1 : 0;
-                }
-                break;
+        case kGVBypassParameter:
+            if (paramQueue->getPoint(numPoints - 1, offsetSamples, value) == kResultTrue) {
+                mParams.bypass = (value > 0.5f) ? 1 : 0;
+            }
+            break;
 
-            case kGVConnectionFlagParameter:
-                if (paramQueue->getPoint(numPoints - 1, offsetSamples, value) == kResultTrue) {
-                    mParams.connectionFlag = (value > 0.5f) ? 1 : 0;
-                    mAU->setDisconnect(mParams.connectionFlag);
-                }
-                break;
+        case kGVConnectionFlagParameter:
+            if (paramQueue->getPoint(numPoints - 1, offsetSamples, value) == kResultTrue) {
+                mParams.connectionFlag = (value > 0.5f) ? 1 : 0;
+                mAU->setDisconnect(mParams.connectionFlag);
+            }
+            break;
         }
     }
 }
 
-void NetSendProcessor::processBypass(ProcessData& data)
+void NetSendProcessor::processBypass (ProcessData& data)
 {
     Sample32** in           = data.inputs[0].channelBuffers32;
     Sample32** out          = data.outputs[0].channelBuffers32;
-    int32 sampleFrames = data.numSamples;
+    int32      sampleFrames = data.numSamples;
     int32      numChannels  = data.inputs[0].numChannels;
     for (int32 i = 0; i < numChannels; i++)
     {
         // dont need to be copied if the buffers are the same
         if (in[i] != out[i]) {
-            memcpy (out[i], in[i], sampleFrames * sizeof (float));
+            memcpy(out[i], in[i], sampleFrames * sizeof (float));
         }
     }
 }
@@ -272,6 +282,5 @@ void NetSendProcessor::onTimer (Timer* timer)
         sendMessage(message);
     }
 }
-
 
 GV_NAMESPACE_END
