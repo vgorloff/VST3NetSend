@@ -14,7 +14,7 @@
 #define GV_EMAIL        "mailto:info@wavelabs.com.ua"
 #define GV_URL          "http://wavelabs.com.ua"
 
-#define GV_FULL_VERSION_STR   "1.0.2" /// @todo \b FIXME: GV: 2013.01.07 \n This should be centralized and synced with bundle version.
+#define GV_FULL_VERSION_STR   "1.0.3" /// @todo \b FIXME: GV: 2013.01.07 \n This should be centralized and synced with bundle version.
 
 #define GV_MAX_NUM_CHANNELS 8
 
