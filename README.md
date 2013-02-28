@@ -13,7 +13,7 @@ This might be useful for Musicians, Audio engineers. *Typical use cases*: Audio 
 Features:
 ---
 
-1. Supports any sample rate and audio buffer size.
+1. Supports any sample rate and audio buffer size. Supports multiple inputs/outputs: 1x1...8x8 (except 3x3).
 2. CPU safe.
 3. Fully utilize features of original AUNetSend audio plugin.
 
