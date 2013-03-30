@@ -13,7 +13,7 @@ This might be useful for Musicians, Audio engineers. *Typical use cases*: Audio 
 Features:
 ---
 
-1. Supports any sample rate and audio buffer size. Supports multiple inputs/outputs: 1x1...8x8 (except 3x3).
+1. Supports any sample rate and audio buffer size. Supports multiple inputs/outputs: 1x1 ... 8x8 (except 3x3).
 2. CPU safe.
 3. Fully utilize features of original AUNetSend audio plugin.
 
@@ -35,7 +35,7 @@ Future plans:
 Usage:
 ---
 
-[Download binary](http://code.google.com/p/vst3netsend/downloads/list) and copy it to "/Library/Audio/Plug-Ins/VST3" folder.  
+[Download binary](https://bitbucket.org/vgorloff/vst3netsend/downloads) and copy it to "/Library/Audio/Plug-Ins/VST3" folder.  
 Launch Cubase/Nuendo® and add instance to insert slot: ***Tools -> WaveLabs VST3NetSend***.
 
 Troubleshooting:
