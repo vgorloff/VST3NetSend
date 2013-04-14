@@ -9,9 +9,10 @@ Detailed description could be found on [product home page](http://www.wavelabs.c
 Features:
 ---
 
-1. Supports any sample rate and audio buffer size. Supports multiple inputs/outputs: 1x1 ... 8x8 (except 3x3).
-2. CPU safe.
-3. Fully utilize features of original AUNetSend audio plugin.
+* Supports any sample rate and audio buffer size.
+* Supports multiple inputs/outputs: 1x1 ... 8x8 (except 3x3).
+* CPU safe.
+* Fully utilize features of original AUNetSend audio plugin.
 
 System requirements:
 ---
