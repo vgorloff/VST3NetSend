@@ -3,6 +3,8 @@ VST3NetSend
 
 VST3 version of Mac OS X system-supplied AUNetSend audio plugin.
 
+[![VST3NetSend User Interface][i1]][a1]
+
 Purpose and Auditory:
 ---
 
@@ -77,5 +79,8 @@ v1.0.1 - Beta version.
 v1.0.0 - Alpha version.
 
 * Plugin listed in VST3 host but does not doing anything.
+
+[i1]: https://lh3.googleusercontent.com/-2xZW76umLhk/UWqcIuiObNI/AAAAAAAAAjw/KhTPd595M_c/s800/VST3NetSend_02.png (VST3NetSend User Interface)
+[a1]: https://lh3.googleusercontent.com/-2xZW76umLhk/UWqcIuiObNI/AAAAAAAAAjw/KhTPd595M_c/s800/VST3NetSend_02.png (VST3NetSend User Interface)
 
 
