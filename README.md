@@ -1,10 +1,18 @@
 VST3NetSend
 ===========
 
-VST3 version of Mac OS X system-supplied AUNetSend audio plugin.   
-Detailed description could be found on [product home page](http://www.wavelabs.com.ua).
+VST3 version of Mac OS X system-supplied AUNetSend audio plugin.
+
+*AUNetSend* - is an audio plugin that streams audio data over a network. Used in conjunction with the AUNetReceive generator audio unit. *VST3NetSend* - is a VST3 version of plugin which provide similar functionality as AUNetSend. It could be used with Cubase/Nuendo® (by Steinberg®).
+
 
 [![VST3NetSend User Interface][i1]][a1]
+
+Usage:
+---
+
+[Download binary](http://www.wavelabs.com.ua) and copy it to "/Library/Audio/Plug-Ins/VST3" folder.  
+Launch Cubase/Nuendo®. Add instance to insert slot: ***Tools -> WaveLabs VST3NetSend***.
 
 Features:
 ---
@@ -20,12 +28,6 @@ System requirements:
 * Mac OS X 10.7 and above.
 * 64-bit VST3 host application (DAW).
 * Gigabit LAN connection between computers.
-
-Usage:
----
-
-[Download binary](https://bitbucket.org/vgorloff/vst3netsend/downloads) and copy it to "/Library/Audio/Plug-Ins/VST3" folder.  
-Launch Cubase/Nuendo® and add instance to insert slot: ***Tools -> WaveLabs VST3NetSend***.
 
 Troubleshooting:
 ---
@@ -47,10 +49,7 @@ In Xcode go to _**Preferences -> Locations -> Source Trees**_ and set the follow
 * `GV_COREAUDIO_SDK` - path to Core Audio SDK (i.e. /Volumes/Data/SDK/CoreAudio)
 * `GV_VST_SDK` - path to VST3 SDK (i.e. /Volumes/Data/SDK/VST3)
 
-Now you are ready to build.
-
-
-* Plugin listed in VST3 host but does not doing anything.
+Now you are ready to build the project.
 
 [i1]: https://lh3.googleusercontent.com/-2xZW76umLhk/UWqcIuiObNI/AAAAAAAAAjw/KhTPd595M_c/s800/VST3NetSend_02.png (VST3NetSend User Interface)
 [a1]: https://lh3.googleusercontent.com/-2xZW76umLhk/UWqcIuiObNI/AAAAAAAAAjw/KhTPd595M_c/s800/VST3NetSend_02.png (VST3NetSend User Interface)
