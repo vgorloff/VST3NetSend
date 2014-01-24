@@ -122,19 +122,11 @@
 				CE966F30169A985C0000E00A /* AudioToolbox.framework */,
 				CE966F17169A32960000E00A /* AudioUnit.framework */,
 				CE0534521699F5690013307E /* Cocoa.framework */,
-				CE0534541699F5690013307E /* Other Frameworks */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		CE0534541699F5690013307E /* Other Frameworks */ = {
-			isa = PBXGroup;
-			children = (
 				CE0534551699F5690013307E /* AppKit.framework */,
 				CE0534561699F5690013307E /* CoreData.framework */,
 				CE0534571699F5690013307E /* Foundation.framework */,
 			);
-			name = "Other Frameworks";
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		CE0534581699F5690013307E /* src */ = {
@@ -256,7 +248,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = GV;
-				LastUpgradeCheck = 0460;
+				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "Vlad Gorloff";
 			};
 			buildConfigurationList = CE0534491699F5690013307E /* Build configuration list for PBXProject "VST3NetSend" */;
