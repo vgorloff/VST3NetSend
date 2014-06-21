@@ -1,7 +1,0 @@
-<?xml version='1.0' encoding='UTF-8' standalone='yes'?>
-<xmi:XMI xmi:version='2.1' xmlns:xmi='http://schema.omg.org/spec/XMI/2.1' xmlns:uml='http://schema.omg.org/spec/UML/2.1.1/uml.xml'>
- <documentation exporter='Oracle JDeveloper' exporterVersion='11.1.2.3.0'/>
- <uml:Package xmi:uuid='urn:uuid:ec6dd9a0-4817-42b3-8a8f-c9a95b6274fe'
-   name='WaveLabs'
-   visibility='public'/>
-</xmi:XMI>
