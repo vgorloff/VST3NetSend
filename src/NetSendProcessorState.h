@@ -34,8 +34,8 @@ public:
 
 //    NetSendProcessorState& operator=(const NetSendProcessorState&) = delete;
     NetSendProcessorState(const NetSendProcessorState&) = delete;
-    NetSendProcessorState& operator=(NetSendProcessorState&&) = delete;
-    NetSendProcessorState(NetSendProcessorState&&) = delete;
+//    NetSendProcessorState& operator=(NetSendProcessorState&&) = delete;
+//    NetSendProcessorState(NetSendProcessorState&&) = delete;
 };
 
 GV_NAMESPACE_END

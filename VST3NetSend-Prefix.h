@@ -32,19 +32,19 @@
     #include <string>
 
     // VST3 SDK
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wnon-virtual-dtor"
+#pragma clang diagnostic ignored "-Wshorten-64-to-32"
     #include "pluginterfaces/base/ustring.h"
     #include "pluginterfaces/vst/vsttypes.h"
-#pragma GCC diagnostic ignored "-Wnon-virtual-dtor"
     #include "public.sdk/source/main/pluginfactoryvst3.h"
     #include "base/source/fstreamer.h"
-#pragma GCC diagnostic ignored "-Wshorten-64-to-32"
     #include "public.sdk/source/vst/vsteditcontroller.h"
-#pragma GCC diagnostic warning "-Wshorten-64-to-32"
     #include "public.sdk/source/vst/vstaudioeffect.h"
     #include "pluginterfaces/vst/ivstparameterchanges.h"
     #include "pluginterfaces/base/ibstream.h"
     #include "base/source/timer.h"
-#pragma GCC diagnostic warning "-Wnon-virtual-dtor"
+#pragma clang diagnostic pop
 
     #include "CommonDefinitions.h"
     #include "Utilities.h"

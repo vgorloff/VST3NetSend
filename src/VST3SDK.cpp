@@ -6,9 +6,17 @@
 //  Copyright (c) 2013 Vlad Gorloff. All rights reserved.
 //
 
-// Base
-#pragma GCC diagnostic ignored "-Wnon-virtual-dtor"
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wnon-virtual-dtor"
+#pragma clang diagnostic ignored "-Wnewline-eof"
+#pragma clang diagnostic ignored "-Wdeprecated-register"
+#pragma clang diagnostic ignored "-Wshorten-64-to-32"
+#pragma clang diagnostic ignored "-Wunsequenced"
+#pragma clang diagnostic ignored "-Wint-to-void-pointer-cast"
+#pragma clang diagnostic ignored "-Wunused-function"
+#pragma clang diagnostic ignored "-Wswitch"
 
+// Base
 #include "base/source/baseiids.cpp"
 #include "base/source/classfactory.cpp"
 #include "base/source/fatomic.cpp"
@@ -20,19 +28,11 @@
 #include "base/source/fpoint.cpp"
 #include "base/source/frect.cpp"
 #include "base/source/fstreamer.cpp"
-#pragma GCC diagnostic ignored "-Wshorten-64-to-32"
 #include "base/source/fbitset.cpp"
 #include "base/source/fmemory.cpp"
-#pragma GCC diagnostic ignored "-Wunsequenced"
 #include "base/source/fstring.cpp"
-#pragma GCC diagnostic warning "-Wunsequenced"
-#pragma GCC diagnostic warning "-Wshorten-64-to-32"
-#pragma GCC diagnostic ignored "-Wint-to-void-pointer-cast"
 #include "base/source/fthread.cpp"
-#pragma GCC diagnostic warning "-Wint-to-void-pointer-cast"
-#pragma GCC diagnostic ignored "-Wunused-function"
 #include "base/source/updatehandler.cpp"
-#pragma GCC diagnostic warning "-Wunused-function"
 #include "pluginterfaces/base/conststringtable.cpp"
 #include "pluginterfaces/base/funknown.cpp"
 #include "base/source/timer.cpp"
@@ -51,4 +51,4 @@
 #include "public.sdk/source/vst/vstinitiids.cpp"
 #include "public.sdk/source/vst/vstparameters.cpp"
 
-#pragma GCC diagnostic warning "-Wnon-virtual-dtor"
+#pragma clang diagnostic pop
