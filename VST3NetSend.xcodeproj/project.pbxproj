@@ -230,7 +230,6 @@
 				CE05344B1699F5690013307E /* Sources */,
 				CE05344C1699F5690013307E /* Frameworks */,
 				CE05344D1699F5690013307E /* Resources */,
-				CE966E9B169A0D310000E00A /* Copy User's VST3 folder */,
 			);
 			buildRules = (
 			);
@@ -278,23 +277,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		CE966E9B169A0D310000E00A /* Copy User's VST3 folder */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy User's VST3 folder";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "doDeploy()\n{\n    GV_INSTALL_PATH=/Users/$USER$INSTALL_PATH\n    mkdir -pv \"$GV_INSTALL_PATH\"\n    srcFile=\"$CODESIGNING_FOLDER_PATH\"\n    find \"$GV_INSTALL_PATH\" -name $WRAPPER_NAME -print0 | xargs -0 rm -dfr\n\techo \"Copying $srcFile to $GV_INSTALL_PATH\"\n\tcp -R \"$srcFile\" \"$GV_INSTALL_PATH\"\n\techo \"Done!\"\n}\n\ndoDeploy";
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		CE05344B1699F5690013307E /* Sources */ = {
