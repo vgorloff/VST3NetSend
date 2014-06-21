@@ -37,7 +37,7 @@
 		CE0534561699F5690013307E /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		CE0534571699F5690013307E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		CE05345A1699F5690013307E /* VST3NetSend-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "VST3NetSend-Info.plist"; sourceTree = "<group>"; };
-		CE05345E1699F5690013307E /* VST3NetSend-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "VST3NetSend-Prefix.pch"; sourceTree = "<group>"; };
+		CE05345E1699F5690013307E /* VST3NetSend-Prefix.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "VST3NetSend-Prefix.h"; sourceTree = "<group>"; };
 		CE0534691699F6260013307E /* Project.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Project.xcconfig; sourceTree = "<group>"; };
 		CE05346A1699F6330013307E /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
 		CE05346B1699F6430013307E /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
@@ -168,7 +168,7 @@
 			isa = PBXGroup;
 			children = (
 				CE05345A1699F5690013307E /* VST3NetSend-Info.plist */,
-				CE05345E1699F5690013307E /* VST3NetSend-Prefix.pch */,
+				CE05345E1699F5690013307E /* VST3NetSend-Prefix.h */,
 			);
 			name = "Supporting Files";
 			path = VST3NetSend;

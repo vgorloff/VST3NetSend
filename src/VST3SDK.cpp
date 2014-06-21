@@ -14,6 +14,7 @@
 #pragma clang diagnostic ignored "-Wunsequenced"
 #pragma clang diagnostic ignored "-Wint-to-void-pointer-cast"
 #pragma clang diagnostic ignored "-Wunused-function"
+#pragma clang diagnostic ignored "-Wswitch"
 
 // Base
 #include "base/source/baseiids.cpp"

@@ -128,7 +128,7 @@ long NetSendAU::getStatus ()
 {
     Float32 result = -1;
     assert(mStatus & kInitialized);
-    if (mStatus & kInitialized == false) {
+    if ((mStatus & kInitialized) == false) {
         return result;
     }
 
