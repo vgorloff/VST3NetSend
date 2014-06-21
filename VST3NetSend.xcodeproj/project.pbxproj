@@ -248,7 +248,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = GV;
-				LastUpgradeCheck = 0500;
+				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "Vlad Gorloff";
 			};
 			buildConfigurationList = CE0534491699F5690013307E /* Build configuration list for PBXProject "VST3NetSend" */;
@@ -304,13 +304,10 @@
 				CE966E97169A007B0000E00A /* NetSendController.cpp in Sources */,
 				CE966E98169A007B0000E00A /* NetSendFactory.cpp in Sources */,
 				CE966E99169A007B0000E00A /* NetSendProcessor.cpp in Sources */,
-				CE966E9A169A007B0000E00A /* VST3SDK.cpp in Sources */,
 				CE966EA0169A20580000E00A /* NetSendView.mm in Sources */,
 				CE966F06169A2D310000E00A /* NetSendAU.cpp in Sources */,
 				CE966F1C169A33B20000E00A /* Utilities.cpp in Sources */,
 				CE966F2B169A5C480000E00A /* NetSendProcessorState.cpp in Sources */,
-				CE966F28169A57610000E00A /* CAStreamBasicDescription.cpp in Sources */,
-				CE966F2E169A68380000E00A /* AUOutputBL.cpp in Sources */,
 				D547B03216A436C1008D3B9C /* GVNetSendViewProxy.mm in Sources */,
 				D547B03916A449B6008D3B9C /* GVNetSendViewController.m in Sources */,
 				D5B8CFA916AE9ACA00DA59DD /* GVNetSendModel.m in Sources */,
@@ -318,6 +315,9 @@
 				CE6A1FD916B5AE4800FBB78F /* GVSolidBackgroundView.m in Sources */,
 				CE6A1FDD16B5B45E00FBB78F /* GVConnectionFlagTransformer.m in Sources */,
 				CE6A1FE016B5C9FE00FBB78F /* GVConnectionStatusTransformer.m in Sources */,
+				CE966E9A169A007B0000E00A /* VST3SDK.cpp in Sources */,
+				CE966F28169A57610000E00A /* CAStreamBasicDescription.cpp in Sources */,
+				CE966F2E169A68380000E00A /* AUOutputBL.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
