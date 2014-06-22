@@ -11,7 +11,7 @@ VST3 version of Mac OS X system-supplied AUNetSend audio plugin.
 Usage:
 ---
 
-[Download binary](http://www.wavelabs.com.ua) and copy it to "/Library/Audio/Plug-Ins/VST3" folder.  
+[Download binary](https://github.com/vgorloff/VST3NetSend/releases/latest) and copy it to "/Library/Audio/Plug-Ins/VST3" folder.  
 Launch Cubase/Nuendo®. Add instance to insert slot: ***Tools -> WaveLabs VST3NetSend***.
 
 Features:
@@ -51,7 +51,7 @@ In Xcode go to _**Preferences -> Locations -> Source Trees**_ and set the follow
 
 Now you are ready to build the project.
 
-[i1]: https://lh3.googleusercontent.com/-2xZW76umLhk/UWqcIuiObNI/AAAAAAAAAjw/KhTPd595M_c/s800/VST3NetSend_02.png (VST3NetSend User Interface)
-[a1]: https://lh3.googleusercontent.com/-2xZW76umLhk/UWqcIuiObNI/AAAAAAAAAjw/KhTPd595M_c/s800/VST3NetSend_02.png (VST3NetSend User Interface)
+[i1]: https://raw.githubusercontent.com/vgorloff/VST3NetSend/develop/VST3NetSend.png (VST3NetSend User Interface)
+[a1]: https://raw.githubusercontent.com/vgorloff/VST3NetSend/develop/VST3NetSend.png (VST3NetSend User Interface)
 
 
