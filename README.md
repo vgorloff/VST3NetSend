@@ -6,7 +6,7 @@ VST3 version of Mac OS X system-supplied AUNetSend audio plugin.
 *AUNetSend* - is an audio plugin that streams audio data over a network. Used in conjunction with the AUNetReceive generator audio unit. *VST3NetSend* - is a VST3 version of plugin which provide similar functionality as AUNetSend. It could be used with Cubase/Nuendo® (by Steinberg®).
 
 
-[![VST3NetSend User Interface][i1]][a1]
+![VST3NetSend User Interface](https://raw.githubusercontent.com/vgorloff/VST3NetSend/develop/VST3NetSend.png)
 
 Usage:
 ---
@@ -50,8 +50,3 @@ In Xcode go to _**Preferences -> Locations -> Source Trees**_ and set the follow
 * `GV_VST_SDK` - path to VST3 SDK (i.e. /Volumes/Data/SDK/VST3)
 
 Now you are ready to build the project.
-
-[i1]: https://raw.githubusercontent.com/vgorloff/VST3NetSend/develop/VST3NetSend.png (VST3NetSend User Interface)
-[a1]: https://raw.githubusercontent.com/vgorloff/VST3NetSend/develop/VST3NetSend.png (VST3NetSend User Interface)
-
-
