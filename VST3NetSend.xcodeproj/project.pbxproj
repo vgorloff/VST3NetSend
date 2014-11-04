@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		802A6FB71A0997690050FA46 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 802A6FB61A0997690050FA46 /* CoreAudio.framework */; };
 		CE59890C16B49693000FB4EE /* GVIntegerFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = CE59890B16B49693000FB4EE /* GVIntegerFormatter.m */; };
 		CE6A1FD916B5AE4800FBB78F /* GVSolidBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = CE6A1FD816B5AE4800FBB78F /* GVSolidBackgroundView.m */; };
 		CE6A1FDD16B5B45E00FBB78F /* GVConnectionFlagTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = CE6A1FDC16B5B45E00FBB78F /* GVConnectionFlagTransformer.m */; };
@@ -31,6 +32,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		802A6FB61A0997690050FA46 /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
 		CE05344F1699F5690013307E /* VST3NetSend.vst3 */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VST3NetSend.vst3; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE0534521699F5690013307E /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		CE0534551699F5690013307E /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -85,6 +87,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				802A6FB71A0997690050FA46 /* CoreAudio.framework in Frameworks */,
 				CE966E9C169A16D00000E00A /* Cocoa.framework in Frameworks */,
 				CE966F19169A32A70000E00A /* AudioUnit.framework in Frameworks */,
 				CE966F32169A98630000E00A /* AudioToolbox.framework in Frameworks */,
@@ -119,6 +122,7 @@
 		CE0534511699F5690013307E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				802A6FB61A0997690050FA46 /* CoreAudio.framework */,
 				CE966F30169A985C0000E00A /* AudioToolbox.framework */,
 				CE966F17169A32960000E00A /* AudioUnit.framework */,
 				CE0534521699F5690013307E /* Cocoa.framework */,
@@ -247,8 +251,8 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = GV;
-				LastUpgradeCheck = 0510;
-				ORGANIZATIONNAME = "Vlad Gorloff";
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = "Vlad Gorlov";
 			};
 			buildConfigurationList = CE0534491699F5690013307E /* Build configuration list for PBXProject "VST3NetSend" */;
 			compatibilityVersion = "Xcode 3.2";
