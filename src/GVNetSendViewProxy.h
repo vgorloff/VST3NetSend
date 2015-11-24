@@ -1,5 +1,5 @@
 //
-//  GVNetSendViewController.h
+//  GVNetSendViewProxy.h
 //  VST3NetSend
 //
 //  Created by Volodymyr Gorlov on 1/14/13.

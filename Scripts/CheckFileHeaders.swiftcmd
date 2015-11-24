@@ -1,0 +1,16 @@
+#!/usr/bin/env swift-osx
+ 
+import Foundation
+import WL
+
+func performHeadersCheck(directory: String) {
+	let checker = FileHeaderChecker(sourceDirectoryPath: directory)
+	checker.projectName = "VST3NetSend"
+	let results = checker.performAnalysis()
+	for result in results {
+		print("\(result.filePath):1: warning: \(result.issueReason)")
+	}
+}
+
+let projectRootDirectoryPath = Process.executableDirectoryPath.stringByDeletingLastPathComponent
+performHeadersCheck(projectRootDirectoryPath.stringByAppendingPathComponent("src"))
