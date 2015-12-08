@@ -5,7 +5,7 @@ import WL
 
 func performHeadersCheck(directory: String) {
 	let checker = FileHeaderChecker(sourceDirectoryPath: directory)
-	checker.projectName = "VST3NetSend"
+	checker.projectNames = ["VST3NetSend"]
 	let results = checker.performAnalysis()
 	for result in results {
 		print("\(result.filePath):1: warning: \(result.issueReason)")
