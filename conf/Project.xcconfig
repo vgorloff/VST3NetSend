@@ -9,7 +9,6 @@
 
 // Build settings ==================================================
 PRODUCT_NAME                = VST3NetSend
-ARCHS                       = $(ARCHS_STANDARD_64_BIT)
 SDKROOT                     = macosx
 VALID_ARCHS                 = x86_64
 SUPPORTED_PLATFORMS         = macosx

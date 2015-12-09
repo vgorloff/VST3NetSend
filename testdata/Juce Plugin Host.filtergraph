@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<FILTERGRAPH>
+  <FILTER uid="1" x="0.41625" y="0.0981481" uiLastX="" uiLastY="">
+    <PLUGIN name="Audio Input" descriptiveName="" format="Internal" category="I/O devices"
+            manufacturer="Raw Material Software" version="1.0" file="" uid="246006c0"
+            isInstrument="0" fileTime="0" numInputs="0" numOutputs="2" isShell="0"/>
+    <STATE>0.</STATE>
+  </FILTER>
+  <FILTER uid="2" x="0.25" y="0.1" uiLastX="" uiLastY="">
+    <PLUGIN name="Midi Input" descriptiveName="" format="Internal" category="I/O devices"
+            manufacturer="Raw Material Software" version="1.0" file="" uid="cb5fde0b"
+            isInstrument="0" fileTime="0" numInputs="0" numOutputs="0" isShell="0"/>
+    <STATE>0.</STATE>
+  </FILTER>
+  <FILTER uid="3" x="0.435" y="0.651852" uiLastX="125" uiLastY="302">
+    <PLUGIN name="Audio Output" descriptiveName="" format="Internal" category="I/O devices"
+            manufacturer="Raw Material Software" version="1.0" file="" uid="724248cb"
+            isInstrument="0" fileTime="0" numInputs="2" numOutputs="0" isShell="0"/>
+    <STATE>0.</STATE>
+  </FILTER>
+  <FILTER uid="7" x="0.235" y="0.264815" uiLastX="792" uiLastY="198">
+    <PLUGIN name="AUAudioFilePlayer" format="AudioUnit" category="Generator"
+            manufacturer="Apple" version="1.6.0" file="AudioUnit:Generators/augn,afpl,appl"
+            uid="6163676e" isInstrument="0" fileTime="0" numInputs="0" numOutputs="2"
+            isShell="0"/>
+    <STATE>863.hAGaoMGcv.C1AHv.DTfAGfPBJr.IkXxIpvUag4VclE1XzUmbkIGUjEFcg8EDarVPUAkbkMWYzAUYxMWZyQWYtQ2TzEFcksTY4c0b0IFc4AWYWYWYxMWZu4FUzkGbk8EDOXVZrUVKxUlYkIWYtMVYyQkag0VYRDFbvwFPhxfFR2fCO.AVFkFak4TXsU1URU1Yo8lay8EDX8RUyUlby8hcuYWXuzTcyk1XujFU04VYy8RZTUmakMGHMU2boM1KMU2boM1KAUWMuHDauM2bu0FHEA0KvDCHBw1ayM2asABJOIWZmklagwFHMkFdo3RavMSnQPsDSPQEVbAFY3kTkcVZu4FQuU1bL81avokTkcVZu4FQgQWXeAADIM2TkwVYiQWYjIUYmk1atokTkcVZu4lSg0VYH7DDvA..........PiFg..HX...nJHD..DF...TpyAP......k5b.D......o+6W++G.............A...............................................EIcVpA...........HD7.nV.DmeBZ4TY2AhTkcVZu41zM3vFbzAFdkzbSUFakMFckQlQowVYeAgZuT0bkI2buX2a1E1KMU2boM1KoQUctU1bujFU04VYyARS0MWZi8RS0MWZi8RPyg1KI4FY0MGcxkGHCUGcyAhUuwFHw7BLx.hQgQGZkIGZu8FYffhPg4FYiEVavARQ3MFa0MWZ1UVJtzFbyDpGTKwDTTgEffgHH7DDvA..........n4UAK9+e..PS0MWZi8RS0A..........7i9ue8+e....o+6W++G..PP5+90++A..A.....HX.........................................BF..............Hk+......PBZ4TY2AhTkcVZu4VBRDlYvwFD.HQX0claRiRJOvgUFkFakARLVYTZrUFHxfUUtQWZzwVYjA.B.jA.l.vJ.jD.QAPV.3E.vAPc.nG.6Afe.LH.LB.k.7N.wCf9AjP.TDvIAHS.yDfoAbZ.xFPtAfr.0HvMB.j.AI.sBTq..KPvBXr.HKPyBHs.YK.3........BD..........q...................BjN</STATE>
+  </FILTER>
+  <FILTER uid="8" x="0.43375" y="0.468519" uiLastX="1089" uiLastY="356">
+    <PLUGIN name="AUNetReceive" format="AudioUnit" category="Generator" manufacturer="Apple"
+            version="1.6.0" file="AudioUnit:Generators/augn,nrcv,appl" uid="6e777474"
+            isInstrument="0" fileTime="0" numInputs="0" numOutputs="2" isShell="0"/>
+    <STATE>207.hAGaoMGcv.C1AHv.DTfAGfPBJr.CM3vCPr0P0Imbk4FcH81bzwUag4VclE1XzUmbkIGUjEFcgc0b0IFc4AWYWYWYxMWZu4FUzkGbkgETgM2b28lbjQkag0VYeAwCr81XgwFZuMGc5TiL3.CLRDFbvw1SPPA..............D......+.H..HgaxMlcP.fDgU2YtAEVU4FcoQGakQFBYThL27yQLUkVrEGhM9HkUB.......DP..........DA...................fm</STATE>
+  </FILTER>
+  <FILTER uid="9" x="0.2325" y="0.472222" uiLastX="965" uiLastY="77">
+    <PLUGIN name="WaveLabs VST3NetSend" format="VST3" category="Fx|Tools"
+            manufacturer="WaveLabs Audio" version="1.0.5" file="/Users/vova/Library/Audio/Plug-Ins/VST3/WaveLabs/VST3NetSend.vst3"
+            uid="b075b11" isInstrument="0" fileTime="14b04acdaa0" numInputs="2"
+            numOutputs="2" isShell="0"/>
+    <STATE>126.VMjLgTG....OVMEUy.Ea0cVZtMEcgQWY9vSRC8Vav8lak4Fc9PCLt3hKt3hKt3hKt3hKt3BSt.kSC4hKt3hKt3hct3hKtXVUSEELL4TUFM1TUwVXpEDTt3hKt3hKtvyKIMzasA2atUlaz4COuX0TTMCTrU2Yo41TzEFck4C.</STATE>
+  </FILTER>
+  <CONNECTION srcFilter="7" srcChannel="0" dstFilter="9" dstChannel="0"/>
+  <CONNECTION srcFilter="7" srcChannel="1" dstFilter="9" dstChannel="1"/>
+  <CONNECTION srcFilter="8" srcChannel="0" dstFilter="3" dstChannel="0"/>
+  <CONNECTION srcFilter="8" srcChannel="1" dstFilter="3" dstChannel="1"/>
+</FILTERGRAPH>

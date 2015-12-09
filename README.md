@@ -10,13 +10,13 @@ VST3 version of Mac OS X system-supplied AUNetSend audio plugin.
 ![VST3NetSend User Interface](https://raw.githubusercontent.com/vgorloff/VST3NetSend/develop/VST3NetSend.png)
 
 Usage:
----
+-----
 
 [Download binary](https://github.com/vgorloff/VST3NetSend/releases/latest) and copy it to "~/Library/Audio/Plug-Ins/VST3" or "/Library/Audio/Plug-Ins/VST3" folder.  
 Launch Cubase/Nuendo®. Add instance to insert slot: ***Tools -> WaveLabs VST3NetSend***.
 
 Features:
----
+--------
 
 * Supports any sample rate and audio buffer size.
 * Supports multiple inputs/outputs: 1x1 ... 8x8 (except 3x3).
@@ -24,20 +24,20 @@ Features:
 * Fully utilize features of original AUNetSend audio plugin.
 
 System requirements:
----
+-------------------
 
 * Mac OS X 10.7 and above.
 * 64-bit VST3 host application (DAW).
 * Gigabit LAN connection between computers.
 
 Troubleshooting:
----
+---------------
 
 [Bonjour Browser](http://www.tildesoft.com) application can be used to inspect all AUNetSend providers.  
 Plugin should be listed as "_apple-ausend.tcp." provider.
 
 How to build:
----
+------------
 
 To build plugin the following tools, libs and SDKs needed:  
   
@@ -53,7 +53,7 @@ In Xcode go to _**Preferences -> Locations -> Source Trees**_ and set the follow
 Now you are ready to build the project.
 
 How to get Core Audio SDK:
----
+-------------------------
 
 * Launch Xcode.app and open Documentation browser: `Window -> Documentation and API Reference`
 * Search for `Core Audio Utility Classes`. Then open project.

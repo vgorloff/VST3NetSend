@@ -1,5 +1,5 @@
 //
-//  VST3Controller.cpp
+//  NetSendController.cpp
 //  VST3NetSend
 //
 //  Created by Vlad Gorloff on 06.01.13.

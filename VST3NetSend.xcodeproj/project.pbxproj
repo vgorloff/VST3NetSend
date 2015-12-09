@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 47;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -251,11 +251,11 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = GV;
-				LastUpgradeCheck = 0610;
+				LastUpgradeCheck = 0710;
 				ORGANIZATIONNAME = "Vlad Gorlov";
 			};
 			buildConfigurationList = CE0534491699F5690013307E /* Build configuration list for PBXProject "VST3NetSend" */;
-			compatibilityVersion = "Xcode 3.2";
+			compatibilityVersion = "Xcode 6.3";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -314,6 +314,9 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = CE0534691699F6260013307E /* Project.xcconfig */;
 			buildSettings = {
+				ENABLE_TESTABILITY = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				ONLY_ACTIVE_ARCH = YES;
 			};
 			name = Debug;
 		};
@@ -321,6 +324,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = CE0534691699F6260013307E /* Project.xcconfig */;
 			buildSettings = {
+				GCC_NO_COMMON_BLOCKS = YES;
 			};
 			name = Release;
 		};
@@ -328,6 +332,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = CE05346A1699F6330013307E /* Debug.xcconfig */;
 			buildSettings = {
+				PRODUCT_BUNDLE_IDENTIFIER = "${GV_BUNDLE_ID}";
 			};
 			name = Debug;
 		};
@@ -335,6 +340,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = CE05346B1699F6430013307E /* Release.xcconfig */;
 			buildSettings = {
+				PRODUCT_BUNDLE_IDENTIFIER = "${GV_BUNDLE_ID}";
 			};
 			name = Release;
 		};
