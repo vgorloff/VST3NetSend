@@ -7,7 +7,7 @@ VST3 version of Mac OS X system-supplied AUNetSend audio plugin.
 *VST3NetSend* - is a VST3 version of the plugin which provide similar functionality as AUNetSend. It could be used with Cubase/Nuendo® (by Steinberg®).
 
 
-![VST3NetSend User Interface](https://raw.githubusercontent.com/vgorloff/VST3NetSend/develop/VST3NetSend.png)
+![VST3NetSend User Interface](https://raw.githubusercontent.com/vgorloff/VST3NetSend/master/VST3NetSend.png)
 
 Usage:
 -----
