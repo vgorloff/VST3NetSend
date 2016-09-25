@@ -7,7 +7,7 @@ VST3 version of Mac OS X system-supplied AUNetSend audio plugin.
 *VST3NetSend* - is a VST3 version of the plugin which provide similar functionality as AUNetSend. It could be used with Cubase/Nuendo® (by Steinberg®).
 
 
-![VST3NetSend User Interface](https://raw.githubusercontent.com/vgorloff/VST3NetSend/master/VST3NetSend.png)
+![VST3NetSend User Interface](https://raw.githubusercontent.com/vgorloff/VST3NetSend/master/Media/VST3NetSend.png)
 
 Usage:
 -----
@@ -35,6 +35,12 @@ Troubleshooting:
 
 [Bonjour Browser](http://www.tildesoft.com) application can be used to inspect all AUNetSend providers.  
 Plugin should be listed as "_apple-ausend.tcp." provider.
+
+On new systems (macOS 10.11 and above) AUNetRecieve may not connect to VST3NetSend via Bonjour discovery (seems IPv6 issue in AUNetRecieve).
+To solve this problem enter IP-address manually.
+
+![Troubleshooting AUNetRecieve. Step 1.](https://raw.githubusercontent.com/vgorloff/VST3NetSend/master/Media/Troubleshooting_AUNetRecieve_01.png)
+![Troubleshooting AUNetRecieve. Step 2.](https://raw.githubusercontent.com/vgorloff/VST3NetSend/master/Media/Troubleshooting_AUNetRecieve_02.png)
 
 How to build:
 ------------

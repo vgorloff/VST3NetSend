@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="kOp-m9-3B1">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11201"/>
+        <capability name="box content view" minToolsVersion="7.0"/>
+    </dependencies>
+    <scenes>
+        <!--Net Send View Controller-->
+        <scene sceneID="tkZ-p5-zdR">
+            <objects>
+                <viewController id="kOp-m9-3B1" customClass="NetSendViewController" customModule="VST3NetSendUI" customModuleProvider="target" sceneMemberID="viewController">
+                    <customView key="view" id="HYQ-82-cAm" customClass="NetSendView" customModule="VST3NetSendUI" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="358" height="218"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <subviews>
+                            <box autoresizesSubviews="NO" fixedFrame="YES" borderType="line" title="Box" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="zd7-r2-862">
+                                <rect key="frame" x="12" y="104" width="334" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <view key="contentView" id="csI-pg-W2L">
+                                    <rect key="frame" x="1" y="1" width="332" height="98"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2u0-c8-sTL">
+                                            <rect key="frame" x="100" y="14" width="96" height="19"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" title="52800" drawsBackground="YES" id="K4x-rc-Xkj">
+                                                <font key="font" metaFont="smallSystem"/>
+                                                <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Y4f-ZT-Gdl">
+                                            <rect key="frame" x="12" y="72" width="82" height="14"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Status:" id="AOh-rn-SF7">
+                                                <font key="font" metaFont="smallSystem"/>
+                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5DR-Ul-7Ze">
+                                            <rect key="frame" x="97" y="72" width="132" height="14"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Listening" id="TyH-Ri-6B4">
+                                                <font key="font" metaFont="smallSystem"/>
+                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bf7-mj-u9B">
+                                            <rect key="frame" x="12" y="16" width="82" height="14"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Port:" id="VyJ-yM-DyS">
+                                                <font key="font" metaFont="smallSystem"/>
+                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Rl9-d2-kkA">
+                                            <rect key="frame" x="12" y="45" width="82" height="14"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Data format:" id="zB4-oY-2Ln">
+                                                <font key="font" metaFont="smallSystem"/>
+                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WJY-ku-NTi">
+                                            <rect key="frame" x="97" y="40" width="224" height="22"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" controlSize="small" lineBreakMode="truncatingTail" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" id="dl9-Fd-Lxa">
+                                                <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                                                <font key="font" metaFont="smallSystem"/>
+                                                <menu key="menu" title="OtherViews" id="Mrf-Vd-8Ce">
+                                                    <items>
+                                                        <menuItem title="32 bit floating point PCM" id="dwb-fs-SwV">
+                                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                                        </menuItem>
+                                                        <menuItem title="24 bit integer PCM" tag="1" id="rmS-pV-Ng3">
+                                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                                        </menuItem>
+                                                        <menuItem title="16 bit integer PCM" tag="2" id="kCd-C1-1Dy">
+                                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                                        </menuItem>
+                                                        <menuItem isSeparatorItem="YES" tag="-1" id="Luo-TD-ouQ"/>
+                                                        <menuItem title="24 bit Apple Lossless" tag="3" id="3Z4-dE-Dan">
+                                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                                        </menuItem>
+                                                        <menuItem title="16 bit Apple Lossless" tag="4" id="8E3-Le-oXH">
+                                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                                        </menuItem>
+                                                        <menuItem isSeparatorItem="YES" tag="-1" id="ckR-V2-eyn"/>
+                                                        <menuItem title="µ-Law" tag="5" id="hbp-bJ-JW0">
+                                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                                        </menuItem>
+                                                        <menuItem title="IMA 4:1" tag="6" id="G6k-ue-Yzd">
+                                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                                        </menuItem>
+                                                        <menuItem isSeparatorItem="YES" tag="-1" id="ylr-my-fC5"/>
+                                                        <menuItem title="AAC 128 kbps per channel" tag="7" id="K7O-UU-NuC">
+                                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                                        </menuItem>
+                                                        <menuItem title="AAC 96 kbps per channel" tag="8" id="CFz-y0-yF0">
+                                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                                        </menuItem>
+                                                        <menuItem title="AAC 80 kbps per channel" tag="9" id="64g-Sh-P7Y">
+                                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                                        </menuItem>
+                                                        <menuItem title="AAC 64 kbps per channel" tag="10" id="WIi-fn-Xau">
+                                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                                        </menuItem>
+                                                        <menuItem title="AAC 48 kbps per channel" tag="11" id="dbU-xd-2op">
+                                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                                        </menuItem>
+                                                        <menuItem title="AAC 40 kbps per channel" tag="12" id="yTy-M2-frQ">
+                                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                                        </menuItem>
+                                                        <menuItem title="AAC 32 kbps per channel" tag="13" id="KdL-I1-Bou">
+                                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                                        </menuItem>
+                                                        <menuItem isSeparatorItem="YES" tag="-1" id="hLt-xF-6Bd"/>
+                                                        <menuItem title="AAC Low Delay 64 kbps per channel" tag="14" id="OOn-m0-8yY">
+                                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                                        </menuItem>
+                                                        <menuItem title="AAC Low Delay 48 kbps per channel" tag="15" id="fe7-4p-zuP">
+                                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                                        </menuItem>
+                                                        <menuItem title="AAC Low Delay 40 kbps per channel" tag="16" id="UXQ-pC-HfD">
+                                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                                        </menuItem>
+                                                        <menuItem title="AAC Low Delay 32 kbps per channel" tag="17" id="owS-vu-9hh">
+                                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                                        </menuItem>
+                                                    </items>
+                                                </menu>
+                                            </popUpButtonCell>
+                                        </popUpButton>
+                                        <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OgU-2C-jKD">
+                                            <rect key="frame" x="230" y="63" width="93" height="28"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <buttonCell key="cell" type="push" title="Disconnect" bezelStyle="rounded" alignment="center" controlSize="small" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="jlc-gi-6xR">
+                                                <behavior key="behavior" pushIn="YES" changeContents="YES" lightByContents="YES"/>
+                                                <font key="font" metaFont="smallSystem"/>
+                                            </buttonCell>
+                                        </button>
+                                    </subviews>
+                                </view>
+                            </box>
+                            <box autoresizesSubviews="NO" fixedFrame="YES" borderType="line" title="Options" translatesAutoresizingMaskIntoConstraints="NO" id="X88-gi-W2K">
+                                <rect key="frame" x="12" y="12" width="334" height="88"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <view key="contentView" id="dRC-9v-IRS">
+                                    <rect key="frame" x="1" y="1" width="332" height="72"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Kfy-8U-BEp">
+                                            <rect key="frame" x="100" y="40" width="218" height="19"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" title="VST3NetSend" drawsBackground="YES" id="cmt-Xj-rDO">
+                                                <font key="font" metaFont="smallSystem"/>
+                                                <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <secureTextField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bcp-dG-0hG">
+                                            <rect key="frame" x="100" y="14" width="218" height="19"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <secureTextFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" usesSingleLineMode="YES" id="zGj-UH-mC8">
+                                                <font key="font" metaFont="smallSystem"/>
+                                                <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                <allowedInputSourceLocales>
+                                                    <string>NSAllRomanInputSourcesLocaleIdentifier</string>
+                                                </allowedInputSourceLocales>
+                                            </secureTextFieldCell>
+                                        </secureTextField>
+                                        <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0hN-Yd-NQ0">
+                                            <rect key="frame" x="12" y="42" width="82" height="14"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Bonjour name:" id="fxU-Ql-Lki">
+                                                <font key="font" metaFont="smallSystem"/>
+                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zVJ-FO-YkL">
+                                            <rect key="frame" x="12" y="16" width="82" height="14"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Password:" id="S4t-xf-GLC">
+                                                <font key="font" metaFont="smallSystem"/>
+                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                    </subviews>
+                                </view>
+                            </box>
+                        </subviews>
+                        <connections>
+                            <outlet property="bonjourName" destination="Kfy-8U-BEp" id="0zV-Z7-aRL"/>
+                            <outlet property="connectionFlag" destination="OgU-2C-jKD" id="zc1-gF-zex"/>
+                            <outlet property="dataFormat" destination="WJY-ku-NTi" id="NrB-zR-DVF"/>
+                            <outlet property="password" destination="bcp-dG-0hG" id="BP5-6T-CDl"/>
+                            <outlet property="port" destination="2u0-c8-sTL" id="4gR-de-3v4"/>
+                            <outlet property="status" destination="5DR-Ul-7Ze" id="JGb-bh-q5J"/>
+                        </connections>
+                    </customView>
+                </viewController>
+                <customObject id="2hM-Ky-cKR" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="119" y="29"/>
+        </scene>
+    </scenes>
+</document>
