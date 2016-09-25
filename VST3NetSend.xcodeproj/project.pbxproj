@@ -67,14 +67,14 @@
 		806358241D98516B002DC5E2 /* NetSendView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetSendView.swift; sourceTree = "<group>"; };
 		8063582B1D98583B002DC5E2 /* NetSendViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetSendViewModel.swift; sourceTree = "<group>"; };
 		8063582D1D9858EC002DC5E2 /* Formatters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Formatters.swift; sourceTree = "<group>"; };
+		80733FB41D9889F200756AE4 /* VST3NetSend-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "VST3NetSend-Info.plist"; sourceTree = "<group>"; };
+		80733FB51D9889F200756AE4 /* VST3NetSend-Prefix.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "VST3NetSend-Prefix.h"; sourceTree = "<group>"; };
 		807A81EB1D985DE900D9DE76 /* ValueTransformers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValueTransformers.swift; sourceTree = "<group>"; };
 		CE05344F1699F5690013307E /* VST3NetSend.vst3 */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VST3NetSend.vst3; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE0534521699F5690013307E /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		CE0534551699F5690013307E /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		CE0534561699F5690013307E /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		CE0534571699F5690013307E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		CE05345A1699F5690013307E /* VST3NetSend-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "VST3NetSend-Info.plist"; sourceTree = "<group>"; };
-		CE05345E1699F5690013307E /* VST3NetSend-Prefix.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "VST3NetSend-Prefix.h"; sourceTree = "<group>"; };
 		CE0534691699F6260013307E /* Project.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Project.xcconfig; sourceTree = "<group>"; };
 		CE966E90169A007B0000E00A /* CommonDefinitions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonDefinitions.h; sourceTree = "<group>"; };
 		CE966E91169A007B0000E00A /* NetSendController.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NetSendController.cpp; sourceTree = "<group>"; };
@@ -140,11 +140,20 @@
 			path = VST3NetSendUI;
 			sourceTree = "<group>";
 		};
+		80733FB31D9889DC00756AE4 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				80733FB41D9889F200756AE4 /* VST3NetSend-Info.plist */,
+				80733FB51D9889F200756AE4 /* VST3NetSend-Prefix.h */,
+				CE0534691699F6260013307E /* Project.xcconfig */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		CE0534441699F5690013307E = {
 			isa = PBXGroup;
 			children = (
-				CE0534591699F5690013307E /* Supporting Files */,
-				CE0534681699F6030013307E /* conf */,
+				80733FB31D9889DC00756AE4 /* Supporting Files */,
 				CE0534581699F5690013307E /* Sources */,
 				806358181D98509C002DC5E2 /* VST3NetSendUI */,
 				D5B94EF6169ED03F0042DB88 /* SDKs */,
@@ -198,24 +207,6 @@
 				CE966E96169A007B0000E00A /* VST3SDK.cpp */,
 			);
 			path = Sources;
-			sourceTree = "<group>";
-		};
-		CE0534591699F5690013307E /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				CE05345A1699F5690013307E /* VST3NetSend-Info.plist */,
-				CE05345E1699F5690013307E /* VST3NetSend-Prefix.h */,
-			);
-			name = "Supporting Files";
-			path = VST3NetSend;
-			sourceTree = "<group>";
-		};
-		CE0534681699F6030013307E /* conf */ = {
-			isa = PBXGroup;
-			children = (
-				CE0534691699F6260013307E /* Project.xcconfig */,
-			);
-			path = conf;
 			sourceTree = "<group>";
 		};
 		CE966F25169A573D0000E00A /* Core Audio SDK */ = {
