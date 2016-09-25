@@ -32,7 +32,6 @@
 		CE966F2E169A68380000E00A /* AUOutputBL.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE966F2C169A68380000E00A /* AUOutputBL.cpp */; };
 		CE966F32169A98630000E00A /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE966F30169A985C0000E00A /* AudioToolbox.framework */; };
 		D547B03216A436C1008D3B9C /* GVNetSendViewProxy.mm in Sources */ = {isa = PBXBuildFile; fileRef = D547B03116A436C1008D3B9C /* GVNetSendViewProxy.mm */; };
-		D547B03516A4461F008D3B9C /* VST3NetSendView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D547B03416A4461F008D3B9C /* VST3NetSendView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -100,7 +99,6 @@
 		CE966F30169A985C0000E00A /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		D547B03016A436C1008D3B9C /* GVNetSendViewProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GVNetSendViewProxy.h; sourceTree = "<group>"; };
 		D547B03116A436C1008D3B9C /* GVNetSendViewProxy.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = GVNetSendViewProxy.mm; sourceTree = "<group>"; };
-		D547B03416A4461F008D3B9C /* VST3NetSendView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VST3NetSendView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,12 +143,11 @@
 		CE0534441699F5690013307E = {
 			isa = PBXGroup;
 			children = (
-				D5B94EF6169ED03F0042DB88 /* SDKs */,
+				CE0534591699F5690013307E /* Supporting Files */,
 				CE0534681699F6030013307E /* conf */,
 				CE0534581699F5690013307E /* src */,
-				D547B03616A44637008D3B9C /* resources */,
-				CE0534591699F5690013307E /* Supporting Files */,
 				806358181D98509C002DC5E2 /* VST3NetSendUI */,
+				D5B94EF6169ED03F0042DB88 /* SDKs */,
 				CE0534511699F5690013307E /* Frameworks */,
 				CE0534501699F5690013307E /* Products */,
 			);
@@ -238,14 +235,6 @@
 			);
 			name = "Core Audio SDK";
 			sourceTree = GV_COREAUDIO_SDK;
-		};
-		D547B03616A44637008D3B9C /* resources */ = {
-			isa = PBXGroup;
-			children = (
-				D547B03416A4461F008D3B9C /* VST3NetSendView.xib */,
-			);
-			path = resources;
-			sourceTree = "<group>";
 		};
 		D5B94EF6169ED03F0042DB88 /* SDKs */ = {
 			isa = PBXGroup;
@@ -356,7 +345,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D547B03516A4461F008D3B9C /* VST3NetSendView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
