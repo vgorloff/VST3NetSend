@@ -26,7 +26,7 @@ Features:
 System requirements:
 -------------------
 
-* Mac OS X 10.7 and above.
+* Mac OS X 10.9 and above.
 * 64-bit VST3 host application (DAW).
 * Gigabit LAN connection between computers.
 
