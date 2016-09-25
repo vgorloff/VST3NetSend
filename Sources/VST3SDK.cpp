@@ -15,6 +15,7 @@
 #pragma clang diagnostic ignored "-Wint-to-void-pointer-cast"
 #pragma clang diagnostic ignored "-Wunused-function"
 #pragma clang diagnostic ignored "-Wswitch"
+#pragma clang diagnostic ignored "-Wempty-body"
 
 // Base
 #include "base/source/baseiids.cpp"

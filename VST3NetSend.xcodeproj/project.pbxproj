@@ -82,7 +82,7 @@
 		CE966E93169A007B0000E00A /* NetSendFactory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NetSendFactory.cpp; sourceTree = "<group>"; };
 		CE966E94169A007B0000E00A /* NetSendProcessor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NetSendProcessor.cpp; sourceTree = "<group>"; };
 		CE966E95169A007B0000E00A /* NetSendProcessor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetSendProcessor.h; sourceTree = "<group>"; };
-		CE966E96169A007B0000E00A /* VST3SDK.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = VST3SDK.cpp; path = src/VST3SDK.cpp; sourceTree = "<group>"; };
+		CE966E96169A007B0000E00A /* VST3SDK.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = VST3SDK.cpp; sourceTree = "<group>"; };
 		CE966E9E169A20580000E00A /* NetSendView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = NetSendView.mm; sourceTree = "<group>"; };
 		CE966E9F169A20580000E00A /* NetSendView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetSendView.h; sourceTree = "<group>"; };
 		CE966F04169A2D310000E00A /* NetSendAU.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NetSendAU.cpp; sourceTree = "<group>"; };
@@ -145,7 +145,7 @@
 			children = (
 				CE0534591699F5690013307E /* Supporting Files */,
 				CE0534681699F6030013307E /* conf */,
-				CE0534581699F5690013307E /* src */,
+				CE0534581699F5690013307E /* Sources */,
 				806358181D98509C002DC5E2 /* VST3NetSendUI */,
 				D5B94EF6169ED03F0042DB88 /* SDKs */,
 				CE0534511699F5690013307E /* Frameworks */,
@@ -176,7 +176,7 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		CE0534581699F5690013307E /* src */ = {
+		CE0534581699F5690013307E /* Sources */ = {
 			isa = PBXGroup;
 			children = (
 				CE966E90169A007B0000E00A /* CommonDefinitions.h */,
@@ -195,8 +195,9 @@
 				CE966E9E169A20580000E00A /* NetSendView.mm */,
 				CE966F1A169A33B10000E00A /* Utilities.cpp */,
 				CE966F1B169A33B20000E00A /* Utilities.h */,
+				CE966E96169A007B0000E00A /* VST3SDK.cpp */,
 			);
-			path = src;
+			path = Sources;
 			sourceTree = "<group>";
 		};
 		CE0534591699F5690013307E /* Supporting Files */ = {
@@ -217,14 +218,6 @@
 			path = conf;
 			sourceTree = "<group>";
 		};
-		CE84AA9E169B7A02006E4780 /* VST3 SDK */ = {
-			isa = PBXGroup;
-			children = (
-				CE966E96169A007B0000E00A /* VST3SDK.cpp */,
-			);
-			name = "VST3 SDK";
-			sourceTree = "<group>";
-		};
 		CE966F25169A573D0000E00A /* Core Audio SDK */ = {
 			isa = PBXGroup;
 			children = (
@@ -240,7 +233,6 @@
 			isa = PBXGroup;
 			children = (
 				CE966F25169A573D0000E00A /* Core Audio SDK */,
-				CE84AA9E169B7A02006E4780 /* VST3 SDK */,
 			);
 			name = SDKs;
 			sourceTree = "<group>";
@@ -310,7 +302,11 @@
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = E27KE6VTF6;
 						LastSwiftMigration = 0800;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
+					};
+					CE05344E1699F5690013307E = {
+						DevelopmentTeam = E27KE6VTF6;
+						ProvisioningStyle = Manual;
 					};
 				};
 			};
@@ -398,12 +394,12 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				APPLICATION_EXTENSION_API_ONLY = YES;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "-";
-				CURRENT_PROJECT_VERSION = 1;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CURRENT_PROJECT_VERSION = 2;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = E27KE6VTF6;
 				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 2;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				FRAMEWORK_VERSION = A;
@@ -433,12 +429,12 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				APPLICATION_EXTENSION_API_ONLY = YES;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "-";
-				CURRENT_PROJECT_VERSION = 1;
+				CODE_SIGN_IDENTITY = "Developer ID Application";
+				CURRENT_PROJECT_VERSION = 2;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = E27KE6VTF6;
 				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 2;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -538,8 +534,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_WARN_DOCUMENTATION_COMMENTS = NO;
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				DEPLOYMENT_LOCATION = YES;
+				DEVELOPMENT_TEAM = E27KE6VTF6;
 				DSTROOT = "$(HOME)";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 2;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				EXPORTED_SYMBOLS_FILE = "$(GV_VST_SDK)/public.sdk/source/main/macexport.exp";
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREFIX_HEADER = "VST3NetSend-Prefix.h";
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -554,8 +556,10 @@
 				);
 				INFOPLIST_FILE = "VST3NetSend-Info.plist";
 				INSTALL_PATH = "/Library/Audio/Plug-Ins/VST3/WaveLabs";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "ua.com.wavelabs.$(PRODUCT_NAME)";
 				PRODUCT_NAME = VST3NetSend;
+				VERSIONING_SYSTEM = "apple-generic";
 				WRAPPER_EXTENSION = vst3;
 			};
 			name = Debug;
@@ -564,8 +568,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_WARN_DOCUMENTATION_COMMENTS = NO;
+				CODE_SIGN_IDENTITY = "Developer ID Application";
 				DEPLOYMENT_LOCATION = YES;
+				DEVELOPMENT_TEAM = E27KE6VTF6;
 				DSTROOT = "$(HOME)";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 2;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				EXPORTED_SYMBOLS_FILE = "$(GV_VST_SDK)/public.sdk/source/main/macexport.exp";
 				GCC_PREFIX_HEADER = "VST3NetSend-Prefix.h";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"RELEASE=1",
@@ -579,8 +589,10 @@
 				);
 				INFOPLIST_FILE = "VST3NetSend-Info.plist";
 				INSTALL_PATH = "/Library/Audio/Plug-Ins/VST3/WaveLabs";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "ua.com.wavelabs.$(PRODUCT_NAME)";
 				PRODUCT_NAME = VST3NetSend;
+				VERSIONING_SYSTEM = "apple-generic";
 				WRAPPER_EXTENSION = vst3;
 			};
 			name = Release;

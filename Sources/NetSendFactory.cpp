@@ -35,5 +35,9 @@ DEF_CLASS2 (INLINE_UID_FROM_FUID(GV::NetSendControllerUID),
 
 END_FACTORY
 
-bool InitModule () { return true; }
-bool DeinitModule () { return true; }
+bool InitModule () {
+   return true;
+}
+bool DeinitModule () {
+   return true;
+}
