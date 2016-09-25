@@ -9,6 +9,9 @@
 #ifndef __VST3NetSend__NetSendView__
 #define __VST3NetSend__NetSendView__
 
+#include "public.sdk/source/vst/vsteditcontroller.h"
+#include "NetSendProcessorState.h"
+
 #ifdef __OBJC__
 @class GVNetSendViewProxy;
 #else

@@ -6,6 +6,10 @@
 //  Copyright (c) 2013 Vlad Gorloff. All rights reserved.
 //
 
+#ifdef __OBJC__
+   #import <Cocoa/Cocoa.h>
+#endif
+
 @interface GVNetSendViewProxy : NSObject
 
 @property NSNumber* status;
@@ -16,6 +20,6 @@
 @property NSString* password;
 
 - (id)initWithView:(void*)editView;
--(void) attachToSuperview:(NSView*)superview;
+- (void)attachToSuperview:(NSView*)superview;
 
 @end

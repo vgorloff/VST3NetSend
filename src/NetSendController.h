@@ -9,6 +9,9 @@
 #ifndef __VST3NetSend__VST3Controller__
 #define __VST3NetSend__VST3Controller__
 
+#include "public.sdk/source/vst/vsteditcontroller.h"
+#include "NetSendView.h"
+
 GV_NAMESPACE_BEGIN
 
 using namespace Steinberg;
@@ -21,7 +24,6 @@ static const FIDString      kGVDataFormatMsgId       = "dataFormat";
 static const FIDString      kGVPortMsgId       = "port";
 static const FIDString      kGVBonjourNameMsgId       = "bonjourName";
 static const FIDString      kGVPasswordMsgId       = "password";
-
 
 
 class NetSendController : public EditController {

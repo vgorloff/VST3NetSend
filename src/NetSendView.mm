@@ -6,6 +6,10 @@
 //  Copyright (c) 2013 Vlad Gorloff. All rights reserved.
 //
 
+#include "NetSendView.h"
+#import "GVNetSendViewProxy.h"
+#include "CommonDefinitions.h"
+
 GV_NAMESPACE_BEGIN
 
 NetSendView::NetSendView (EditController* controller, ViewRect* size)

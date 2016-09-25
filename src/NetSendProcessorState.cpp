@@ -6,10 +6,11 @@
 //  Copyright (c) 2013 Vlad Gorloff. All rights reserved.
 //
 
+#include "NetSendProcessorState.h"
 
 GV_NAMESPACE_BEGIN
 
-using namespace Steinberg::Vst;
+using namespace Steinberg;
 
 const uint64 NetSendProcessorState::currentParamStateVersion = 0;
 

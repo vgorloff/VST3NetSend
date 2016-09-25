@@ -6,6 +6,8 @@
 //  Copyright (c) 2013 Vlad Gorloff. All rights reserved.
 //
 
+#include "CommonDefinitions.h"
+#include <string>
 
 GV_NAMESPACE_BEGIN
 

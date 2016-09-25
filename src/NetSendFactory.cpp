@@ -6,6 +6,10 @@
 //  Copyright (c) 2013 Vlad Gorloff. All rights reserved.
 //
 
+#include "public.sdk/source/main/pluginfactoryvst3.h"
+#include "NetSendProcessor.h"
+#include "CommonDefinitions.h"
+
 BEGIN_FACTORY_DEF (GV_VENDOR, GV_URL, GV_EMAIL)
 
 DEF_CLASS2 (INLINE_UID_FROM_FUID(GV::NetSendProcessorUID),

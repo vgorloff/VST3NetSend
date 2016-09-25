@@ -7,59 +7,6 @@
 //
 
 
-// Build settings ==================================================
-PRODUCT_NAME                = VST3NetSend
-SDKROOT                     = macosx
-VALID_ARCHS                 = x86_64
-SUPPORTED_PLATFORMS         = macosx
-
-// Architectures
-ONLY_ACTIVE_ARCH = $(ONLY_ACTIVE_ARCH_$(CONFIGURATION))
-ONLY_ACTIVE_ARCH_Debug   = YES
-ONLY_ACTIVE_ARCH_Release = NO
-
-MACOSX_DEPLOYMENT_TARGET    = 10.7
-GENERATE_PKGINFO_FILE       = YES
-INFOPLIST_FILE              = VST3NetSend-Info.plist
-DEPLOYMENT_LOCATION         = YES
-INSTALL_PATH                = /Library/Audio/Plug-Ins/VST3/WaveLabs
-DSTROOT                     = $(HOME)
-WRAPPER_EXTENSION           = vst3
-COMBINE_HIDPI_IMAGES        = YES
-
 // Custom settings =================================================
-GV_BUNDLE_ID = ua.com.wavelabs.$(PRODUCT_NAME)
 AWL_BUILD_VERSION = 1.0.5
-
-
-// Compiller settings ==============================================
-GCC_VERSION                     = com.apple.compilers.llvm.clang.1_0
-CLANG_ENABLE_OBJC_ARC           = YES // As our plugin is 64-bit only!
-GCC_ENABLE_OBJC_EXCEPTIONS      = YES
-GCC_C_LANGUAGE_STANDARD         = gnu99
-CLANG_CXX_LANGUAGE_STANDARD     = gnu++0x
-CLANG_CXX_LIBRARY               = libc++
-GCC_PRECOMPILE_PREFIX_HEADER    = NO
-ALWAYS_SEARCH_USER_PATHS        = NO
-GCC_PREFIX_HEADER               = VST3NetSend-Prefix.h
-HEADER_SEARCH_PATHS             = $(GV_VST_SDK) $(GV_COREAUDIO_SDK)
-GCC_PREPROCESSOR_DEFINITIONS_NOT_USED_IN_PRECOMPS = GV_BUNDLE_ID=\"$(GV_BUNDLE_ID)\" AWL_BUILD_VERSION=\"$(AWL_BUILD_VERSION)\" $(inherited)
-
-
-// Compiller Warnings ==============================================
-GCC_WARN_64_TO_32_BIT_CONVERSION    = YES
-GCC_WARN_UNUSED_VARIABLE            = YES
-GCC_WARN_ABOUT_RETURN_TYPE          = YES
-GCC_WARN_NON_VIRTUAL_DESTRUCTOR     = YES
-CLANG_WARN__DUPLICATE_METHOD_MATCH  = YES
-GCC_WARN_UNINITIALIZED_AUTOS        = YES
-CLANG_WARN_EMPTY_BODY               = YES
-CLANG_WARN_CONSTANT_CONVERSION      = YES
-CLANG_WARN_ENUM_CONVERSION          = YES
-CLANG_WARN_INT_CONVERSION           = YES
-CLANG_WARN_BOOL_CONVERSION          = YES
-GCC_WARN_UNUSED_FUNCTION            = YES
-GCC_WARN_UNDECLARED_SELECTOR        = YES
-GCC_WARN_ABOUT_MISSING_NEWLINE      = YES
-ENABLE_STRICT_OBJC_MSGSEND          = YES
-CLANG_WARN_UNREACHABLE_CODE         = YES
+GCC_PREPROCESSOR_DEFINITIONS_NOT_USED_IN_PRECOMPS = AWL_BUILD_VERSION=\"$(AWL_BUILD_VERSION)\" $(inherited)

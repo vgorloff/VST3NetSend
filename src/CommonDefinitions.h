@@ -20,8 +20,7 @@
 #define GV_UI_WIDTH 358
 #define GV_UI_HEIGHT 218
 
-#define GV_NAMESPACE_BEGIN namespace GV {
-#define GV_NAMESPACE_END   }
+#include <cstdint>
 
 enum NetSendParameters
 {

@@ -9,6 +9,11 @@
 #ifndef __VST3NetSend__NetSendAU__
 #define __VST3NetSend__NetSendAU__
 
+#include <AudioUnit/AudioUnit.h>
+#include "public.sdk/source/vst/vstaudioeffect.h"
+#include "AUOutputBL.h"
+#include "NetSendController.h"
+
 typedef unsigned long     NetSendAUStatusBits;
 
 GV_NAMESPACE_BEGIN

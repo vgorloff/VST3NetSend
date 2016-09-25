@@ -6,6 +6,11 @@
 //  Copyright (c) 2013 Vlad Gorloff. All rights reserved.
 //
 
+#include <string>
+#include "NetSendAU.h"
+#include "Utilities.h"
+#include "CommonDefinitions.h"
+
 GV_NAMESPACE_BEGIN
 
 #define CheckConditionAndLogError(condition, message) if (condition == false) { assert(condition); GVLogError(message); }

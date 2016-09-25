@@ -6,6 +6,10 @@
 //  Copyright (c) 2013 Vlad Gorloff. All rights reserved.
 //
 
+#include "NetSendController.h"
+#include "NetSendAU.h"
+#include "CommonDefinitions.h"
+
 GV_NAMESPACE_BEGIN
 
 NetSendController::NetSendController()

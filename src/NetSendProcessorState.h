@@ -9,10 +9,11 @@
 #ifndef __VST3NetSend__NetSendProcessorState__
 #define __VST3NetSend__NetSendProcessorState__
 
+#include "base/source/fstreamer.h"
+
 GV_NAMESPACE_BEGIN
 
 using namespace Steinberg;
-using namespace Steinberg::Vst;
 
 class NetSendProcessorState {
 

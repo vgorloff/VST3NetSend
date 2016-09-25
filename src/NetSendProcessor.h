@@ -9,12 +9,17 @@
 #ifndef __VST3NetSend__Processor__
 #define __VST3NetSend__Processor__
 
+#include "base/source/timer.h"
+#include "public.sdk/source/vst/vstaudioeffect.h"
+#include "NetSendController.h"
+#include "NetSendAU.h"
+
 GV_NAMESPACE_BEGIN
 
 using namespace Steinberg;
 using namespace Steinberg::Vst;
 
-static const FUID           NetSendProcessorUID(0x60ed7185, 0x786a4eb7, 0xb8007a46, 0x4cc95357);
+static const FUID NetSendProcessorUID(0x60ed7185, 0x786a4eb7, 0xb8007a46, 0x4cc95357);
 
 class NetSendProcessor : public AudioEffect, public ITimerCallback {
 

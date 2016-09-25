@@ -6,6 +6,11 @@
 //  Copyright (c) 2013 Vlad Gorloff. All rights reserved.
 //
 
+#include "pluginterfaces/vst/ivstparameterchanges.h"
+#include "pluginterfaces/base/ustring.h"
+#include "NetSendProcessor.h"
+#include "CommonDefinitions.h"
+
 GV_NAMESPACE_BEGIN
 
 NetSendProcessor::NetSendProcessor ()
