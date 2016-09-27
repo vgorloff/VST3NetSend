@@ -127,7 +127,6 @@ NSRect NSRectFromViewRect(Steinberg::ViewRect rect) {
    _editController->setParamNormalized(kGVConnectionFlagParameter, valueNormalized);
    _editController->performEdit(kGVConnectionFlagParameter, valueNormalized);
    _editController->endEdit(kGVConnectionFlagParameter);
-
 }
 
 -(NSNumber*)connectionFlag {
@@ -198,14 +197,12 @@ NSRect NSRectFromViewRect(Steinberg::ViewRect rect) {
    return _password;
 }
 
--(void)propagateValue:(id)value forBinding:(NSString*)binding
-{
+-(void)propagateValue:(id)value forBinding:(NSString*)binding {
    NSParameterAssert(binding != nil);
 
    //WARNING: bindingInfo contains NSNull, so it must be accounted for
    NSDictionary* bindingInfo = [self infoForBinding:binding];
-   if(!bindingInfo)
-   {
+   if(!bindingInfo) {
       assert(false);
       return; //there is no binding
    }

@@ -24,10 +24,7 @@ GV_NAMESPACE_BEGIN
 #define WarnSetProperty "Unable to set AUNetSend property"
 #define WarnGetProperty "Unable to get AUNetSend property"
 
-NetSendAU::NetSendAU ()
-    : mAU(nullptr)
-    , mStatus(kUnknown)
-{
+NetSendAU::NetSendAU () : mAU(nullptr), mStatus(kUnknown) {
     OSStatus                  status;
     AudioComponent            component;
 
@@ -145,7 +142,7 @@ long NetSendAU::getStatus ()
 void NetSendAU::SetupProcessing (ProcessSetup& setup)
 {
     VerifyStatusBitAndReturnOnError(kInitialized);
-    mSampleRate         = setup.sampleRate;
+    mSampleRate = setup.sampleRate;
     mMaxSamplesPerBlock = setup.maxSamplesPerBlock;
     setupStreamFormat(mSampleRate, mMaxSamplesPerBlock, mNumChannels);
 }
@@ -189,8 +186,8 @@ void NetSendAU::setupStreamFormat (float sampleRate, UInt32 blockSize, UInt32 nu
 {
     VerifyStatusBitAndReturnOnError(kInitialized);
 
-    UInt32                      propertySize = sizeof(AudioStreamBasicDescription);
-    OSStatus                    status = noErr;
+    UInt32 propertySize = sizeof(AudioStreamBasicDescription);
+    OSStatus status = noErr;
 
     AudioStreamBasicDescription asbd = {0};
     status = AudioUnitGetProperty(mAU, kAudioUnitProperty_StreamFormat, kAudioUnitScope_Input, 0, &asbd, &propertySize);
@@ -204,9 +201,9 @@ void NetSendAU::setupStreamFormat (float sampleRate, UInt32 blockSize, UInt32 nu
 
     streamFormat.mSampleRate = sampleRate;
     streamFormat.ChangeNumberChannels(numChannels, false);
-    asbd                     = (AudioStreamBasicDescription)streamFormat;
-    propertySize             = sizeof(AudioStreamBasicDescription);
-    status                   = AudioUnitSetProperty(mAU, kAudioUnitProperty_StreamFormat, kAudioUnitScope_Input, 0, &asbd, propertySize);
+    asbd = (AudioStreamBasicDescription)streamFormat;
+    propertySize = sizeof(AudioStreamBasicDescription);
+    status = AudioUnitSetProperty(mAU, kAudioUnitProperty_StreamFormat, kAudioUnitScope_Input, 0, &asbd, propertySize);
     CheckStatusAndLogError(status, WarnSetProperty "StreamFormat");
     CheckStatusAndReturnOnError(status);
 
@@ -230,10 +227,10 @@ void NetSendAU::setupRenderCallback ()
     AURenderCallbackStruct callback;
     OSStatus               status;
 
-    callback.inputProc       = NetSendRenderer;
+    callback.inputProc = NetSendRenderer;
     callback.inputProcRefCon = &mRenderInfo;
 
-    status                   = AudioUnitSetProperty(mAU, kAudioUnitProperty_SetRenderCallback, kAudioUnitScope_Input, 0, &callback, sizeof(callback) );
+    status = AudioUnitSetProperty(mAU, kAudioUnitProperty_SetRenderCallback, kAudioUnitScope_Input, 0, &callback, sizeof(callback) );
     CheckStatusAndLogError(status, WarnSetProperty "SetRenderCallback");
 }
 
@@ -244,21 +241,21 @@ void NetSendAU::Render (ProcessData& data)
     AudioUnitRenderActionFlags actionFlags;
     OSStatus                   status;
 
-    mRenderInfo.data        = data;
-    actionFlags             = 0;
+    mRenderInfo.data = data;
+    actionFlags = 0;
     mBufferList->Prepare(data.numSamples);
-    status                  = AudioUnitRender(mAU, &actionFlags, &mTimeStamp, 0, data.numSamples, mBufferList->ABL());
+    status = AudioUnitRender(mAU, &actionFlags, &mTimeStamp, 0, data.numSamples, mBufferList->ABL());
     assert(status == noErr);
     mTimeStamp.mSampleTime += data.numSamples;
 }
 
 OSStatus NetSendAU::NetSendRenderer (void* ref, AudioUnitRenderActionFlags* ioActionFlags, const AudioTimeStamp* inTimeStamp, UInt32 inBusNumber, UInt32 frames, AudioBufferList* ioData)
 {
-    NetSendAU::RenderInfo* info            = (NetSendAU::RenderInfo*)ref;
-    ProcessData            data            = info->data;
+    NetSendAU::RenderInfo* info = (NetSendAU::RenderInfo*)ref;
+    ProcessData            data = info->data;
     AudioBusBuffers        mainInputBuffer = data.inputs[0];
-    int32                  numChannels     = mainInputBuffer.numChannels;
-    Sample32**             chData          = mainInputBuffer.channelBuffers32;
+    int32                  numChannels = mainInputBuffer.numChannels;
+    Sample32**             chData = mainInputBuffer.channelBuffers32;
 
     assert(numChannels == ioData->mNumberBuffers);
     if (numChannels != ioData->mNumberBuffers) {

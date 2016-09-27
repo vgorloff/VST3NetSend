@@ -11,25 +11,27 @@
 
 #include <AudioUnit/AudioUnit.h>
 #include "public.sdk/source/vst/vstaudioeffect.h"
+#include "pluginterfaces/vst/ivstaudioprocessor.h"
+#include "pluginterfaces/base/ftypes.h"
 #include "AUOutputBL.h"
-#include "NetSendController.h"
 
-typedef unsigned long     NetSendAUStatusBits;
+typedef unsigned long NetSendAUStatusBits;
+using namespace Steinberg::Vst;
+using namespace Steinberg;
 
 GV_NAMESPACE_BEGIN
 
-class NetSendAU
-{
+class NetSendAU {
 
 public:
 
-    NetSendAU ();
-    virtual ~NetSendAU ();
+    NetSendAU();
+    virtual ~NetSendAU();
 
-    void SetupProcessing (ProcessSetup& setup);
-    void SetActive (TBool state);
+    void SetupProcessing(ProcessSetup &setup);
+    void SetActive(TBool state);
     void SetNumChannels(UInt32 numChannels);
-    void Render(ProcessData& data);
+    void Render(ProcessData &data);
     void setPortNum(UInt32 port);
     void setServiceName(const char* name);
     void setPassword(const char* pwd);
@@ -37,48 +39,45 @@ public:
     void setDisconnect(UInt32 flag);
     long getStatus();
 
-    NetSendAU& operator =(const NetSendAU&) = delete;
-    NetSendAU (const NetSendAU&)            = delete;
-    NetSendAU& operator =(NetSendAU&&)      = delete;
-    NetSendAU (NetSendAU&&)                 = delete;
+    NetSendAU &operator=(const NetSendAU &) = delete;
+    NetSendAU(const NetSendAU &) = delete;
+    NetSendAU &operator=(NetSendAU &&)      = delete;
+    NetSendAU(NetSendAU &&) = delete;
 
 private:
 
-    static OSStatus NetSendRenderer(void* ref, AudioUnitRenderActionFlags* ioActionFlags, const AudioTimeStamp* inTimeStamp, UInt32 inBusNumber, UInt32 frames, AudioBufferList* ioData);
-
-    static OSStatus VST3Renderer(void* ref, AudioUnitRenderActionFlags* ioActionFlags, const AudioTimeStamp* inTimeStamp, UInt32 inBusNumber, UInt32 frames, AudioBufferList* ioData);
+    static OSStatus NetSendRenderer(void* ref, AudioUnitRenderActionFlags* ioActionFlags, const AudioTimeStamp* inTimeStamp,
+        UInt32 inBusNumber, UInt32 frames, AudioBufferList* ioData);
 
     void setupStreamFormat(float sampleRate, UInt32 blockSize, UInt32 numChannels);
     void setupRenderCallback();
 
 private:
 
-    enum ComponentStatus
-    {
-        kUnknown       = 0,
-        kInitialized   = (1u << 0),
-        kActive        = (1u << 1),
+    enum ComponentStatus {
+        kUnknown = 0,
+        kInitialized = (1u << 0),
+        kActive = (1u << 1),
         kErrorsPresent = (1u << 2)
     };
 
-    struct RenderInfo
-    {
+    struct RenderInfo {
         ProcessData data;
     };
 
 private:
 
-    AudioUnit                   mAU;
-    AudioTimeStamp              mTimeStamp;
-    NetSendAUStatusBits         mStatus;
+    AudioUnit mAU;
+    AudioTimeStamp mTimeStamp;
+    NetSendAUStatusBits mStatus;
     std::unique_ptr<AUOutputBL> mBufferList;
-    RenderInfo                  mRenderInfo;
+    RenderInfo mRenderInfo;
 
-    double                      mSampleRate;
-    int32                       mMaxSamplesPerBlock;
-    int32                       mNumChannels;
+    double mSampleRate;
+    int32 mMaxSamplesPerBlock;
+    int32 mNumChannels;
 };
 
 GV_NAMESPACE_END
 
-#endif /* defined(__VST3NetSend__NetSendAU__) */
+#endif
