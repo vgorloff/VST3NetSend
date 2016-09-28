@@ -27,9 +27,9 @@
 		CE966F06169A2D310000E00A /* NetSendAU.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE966F04169A2D310000E00A /* NetSendAU.cpp */; };
 		CE966F19169A32A70000E00A /* AudioUnit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE966F17169A32960000E00A /* AudioUnit.framework */; };
 		CE966F1C169A33B20000E00A /* Utilities.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE966F1A169A33B10000E00A /* Utilities.cpp */; };
-		CE966F28169A57610000E00A /* CAStreamBasicDescription.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE966F26169A57610000E00A /* CAStreamBasicDescription.cpp */; };
+		CE966F28169A57610000E00A /* CAStreamBasicDescription.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE966F26169A57610000E00A /* CAStreamBasicDescription.cpp */; settings = {COMPILER_FLAGS = "-Wno-deprecated-declarations"; }; };
 		CE966F2B169A5C480000E00A /* NetSendProcessorState.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE966F29169A5C470000E00A /* NetSendProcessorState.cpp */; };
-		CE966F2E169A68380000E00A /* AUOutputBL.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE966F2C169A68380000E00A /* AUOutputBL.cpp */; };
+		CE966F2E169A68380000E00A /* AUOutputBL.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE966F2C169A68380000E00A /* AUOutputBL.cpp */; settings = {COMPILER_FLAGS = "-Wno-deprecated-declarations"; }; };
 		CE966F32169A98630000E00A /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE966F30169A985C0000E00A /* AudioToolbox.framework */; };
 		D547B03216A436C1008D3B9C /* GVNetSendViewProxy.mm in Sources */ = {isa = PBXBuildFile; fileRef = D547B03116A436C1008D3B9C /* GVNetSendViewProxy.mm */; };
 /* End PBXBuildFile section */

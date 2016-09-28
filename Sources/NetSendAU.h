@@ -13,7 +13,11 @@
 #include "public.sdk/source/vst/vstaudioeffect.h"
 #include "pluginterfaces/vst/ivstaudioprocessor.h"
 #include "pluginterfaces/base/ftypes.h"
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
 #include "AUOutputBL.h"
+#pragma clang diagnostic pop
 
 typedef unsigned long NetSendAUStatusBits;
 using namespace Steinberg::Vst;
