@@ -31,8 +31,7 @@ NetSendProcessor::~NetSendProcessor ()
 
 #pragma mark VST3 SDK methods
 
-tresult PLUGIN_API NetSendProcessor::initialize (FUnknown* context)
-{
+tresult PLUGIN_API NetSendProcessor::initialize (FUnknown* context) {
     tresult result = AudioEffect::initialize(context);
     if (result == kResultTrue)
     {
@@ -43,15 +42,13 @@ tresult PLUGIN_API NetSendProcessor::initialize (FUnknown* context)
     return result;
 }
 
-tresult PLUGIN_API NetSendProcessor::terminate ()
-{
+tresult PLUGIN_API NetSendProcessor::terminate () {
     tresult result = AudioEffect::terminate();
     assert(result == kResultOk);
     return result;
 }
 
-tresult PLUGIN_API NetSendProcessor::setActive (TBool state)
-{
+tresult PLUGIN_API NetSendProcessor::setActive (TBool state) {
     SpeakerArrangement arr;
     if (getBusArrangement(kOutput, 0, arr) != kResultTrue) {
         return kResultFalse;
@@ -64,15 +61,13 @@ tresult PLUGIN_API NetSendProcessor::setActive (TBool state)
 
     mAU->SetActive(state);
 
-    if (state)
-    {   // Became Active
+    if (state) {   // Became Active
         if (mTimer == nullptr) {
             mTimer = Timer::create(this, 500); // 500ms 2Hz
             onTimer(mTimer);                   // Forsing callback method call.
         }
     }
-    else
-    {   // Became inactive
+    else {   // Became inactive
         if (mTimer != nullptr) {
             mTimer->release();
             mTimer = nullptr;
@@ -82,8 +77,7 @@ tresult PLUGIN_API NetSendProcessor::setActive (TBool state)
     return AudioEffect::setActive(state);
 }
 
-tresult PLUGIN_API NetSendProcessor::setState (IBStream* state)
-{
+tresult PLUGIN_API NetSendProcessor::setState (IBStream* state) {
     NetSendProcessorState gps;
     tresult               result = gps.setState(state);
     if (result == kResultTrue) {
@@ -169,8 +163,8 @@ tresult PLUGIN_API NetSendProcessor::setBusArrangements (SpeakerArrangement* inp
 
     int32 numChannels = SpeakerArr::getChannelCount(inputs[0]);
     // Original AU support 1x1 and up to 8x8 channels, but not support 3x3 (auval -64 -v aufx nsnd appl)
-    if (numChannels > 0 && numChannels <= 8 && numChannels != 3) 
-    { 
+    if (numChannels > 0 && numChannels <= 8 && numChannels != 3)
+    {
         mAU->SetNumChannels(numChannels);
         return AudioEffect::setBusArrangements(inputs, numIns, outputs, numOuts);
     }
