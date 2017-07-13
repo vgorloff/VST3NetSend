@@ -1,0 +1,15 @@
+//
+//  Debug.xcconfig
+//  WaveLabs
+//
+//  Created by Vlad Gorlov on 25.06.17.
+//  Copyright © 2017 WaveLabs. All rights reserved.
+//
+
+#include "Common.xcconfig"
+
+DEBUG_INFORMATION_FORMAT = dwarf
+ENABLE_TESTABILITY = YES
+GCC_OPTIMIZATION_LEVEL = 0
+GCC_PREPROCESSOR_DEFINITIONS = DEBUG=1 $(inherited)
+SWIFT_OPTIMIZATION_LEVEL = -Onone
