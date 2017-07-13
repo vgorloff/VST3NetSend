@@ -19,6 +19,6 @@ class NetSendView: NSView {
 
    override func draw(_ dirtyRect: NSRect) {
       NSColor.controlColor.setFill()
-      NSRectFill(dirtyRect)
+      dirtyRect.fill()
    }
 }
