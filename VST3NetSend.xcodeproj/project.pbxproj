@@ -18,18 +18,20 @@
 		8063582E1D9858EC002DC5E2 /* Formatters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8063582D1D9858EC002DC5E2 /* Formatters.swift */; };
 		807A81EC1D985DE900D9DE76 /* ValueTransformers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807A81EB1D985DE900D9DE76 /* ValueTransformers.swift */; };
 		807A81ED1D985FFA00D9DE76 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE966F30169A985C0000E00A /* AudioToolbox.framework */; };
+		80DC85F51F1A8C1300DE7B32 /* NetSendAU.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80DC85F41F1A8C1300DE7B32 /* NetSendAU.swift */; };
+		80DC85F81F1A8D3A00DE7B32 /* NetSendProcessSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80DC85F71F1A8D3A00DE7B32 /* NetSendProcessSetup.swift */; };
+		80DC86171F1A9B0800DE7B32 /* AudioComponentDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80DC86161F1A9AEE00DE7B32 /* AudioComponentDescription.swift */; };
+		80DC861A1F1AA2FC00DE7B32 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80DC86191F1AA2F800DE7B32 /* Log.swift */; };
+		80DC861E1F1ABCC900DE7B32 /* AudioUnitSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80DC861D1F1ABCBE00DE7B32 /* AudioUnitSettings.swift */; };
 		CE966E97169A007B0000E00A /* NetSendController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE966E91169A007B0000E00A /* NetSendController.cpp */; };
 		CE966E98169A007B0000E00A /* NetSendFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE966E93169A007B0000E00A /* NetSendFactory.cpp */; };
-		CE966E99169A007B0000E00A /* NetSendProcessor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE966E94169A007B0000E00A /* NetSendProcessor.cpp */; };
+		CE966E99169A007B0000E00A /* NetSendProcessor.mm in Sources */ = {isa = PBXBuildFile; fileRef = CE966E94169A007B0000E00A /* NetSendProcessor.mm */; };
 		CE966E9A169A007B0000E00A /* VST3SDK.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE966E96169A007B0000E00A /* VST3SDK.cpp */; };
 		CE966E9C169A16D00000E00A /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE0534521699F5690013307E /* Cocoa.framework */; };
 		CE966EA0169A20580000E00A /* NetSendView.mm in Sources */ = {isa = PBXBuildFile; fileRef = CE966E9E169A20580000E00A /* NetSendView.mm */; };
-		CE966F06169A2D310000E00A /* NetSendAU.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE966F04169A2D310000E00A /* NetSendAU.cpp */; };
 		CE966F19169A32A70000E00A /* AudioUnit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE966F17169A32960000E00A /* AudioUnit.framework */; };
 		CE966F1C169A33B20000E00A /* Utilities.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE966F1A169A33B10000E00A /* Utilities.cpp */; };
-		CE966F28169A57610000E00A /* CAStreamBasicDescription.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE966F26169A57610000E00A /* CAStreamBasicDescription.cpp */; settings = {COMPILER_FLAGS = "-Wno-deprecated-declarations"; }; };
 		CE966F2B169A5C480000E00A /* NetSendProcessorState.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE966F29169A5C470000E00A /* NetSendProcessorState.cpp */; };
-		CE966F2E169A68380000E00A /* AUOutputBL.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE966F2C169A68380000E00A /* AUOutputBL.cpp */; settings = {COMPILER_FLAGS = "-Wno-deprecated-declarations"; }; };
 		CE966F32169A98630000E00A /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE966F30169A985C0000E00A /* AudioToolbox.framework */; };
 		D547B03216A436C1008D3B9C /* GVNetSendViewProxy.mm in Sources */ = {isa = PBXBuildFile; fileRef = D547B03116A436C1008D3B9C /* GVNetSendViewProxy.mm */; };
 /* End PBXBuildFile section */
@@ -70,6 +72,11 @@
 		80733FB41D9889F200756AE4 /* VST3NetSend-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "VST3NetSend-Info.plist"; sourceTree = "<group>"; };
 		80733FB51D9889F200756AE4 /* VST3NetSend-Prefix.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "VST3NetSend-Prefix.h"; sourceTree = "<group>"; };
 		807A81EB1D985DE900D9DE76 /* ValueTransformers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValueTransformers.swift; sourceTree = "<group>"; };
+		80DC85F41F1A8C1300DE7B32 /* NetSendAU.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetSendAU.swift; sourceTree = "<group>"; };
+		80DC85F71F1A8D3A00DE7B32 /* NetSendProcessSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetSendProcessSetup.swift; sourceTree = "<group>"; };
+		80DC86161F1A9AEE00DE7B32 /* AudioComponentDescription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioComponentDescription.swift; sourceTree = "<group>"; };
+		80DC86191F1AA2F800DE7B32 /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
+		80DC861D1F1ABCBE00DE7B32 /* AudioUnitSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioUnitSettings.swift; sourceTree = "<group>"; };
 		CE05344F1699F5690013307E /* VST3NetSend.vst3 */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VST3NetSend.vst3; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE0534521699F5690013307E /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		CE0534551699F5690013307E /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -80,22 +87,16 @@
 		CE966E91169A007B0000E00A /* NetSendController.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NetSendController.cpp; sourceTree = "<group>"; };
 		CE966E92169A007B0000E00A /* NetSendController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetSendController.h; sourceTree = "<group>"; };
 		CE966E93169A007B0000E00A /* NetSendFactory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NetSendFactory.cpp; sourceTree = "<group>"; };
-		CE966E94169A007B0000E00A /* NetSendProcessor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NetSendProcessor.cpp; sourceTree = "<group>"; };
+		CE966E94169A007B0000E00A /* NetSendProcessor.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = NetSendProcessor.mm; sourceTree = "<group>"; };
 		CE966E95169A007B0000E00A /* NetSendProcessor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetSendProcessor.h; sourceTree = "<group>"; };
 		CE966E96169A007B0000E00A /* VST3SDK.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = VST3SDK.cpp; sourceTree = "<group>"; };
 		CE966E9E169A20580000E00A /* NetSendView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = NetSendView.mm; sourceTree = "<group>"; };
 		CE966E9F169A20580000E00A /* NetSendView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetSendView.h; sourceTree = "<group>"; };
-		CE966F04169A2D310000E00A /* NetSendAU.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NetSendAU.cpp; sourceTree = "<group>"; };
-		CE966F05169A2D310000E00A /* NetSendAU.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetSendAU.h; sourceTree = "<group>"; };
 		CE966F17169A32960000E00A /* AudioUnit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioUnit.framework; path = System/Library/Frameworks/AudioUnit.framework; sourceTree = SDKROOT; };
 		CE966F1A169A33B10000E00A /* Utilities.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Utilities.cpp; sourceTree = "<group>"; };
 		CE966F1B169A33B20000E00A /* Utilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utilities.h; sourceTree = "<group>"; };
-		CE966F26169A57610000E00A /* CAStreamBasicDescription.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CAStreamBasicDescription.cpp; path = PublicUtility/CAStreamBasicDescription.cpp; sourceTree = "<group>"; };
-		CE966F27169A57610000E00A /* CAStreamBasicDescription.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CAStreamBasicDescription.h; path = PublicUtility/CAStreamBasicDescription.h; sourceTree = "<group>"; };
 		CE966F29169A5C470000E00A /* NetSendProcessorState.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NetSendProcessorState.cpp; sourceTree = "<group>"; };
 		CE966F2A169A5C470000E00A /* NetSendProcessorState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetSendProcessorState.h; sourceTree = "<group>"; };
-		CE966F2C169A68380000E00A /* AUOutputBL.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AUOutputBL.cpp; path = PublicUtility/AUOutputBL.cpp; sourceTree = "<group>"; };
-		CE966F2D169A68380000E00A /* AUOutputBL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AUOutputBL.h; path = PublicUtility/AUOutputBL.h; sourceTree = "<group>"; };
 		CE966F30169A985C0000E00A /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		D547B03016A436C1008D3B9C /* GVNetSendViewProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GVNetSendViewProxy.h; sourceTree = "<group>"; };
 		D547B03116A436C1008D3B9C /* GVNetSendViewProxy.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = GVNetSendViewProxy.mm; sourceTree = "<group>"; };
@@ -128,14 +129,16 @@
 		806358181D98509C002DC5E2 /* VST3NetSendUI */ = {
 			isa = PBXGroup;
 			children = (
+				8063582D1D9858EC002DC5E2 /* Formatters.swift */,
+				8063581A1D98509C002DC5E2 /* Info.plist */,
+				80DC85F41F1A8C1300DE7B32 /* NetSendAU.swift */,
+				80DC85F71F1A8D3A00DE7B32 /* NetSendProcessSetup.swift */,
+				806358241D98516B002DC5E2 /* NetSendView.swift */,
+				806358201D9850D9002DC5E2 /* NetSendViewController.swift */,
+				8063582B1D98583B002DC5E2 /* NetSendViewModel.swift */,
+				807A81EB1D985DE900D9DE76 /* ValueTransformers.swift */,
 				806358221D985122002DC5E2 /* VST3NetSend.storyboard */,
 				806358191D98509C002DC5E2 /* VST3NetSendUI.h */,
-				8063581A1D98509C002DC5E2 /* Info.plist */,
-				806358201D9850D9002DC5E2 /* NetSendViewController.swift */,
-				806358241D98516B002DC5E2 /* NetSendView.swift */,
-				8063582B1D98583B002DC5E2 /* NetSendViewModel.swift */,
-				8063582D1D9858EC002DC5E2 /* Formatters.swift */,
-				807A81EB1D985DE900D9DE76 /* ValueTransformers.swift */,
 			);
 			path = VST3NetSendUI;
 			sourceTree = "<group>";
@@ -150,13 +153,69 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		80DC85F31F1A885000DE7B32 /* VST */ = {
+			isa = PBXGroup;
+			children = (
+				CE966E91169A007B0000E00A /* NetSendController.cpp */,
+				CE966E92169A007B0000E00A /* NetSendController.h */,
+				CE966E93169A007B0000E00A /* NetSendFactory.cpp */,
+				CE966E95169A007B0000E00A /* NetSendProcessor.h */,
+				CE966E94169A007B0000E00A /* NetSendProcessor.mm */,
+				CE966E9F169A20580000E00A /* NetSendView.h */,
+				CE966E9E169A20580000E00A /* NetSendView.mm */,
+			);
+			path = VST;
+			sourceTree = "<group>";
+		};
+		80DC85F91F1A9AEE00DE7B32 /* Vendor */ = {
+			isa = PBXGroup;
+			children = (
+				80DC85FA1F1A9AEE00DE7B32 /* WL */,
+			);
+			path = Vendor;
+			sourceTree = "<group>";
+		};
+		80DC85FA1F1A9AEE00DE7B32 /* WL */ = {
+			isa = PBXGroup;
+			children = (
+				80DC86181F1AA2F800DE7B32 /* Core */,
+				80DC86141F1A9AEE00DE7B32 /* Media */,
+			);
+			path = WL;
+			sourceTree = "<group>";
+		};
+		80DC86141F1A9AEE00DE7B32 /* Media */ = {
+			isa = PBXGroup;
+			children = (
+				80DC861D1F1ABCBE00DE7B32 /* AudioUnitSettings.swift */,
+				80DC86151F1A9AEE00DE7B32 /* Extensions */,
+			);
+			path = Media;
+			sourceTree = "<group>";
+		};
+		80DC86151F1A9AEE00DE7B32 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				80DC86161F1A9AEE00DE7B32 /* AudioComponentDescription.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		80DC86181F1AA2F800DE7B32 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				80DC86191F1AA2F800DE7B32 /* Log.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
 		CE0534441699F5690013307E = {
 			isa = PBXGroup;
 			children = (
 				80733FB31D9889DC00756AE4 /* Supporting Files */,
 				CE0534581699F5690013307E /* Sources */,
 				806358181D98509C002DC5E2 /* VST3NetSendUI */,
-				D5B94EF6169ED03F0042DB88 /* SDKs */,
+				80DC85F91F1A9AEE00DE7B32 /* Vendor */,
 				CE0534511699F5690013307E /* Frameworks */,
 				CE0534501699F5690013307E /* Products */,
 			);
@@ -191,41 +250,14 @@
 				CE966E90169A007B0000E00A /* CommonDefinitions.h */,
 				D547B03016A436C1008D3B9C /* GVNetSendViewProxy.h */,
 				D547B03116A436C1008D3B9C /* GVNetSendViewProxy.mm */,
-				CE966F04169A2D310000E00A /* NetSendAU.cpp */,
-				CE966F05169A2D310000E00A /* NetSendAU.h */,
-				CE966E91169A007B0000E00A /* NetSendController.cpp */,
-				CE966E92169A007B0000E00A /* NetSendController.h */,
-				CE966E93169A007B0000E00A /* NetSendFactory.cpp */,
-				CE966E94169A007B0000E00A /* NetSendProcessor.cpp */,
-				CE966E95169A007B0000E00A /* NetSendProcessor.h */,
 				CE966F29169A5C470000E00A /* NetSendProcessorState.cpp */,
 				CE966F2A169A5C470000E00A /* NetSendProcessorState.h */,
-				CE966E9F169A20580000E00A /* NetSendView.h */,
-				CE966E9E169A20580000E00A /* NetSendView.mm */,
+				80DC85F31F1A885000DE7B32 /* VST */,
 				CE966F1A169A33B10000E00A /* Utilities.cpp */,
 				CE966F1B169A33B20000E00A /* Utilities.h */,
 				CE966E96169A007B0000E00A /* VST3SDK.cpp */,
 			);
 			path = Sources;
-			sourceTree = "<group>";
-		};
-		CE966F25169A573D0000E00A /* Core Audio SDK */ = {
-			isa = PBXGroup;
-			children = (
-				CE966F2C169A68380000E00A /* AUOutputBL.cpp */,
-				CE966F2D169A68380000E00A /* AUOutputBL.h */,
-				CE966F26169A57610000E00A /* CAStreamBasicDescription.cpp */,
-				CE966F27169A57610000E00A /* CAStreamBasicDescription.h */,
-			);
-			name = "Core Audio SDK";
-			sourceTree = GV_COREAUDIO_SDK;
-		};
-		D5B94EF6169ED03F0042DB88 /* SDKs */ = {
-			isa = PBXGroup;
-			children = (
-				CE966F25169A573D0000E00A /* Core Audio SDK */,
-			);
-			name = SDKs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -343,8 +375,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				8063582C1D98583B002DC5E2 /* NetSendViewModel.swift in Sources */,
+				80DC85F81F1A8D3A00DE7B32 /* NetSendProcessSetup.swift in Sources */,
+				80DC861A1F1AA2FC00DE7B32 /* Log.swift in Sources */,
+				80DC85F51F1A8C1300DE7B32 /* NetSendAU.swift in Sources */,
+				80DC86171F1A9B0800DE7B32 /* AudioComponentDescription.swift in Sources */,
 				807A81EC1D985DE900D9DE76 /* ValueTransformers.swift in Sources */,
 				806358251D98516B002DC5E2 /* NetSendView.swift in Sources */,
+				80DC861E1F1ABCC900DE7B32 /* AudioUnitSettings.swift in Sources */,
 				8063582E1D9858EC002DC5E2 /* Formatters.swift in Sources */,
 				806358211D9850D9002DC5E2 /* NetSendViewController.swift in Sources */,
 			);
@@ -356,15 +393,12 @@
 			files = (
 				CE966E97169A007B0000E00A /* NetSendController.cpp in Sources */,
 				CE966E98169A007B0000E00A /* NetSendFactory.cpp in Sources */,
-				CE966E99169A007B0000E00A /* NetSendProcessor.cpp in Sources */,
+				CE966E99169A007B0000E00A /* NetSendProcessor.mm in Sources */,
 				CE966EA0169A20580000E00A /* NetSendView.mm in Sources */,
-				CE966F06169A2D310000E00A /* NetSendAU.cpp in Sources */,
 				CE966F1C169A33B20000E00A /* Utilities.cpp in Sources */,
 				CE966F2B169A5C480000E00A /* NetSendProcessorState.cpp in Sources */,
 				D547B03216A436C1008D3B9C /* GVNetSendViewProxy.mm in Sources */,
 				CE966E9A169A007B0000E00A /* VST3SDK.cpp in Sources */,
-				CE966F28169A57610000E00A /* CAStreamBasicDescription.cpp in Sources */,
-				CE966F2E169A68380000E00A /* AUOutputBL.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -486,7 +520,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
 				VALID_ARCHS = x86_64;
@@ -533,7 +567,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				SDKROOT = macosx;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VALID_ARCHS = x86_64;

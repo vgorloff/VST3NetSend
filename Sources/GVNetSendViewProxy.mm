@@ -9,6 +9,7 @@
 #ifdef __OBJC__
    #import <Cocoa/Cocoa.h>
 #endif
+#import <CoreAudio/CoreAudio.h>
 #import <VST3NetSendUI/VST3NetSendUI-Swift.h>
 #import "GVNetSendViewProxy.h"
 #include "pluginterfaces/base/ustring.h"
