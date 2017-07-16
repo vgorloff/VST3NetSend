@@ -13,6 +13,11 @@ public class NetSendViewController: NSViewController {
    @objc public lazy var viewModelObjectController: NSObjectController = NSObjectController(content: self.viewModel)
    private lazy var viewModel = NetSendViewModel()
 
+   required public init?(coder: NSCoder) {
+      super.init(coder: coder)
+      Log.initialize(subsystem: .controller)
+   }
+
    public override func awakeFromNib() {
       super.awakeFromNib()
       setupBindings()
@@ -23,6 +28,7 @@ public class NetSendViewController: NSViewController {
 
    deinit {
       removeBindings()
+      Log.deinitialize(subsystem: .controller)
    }
 
    private func setupBindings() {

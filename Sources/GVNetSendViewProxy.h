@@ -20,6 +20,5 @@
 @property NSString* password;
 
 - (id)initWithView:(void*)editView;
-- (void)attachToSuperview:(NSView*)superview;
 
 @end

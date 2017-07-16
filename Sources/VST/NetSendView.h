@@ -14,8 +14,10 @@
 
 #ifdef __OBJC__
 @class GVNetSendViewProxy;
+@class NetSendViewController;
 #else
 typedef struct objc_object GVNetSendViewProxy;
+typedef struct objc_object NetSendViewController;
 #endif
 
 GV_NAMESPACE_BEGIN
@@ -47,6 +49,9 @@ public:
    
 private:
    GVNetSendViewProxy* mViewProxy;
+
+public:
+   NetSendViewController* mViewController;
    
 };
 

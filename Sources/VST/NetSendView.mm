@@ -10,6 +10,15 @@
 #import "GVNetSendViewProxy.h"
 #import "CommonDefinitions.h"
 #import "NetSendParameters.h"
+#import <CoreAudio/CoreAudio.h>
+#import <VST3NetSendUI/VST3NetSendUI-Swift.h>
+
+NSRect NSRectFromVSTViewRect(Steinberg::ViewRect rect) {
+   int w = rect.getWidth();
+   int h = rect.getHeight();
+   NSRect result = NSMakeRect(rect.left, rect.top, w, h);
+   return result;
+}
 
 GV_NAMESPACE_BEGIN
 
@@ -26,16 +35,27 @@ tresult PLUGIN_API NetSendView::attached (void* ptr, Steinberg::FIDString type) 
    if (isPlatformTypeSupported(type) != Steinberg::kResultTrue) {
       return Steinberg::kResultFalse;
    }
-   
+
+   NSBundle* UIFrameworkBundle = [NSBundle bundleForClass:NetSendViewController.class];
+   NSStoryboard *storyboard = [NSStoryboard storyboardWithName:@"VST3NetSend" bundle:UIFrameworkBundle];
+   mViewController = [storyboard instantiateInitialController];
+
+   NSRect rect = NSRectFromVSTViewRect(getRect());
+   NSView *superview = (__bridge NSView*)ptr;
+   [superview addSubview:mViewController.view]; // view initialised lazy
+   [mViewController.view setFrame:rect];
+
    mViewProxy = [[GVNetSendViewProxy alloc] initWithView:this];
    assert(mViewProxy != nil);
-   [mViewProxy attachToSuperview:(__bridge NSView*)ptr];
+
    tresult result = CPluginView::attached(ptr, type);
    assert(result == kResultOk);
    return result;
 }
 
 tresult PLUGIN_API NetSendView::removed () {
+   [mViewController.view removeFromSuperviewWithoutNeedingDisplay];
+   mViewController = nil;
    Steinberg::tresult result = CPluginView::removed();
    mViewProxy = nil;
    assert(result == kResultOk);
