@@ -171,7 +171,7 @@ NSRect NSRectFromViewRect(Steinberg::ViewRect rect) {
    OPtr<IMessage> message = _editController->allocateMessage();
    if (message) {
       String128 string;
-      UString(string, tStrBufferSize(String128)).fromAscii ([value cStringUsingEncoding:NSASCIIStringEncoding]);
+      UString(string, tStrBufferSize(String128)).fromAscii ([value UTF8String]);
       message->setMessageID(kGVBonjourNameMsgId);
       message->getAttributes()->setString(kGVBonjourNameMsgId, string);
       _editController->sendMessage(message);
@@ -188,7 +188,7 @@ NSRect NSRectFromViewRect(Steinberg::ViewRect rect) {
    OPtr<IMessage> message = _editController->allocateMessage();
    if (message) {
       String128 string;
-      UString(string, tStrBufferSize(String128)).fromAscii ([value cStringUsingEncoding:NSASCIIStringEncoding]);
+      UString(string, tStrBufferSize(String128)).fromAscii ([value UTF8String]);
       message->setMessageID(kGVPasswordMsgId);
       message->getAttributes()->setString(kGVPasswordMsgId, string);
       _editController->sendMessage(message);
