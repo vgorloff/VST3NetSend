@@ -75,8 +75,8 @@ void NetSendView::notifyParameterChanges (unsigned int index) {
       case kGVConnectionFlagParameter: {
          ParamValue normValue = getController()->getParamNormalized(index);
          NSNumber*  connectionFlag = (normValue > 0.5f) ? [NSNumber numberWithBool:TRUE]: [NSNumber numberWithBool:FALSE];
-         if ([connectionFlag compare:mViewProxy.connectionFlag] != NSOrderedSame) { // Preverting infinite loop
-            mViewProxy.connectionFlag = connectionFlag;
+         if ([connectionFlag compare:mViewController.viewModel.connectionFlag] != NSOrderedSame) { // Preverting infinite loop
+            mViewController.viewModel.connectionFlag = connectionFlag;
          }
          break;
       }
@@ -85,27 +85,27 @@ void NetSendView::notifyParameterChanges (unsigned int index) {
 
 void NetSendView::setConnectionStatus(int64 stat) {
    NSNumber* status = [NSNumber numberWithFloat:stat];
-   mViewProxy.status = status;
+   mViewController.viewModel.status = status;
 }
 
 void NetSendView::handleStateChanges (const NetSendProcessorState& state) {
 
    NSNumber* dataFormat  = [NSNumber numberWithInt:state.dataFormat];
-   NSNumber* port        = [NSNumber numberWithFloat:state.port];
+   NSNumber* port        = [NSNumber numberWithLong:state.port];
    NSString* bonjourName = [NSString stringWithUTF8String:state.bonjourName];
    NSString* password    = [NSString stringWithUTF8String:state.password];
    
-   if ([dataFormat compare:mViewProxy.dataFormat] != NSOrderedSame) {
-      mViewProxy.dataFormat  = dataFormat;
+   if ([dataFormat compare:mViewController.viewModel.dataFormat] != NSOrderedSame) {
+      mViewController.viewModel.dataFormat  = dataFormat;
    }
-   if ([port compare:mViewProxy.port] != NSOrderedSame) {
-      mViewProxy.port  = port;
+   if ([port compare:mViewController.viewModel.port] != NSOrderedSame) {
+      mViewController.viewModel.port = port;
    }
-   if ([bonjourName compare:mViewProxy.bonjourName] != NSOrderedSame) {
-      mViewProxy.bonjourName = bonjourName;
+   if ([bonjourName compare:mViewController.viewModel.bonjourName] != NSOrderedSame) {
+      mViewController.viewModel.bonjourName = bonjourName;
    }
-   if ([password compare:mViewProxy.password] != NSOrderedSame) {
-      mViewProxy.password = password;
+   if ([password compare:mViewController.viewModel.password] != NSOrderedSame) {
+      mViewController.viewModel.password = password;
    }
 }
 

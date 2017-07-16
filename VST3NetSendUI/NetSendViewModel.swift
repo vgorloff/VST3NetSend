@@ -8,7 +8,7 @@
 
 import Foundation
 
-class NetSendViewModel: NSObject {
+public class NetSendViewModel: NSObject {
 
    @objc var status = NSNumber(integerLiteral: 0)
    @objc var connectionFlag = NSNumber(integerLiteral: 0)
