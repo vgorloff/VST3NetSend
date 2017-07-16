@@ -8,7 +8,7 @@
 
 import Foundation
 
-class IntegerFormatter : Formatter {
+class IntegerFormatter: Formatter {
 
    func string(forNumber number: NSNumber) -> String {
       return String(format: "%d", number.intValue)
