@@ -11,7 +11,7 @@
 #import "NetSendProcessor.h"
 #import "NetSendParameters.h"
 #import <AppKit/AppKit.h>
-#import <VST3NetSendUI/VST3NetSendUI-Swift.h>
+#import <VST3NetSendKit/VST3NetSendKit-Swift.h>
 
 GV_NAMESPACE_BEGIN
 

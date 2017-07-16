@@ -1,6 +1,6 @@
 //
 //  NetSendProcessSetup.swift
-//  VST3NetSendUI
+//  VST3NetSendKit
 //
 //  Created by Vlad Gorlov on 15.07.17.
 //  Copyright © 2017 Vlad Gorlov. All rights reserved.
