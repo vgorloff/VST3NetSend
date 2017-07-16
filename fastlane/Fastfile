@@ -7,8 +7,8 @@ fastlane_version "1.102.0"
 
 import "#{ENV['PWD']}/Vendor/WL/Conf/Scripts/fastlane.rb"
 
-XCodeProjectFilePath = "#{ENV['PWD']}/CARingBuffer.xcodeproj"
-XCodeProjectSchema = "Developer: Build Everything"
+XCodeProjectFilePath = "#{ENV['PWD']}/VST3NetSend.xcodeproj"
+XCodeProjectSchema = "VST3NetSend"
 
 desc "Builds project."
 lane :build do
@@ -22,15 +22,7 @@ end
 
 desc "Builds when under CI (i.e. Travis)."
 lane :ci do
-   XcodeBuilder.new(XCodeProjectFilePath).ci("Developer: Analyze Performance")
-   XcodeBuilder.new(XCodeProjectFilePath).ci("Demo: CAPlayThrough")
-   XcodeBuilder.new(XCodeProjectFilePath).test("Logic Tests: Swift")
-end
-
-desc "Runs logic tests."
-lane :test do
-  XcodeBuilder.new(XCodeProjectFilePath).test("Logic Tests: Swift")
-  XcodeBuilder.new(XCodeProjectFilePath).test("Logic Tests: C++")
+   XcodeBuilder.new(XCodeProjectFilePath).ci("VST3NetSend")
 end
 
 desc "Deploy release to GitHub."
@@ -59,6 +51,5 @@ desc "Verify source code."
 lane :verify do
    `swiftlint lint --quiet --path #{ENV['PWD']}`
    puts FileHeaderChecker.new(["WaveLabs"]).analyse("#{ENV['PWD']}/Sources")
-   puts FileHeaderChecker.new(["WaveLabs"]).analyse("#{ENV['PWD']}/Tests")
    puts FileHeaderChecker.new(["WaveLabs"]).analyse("#{ENV['PWD']}/Vendor/WL")
 end

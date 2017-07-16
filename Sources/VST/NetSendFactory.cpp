@@ -22,17 +22,17 @@ DEF_CLASS2 (INLINE_UID_FROM_FUID(GV::NetSendProcessorUID),
             GV_PLUGIN_NAME,
             Steinberg::Vst::kDistributable,
             Steinberg::Vst::PlugType::kFxTools,
-            AWL_BUILD_VERSION,            // Plug-in version (to be changed)
+            AWL_MARKETING_VERSION "x" AWL_BUILD_VERSION, // Plug-in version (to be changed)
             kVstVersionString,
             GV::NetSendProcessor::createInstance)
 
 DEF_CLASS2 (INLINE_UID_FROM_FUID(GV::NetSendControllerUID),
             PClassInfo::kManyInstances,
             kVstComponentControllerClass,
-            GV_PLUGIN_NAME "Controller",	// controller name (could be the same than component name)
+            GV_PLUGIN_NAME "Controller",    // controller name (could be the same than component name)
             0,                              // not used here
             "",                             // not used here
-            AWL_BUILD_VERSION,            // Plug-in version (to be changed)
+            AWL_MARKETING_VERSION "x" AWL_BUILD_VERSION, // Plug-in version (to be changed)
             kVstVersionString,
             GV::NetSendController::createInstance)
 
