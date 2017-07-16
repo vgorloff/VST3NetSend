@@ -10,6 +10,11 @@
 #include "NetSendProcessor.h"
 #include "CommonDefinitions.h"
 
+#define GV_PLUGIN_NAME  "WaveLabs VST3NetSend"
+#define GV_VENDOR       "WaveLabs Audio"
+#define GV_EMAIL        "mailto:info@wavelabs.com.ua"
+#define GV_URL          "http://wavelabs.com.ua"
+
 BEGIN_FACTORY_DEF (GV_VENDOR, GV_URL, GV_EMAIL)
 
 DEF_CLASS2 (INLINE_UID_FROM_FUID(GV::NetSendProcessorUID),

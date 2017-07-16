@@ -17,14 +17,13 @@ GV_NAMESPACE_BEGIN
 using namespace Steinberg;
 using namespace Steinberg::Vst;
 
-static const FUID           NetSendControllerUID(0x050cf160, 0x362e4416, 0xb215cd57, 0x8dc5d5d8);
+static const FUID NetSendControllerUID(0x050cf160, 0x362e4416, 0xb215cd57, 0x8dc5d5d8);
 
-static const FIDString      kGVStatusMsgId       = "status";
-static const FIDString      kGVDataFormatMsgId       = "dataFormat";
-static const FIDString      kGVPortMsgId       = "port";
-static const FIDString      kGVBonjourNameMsgId       = "bonjourName";
-static const FIDString      kGVPasswordMsgId       = "password";
-
+static const FIDString kGVStatusMsgId = "status";
+static const FIDString kGVDataFormatMsgId = "dataFormat";
+static const FIDString kGVPortMsgId = "port";
+static const FIDString kGVBonjourNameMsgId = "bonjourName";
+static const FIDString kGVPasswordMsgId = "password";
 
 class NetSendController : public EditController {
    
@@ -33,7 +32,7 @@ public:
    virtual ~NetSendController();
    
    // IPluginBase methods
-   tresult PLUGIN_API            initialize (FUnknown* context);
+   tresult PLUGIN_API initialize (FUnknown* context);
    
    // IEditController methods
    virtual IPlugView* PLUGIN_API createView (FIDString name);

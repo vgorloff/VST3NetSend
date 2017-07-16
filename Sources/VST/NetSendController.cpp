@@ -15,17 +15,14 @@ GV_NAMESPACE_BEGIN
 
 NetSendController::NetSendController()
 : EditController()
-, mView(nullptr)
-{
+, mView(nullptr) {
 }
 
-NetSendController::~NetSendController()
-{
+NetSendController::~NetSendController() {
    mView = nullptr;
 }
 
-tresult PLUGIN_API NetSendController::initialize (FUnknown* context)
-{
+tresult PLUGIN_API NetSendController::initialize (FUnknown* context) {
    tresult result = EditController::initialize(context);
    if (result != kResultTrue) {
       return result;
@@ -37,10 +34,8 @@ tresult PLUGIN_API NetSendController::initialize (FUnknown* context)
    return kResultTrue;
 }
 
-IPlugView * PLUGIN_API NetSendController::createView (FIDString name)
-{
-   if (ConstString(name) == ViewType::kEditor)
-   {
+IPlugView * PLUGIN_API NetSendController::createView (FIDString name) {
+   if (ConstString(name) == ViewType::kEditor) {
       ViewRect defaultSize = ViewRect(0, 0, GV_UI_WIDTH, GV_UI_HEIGHT);
       mView = new NetSendView(this, &defaultSize);
       assert(mView != nullptr);
@@ -49,12 +44,10 @@ IPlugView * PLUGIN_API NetSendController::createView (FIDString name)
    return 0;
 }
 
-tresult PLUGIN_API NetSendController::setComponentState (IBStream* state)
-{
+tresult PLUGIN_API NetSendController::setComponentState (IBStream* state) {
    NetSendProcessorState gps;
-   tresult                 result = gps.setState(state);
-   if (result == kResultTrue)
-   {
+   tresult result = gps.setState(state);
+   if (result == kResultTrue) {
       mParams = gps;
       setParamNormalized(kGVConnectionFlagParameter, gps.connectionFlag);
       if (mView != nullptr) {
@@ -64,8 +57,7 @@ tresult PLUGIN_API NetSendController::setComponentState (IBStream* state)
    return result;
 }
 
-tresult PLUGIN_API NetSendController::setParamNormalized (ParamID tag, ParamValue value)
-{
+tresult PLUGIN_API NetSendController::setParamNormalized (ParamID tag, ParamValue value) {
    tresult result = EditController::setParamNormalized(tag, value);
    if (mView != nullptr) {
       mView->notifyParameterChanges(tag);
@@ -74,25 +66,22 @@ tresult PLUGIN_API NetSendController::setParamNormalized (ParamID tag, ParamValu
 }
 
 
-void NetSendController::editorAttached (EditorView* editor)
-{
+void NetSendController::editorAttached (EditorView* editor) {
    assert(mView != nullptr);
    mView->notifyParameterChanges(kGVConnectionFlagParameter);
    mView->handleStateChanges(mParams);
 }
 
-void NetSendController::editorRemoved (EditorView* editor)
-{
+void NetSendController::editorRemoved (EditorView* editor) {
    
 }
 
-void NetSendController::editorDestroyed (EditorView* editor)
-{
+void NetSendController::editorDestroyed (EditorView* editor) {
    mView = nullptr;
 }
 
-tresult PLUGIN_API NetSendController::notify (IMessage* message)
-{
+tresult PLUGIN_API NetSendController::notify (IMessage* message) {
+
    if (message == nullptr) {
       return kInvalidArgument;
    }

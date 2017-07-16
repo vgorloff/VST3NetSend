@@ -12,11 +12,11 @@
 #import <CoreAudio/CoreAudio.h>
 #import <VST3NetSendUI/VST3NetSendUI-Swift.h>
 #import "GVNetSendViewProxy.h"
-#include "pluginterfaces/base/ustring.h"
-#include "pluginterfaces/gui/iplugview.h"
-#include "NetSendView.h"
-#include "NetSendController.h"
-#include "CommonDefinitions.h"
+#import "pluginterfaces/base/ustring.h"
+#import "pluginterfaces/gui/iplugview.h"
+#import "NetSendView.h"
+#import "NetSendController.h"
+#import "CommonDefinitions.h"
 #import "NetSendParameters.h"
 
 using namespace Steinberg;
@@ -165,7 +165,7 @@ NSRect NSRectFromViewRect(Steinberg::ViewRect rect) {
    return _port;
 }
 
--(void) setBonjourName:(NSString *)value {
+-(void)setBonjourName:(NSString *)value {
    _bonjourName = value;
    [self propagateValue:value forBinding:@"bonjourName"];
    OPtr<IMessage> message = _editController->allocateMessage();
