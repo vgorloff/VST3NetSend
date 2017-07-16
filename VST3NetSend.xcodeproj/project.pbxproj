@@ -19,6 +19,7 @@
 		807A81EC1D985DE900D9DE76 /* ConnectionStatusValueTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807A81EB1D985DE900D9DE76 /* ConnectionStatusValueTransformer.swift */; };
 		807A81ED1D985FFA00D9DE76 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE966F30169A985C0000E00A /* AudioToolbox.framework */; };
 		8093D9341F1B920300E83309 /* ConnectionFlagValueTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8093D9331F1B920300E83309 /* ConnectionFlagValueTransformer.swift */; };
+		8093D9361F1B9A0200E83309 /* NetSendParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8093D9351F1B9A0200E83309 /* NetSendParameter.swift */; };
 		80DC85F51F1A8C1300DE7B32 /* NetSendAU.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80DC85F41F1A8C1300DE7B32 /* NetSendAU.swift */; };
 		80DC85F81F1A8D3A00DE7B32 /* NetSendProcessSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80DC85F71F1A8D3A00DE7B32 /* NetSendProcessSetup.swift */; };
 		80DC86171F1A9B0800DE7B32 /* AudioComponentDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80DC86161F1A9AEE00DE7B32 /* AudioComponentDescription.swift */; };
@@ -72,6 +73,7 @@
 		80733FB51D9889F200756AE4 /* VST3NetSend-Prefix.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "VST3NetSend-Prefix.h"; sourceTree = "<group>"; };
 		807A81EB1D985DE900D9DE76 /* ConnectionStatusValueTransformer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionStatusValueTransformer.swift; sourceTree = "<group>"; };
 		8093D9331F1B920300E83309 /* ConnectionFlagValueTransformer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionFlagValueTransformer.swift; sourceTree = "<group>"; };
+		8093D9351F1B9A0200E83309 /* NetSendParameter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetSendParameter.swift; sourceTree = "<group>"; };
 		80DC85F41F1A8C1300DE7B32 /* NetSendAU.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetSendAU.swift; sourceTree = "<group>"; };
 		80DC85F71F1A8D3A00DE7B32 /* NetSendProcessSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetSendProcessSetup.swift; sourceTree = "<group>"; };
 		80DC86161F1A9AEE00DE7B32 /* AudioComponentDescription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioComponentDescription.swift; sourceTree = "<group>"; };
@@ -135,6 +137,7 @@
 				8063582B1D98583B002DC5E2 /* NetSendViewModel.swift */,
 				806358221D985122002DC5E2 /* VST3NetSend.storyboard */,
 				806358191D98509C002DC5E2 /* VST3NetSendKit.h */,
+				8093D9351F1B9A0200E83309 /* NetSendParameter.swift */,
 			);
 			path = VST3NetSendKit;
 			sourceTree = "<group>";
@@ -370,6 +373,7 @@
 				8063582C1D98583B002DC5E2 /* NetSendViewModel.swift in Sources */,
 				80DC85F81F1A8D3A00DE7B32 /* NetSendProcessSetup.swift in Sources */,
 				80DC861A1F1AA2FC00DE7B32 /* Log.swift in Sources */,
+				8093D9361F1B9A0200E83309 /* NetSendParameter.swift in Sources */,
 				80DC85F51F1A8C1300DE7B32 /* NetSendAU.swift in Sources */,
 				80DC86171F1A9B0800DE7B32 /* AudioComponentDescription.swift in Sources */,
 				807A81EC1D985DE900D9DE76 /* ConnectionStatusValueTransformer.swift in Sources */,
