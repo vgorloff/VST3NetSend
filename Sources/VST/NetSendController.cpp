@@ -8,6 +8,7 @@
 
 #include "NetSendController.h"
 #include "CommonDefinitions.h"
+#include "NetSendParameters.h"
 #include <assert.h>
 
 GV_NAMESPACE_BEGIN

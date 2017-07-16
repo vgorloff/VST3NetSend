@@ -9,6 +9,7 @@
 #import "NetSendView.h"
 #import "GVNetSendViewProxy.h"
 #import "CommonDefinitions.h"
+#import "NetSendParameters.h"
 
 GV_NAMESPACE_BEGIN
 
