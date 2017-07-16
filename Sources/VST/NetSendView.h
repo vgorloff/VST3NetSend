@@ -47,6 +47,7 @@ public:
    
 private:
    NetSendViewController* mViewController;
+   void handleViewModelChanges(int sourceID);
    
 };
 

@@ -10,8 +10,11 @@ import Cocoa
 
 public class NetSendViewController: NSViewController {
 
-   @objc public lazy var viewModelObjectController: NSObjectController = NSObjectController(content: self.viewModel)
-   @objc public lazy var viewModel = NetSendViewModel()
+   fileprivate lazy var viewModelObjectController: NSObjectController = NSObjectController(content: self.viewModel)
+   @objc public private (set) lazy var viewModel = NetSendViewModel()
+   @objc public var modelChangeHandler: ((NetSendParameter) -> Void)?
+
+   fileprivate var observers = [NSKeyValueObservation]()
 
    required public init?(coder: NSCoder) {
       super.init(coder: coder)
@@ -21,14 +24,34 @@ public class NetSendViewController: NSViewController {
    public override func awakeFromNib() {
       super.awakeFromNib()
       setupBindings()
+      setupObservers()
       if let view = view as? NetSendView {
          view.port.cell?.formatter = IntegerFormatter()
       }
    }
 
    deinit {
+      observers.removeAll()
       removeBindings()
       Log.deinitialize(subsystem: .controller)
+   }
+
+   private func setupObservers() {
+      observers.append(viewModel.observe(\.dataFormat) { [weak self] _, _ in
+         self?.modelChangeHandler?(.dataFormat)
+      })
+      observers.append(viewModel.observe(\.connectionFlag) { [weak self] _, _ in
+         self?.modelChangeHandler?(.connectionFlag)
+      })
+      observers.append(viewModel.observe(\.port) { [weak self] _, _ in
+         self?.modelChangeHandler?(.port)
+      })
+      observers.append(viewModel.observe(\.bonjourName) { [weak self] _, _ in
+         self?.modelChangeHandler?(.bonjourName)
+      })
+      observers.append(viewModel.observe(\.password) { [weak self] _, _ in
+         self?.modelChangeHandler?(.password)
+      })
    }
 
    private func setupBindings() {

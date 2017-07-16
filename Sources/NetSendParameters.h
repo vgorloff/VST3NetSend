@@ -14,11 +14,6 @@ enum NetSendParameters {
    kGVBypassParameter = UINT16_MAX,
    kGVConnectionFlagParameter = 0,
    kGVNumParameters,
-
-   kGVDataFormat,
-   kGVPort,
-   kGVBonjourName,
-   kGVPassword
 };
 
 #endif /* NetSendParameters_h */
