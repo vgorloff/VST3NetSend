@@ -15,17 +15,14 @@ GV_NAMESPACE_BEGIN
 
 NetSendView::NetSendView (EditController* controller, ViewRect* size)
 : EditorView(controller, size)
-, mViewProxy(nil)
-{
+, mViewProxy(nil) {
 }
 
-NetSendView::~NetSendView ()
-{
+NetSendView::~NetSendView () {
    mViewProxy = nil;
 }
 
-tresult PLUGIN_API NetSendView::attached (void* ptr, Steinberg::FIDString type)
-{
+tresult PLUGIN_API NetSendView::attached (void* ptr, Steinberg::FIDString type) {
    if (isPlatformTypeSupported(type) != Steinberg::kResultTrue) {
       return Steinberg::kResultFalse;
    }
@@ -38,16 +35,14 @@ tresult PLUGIN_API NetSendView::attached (void* ptr, Steinberg::FIDString type)
    return result;
 }
 
-tresult PLUGIN_API NetSendView::removed ()
-{
+tresult PLUGIN_API NetSendView::removed () {
    Steinberg::tresult result = CPluginView::removed();
    mViewProxy = nil;
    assert(result == kResultOk);
    return result;
 }
 
-tresult PLUGIN_API NetSendView::isPlatformTypeSupported (Steinberg::FIDString type)
-{
+tresult PLUGIN_API NetSendView::isPlatformTypeSupported (Steinberg::FIDString type) {
    if (strcmp(type, Steinberg::kPlatformTypeNSView) == 0) {
       return Steinberg::kResultTrue;
    }
@@ -55,12 +50,9 @@ tresult PLUGIN_API NetSendView::isPlatformTypeSupported (Steinberg::FIDString ty
    return Steinberg::kInvalidArgument;
 }
 
-void NetSendView::notifyParameterChanges (unsigned int index)
-{
-   switch (index)
-   {
-      case kGVConnectionFlagParameter:
-      {
+void NetSendView::notifyParameterChanges (unsigned int index) {
+   switch (index) {
+      case kGVConnectionFlagParameter: {
          ParamValue normValue = getController()->getParamNormalized(index);
          NSNumber*  connectionFlag = (normValue > 0.5f) ? [NSNumber numberWithBool:TRUE]: [NSNumber numberWithBool:FALSE];
          if ([connectionFlag compare:mViewProxy.connectionFlag] != NSOrderedSame) { // Preverting infinite loop
@@ -71,14 +63,13 @@ void NetSendView::notifyParameterChanges (unsigned int index)
    }
 }
 
-void NetSendView::setConnectionStatus(int64 stat)
-{
+void NetSendView::setConnectionStatus(int64 stat) {
    NSNumber* status = [NSNumber numberWithFloat:stat];
    mViewProxy.status = status;
 }
 
-void NetSendView::handleStateChanges (const NetSendProcessorState& state)
-{
+void NetSendView::handleStateChanges (const NetSendProcessorState& state) {
+
    NSNumber* dataFormat  = [NSNumber numberWithInt:state.dataFormat];
    NSNumber* port        = [NSNumber numberWithFloat:state.port];
    NSString* bonjourName = [NSString stringWithUTF8String:state.bonjourName];

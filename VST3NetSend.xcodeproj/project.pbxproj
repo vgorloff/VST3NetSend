@@ -30,7 +30,6 @@
 		CE966E9C169A16D00000E00A /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE0534521699F5690013307E /* Cocoa.framework */; };
 		CE966EA0169A20580000E00A /* NetSendView.mm in Sources */ = {isa = PBXBuildFile; fileRef = CE966E9E169A20580000E00A /* NetSendView.mm */; };
 		CE966F19169A32A70000E00A /* AudioUnit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE966F17169A32960000E00A /* AudioUnit.framework */; };
-		CE966F1C169A33B20000E00A /* Utilities.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE966F1A169A33B10000E00A /* Utilities.cpp */; };
 		CE966F2B169A5C480000E00A /* NetSendProcessorState.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE966F29169A5C470000E00A /* NetSendProcessorState.cpp */; };
 		CE966F32169A98630000E00A /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE966F30169A985C0000E00A /* AudioToolbox.framework */; };
 		D547B03216A436C1008D3B9C /* GVNetSendViewProxy.mm in Sources */ = {isa = PBXBuildFile; fileRef = D547B03116A436C1008D3B9C /* GVNetSendViewProxy.mm */; };
@@ -94,8 +93,6 @@
 		CE966E9E169A20580000E00A /* NetSendView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = NetSendView.mm; sourceTree = "<group>"; };
 		CE966E9F169A20580000E00A /* NetSendView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetSendView.h; sourceTree = "<group>"; };
 		CE966F17169A32960000E00A /* AudioUnit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioUnit.framework; path = System/Library/Frameworks/AudioUnit.framework; sourceTree = SDKROOT; };
-		CE966F1A169A33B10000E00A /* Utilities.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Utilities.cpp; sourceTree = "<group>"; };
-		CE966F1B169A33B20000E00A /* Utilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utilities.h; sourceTree = "<group>"; };
 		CE966F29169A5C470000E00A /* NetSendProcessorState.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NetSendProcessorState.cpp; sourceTree = "<group>"; };
 		CE966F2A169A5C470000E00A /* NetSendProcessorState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetSendProcessorState.h; sourceTree = "<group>"; };
 		CE966F30169A985C0000E00A /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
@@ -254,8 +251,6 @@
 				80EF390A1F1B6EBA00941BCC /* NetSendParameters.h */,
 				CE966F29169A5C470000E00A /* NetSendProcessorState.cpp */,
 				CE966F2A169A5C470000E00A /* NetSendProcessorState.h */,
-				CE966F1A169A33B10000E00A /* Utilities.cpp */,
-				CE966F1B169A33B20000E00A /* Utilities.h */,
 				80DC85F31F1A885000DE7B32 /* VST */,
 				CE966E96169A007B0000E00A /* VST3SDK.cpp */,
 			);
@@ -397,7 +392,6 @@
 				CE966E98169A007B0000E00A /* NetSendFactory.cpp in Sources */,
 				CE966E99169A007B0000E00A /* NetSendProcessor.mm in Sources */,
 				CE966EA0169A20580000E00A /* NetSendView.mm in Sources */,
-				CE966F1C169A33B20000E00A /* Utilities.cpp in Sources */,
 				CE966F2B169A5C480000E00A /* NetSendProcessorState.cpp in Sources */,
 				D547B03216A436C1008D3B9C /* GVNetSendViewProxy.mm in Sources */,
 				CE966E9A169A007B0000E00A /* VST3SDK.cpp in Sources */,
