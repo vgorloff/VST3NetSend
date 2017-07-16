@@ -1,5 +1,9 @@
 //
-// Prefix header for all source files of the 'VST3NetSend' target in the 'VST3NetSend' project
+//  Prefix.h
+//  VST3NetSend
+//
+//  Created by Vlad Gorloff on 06.01.13.
+//  Copyright (c) 2013 Vlad Gorloff. All rights reserved.
 //
 
 #define GV_NAMESPACE_BEGIN namespace GV {
