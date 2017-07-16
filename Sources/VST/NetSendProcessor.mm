@@ -9,7 +9,6 @@
 #import "pluginterfaces/vst/ivstparameterchanges.h"
 #import "pluginterfaces/base/ustring.h"
 #import "NetSendProcessor.h"
-#import "CommonDefinitions.h"
 #import "NetSendParameters.h"
 #import <AppKit/AppKit.h>
 #import <VST3NetSendUI/VST3NetSendUI-Swift.h>
