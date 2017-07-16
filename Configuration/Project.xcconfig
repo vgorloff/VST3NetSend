@@ -1,0 +1,12 @@
+//
+//  Project.xcconfig
+//  VST3NetSend
+//
+//  Created by Vlad Gorloff on 06.01.13.
+//  Copyright (c) 2013 Vlad Gorloff. All rights reserved.
+//
+
+#include "Version.xcconfig"
+
+GCC_PREPROCESSOR_DEFINITIONS_NOT_USED_IN_PRECOMPS = AWL_MARKETING_VERSION=\"$(AWL_MARKETING_VERSION)\" AWL_BUILD_VERSION=\"$(AWL_BUILD_VERSION)\" $(inherited)
+HEADER_SEARCH_PATHS = $(GV_VST_SDK)
