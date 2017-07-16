@@ -8,7 +8,6 @@
 
 #include "public.sdk/source/main/pluginfactoryvst3.h"
 #include "NetSendProcessor.h"
-#include "CommonDefinitions.h"
 
 #define GV_PLUGIN_NAME  "WaveLabs VST3NetSend"
 #define GV_VENDOR       "WaveLabs Audio"

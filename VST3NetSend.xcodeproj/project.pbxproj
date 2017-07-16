@@ -32,7 +32,6 @@
 		CE966F19169A32A70000E00A /* AudioUnit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE966F17169A32960000E00A /* AudioUnit.framework */; };
 		CE966F2B169A5C480000E00A /* NetSendProcessorState.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE966F29169A5C470000E00A /* NetSendProcessorState.cpp */; };
 		CE966F32169A98630000E00A /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE966F30169A985C0000E00A /* AudioToolbox.framework */; };
-		D547B03216A436C1008D3B9C /* GVNetSendViewProxy.mm in Sources */ = {isa = PBXBuildFile; fileRef = D547B03116A436C1008D3B9C /* GVNetSendViewProxy.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,7 +82,6 @@
 		CE0534561699F5690013307E /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		CE0534571699F5690013307E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		CE0534691699F6260013307E /* Project.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Project.xcconfig; sourceTree = "<group>"; };
-		CE966E90169A007B0000E00A /* CommonDefinitions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonDefinitions.h; sourceTree = "<group>"; };
 		CE966E91169A007B0000E00A /* NetSendController.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NetSendController.cpp; sourceTree = "<group>"; };
 		CE966E92169A007B0000E00A /* NetSendController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetSendController.h; sourceTree = "<group>"; };
 		CE966E93169A007B0000E00A /* NetSendFactory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NetSendFactory.cpp; sourceTree = "<group>"; };
@@ -96,8 +94,6 @@
 		CE966F29169A5C470000E00A /* NetSendProcessorState.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NetSendProcessorState.cpp; sourceTree = "<group>"; };
 		CE966F2A169A5C470000E00A /* NetSendProcessorState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetSendProcessorState.h; sourceTree = "<group>"; };
 		CE966F30169A985C0000E00A /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
-		D547B03016A436C1008D3B9C /* GVNetSendViewProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GVNetSendViewProxy.h; sourceTree = "<group>"; };
-		D547B03116A436C1008D3B9C /* GVNetSendViewProxy.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = GVNetSendViewProxy.mm; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -245,9 +241,6 @@
 		CE0534581699F5690013307E /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				CE966E90169A007B0000E00A /* CommonDefinitions.h */,
-				D547B03016A436C1008D3B9C /* GVNetSendViewProxy.h */,
-				D547B03116A436C1008D3B9C /* GVNetSendViewProxy.mm */,
 				80EF390A1F1B6EBA00941BCC /* NetSendParameters.h */,
 				CE966F29169A5C470000E00A /* NetSendProcessorState.cpp */,
 				CE966F2A169A5C470000E00A /* NetSendProcessorState.h */,
@@ -393,7 +386,6 @@
 				CE966E99169A007B0000E00A /* NetSendProcessor.mm in Sources */,
 				CE966EA0169A20580000E00A /* NetSendView.mm in Sources */,
 				CE966F2B169A5C480000E00A /* NetSendProcessorState.cpp in Sources */,
-				D547B03216A436C1008D3B9C /* GVNetSendViewProxy.mm in Sources */,
 				CE966E9A169A007B0000E00A /* VST3SDK.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

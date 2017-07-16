@@ -7,7 +7,6 @@
 //
 
 #include "NetSendController.h"
-#include "CommonDefinitions.h"
 #include "NetSendParameters.h"
 #include <assert.h>
 
@@ -36,8 +35,7 @@ tresult PLUGIN_API NetSendController::initialize (FUnknown* context) {
 
 IPlugView * PLUGIN_API NetSendController::createView (FIDString name) {
    if (ConstString(name) == ViewType::kEditor) {
-      ViewRect defaultSize = ViewRect(0, 0, GV_UI_WIDTH, GV_UI_HEIGHT);
-      mView = new NetSendView(this, &defaultSize);
+      mView = new NetSendView(this);
       assert(mView != nullptr);
       return mView;
    }

@@ -13,10 +13,8 @@
 #include "NetSendProcessorState.h"
 
 #ifdef __OBJC__
-@class GVNetSendViewProxy;
 @class NetSendViewController;
 #else
-typedef struct objc_object GVNetSendViewProxy;
 typedef struct objc_object NetSendViewController;
 #endif
 
@@ -48,7 +46,6 @@ public:
    NetSendView(NetSendView&&) = delete;
    
 private:
-   GVNetSendViewProxy* mViewProxy;
    NetSendViewController* mViewController;
    
 };
