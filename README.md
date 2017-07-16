@@ -26,7 +26,7 @@ Features:
 System requirements:
 -------------------
 
-* Mac OS X 10.9 and above.
+* macOS 10.11 and above.
 * 64-bit VST3 host application (DAW).
 * Gigabit LAN connection between computers.
 
@@ -47,21 +47,11 @@ How to build:
 
 To build plugin the following tools, libs and SDKs needed:  
   
-* [Xcode](https://itunes.apple.com/en/app/xcode/id497799835?mt=12)
-* Core Audio SDK (see section below)
+* [Xcode 9](https://itunes.apple.com/en/app/xcode/id497799835?mt=12)
 * [VST3 SDK](http://www.steinberg.net/en/company/developer.html)
 
 In Xcode go to _**Preferences -> Locations -> Source Trees**_ and set the following settings:  
 
-* `GV_COREAUDIO_SDK` - path to Core Audio SDK (i.e. ~/SDK/CoreAudio)
 * `GV_VST_SDK` - path to VST3 SDK (i.e. ~/SDK/VST3)
 
 Now you are ready to build the project.
-
-How to get Core Audio SDK:
--------------------------
-
-* Launch Xcode.app and open Documentation browser: `Window -> Documentation and API Reference`
-* Search for `Core Audio Utility Classes`. Then open project.
-
-Xcode will save `Core Audio Utility Classes` into Downloads folder.
