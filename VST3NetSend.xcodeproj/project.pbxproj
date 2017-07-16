@@ -124,22 +124,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		806358181D98509C002DC5E2 /* VST3NetSendKit */ = {
+		806358181D98509C002DC5E2 /* NetSendKit */ = {
 			isa = PBXGroup;
 			children = (
 				8093D9331F1B920300E83309 /* ConnectionFlagValueTransformer.swift */,
 				807A81EB1D985DE900D9DE76 /* ConnectionStatusValueTransformer.swift */,
 				8063581A1D98509C002DC5E2 /* Info.plist */,
 				80DC85F41F1A8C1300DE7B32 /* NetSendAU.swift */,
+				8093D9351F1B9A0200E83309 /* NetSendParameter.swift */,
 				80DC85F71F1A8D3A00DE7B32 /* NetSendProcessSetup.swift */,
 				806358241D98516B002DC5E2 /* NetSendView.swift */,
 				806358201D9850D9002DC5E2 /* NetSendViewController.swift */,
 				8063582B1D98583B002DC5E2 /* NetSendViewModel.swift */,
 				806358221D985122002DC5E2 /* VST3NetSend.storyboard */,
 				806358191D98509C002DC5E2 /* VST3NetSendKit.h */,
-				8093D9351F1B9A0200E83309 /* NetSendParameter.swift */,
 			);
-			path = VST3NetSendKit;
+			path = NetSendKit;
 			sourceTree = "<group>";
 		};
 		80733FB31D9889DC00756AE4 /* Supporting Files */ = {
@@ -158,10 +158,14 @@
 				CE966E91169A007B0000E00A /* NetSendController.cpp */,
 				CE966E92169A007B0000E00A /* NetSendController.h */,
 				CE966E93169A007B0000E00A /* NetSendFactory.cpp */,
+				80EF390A1F1B6EBA00941BCC /* NetSendParameters.h */,
 				CE966E95169A007B0000E00A /* NetSendProcessor.h */,
 				CE966E94169A007B0000E00A /* NetSendProcessor.mm */,
+				CE966F29169A5C470000E00A /* NetSendProcessorState.cpp */,
+				CE966F2A169A5C470000E00A /* NetSendProcessorState.h */,
 				CE966E9F169A20580000E00A /* NetSendView.h */,
 				CE966E9E169A20580000E00A /* NetSendView.mm */,
+				CE966E96169A007B0000E00A /* VST3SDK.cpp */,
 			);
 			path = VST;
 			sourceTree = "<group>";
@@ -214,7 +218,6 @@
 			children = (
 				80733FB31D9889DC00756AE4 /* Supporting Files */,
 				CE0534581699F5690013307E /* Sources */,
-				806358181D98509C002DC5E2 /* VST3NetSendKit */,
 				80DC85F91F1A9AEE00DE7B32 /* Vendor */,
 				CE0534511699F5690013307E /* Frameworks */,
 				CE0534501699F5690013307E /* Products */,
@@ -247,11 +250,8 @@
 		CE0534581699F5690013307E /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				80EF390A1F1B6EBA00941BCC /* NetSendParameters.h */,
-				CE966F29169A5C470000E00A /* NetSendProcessorState.cpp */,
-				CE966F2A169A5C470000E00A /* NetSendProcessorState.h */,
+				806358181D98509C002DC5E2 /* NetSendKit */,
 				80DC85F31F1A885000DE7B32 /* VST */,
-				CE966E96169A007B0000E00A /* VST3SDK.cpp */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -430,7 +430,7 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = VST3NetSendKit/Info.plist;
+				INFOPLIST_FILE = Sources/NetSendKit/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ua.com.wavelabs.vst3.VST3NetSendKit;
@@ -460,7 +460,7 @@
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				FRAMEWORK_VERSION = A;
-				INFOPLIST_FILE = VST3NetSendKit/Info.plist;
+				INFOPLIST_FILE = Sources/NetSendKit/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ua.com.wavelabs.vst3.VST3NetSendKit;
