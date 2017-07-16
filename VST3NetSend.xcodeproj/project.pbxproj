@@ -69,8 +69,8 @@
 		806358241D98516B002DC5E2 /* NetSendView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetSendView.swift; sourceTree = "<group>"; };
 		8063582B1D98583B002DC5E2 /* NetSendViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetSendViewModel.swift; sourceTree = "<group>"; };
 		8063582D1D9858EC002DC5E2 /* IntegerFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntegerFormatter.swift; sourceTree = "<group>"; };
-		80733FB41D9889F200756AE4 /* VST3NetSend-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "VST3NetSend-Info.plist"; sourceTree = "<group>"; };
-		80733FB51D9889F200756AE4 /* VST3NetSend-Prefix.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "VST3NetSend-Prefix.h"; sourceTree = "<group>"; };
+		80733FB41D9889F200756AE4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		80733FB51D9889F200756AE4 /* Prefix.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Prefix.h; sourceTree = "<group>"; };
 		807A81EB1D985DE900D9DE76 /* ConnectionStatusValueTransformer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionStatusValueTransformer.swift; sourceTree = "<group>"; };
 		8093D9331F1B920300E83309 /* ConnectionFlagValueTransformer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionFlagValueTransformer.swift; sourceTree = "<group>"; };
 		8093D9351F1B9A0200E83309 /* NetSendParameter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetSendParameter.swift; sourceTree = "<group>"; };
@@ -143,20 +143,20 @@
 			path = NetSendKit;
 			sourceTree = "<group>";
 		};
-		80733FB31D9889DC00756AE4 /* Supporting Files */ = {
+		80733FB31D9889DC00756AE4 /* Configuration */ = {
 			isa = PBXGroup;
 			children = (
-				80733FB41D9889F200756AE4 /* VST3NetSend-Info.plist */,
-				80733FB51D9889F200756AE4 /* VST3NetSend-Prefix.h */,
 				CE0534691699F6260013307E /* Project.xcconfig */,
 				8093D9391F1BAA3B00E83309 /* Version.xcconfig */,
 			);
-			name = "Supporting Files";
+			path = Configuration;
 			sourceTree = "<group>";
 		};
 		80DC85F31F1A885000DE7B32 /* VST */ = {
 			isa = PBXGroup;
 			children = (
+				80733FB41D9889F200756AE4 /* Info.plist */,
+				80733FB51D9889F200756AE4 /* Prefix.h */,
 				CE966E91169A007B0000E00A /* NetSendController.cpp */,
 				CE966E92169A007B0000E00A /* NetSendController.h */,
 				CE966E93169A007B0000E00A /* NetSendFactory.cpp */,
@@ -218,7 +218,7 @@
 		CE0534441699F5690013307E = {
 			isa = PBXGroup;
 			children = (
-				80733FB31D9889DC00756AE4 /* Supporting Files */,
+				80733FB31D9889DC00756AE4 /* Configuration */,
 				CE0534581699F5690013307E /* Sources */,
 				80DC85F91F1A9AEE00DE7B32 /* Vendor */,
 				CE0534511699F5690013307E /* Frameworks */,
@@ -585,7 +585,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				EXPORTED_SYMBOLS_FILE = "$(GV_VST_SDK)/public.sdk/source/main/macexport.exp";
 				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREFIX_HEADER = "VST3NetSend-Prefix.h";
+				GCC_PREFIX_HEADER = Sources/VST/Prefix.h;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"DEVELOPMENT=1",
@@ -596,7 +596,7 @@
 					"$(GV_VST_SDK)",
 					"$(GV_COREAUDIO_SDK)",
 				);
-				INFOPLIST_FILE = "VST3NetSend-Info.plist";
+				INFOPLIST_FILE = Sources/VST/Info.plist;
 				INSTALL_PATH = "/Library/Audio/Plug-Ins/VST3/WaveLabs";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "ua.com.wavelabs.$(PRODUCT_NAME)";
@@ -620,7 +620,7 @@
 				DYLIB_CURRENT_VERSION = "$(AWL_BUILD_VERSION)";
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				EXPORTED_SYMBOLS_FILE = "$(GV_VST_SDK)/public.sdk/source/main/macexport.exp";
-				GCC_PREFIX_HEADER = "VST3NetSend-Prefix.h";
+				GCC_PREFIX_HEADER = Sources/VST/Prefix.h;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"RELEASE=1",
 					"NDEBUG=1",
@@ -631,7 +631,7 @@
 					"$(GV_VST_SDK)",
 					"$(GV_COREAUDIO_SDK)",
 				);
-				INFOPLIST_FILE = "VST3NetSend-Info.plist";
+				INFOPLIST_FILE = Sources/VST/Info.plist;
 				INSTALL_PATH = "/Library/Audio/Plug-Ins/VST3/WaveLabs";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "ua.com.wavelabs.$(PRODUCT_NAME)";
