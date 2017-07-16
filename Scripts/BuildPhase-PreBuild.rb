@@ -21,6 +21,12 @@ if targetName == "VST3NetSendKit"
       }
    end
 elsif targetName == "Verify"
-   puts `swiftlint lint --quiet --config \"#{gitRepoDirPath}/.swiftlint.yml\"`
-   puts FileHeaderChecker.new(["VST3NetSend", "WaveLabs"]).analyse(gitRepoDirPath)
+   if Tool.verifyEnvironment("Check Headers")
+      puts "→ Checking headers..."
+      puts `swiftlint lint --quiet --config \"#{gitRepoDirPath}/.swiftlint.yml\"`
+   end
+   if Tool.canRunSwiftLint()
+      puts "→ Linting..."
+      puts FileHeaderChecker.new(["VST3NetSend", "WaveLabs"]).analyse(gitRepoDirPath)
+   end
 end
