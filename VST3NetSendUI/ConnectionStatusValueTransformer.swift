@@ -9,29 +9,6 @@
 import Foundation
 import AudioToolbox
 
-class ConnectionFlagValueTransformer: ValueTransformer {
-
-   override class func transformedValueClass() -> Swift.AnyClass {
-      return NSString.self
-   }
-
-   override class func allowsReverseTransformation() -> Bool {
-      return false
-   }
-
-   override func transformedValue(_ value: Any?) -> Any? {
-      var result = ""
-      if let value = value as? NSNumber {
-         // Value == "0" in AU means "Connected"
-         // Value >  "0" in AU means "Disconnected"
-         // But button should showd opposite title.
-         // So, when value not "0" we need to show title "Connect"
-         result = value.boolValue == true ? "Connect" : "Disconnect"
-      }
-      return result as NSString
-   }
-}
-
 class ConnectionStatusValueTransformer: ValueTransformer {
 
    override class func transformedValueClass() -> Swift.AnyClass {
@@ -62,6 +39,6 @@ class ConnectionStatusValueTransformer: ValueTransformer {
             break
          }
       }
-      return result as NSString
+      return result
    }
 }

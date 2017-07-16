@@ -58,7 +58,7 @@ public:
    
 private:
    NetSendView* mView;
-   NetSendProcessorState       mParams;
+   NetSendProcessorState mParams;
 };
 
 GV_NAMESPACE_END
