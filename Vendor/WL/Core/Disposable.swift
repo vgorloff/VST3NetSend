@@ -7,5 +7,5 @@
 //
 
 public protocol Disposable: class {
-	func dispose()
+   func dispose()
 }

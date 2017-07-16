@@ -10,8 +10,8 @@ import Foundation
 
 public final class NetSendProcessSetup: NSObject {
 
-   @objc public private (set) var sampleRate: Double = 44100
-   @objc public private (set) var maxSamplesPerBlock: UInt32 = 512
+   @objc public private(set) var sampleRate: Double = 44100
+   @objc public private(set) var maxSamplesPerBlock: UInt32 = 512
 
    public override init() {
       super.init()
@@ -22,5 +22,4 @@ public final class NetSendProcessSetup: NSObject {
       self.maxSamplesPerBlock = maxSamplesPerBlock
       super.init()
    }
-
 }

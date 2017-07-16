@@ -16,5 +16,4 @@ public class NetSendViewModel: NSObject {
    @objc public var port = NSNumber(integerLiteral: 0)
    @objc public var bonjourName = NSString(string: "")
    @objc public var password = NSString(string: "")
-
 }
