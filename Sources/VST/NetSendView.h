@@ -49,8 +49,6 @@ public:
    
 private:
    GVNetSendViewProxy* mViewProxy;
-
-public:
    NetSendViewController* mViewController;
    
 };

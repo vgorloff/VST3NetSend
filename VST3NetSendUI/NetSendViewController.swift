@@ -11,7 +11,7 @@ import Cocoa
 public class NetSendViewController: NSViewController {
 
    @objc public lazy var viewModelObjectController: NSObjectController = NSObjectController(content: self.viewModel)
-   private lazy var viewModel = NetSendViewModel()
+   @objc public lazy var viewModel = NetSendViewModel()
 
    required public init?(coder: NSCoder) {
       super.init(coder: coder)
