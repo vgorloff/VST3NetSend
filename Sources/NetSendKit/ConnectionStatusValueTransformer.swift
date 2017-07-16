@@ -6,8 +6,8 @@
 //  Copyright © 2016 Vlad Gorlov. All rights reserved.
 //
 
-import Foundation
 import AudioToolbox
+import Foundation
 
 class ConnectionStatusValueTransformer: ValueTransformer {
 

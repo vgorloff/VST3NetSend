@@ -6,10 +6,10 @@
 //  Copyright (c) 2013 Vlad Gorloff. All rights reserved.
 //
 
-#import "pluginterfaces/vst/ivstparameterchanges.h"
-#import "pluginterfaces/base/ustring.h"
-#import "NetSendProcessor.h"
 #import "NetSendParameters.h"
+#import "NetSendProcessor.h"
+#import "pluginterfaces/base/ustring.h"
+#import "pluginterfaces/vst/ivstparameterchanges.h"
 #import <AppKit/AppKit.h>
 #import <VST3NetSendKit/VST3NetSendKit-Swift.h>
 
