@@ -72,8 +72,8 @@ void NetSendView::handleStateChanges (const NetSendProcessorState& state) {
 
    NSNumber* dataFormat  = [NSNumber numberWithInt:state.dataFormat];
    NSNumber* port        = [NSNumber numberWithFloat:state.port];
-   NSString* bonjourName = [NSString stringWithUTF8String:state.bonjourName];
-   NSString* password    = [NSString stringWithUTF8String:state.password];
+   NSString* bonjourName = [NSString stringWithCString:state.bonjourName encoding:NSASCIIStringEncoding];
+   NSString* password    = [NSString stringWithCString:state.password encoding:NSASCIIStringEncoding];
    
    if ([dataFormat compare:mViewProxy.dataFormat] != NSOrderedSame) {
       mViewProxy.dataFormat  = dataFormat;

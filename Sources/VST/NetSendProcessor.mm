@@ -91,9 +91,9 @@ tresult PLUGIN_API NetSendProcessor::setState (IBStream* state) {
       mParams = gps;
       [mNetSendAU setTransmissionFormatIndex: (UInt32)mParams.dataFormat];
       [mNetSendAU setPortNumber: (UInt32)mParams.port];
-      NSString *serviceName = [NSString stringWithCString:mParams.bonjourName encoding:kCFStringEncodingUTF8];
+      NSString *serviceName = [NSString stringWithCString:mParams.bonjourName encoding:NSASCIIStringEncoding];
       [mNetSendAU setServiceName:serviceName];
-      NSString *password = [NSString stringWithCString:mParams.password encoding:kCFStringEncodingUTF8];
+      NSString *password = [NSString stringWithCString:mParams.password encoding:NSASCIIStringEncoding];
       [mNetSendAU setPassword:password];
       [mNetSendAU setDisconnect:mParams.connectionFlag];
    }
@@ -135,7 +135,7 @@ tresult PLUGIN_API NetSendProcessor::notify (IMessage* message)
       if (message->getAttributes()->getString(kGVBonjourNameMsgId, string, tStrBufferSize(String128)) == kResultOk) {
          memset(mParams.bonjourName, 0, 128);
          s.toAscii(const_cast<char*>(mParams.bonjourName), 128);
-         NSString *serviceName = [NSString stringWithCString:mParams.bonjourName encoding:kCFStringEncodingUTF8];
+         NSString *serviceName = [NSString stringWithCString:mParams.bonjourName encoding:NSASCIIStringEncoding];
          [mNetSendAU setServiceName:serviceName];
          return kResultOk;
       }
@@ -147,7 +147,7 @@ tresult PLUGIN_API NetSendProcessor::notify (IMessage* message)
       if (message->getAttributes()->getString(kGVPasswordMsgId, string, tStrBufferSize(String128)) == kResultOk) {
          memset(mParams.password, 0, 128);
          s.toAscii(const_cast<char*>(mParams.password), 128);
-         NSString *password = [NSString stringWithCString:mParams.password encoding:kCFStringEncodingUTF8];
+         NSString *password = [NSString stringWithCString:mParams.password encoding:NSASCIIStringEncoding];
          [mNetSendAU setPassword:password];
          return kResultOk;
       }
