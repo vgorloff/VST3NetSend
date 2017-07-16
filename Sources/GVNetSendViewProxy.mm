@@ -22,13 +22,6 @@
 using namespace Steinberg;
 using namespace GV;
 
-NSRect NSRectFromViewRect(Steinberg::ViewRect rect) {
-   int w = rect.getWidth();
-   int h = rect.getHeight();
-   NSRect result = NSMakeRect(rect.left, rect.top, w, h);
-   return result;
-}
-
 @interface GVNetSendViewProxy () {
    NetSendViewController* _viewController;
    NetSendController* _editController;
@@ -58,12 +51,8 @@ NSRect NSRectFromViewRect(Steinberg::ViewRect rect) {
 
       _editView  = static_cast<GV::NetSendView*>(parentView);
       _editController = static_cast<NetSendController*>(_editView->getController());
+      _viewController = _editView->mViewController;
 
-      NSBundle* pluginBundle = [NSBundle bundleForClass:GVNetSendViewProxy.class];
-      NSURL *UIFrameworkURL = [pluginBundle.privateFrameworksURL URLByAppendingPathComponent:@"VST3NetSendUI.framework"];
-      NSBundle * UIFrameworkBundle = [NSBundle bundleWithURL:UIFrameworkURL];
-      NSStoryboard *storyboard = [NSStoryboard storyboardWithName:@"VST3NetSend" bundle:UIFrameworkBundle];
-      _viewController = [storyboard instantiateInitialController];
       [self setupBindings];
    }
    return self;
@@ -72,8 +61,6 @@ NSRect NSRectFromViewRect(Steinberg::ViewRect rect) {
 
 - (void)dealloc {
    [self removeBindings];
-   assert(_viewController != nil);
-   [_viewController.view removeFromSuperviewWithoutNeedingDisplay];
    _viewController = nil;
    _editView = nullptr;
    _editController = nullptr;
@@ -103,12 +90,6 @@ NSRect NSRectFromViewRect(Steinberg::ViewRect rect) {
    [self unbind:@"port"];
    [self unbind:@"bonjourName"];
    [self unbind:@"password"];
-}
-
--(void)attachToSuperview:(NSView*)parentView {
-   NSRect rect = NSRectFromViewRect(_editView->getRect());
-   [parentView addSubview:_viewController.view]; // view initialised lazy
-   [_viewController.view setFrame:rect];
 }
 
 -(void)setStatus:(NSNumber *)value {
