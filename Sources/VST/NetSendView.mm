@@ -12,7 +12,7 @@
 #import "pluginterfaces/base/ustring.h"
 #import <CoreAudio/CoreAudio.h>
 #import <AppKit/AppKit.h>
-#import <VST3NetSendUI/VST3NetSendUI-Swift.h>
+#import <VST3NetSendKit/VST3NetSendKit-Swift.h>
 
 NSRect NSRectFromVSTViewRect(Steinberg::ViewRect rect) {
    NSRect result = NSMakeRect(rect.left, rect.top, rect.getWidth(), rect.getHeight());

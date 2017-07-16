@@ -8,12 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		802A6FB71A0997690050FA46 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 802A6FB61A0997690050FA46 /* CoreAudio.framework */; };
-		8063581B1D98509C002DC5E2 /* VST3NetSendUI.h in Headers */ = {isa = PBXBuildFile; fileRef = 806358191D98509C002DC5E2 /* VST3NetSendUI.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8063581B1D98509C002DC5E2 /* VST3NetSendKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 806358191D98509C002DC5E2 /* VST3NetSendKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		806358211D9850D9002DC5E2 /* NetSendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806358201D9850D9002DC5E2 /* NetSendViewController.swift */; };
 		806358231D985122002DC5E2 /* VST3NetSend.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 806358221D985122002DC5E2 /* VST3NetSend.storyboard */; };
 		806358251D98516B002DC5E2 /* NetSendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806358241D98516B002DC5E2 /* NetSendView.swift */; };
-		806358281D9857BC002DC5E2 /* VST3NetSendUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 806358171D98509C002DC5E2 /* VST3NetSendUI.framework */; };
-		8063582A1D9857D3002DC5E2 /* VST3NetSendUI.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 806358171D98509C002DC5E2 /* VST3NetSendUI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		806358281D9857BC002DC5E2 /* VST3NetSendKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 806358171D98509C002DC5E2 /* VST3NetSendKit.framework */; };
+		8063582A1D9857D3002DC5E2 /* VST3NetSendKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 806358171D98509C002DC5E2 /* VST3NetSendKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		8063582C1D98583B002DC5E2 /* NetSendViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8063582B1D98583B002DC5E2 /* NetSendViewModel.swift */; };
 		8063582E1D9858EC002DC5E2 /* IntegerFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8063582D1D9858EC002DC5E2 /* IntegerFormatter.swift */; };
 		807A81EC1D985DE900D9DE76 /* ConnectionStatusValueTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807A81EB1D985DE900D9DE76 /* ConnectionStatusValueTransformer.swift */; };
@@ -52,7 +52,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				8063582A1D9857D3002DC5E2 /* VST3NetSendUI.framework in CopyFiles */,
+				8063582A1D9857D3002DC5E2 /* VST3NetSendKit.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,8 +60,8 @@
 
 /* Begin PBXFileReference section */
 		802A6FB61A0997690050FA46 /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
-		806358171D98509C002DC5E2 /* VST3NetSendUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = VST3NetSendUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		806358191D98509C002DC5E2 /* VST3NetSendUI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VST3NetSendUI.h; sourceTree = "<group>"; };
+		806358171D98509C002DC5E2 /* VST3NetSendKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = VST3NetSendKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		806358191D98509C002DC5E2 /* VST3NetSendKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VST3NetSendKit.h; sourceTree = "<group>"; };
 		8063581A1D98509C002DC5E2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		806358201D9850D9002DC5E2 /* NetSendViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetSendViewController.swift; sourceTree = "<group>"; };
 		806358221D985122002DC5E2 /* VST3NetSend.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = VST3NetSend.storyboard; sourceTree = "<group>"; };
@@ -111,7 +111,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				806358281D9857BC002DC5E2 /* VST3NetSendUI.framework in Frameworks */,
+				806358281D9857BC002DC5E2 /* VST3NetSendKit.framework in Frameworks */,
 				802A6FB71A0997690050FA46 /* CoreAudio.framework in Frameworks */,
 				CE966E9C169A16D00000E00A /* Cocoa.framework in Frameworks */,
 				CE966F19169A32A70000E00A /* AudioUnit.framework in Frameworks */,
@@ -122,7 +122,7 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		806358181D98509C002DC5E2 /* VST3NetSendUI */ = {
+		806358181D98509C002DC5E2 /* VST3NetSendKit */ = {
 			isa = PBXGroup;
 			children = (
 				8093D9331F1B920300E83309 /* ConnectionFlagValueTransformer.swift */,
@@ -134,9 +134,9 @@
 				806358201D9850D9002DC5E2 /* NetSendViewController.swift */,
 				8063582B1D98583B002DC5E2 /* NetSendViewModel.swift */,
 				806358221D985122002DC5E2 /* VST3NetSend.storyboard */,
-				806358191D98509C002DC5E2 /* VST3NetSendUI.h */,
+				806358191D98509C002DC5E2 /* VST3NetSendKit.h */,
 			);
-			path = VST3NetSendUI;
+			path = VST3NetSendKit;
 			sourceTree = "<group>";
 		};
 		80733FB31D9889DC00756AE4 /* Supporting Files */ = {
@@ -211,7 +211,7 @@
 			children = (
 				80733FB31D9889DC00756AE4 /* Supporting Files */,
 				CE0534581699F5690013307E /* Sources */,
-				806358181D98509C002DC5E2 /* VST3NetSendUI */,
+				806358181D98509C002DC5E2 /* VST3NetSendKit */,
 				80DC85F91F1A9AEE00DE7B32 /* Vendor */,
 				CE0534511699F5690013307E /* Frameworks */,
 				CE0534501699F5690013307E /* Products */,
@@ -222,7 +222,7 @@
 			isa = PBXGroup;
 			children = (
 				CE05344F1699F5690013307E /* VST3NetSend.vst3 */,
-				806358171D98509C002DC5E2 /* VST3NetSendUI.framework */,
+				806358171D98509C002DC5E2 /* VST3NetSendKit.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -260,16 +260,16 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8063581B1D98509C002DC5E2 /* VST3NetSendUI.h in Headers */,
+				8063581B1D98509C002DC5E2 /* VST3NetSendKit.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		806358161D98509C002DC5E2 /* VST3NetSendUI */ = {
+		806358161D98509C002DC5E2 /* VST3NetSendKit */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 8063581C1D98509C002DC5E2 /* Build configuration list for PBXNativeTarget "VST3NetSendUI" */;
+			buildConfigurationList = 8063581C1D98509C002DC5E2 /* Build configuration list for PBXNativeTarget "VST3NetSendKit" */;
 			buildPhases = (
 				806358121D98509C002DC5E2 /* Sources */,
 				806358131D98509C002DC5E2 /* Frameworks */,
@@ -280,9 +280,9 @@
 			);
 			dependencies = (
 			);
-			name = VST3NetSendUI;
+			name = VST3NetSendKit;
 			productName = VST3NetSendUI;
-			productReference = 806358171D98509C002DC5E2 /* VST3NetSendUI.framework */;
+			productReference = 806358171D98509C002DC5E2 /* VST3NetSendKit.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		CE05344E1699F5690013307E /* VST3NetSend */ = {
@@ -339,7 +339,7 @@
 			projectRoot = "";
 			targets = (
 				CE05344E1699F5690013307E /* VST3NetSend */,
-				806358161D98509C002DC5E2 /* VST3NetSendUI */,
+				806358161D98509C002DC5E2 /* VST3NetSendKit */,
 			);
 		};
 /* End PBXProject section */
@@ -399,7 +399,7 @@
 /* Begin PBXTargetDependency section */
 		806358271D98519C002DC5E2 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 806358161D98509C002DC5E2 /* VST3NetSendUI */;
+			target = 806358161D98509C002DC5E2 /* VST3NetSendKit */;
 			targetProxy = 806358261D98519C002DC5E2 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -426,10 +426,10 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = VST3NetSendUI/Info.plist;
+				INFOPLIST_FILE = VST3NetSendKit/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = ua.com.wavelabs.vst3.VST3NetSendUI;
+				PRODUCT_BUNDLE_IDENTIFIER = ua.com.wavelabs.vst3.VST3NetSendKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
@@ -456,10 +456,10 @@
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				FRAMEWORK_VERSION = A;
-				INFOPLIST_FILE = VST3NetSendUI/Info.plist;
+				INFOPLIST_FILE = VST3NetSendKit/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = ua.com.wavelabs.vst3.VST3NetSendUI;
+				PRODUCT_BUNDLE_IDENTIFIER = ua.com.wavelabs.vst3.VST3NetSendKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -634,7 +634,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		8063581C1D98509C002DC5E2 /* Build configuration list for PBXNativeTarget "VST3NetSendUI" */ = {
+		8063581C1D98509C002DC5E2 /* Build configuration list for PBXNativeTarget "VST3NetSendKit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				8063581D1D98509C002DC5E2 /* Debug */,
