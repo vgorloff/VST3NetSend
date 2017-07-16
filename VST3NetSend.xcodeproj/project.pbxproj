@@ -77,6 +77,7 @@
 		80DC86161F1A9AEE00DE7B32 /* AudioComponentDescription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioComponentDescription.swift; sourceTree = "<group>"; };
 		80DC86191F1AA2F800DE7B32 /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
 		80DC861D1F1ABCBE00DE7B32 /* AudioUnitSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioUnitSettings.swift; sourceTree = "<group>"; };
+		80EF390A1F1B6EBA00941BCC /* NetSendParameters.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NetSendParameters.h; sourceTree = "<group>"; };
 		CE05344F1699F5690013307E /* VST3NetSend.vst3 */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VST3NetSend.vst3; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE0534521699F5690013307E /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		CE0534551699F5690013307E /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -250,11 +251,12 @@
 				CE966E90169A007B0000E00A /* CommonDefinitions.h */,
 				D547B03016A436C1008D3B9C /* GVNetSendViewProxy.h */,
 				D547B03116A436C1008D3B9C /* GVNetSendViewProxy.mm */,
+				80EF390A1F1B6EBA00941BCC /* NetSendParameters.h */,
 				CE966F29169A5C470000E00A /* NetSendProcessorState.cpp */,
 				CE966F2A169A5C470000E00A /* NetSendProcessorState.h */,
-				80DC85F31F1A885000DE7B32 /* VST */,
 				CE966F1A169A33B10000E00A /* Utilities.cpp */,
 				CE966F1B169A33B20000E00A /* Utilities.h */,
+				80DC85F31F1A885000DE7B32 /* VST */,
 				CE966E96169A007B0000E00A /* VST3SDK.cpp */,
 			);
 			path = Sources;

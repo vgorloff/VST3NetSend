@@ -17,6 +17,7 @@
 #include "NetSendView.h"
 #include "NetSendController.h"
 #include "CommonDefinitions.h"
+#import "NetSendParameters.h"
 
 using namespace Steinberg;
 using namespace GV;
