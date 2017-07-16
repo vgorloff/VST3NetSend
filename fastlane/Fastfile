@@ -20,9 +20,12 @@ lane :clean do
    XcodeBuilder.new(XCodeProjectFilePath).clean(XCodeProjectSchema)
 end
 
-desc "Builds when under CI (i.e. Travis)."
-lane :ci do
-   XcodeBuilder.new(XCodeProjectFilePath).ci("VST3NetSend")
+desc "Build codesigned release for GitHub."
+lane :release do
+   # XcodeBuilder.new(XCodeProjectFilePath).archive(XCodeProjectSchema, "Release", true)
+   apps = Dir["#{ENV['PWD']}/**/*.xcarchive/**/*.vst3"].select { |f| File.directory?(f) }
+   apps.each { |app| zip(path: app, output_path: "#{app}.zip") }
+   apps.each { |app| XcodeBuilder.validateBinary(app) }
 end
 
 desc "Deploy release to GitHub."
@@ -30,7 +33,7 @@ lane :deploy do
    releaseName = File.read("#{ENV['PWD']}/fastlane/ReleaseName.txt").strip
    releaseDescription = File.read("#{ENV['PWD']}/fastlane/ReleaseNotes.txt").strip
    github_release = set_github_release(
-     repository_name: "vgorloff/CARingBuffer", api_token: ENV['AWL_GITHUB_TOKEN'], name: releaseName, tag_name: last_git_tag,
+     repository_name: "vgorloff/VST3NetSend", api_token: ENV['AWL_GITHUB_TOKEN'], name: releaseName, tag_name: last_git_tag,
      description: releaseDescription, commitish: "master"
    )
 end
