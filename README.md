@@ -48,7 +48,7 @@ How to build:
 To build plugin the following tools, libs and SDKs needed:  
   
 * [Xcode 9](https://itunes.apple.com/en/app/xcode/id497799835?mt=12)
-* [VST3 SDK](http://www.steinberg.net/en/company/developer.html)
+* [VST3 SDK 3.6.7](http://www.steinberg.net/en/company/developer.html)
 
 In Xcode go to _**Preferences -> Locations -> Source Trees**_ and set the following settings:  
 
