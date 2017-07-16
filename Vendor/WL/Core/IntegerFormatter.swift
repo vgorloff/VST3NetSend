@@ -1,5 +1,5 @@
 //
-//  Formatters.swift
+//  IntegerFormatter.swift
 //  VST3NetSend
 //
 //  Created by Vlad Gorlov on 25/09/2016.

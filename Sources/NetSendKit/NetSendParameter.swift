@@ -1,6 +1,6 @@
 //
 //  NetSendParameter.swift
-//  VST3NetSendKit
+//  VST3NetSend
 //
 //  Created by Vlad Gorlov on 16.07.17.
 //  Copyright © 2017 Vlad Gorlov. All rights reserved.

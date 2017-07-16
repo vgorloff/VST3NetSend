@@ -9,6 +9,8 @@
 #ifndef VST3NetSend_NetSendParameters_h
 #define VST3NetSend_NetSendParameters_h
 
+#include <stdint.h>
+
 enum NetSendParameters {
 
    kGVBypassParameter = UINT16_MAX,
