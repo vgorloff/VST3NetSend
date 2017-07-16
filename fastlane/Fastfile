@@ -52,7 +52,6 @@ end
 
 desc "Verify source code."
 lane :verify do
-   `swiftlint lint --quiet --path #{ENV['PWD']}`
-   puts FileHeaderChecker.new(["WaveLabs"]).analyse("#{ENV['PWD']}/Sources")
-   puts FileHeaderChecker.new(["WaveLabs"]).analyse("#{ENV['PWD']}/Vendor/WL")
+   import "#{ENV['PWD']}/Scripts/BuildPhase-PreBuild.rb"
+   verifySources('Verify')
 end
