@@ -10,11 +10,10 @@ import Foundation
 
 public class NetSendViewModel: NSObject {
 
-   @objc public var status = NSNumber(integerLiteral: 0)
-   @objc public var connectionFlag = NSNumber(integerLiteral: 0)
-   @objc public var dataFormat = NSNumber(integerLiteral: 0)
-   @objc public var port = NSNumber(integerLiteral: 0)
-   @objc public var bonjourName = NSString(string: "")
-   @objc public var password = NSString(string: "")
-
+   @objc public var status: NSNumber = 0
+   @objc public var connectionFlag: NSNumber = 0
+   @objc public var dataFormat: NSNumber = 0
+   @objc public var port: NSNumber = 0
+   @objc public var bonjourName: NSString = ""
+   @objc public var password: NSString = ""
 }

@@ -6,12 +6,12 @@
 //  Copyright (c) 2013 Vlad Gorloff. All rights reserved.
 //
 
-#import "NetSendView.h"
-#import "NetSendParameters.h"
 #import "NetSendController.h"
+#import "NetSendParameters.h"
+#import "NetSendView.h"
 #import "pluginterfaces/base/ustring.h"
-#import <CoreAudio/CoreAudio.h>
 #import <AppKit/AppKit.h>
+#import <CoreAudio/CoreAudio.h>
 #import <VST3NetSendKit/VST3NetSendKit-Swift.h>
 
 NSRect NSRectFromVSTViewRect(Steinberg::ViewRect rect) {

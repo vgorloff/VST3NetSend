@@ -77,7 +77,7 @@ public struct AudioUnitSettings {
    }
 
    public static func getParameter(for unit: AudioUnit, parameterID: AudioUnitParameterID, scope: Scope,
-                                      element: AudioUnitElement) throws -> Float32 {
+                                   element: AudioUnitElement) throws -> Float32 {
       var value: Float32 = 0
       let status = AudioUnitGetParameter(unit, parameterID, scope.value, element, &value)
       if status != noErr {

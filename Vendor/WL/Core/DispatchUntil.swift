@@ -17,7 +17,6 @@ public final class DispatchUntil {
    }
 
    public init() {
-
    }
 
    public func performIfNeeded(block: () -> Void) {
@@ -31,5 +30,4 @@ public final class DispatchUntil {
          mIsFulfilled = true
       }
    }
-
 }

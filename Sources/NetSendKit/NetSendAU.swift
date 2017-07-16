@@ -1,6 +1,6 @@
 //
 //  NetSendAU.swift
-//  VST3NetSendKit
+//  VST3NetSend
 //
 //  Created by Vlad Gorlov on 15.07.17.
 //  Copyright © 2017 Vlad Gorlov. All rights reserved.
@@ -9,7 +9,7 @@
 import AVFoundation
 
 public final class NetSendAU: NSObject {
-   
+
    private var au: AVAudioUnit?
    private var timeStamp = AudioTimeStamp()
    private var isActive: Bool = false
@@ -18,7 +18,7 @@ public final class NetSendAU: NSObject {
    private var blockSize: UInt32 = 512
    private var numberOfChannels: UInt32 = 2
    private var vstBufferList: UnsafeMutablePointer<AudioBufferList>?
-   
+
    public override init() {
       super.init()
       let desc = AudioComponentDescription(type: kAudioUnitType_Effect, subType: kAudioUnitSubType_NetSend)
@@ -38,31 +38,30 @@ public final class NetSendAU: NSObject {
       }
       timeStamp.mFlags = [.sampleTimeValid]
       timeStamp.mSampleTime = 0
-      
+
       setTransmissionFormatIndex(kAUNetSendPresetFormat_PCMFloat32)
       setPortNumber(52800)
       setServiceName("WaveLabs VST3NetSend")
       setPassword("")
-      
+
       setupStreamFormat(sampleRate: sampleRate, blockSize: blockSize, numChannels: numberOfChannels)
       setupRenderCallback()
    }
-   
+
    deinit {
       setActive(false)
       au = nil
    }
-   
 }
 
 extension NetSendAU {
-   
+
    @objc public func setupProcessing(_ setupInfo: NetSendProcessSetup) {
       sampleRate = setupInfo.sampleRate
       blockSize = setupInfo.maxSamplesPerBlock
       setupStreamFormat(sampleRate: sampleRate, blockSize: blockSize, numChannels: numberOfChannels)
    }
-   
+
    @objc public func setActive(_ shouldActivate: Bool) {
       guard let au = au?.audioUnit else {
          return
@@ -81,7 +80,7 @@ extension NetSendAU {
          isActive = false
       }
    }
-   
+
    @objc public func render(numberOfFrames: UInt32, bufferList: UnsafeMutablePointer<AudioBufferList>) {
       guard let au = au?.audioUnit, let buffer = buffer else {
          return
@@ -94,12 +93,12 @@ extension NetSendAU {
       assert(status == noErr)
       timeStamp.mSampleTime += Float64(numberOfFrames)
    }
-   
+
    @objc public func setNumberOfChannels(_ numChannels: UInt32) {
-      self.numberOfChannels = numChannels
+      numberOfChannels = numChannels
       setupStreamFormat(sampleRate: sampleRate, blockSize: blockSize, numChannels: numberOfChannels)
    }
-   
+
    @objc public func setServiceName(_ serviceName: String) {
       guard let au = au?.audioUnit else {
          return
@@ -109,7 +108,7 @@ extension NetSendAU {
                                            scope: .global, element: 0, data: (serviceName as CFString))
       }
    }
-   
+
    @objc public func setPassword(_ password: String) {
       guard let au = au?.audioUnit else {
          return
@@ -119,7 +118,7 @@ extension NetSendAU {
                                            scope: .global, element: 0, data: (password as CFString))
       }
    }
-   
+
    @objc public func setTransmissionFormatIndex(_ formatIndex: UInt32) {
       guard let au = au?.audioUnit else {
          return
@@ -130,7 +129,7 @@ extension NetSendAU {
                                            scope: .global, element: 0, data: formatIndex)
       }
    }
-   
+
    @objc public func setDisconnect(_ flag: UInt32) {
       guard let au = au?.audioUnit else {
          return
@@ -140,7 +139,7 @@ extension NetSendAU {
                                            scope: .global, element: 0, data: flag)
       }
    }
-   
+
    @objc public func setPortNumber(_ port: UInt32) {
       guard let au = au?.audioUnit else {
          return
@@ -150,7 +149,7 @@ extension NetSendAU {
                                            scope: .global, element: 0, data: port)
       }
    }
-   
+
    @objc public func getStatus() -> Int {
       var result: Float32 = -1
       guard let au = au?.audioUnit else {
@@ -161,11 +160,10 @@ extension NetSendAU {
       }
       return Int(result)
    }
-   
 }
 
 extension NetSendAU {
-   
+
    private func setProperty(_ name: String, closure: () throws -> Void) {
       do {
          try closure()
@@ -173,7 +171,7 @@ extension NetSendAU {
          Log.error(subsystem: .media, category: .event, message: "Unable to set property `\(name)`.")
       }
    }
-   
+
    private func getParameter(_ name: String, closure: () throws -> Void) {
       do {
          try closure()
@@ -181,7 +179,7 @@ extension NetSendAU {
          Log.error(subsystem: .media, category: .event, message: "Unable to get parameter `\(name)`.")
       }
    }
-   
+
    private func setupRenderCallback() {
       guard let au = au?.audioUnit else {
          return
@@ -193,7 +191,7 @@ extension NetSendAU {
                                            scope: .input, element: 0, data: callback)
       }
    }
-   
+
    fileprivate func render(flags: UnsafeMutablePointer<AudioUnitRenderActionFlags>, timestamp: UnsafePointer<AudioTimeStamp>,
                            busNumber: UInt32, numberOfFrames: UInt32, data: UnsafeMutablePointer<AudioBufferList>?) -> OSStatus {
       guard let vstBufferList = vstBufferList, let data = data else {
@@ -212,14 +210,14 @@ extension NetSendAU {
       }
       return noErr
    }
-   
+
    private func setupStreamFormat(sampleRate: Double, blockSize: UInt32, numChannels: UInt32) {
       guard let au = au?.audioUnit else {
          return
       }
       guard let format = AVAudioFormat(commonFormat: .pcmFormatFloat32, sampleRate: sampleRate,
                                        channels: numChannels, interleaved: false) else {
-                                          fatalError()
+         fatalError()
       }
       let sd = format.streamDescription.pointee
       setProperty("StreamFormat (Input)") {
@@ -230,13 +228,12 @@ extension NetSendAU {
          try AudioUnitSettings.setProperty(for: au, propertyID: kAudioUnitProperty_StreamFormat, scope: .output,
                                            element: 0, data: sd)
       }
-      
+
       guard let buffer = AVAudioPCMBuffer(pcmFormat: format, frameCapacity: blockSize) else {
          fatalError()
       }
       self.buffer = buffer
    }
-   
 }
 
 private let renderCallback: AURenderCallback = { inRefCon, ioActionFlags, inTimeStamp, inBusNumber, inNumberFrames, ioData in
