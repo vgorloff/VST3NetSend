@@ -2,10 +2,7 @@
 
 GitRepoDirPath = File.expand_path("#{File.dirname(__FILE__)}/../")
 
-require "#{GitRepoDirPath}/Vendor/WL/Conf/Scripts/lib/FileHeaderChecker.rb"
-require "#{GitRepoDirPath}/Vendor/WL/Conf/Scripts/lib/Tool.rb"
-require "#{GitRepoDirPath}/Vendor/WL/Conf/Scripts/lib/GitStatus.rb"
-
+require "#{GitRepoDirPath}/Vendor/WL/Scripts/WL.rb"
 
 def verifySources(targetName)
    if targetName == "VST3NetSendKit"
