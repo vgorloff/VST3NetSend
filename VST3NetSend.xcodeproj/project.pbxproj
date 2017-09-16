@@ -339,9 +339,8 @@
 					};
 					806358161D98509C002DC5E2 = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = E27KE6VTF6;
 						LastSwiftMigration = 0900;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 					CE05344E1699F5690013307E = {
 						DevelopmentTeam = E27KE6VTF6;
@@ -483,8 +482,8 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				APPLICATION_EXTENSION_API_ONLY = YES;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "Mac Developer";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = "$(AWL_BUILD_VERSION)";
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = "";
@@ -518,8 +517,8 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				APPLICATION_EXTENSION_API_ONLY = YES;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "Mac Developer";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = "$(AWL_BUILD_VERSION)";
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = "";
@@ -717,6 +716,7 @@
 				801423311F1BB75500097325 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8063581C1D98509C002DC5E2 /* Build configuration list for PBXNativeTarget "VST3NetSendKit" */ = {
 			isa = XCConfigurationList;
