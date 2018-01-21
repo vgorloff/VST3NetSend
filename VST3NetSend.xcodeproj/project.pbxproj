@@ -6,20 +6,6 @@
 	objectVersion = 48;
 	objects = {
 
-/* Begin PBXAggregateTarget section */
-		8014232E1F1BB75500097325 /* Verify */ = {
-			isa = PBXAggregateTarget;
-			buildConfigurationList = 8014232F1F1BB75500097325 /* Build configuration list for PBXAggregateTarget "Verify" */;
-			buildPhases = (
-				801423321F1BB76400097325 /* Run Script: Pre-Build */,
-			);
-			dependencies = (
-			);
-			name = Verify;
-			productName = Verify;
-		};
-/* End PBXAggregateTarget section */
-
 /* Begin PBXBuildFile section */
 		802A6FB71A0997690050FA46 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 802A6FB61A0997690050FA46 /* CoreAudio.framework */; };
 		8063581B1D98509C002DC5E2 /* VST3NetSendKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 806358191D98509C002DC5E2 /* VST3NetSendKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -334,9 +320,6 @@
 				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = "Vlad Gorlov";
 				TargetAttributes = {
-					8014232E1F1BB75500097325 = {
-						CreatedOnToolsVersion = 9.0;
-					};
 					806358161D98509C002DC5E2 = {
 						CreatedOnToolsVersion = 8.0;
 						LastSwiftMigration = 0900;
@@ -362,7 +345,6 @@
 			targets = (
 				CE05344E1699F5690013307E /* VST3NetSend */,
 				806358161D98509C002DC5E2 /* VST3NetSendKit */,
-				8014232E1F1BB75500097325 /* Verify */,
 			);
 		};
 /* End PBXProject section */
@@ -397,22 +379,8 @@
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "[[ -r ~/.bashrc ]] && . ~/.bashrc\n \"$SRCROOT/Scripts/BuildPhase-PreBuild.rb\"";
-		};
-		801423321F1BB76400097325 /* Run Script: Pre-Build */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Run Script: Pre-Build";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "[[ -r ~/.bashrc ]] && . ~/.bashrc\n \"$SRCROOT/Scripts/BuildPhase-PreBuild.rb\"";
+			shellPath = /bin/bash;
+			shellScript = "[[ -r ~/.bashrc ]] && . ~/.bashrc\nmake verify";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -460,22 +428,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		801423301F1BB75500097325 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				DEVELOPMENT_TEAM = E27KE6VTF6;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Debug;
-		};
-		801423311F1BB75500097325 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				DEVELOPMENT_TEAM = E27KE6VTF6;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
 		8063581D1D98509C002DC5E2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -709,15 +661,6 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		8014232F1F1BB75500097325 /* Build configuration list for PBXAggregateTarget "Verify" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				801423301F1BB75500097325 /* Debug */,
-				801423311F1BB75500097325 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		8063581C1D98509C002DC5E2 /* Build configuration list for PBXNativeTarget "VST3NetSendKit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
