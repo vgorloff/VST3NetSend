@@ -205,8 +205,8 @@
 				80DC86181F1AA2F800DE7B32 /* Core */,
 				80DC86141F1A9AEE00DE7B32 /* Media */,
 			);
-			name = WL;
-			sourceTree = WL;
+			path = WL;
+			sourceTree = "<group>";
 		};
 		80DC86141F1A9AEE00DE7B32 /* Media */ = {
 			isa = PBXGroup;
