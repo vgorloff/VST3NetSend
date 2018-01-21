@@ -1,20 +1,16 @@
-### Xcode
-# gitignore contributors: remember to update Global/Xcode.gitignore, Objective-C.gitignore & Swift.gitignore
-
 ## OS X
 .DS_Store
-
-## IDE
-.idea
 
 ## Build generated
 /Build
 /DerivedData
+.tmp
 
 ## Package managers
 /Vendor/Carthage
 
-## Various settings
+## IDE
+.idea
 *.pbxuser
 !default.pbxuser
 *.mode1v3
@@ -25,19 +21,7 @@
 !default.perspectivev3
 xcuserdata
 xcbaselines
-
-## Other
 *.xccheckout
 *.moved-aside
 *.xcscmblueprint
-.tmp
-*.playground
 
-## Obj-C/Swift specific
-*.hmap
-*.ipa
-
-## Fastlane
-/fastlane/report.xml
-/fastlane/test_output
-/fastlane/README.md

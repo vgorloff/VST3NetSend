@@ -1,11 +1,12 @@
 # Info:
-# - [ Travis CI for iOS · objc.io ]( https://www.objc.io/issues/6-build-tools/travis-ci/ )
-# - [ Travis CI Tutorial: Getting Started - Ray Wenderlich ]( http://www.raywenderlich.com/109418/travis-ci-tutorial )
+# - Travis CI for iOS · objc.io: https://www.objc.io/issues/6-build-tools/travis-ci/
+# - Travis CI Tutorial: Getting Started - Ray Wenderlich:  http://www.raywenderlich.com/109418/travis-ci-tutorial
+# - Building an Objective-C or Swift Project: https://docs.travis-ci.com/user/languages/objective-c/
 
 language: objective-c
-osx_image: xcode9
+osx_image: xcode9.2
 before_install: gem update fastlane --no-ri --no-rdoc --no-document
-script: Vendor/WL/Conf/Scripts/travis.sh
+script: make ci
 
 branches:
   only:
