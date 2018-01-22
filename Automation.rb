@@ -4,7 +4,8 @@ require 'yaml'
 
 class Automation
 
-   XCodeProjectFilePath = ENV['PWD'] + "/VST3NetSend.xcodeproj"
+   GitRepoDirPath = ENV['PWD']
+   XCodeProjectFilePath = GitRepoDirPath + "/VST3NetSend.xcodeproj"
    XCodeProjectSchema = "VST3NetSend"
       
    def self.build()
@@ -16,31 +17,42 @@ class Automation
    end
    
    def self.release()
-      # XcodeBuilder.new(XCodeProjectFilePath).archive(XCodeProjectSchema, "Release", true)
-      apps = Dir["#{ENV['PWD']}/**/*.xcarchive/**/*.vst3"].select { |f| File.directory?(f) }
+      XcodeBuilder.new(XCodeProjectFilePath).archive(XCodeProjectSchema, "Release", true)
+      apps = Dir["#{GitRepoDirPath}/**/*.xcarchive/**/*.vst3"].select { |f| File.directory?(f) }
       apps.each { |app| Archive.zip(app) }
       apps.each { |app| XcodeBuilder.validateBinary(app) }
    end
    
    def self.verify()
-      puts "OK"
-      # changedFiles = GitStatus.new(GitRepoDirPath).changedFiles
-     #  if Tool.verifyEnvironment("Check Headers")
-     #     puts "→ Checking headers..."
-     #     puts FileHeaderChecker.new(["VST3NetSend", "WaveLabs"]).analyseFiles(changedFiles)
-     #  end
-     #  if Tool.canRunSwiftLint()
-     #     puts "→ Linting..."
-     #     changedFiles.select { |f| File.extname(f) == ".swift" }.each { |f|
-     #        puts `swiftlint lint --quiet --config \"#{GitRepoDirPath}/.swiftlint.yml\" --path \"#{f}\"`
-     #     }
-     #  end
+      t = Tool.new()
+      l = Linter.new(GitRepoDirPath)
+      h = FileHeaderChecker.new(["VST3NetSend", "WaveLabs"])
+      if t.isXcodeBuild
+         if t.canRunActions("Verification")
+            changedFiles = GitStatus.new(GitRepoDirPath).changedFiles()
+            puts "→ Checking headers..."
+            puts h.analyseFiles(changedFiles)
+            if l.canRunSwiftLint()
+               puts "→ Linting..."
+               l.lintFiles(changedFiles)
+            end
+         end
+      else
+         puts h.analyseDir(GitRepoDirPath)
+         if l.canRunSwiftFormat()
+            puts "→ Correcting sources (SwiftFormat)..."
+            l.correctWithSwiftFormat()
+         end
+         if l.canRunSwiftLint()
+            puts "→ Correcting sources (SwiftLint)..."
+            l.correctWithSwiftLint()
+         end
+      end
    end
    
    def self.deploy()
-      currentDir = ENV['PWD']
-      assets = Dir["#{currentDir}/**/*.xcarchive/**/*.vst3.zip"]
-      releaseInfo = YAML.load_file("#{currentDir}/Configuration/Release.yml")
+      assets = Dir["#{GitRepoDirPath}/**/*.xcarchive/**/*.vst3.zip"]
+      releaseInfo = YAML.load_file("#{GitRepoDirPath}/Configuration/Release.yml")
       releaseName = releaseInfo['name']
       releaseDescription = releaseInfo['description'].map { |l| "* #{l}"}.join("\n")
       gh = GitHubRepo.new("vgorloff", "VST3NetSend")
