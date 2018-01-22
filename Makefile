@@ -1,21 +1,20 @@
-
-XCodeProjectFilePath = ${PWD}/VST3NetSend.xcodeproj
-XCodeProjectSchema = VST3NetSend
-
 default:
 	@echo "Available actions:"
-	@echo " - build:  Make build."
-	@echo " - clean:  Clean project."
-	@echo " - ci:     Make CI build."
-	@echo " - verify: Verify sources."
-
-build:
-	@ruby -r "`pwd`/Vendor/WL/Scripts/lib/Core.rb" -e "XcodeBuilder.new(\"$(XCodeProjectFilePath)\").build(\"$(XCodeProjectSchema)\")"
-	
-clean:
-	@ruby -r "`pwd`/Vendor/WL/Scripts/lib/Core.rb" -e "XcodeBuilder.new(\"$(XCodeProjectFilePath)\").clean(\"$(XCodeProjectSchema)\")"
+	@cat Makefile | grep ":$$" | sed 's/://' | xargs -I{} echo " - make {}"
 
 ci: clean build
 
+build:
+	@ruby -r "`pwd`/Automation.rb" -e "Automation.build"
+	
+clean:
+	@ruby -r "`pwd`/Automation.rb" -e "Automation.clean"
+	
+release:
+	@ruby -r "`pwd`/Automation.rb" -e "Automation.release"
+
 verify:
-	@echo "OK"
+	@ruby -r "`pwd`/Automation.rb" -e "Automation.verify"
+	
+deploy:
+	@ruby -r "`pwd`/Automation.rb" -e "Automation.deploy"
