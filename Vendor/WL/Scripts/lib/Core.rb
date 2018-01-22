@@ -1,2 +1,6 @@
 require_relative 'Core/XcodeBuilder.rb'
 require_relative 'Core/Archive.rb'
+require_relative 'Core/Tool.rb'
+require_relative 'Core/GitStatus.rb'
+require_relative 'Core/Linter.rb'
+require_relative 'Core/FileHeaderChecker.rb'
