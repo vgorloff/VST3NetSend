@@ -1,4 +1,6 @@
 require_relative "Vendor/WL/Scripts/lib/Core.rb"
+require_relative "Vendor/WL/Scripts/lib/Services.rb"
+require 'yaml'
 
 class Automation
 
@@ -36,16 +38,14 @@ class Automation
    end
    
    def self.deploy()
-      assets = Dir["#{ENV['PWD']}/**/*.xcarchive/**/*.vst3.zip"]
-      releaseName = File.read("#{ENV['PWD']}/Configuration/ReleaseName.txt").strip
-      releaseDescription = File.read("#{ENV['PWD']}/Configuration/ReleaseNotes.txt").strip
-      puts assets
-      puts releaseName
-      puts releaseDescription
-      # github_release = set_github_release(
-#         repository_name: "vgorloff/VST3NetSend", api_token: ENV['AWL_GITHUB_TOKEN'], name: releaseName, tag_name: last_git_tag,
-#         description: releaseDescription, commitish: "master", upload_assets: assets
-#       )
+      currentDir = ENV['PWD']
+      assets = Dir["#{currentDir}/**/*.xcarchive/**/*.vst3.zip"]
+      releaseInfo = YAML.load_file("#{currentDir}/Configuration/Release.yml")
+      releaseName = releaseInfo['name']
+      releaseDescription = releaseInfo['description'].map { |l| "* #{l}"}.join("\n")
+      gh = GitHubRepo.new("vgorloff", "VST3NetSend")
+      gh.release("1.0.8", releaseName, releaseDescription)
+      assets.each { |f| gh.uploadReleaseAsset(f) }
    end
 
 end
