@@ -1,6 +1,8 @@
 require 'fileutils'
 require_relative 'Extensions/AnsiTextStyles.rb'
 
+String.include(AnsiTextStyles)
+
 module BuildConfiguration
   DEBUG = 'Debug'
   RELEASE = 'Release'
