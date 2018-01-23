@@ -1,5 +1,7 @@
 require 'fileutils'
+require 'tmpdir'
 require_relative 'Extensions/AnsiTextStyles.rb'
+require_relative 'PlistTool.rb'
 
 String.include(AnsiTextStyles)
 
@@ -21,6 +23,7 @@ class XcodeBuilder
     @commonArgsXCPretty = "| xcpretty --color --simple"
     @buildExecutable = "set -o pipefail && xcrun xcodebuild"
     @derivedDataPath = " -derivedDataPath \"#{@buildDir}\" "
+    @exportPlistFilePath = Dir::Tmpname.make_tmpname("/tmp/ruby-automation.xcodeBuilder.", ".xml")
   end
 
   def build(schema, configuration = nil)
@@ -39,15 +42,15 @@ class XcodeBuilder
     c = configuration == nil ? "" : "-configuration #{configuration}"
     archivePath = "#{@buildDir}/#{schema}.xcarchive"
     exportPath = "#{@buildDir}/#{schema}.export"
-    exportOptionsPath = "#{File.realpath(File.dirname(__FILE__))}/Resources/xcode.exportOptions.macOS.plist"
     puts "→ Building archive to \"#{archivePath}\"".green
     cmd = "#{@buildExecutable} -project \"#{@projectFilePath}\" -scheme \"#{schema}\" -archivePath \"#{archivePath}\" #{c} #{@derivedDataPath} archive #{@commonArgsXCPretty}"
     system(cmd)
     if skipExport
       return
     end
+    prepareExportOptionsPlist()
     puts "→ Exporting archive to \"#{exportPath}\"".green
-    cmd = "xcodebuild -exportArchive -archivePath \"#{archivePath}\" -exportPath \"#{exportPath}\" -exportOptionsPlist \"#{exportOptionsPath}\" "
+    cmd = "xcodebuild -exportArchive -archivePath \"#{archivePath}\" -exportPath \"#{exportPath}\" -exportOptionsPlist \"#{@exportPlistFilePath}\" "
     system(cmd)
   end
 
@@ -84,5 +87,13 @@ class XcodeBuilder
     value = `#{cmd}`
     value = value.split("=").last.strip
     return value
+  end
+  
+  private
+  def prepareExportOptionsPlist()
+    p = PlistTool.new(@exportPlistFilePath)
+    p.addString("method", "development")
+    contents = File.readlines(@exportPlistFilePath).join()
+    puts contents
   end
 end

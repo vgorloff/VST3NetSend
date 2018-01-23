@@ -2,7 +2,9 @@ default:
 	@echo "Available actions:"
 	@cat Makefile | grep ":$$" | sed 's/://' | xargs -I{} echo " - make {}"
 
-ci: clean build
+ci:
+	@make clean
+	@make build
 
 build:
 	@ruby -r "`pwd`/Automation.rb" -e "Automation.build"
