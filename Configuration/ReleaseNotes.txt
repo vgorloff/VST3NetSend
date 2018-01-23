@@ -1,0 +1,2 @@
+* Core Audio SDK usage replaced with AVFoundation APIs.
+* Xcode 9 beta 3 compatibility update.
