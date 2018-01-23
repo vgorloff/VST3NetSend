@@ -17,9 +17,12 @@ public struct Log {
       case net
       case media
       case io
+      case service
       case model
       case view
       case controller
+      case viewModel
+      case test
    }
 
    public enum Category: Int {
@@ -30,9 +33,13 @@ public struct Log {
       case event
       case fetch
       case access
+      case processing
+      case save
+      case diagnostics
    }
 
    fileprivate static var loggers = [Int: OSLog]()
+   fileprivate static let isUnderTesting = NSClassFromString("XCTestCase") != nil
 }
 
 extension Log {
@@ -40,8 +47,23 @@ extension Log {
    public static func initialize(subsystem: Subsystem, function: String = #function, file: String = #file, line: Int32 = #line,
                                  dso: UnsafeRawPointer? = #dsohandle) {
       if #available(OSX 10.12, iOS 10.0, *) {
-         let logger = getLogger(subsystem: subsystem, category: .initialise)
+         guard !isUnderTesting else {
+            return
+         }
+         let logger = osLog(subsystem: subsystem, category: .initialise)
          let message = format("+++", function: function, file: file, line: line)
+         os_log("%{public}@", dso: dso, log: logger, type: .debug, message)
+      }
+   }
+
+   public static func initialize(subsystem: Subsystem, message: String, function: String = #function, file: String = #file,
+                                 line: Int32 = #line, dso: UnsafeRawPointer? = #dsohandle) {
+      if #available(OSX 10.12, iOS 10.0, *) {
+         guard !isUnderTesting else {
+            return
+         }
+         let logger = osLog(subsystem: subsystem, category: .initialise)
+         let message = format("+++ \(message)", function: function, file: file, line: line)
          os_log("%{public}@", dso: dso, log: logger, type: .debug, message)
       }
    }
@@ -49,8 +71,23 @@ extension Log {
    public static func deinitialize(subsystem: Subsystem, function: String = #function, file: String = #file, line: Int32 = #line,
                                    dso: UnsafeRawPointer? = #dsohandle) {
       if #available(OSX 10.12, iOS 10.0, *) {
-         let logger = getLogger(subsystem: subsystem, category: .deinitialize)
+         guard !isUnderTesting else {
+            return
+         }
+         let logger = osLog(subsystem: subsystem, category: .deinitialize)
          let message = format("~~~", function: function, file: file, line: line)
+         os_log("%{public}@", dso: dso, log: logger, type: .debug, message)
+      }
+   }
+
+   public static func deinitialize(subsystem: Subsystem, message: String, function: String = #function, file: String = #file,
+                                   line: Int32 = #line, dso: UnsafeRawPointer? = #dsohandle) {
+      if #available(OSX 10.12, iOS 10.0, *) {
+         guard !isUnderTesting else {
+            return
+         }
+         let logger = osLog(subsystem: subsystem, category: .deinitialize)
+         let message = format("~~~ \(message)", function: function, file: file, line: line)
          os_log("%{public}@", dso: dso, log: logger, type: .debug, message)
       }
    }
@@ -58,57 +95,59 @@ extension Log {
    public static func fault(subsystem: Subsystem, category: Category, message: String, function: String = #function,
                             file: String = #file, line: Int32 = #line, dso: UnsafeRawPointer? = #dsohandle) {
       if #available(OSX 10.12, iOS 10.0, *) {
-         let logger = getLogger(subsystem: subsystem, category: category)
+         let logger = osLog(subsystem: subsystem, category: category)
          let message = format(message, function: function, file: file, line: line)
          os_log("%{public}@", dso: dso, log: logger, type: .fault, message)
       }
    }
 
-   public static func error(subsystem: Subsystem, category: Category, message: String, function: String = #function,
+   public static func error(subsystem: Subsystem, category: Category = .generic, message: String, function: String = #function,
                             file: String = #file, line: Int32 = #line, dso: UnsafeRawPointer? = #dsohandle) {
       if #available(OSX 10.12, iOS 10.0, *) {
-         let logger = getLogger(subsystem: subsystem, category: category)
+         let logger = osLog(subsystem: subsystem, category: category)
          let message = format(message, function: function, file: file, line: line)
          os_log("%{public}@", dso: dso, log: logger, type: .error, message)
       }
    }
 
-   public static func error<T>(subsystem: Subsystem, category: Category, object: T, function: String = #function,
+   public static func error<T>(subsystem: Subsystem, category: Category = .generic, object: T, function: String = #function,
                                file: String = #file, line: Int32 = #line, dso: UnsafeRawPointer? = #dsohandle) {
       error(subsystem: subsystem, category: category, message: String(describing: object))
    }
 
-   public static func error(subsystem: Subsystem, category: Category, error: Swift.Error, function: String = #function,
-                            file: String = #file, line: Int32 = #line, dso: UnsafeRawPointer? = #dsohandle) {
+   public static func error(subsystem: Subsystem, category: Category = .generic, error: Swift.Error,
+                            function: String = #function, file: String = #file, line: Int32 = #line,
+                            dso: UnsafeRawPointer? = #dsohandle) {
       if #available(OSX 10.12, iOS 10.0, *) {
-         let logger = getLogger(subsystem: subsystem, category: category)
+         let logger = osLog(subsystem: subsystem, category: category)
          let message = format(error.localizedDescription, function: function, file: file, line: line)
          os_log("%{public}@", dso: dso, log: logger, type: .error, message)
       }
    }
 
-   public static func info(subsystem: Subsystem, category: Category, message: String, function: String = #function,
+   public static func info(subsystem: Subsystem, category: Category = .generic, message: String, function: String = #function,
                            file: String = #file, line: Int32 = #line, dso: UnsafeRawPointer? = #dsohandle) {
       if #available(OSX 10.12, iOS 10.0, *) {
-         let logger = getLogger(subsystem: subsystem, category: category)
+         let logger = osLog(subsystem: subsystem, category: category)
          let message = format(message, function: function, file: file, line: line)
          os_log("%{public}@", dso: dso, log: logger, type: .info, message)
       }
    }
 
-   public static func debug(subsystem: Subsystem, category: Category, message: String, function: String = #function,
+   public static func debug(subsystem: Subsystem, category: Category = .generic, message: String, function: String = #function,
                             file: String = #file, line: Int32 = #line, dso: UnsafeRawPointer? = #dsohandle) {
       if #available(OSX 10.12, iOS 10.0, *) {
-         let logger = getLogger(subsystem: subsystem, category: category)
+         let logger = osLog(subsystem: subsystem, category: category)
          let message = format(message, function: function, file: file, line: line)
          os_log("%{public}@", dso: dso, log: logger, type: .debug, message)
       }
    }
 
-   public static func `default`(subsystem: Subsystem, category: Category, message: String, function: String = #function,
-                                file: String = #file, line: Int32 = #line, dso: UnsafeRawPointer? = #dsohandle) {
+   public static func `default`(subsystem: Subsystem, category: Category = .generic, message: String,
+                                function: String = #function, file: String = #file, line: Int32 = #line,
+                                dso: UnsafeRawPointer? = #dsohandle) {
       if #available(OSX 10.12, iOS 10.0, *) {
-         let logger = getLogger(subsystem: subsystem, category: category)
+         let logger = osLog(subsystem: subsystem, category: category)
          let message = format(message, function: function, file: file, line: line)
          os_log("%{public}@", dso: dso, log: logger, type: .default, message)
       }
@@ -141,7 +180,8 @@ extension Log {
       }
    }
 
-   public static func debug(subsystem: Subsystem, category: Category, message: String, if expression: @autoclosure () -> Bool,
+   public static func debug(subsystem: Subsystem, category: Category = .generic, message: String,
+                            if expression: @autoclosure () -> Bool,
                             function: String = #function, file: String = #file, line: Int32 = #line,
                             dso: UnsafeRawPointer? = #dsohandle) {
       guard expression() else { return }
@@ -164,7 +204,7 @@ extension Log {
 extension Log {
 
    @available(OSX 10.12, iOS 10.0, *)
-   fileprivate static func getLogger(subsystem: Subsystem, category: Category) -> OSLog {
+   public static func osLog(subsystem: Subsystem, category: Category) -> OSLog {
       let key = subsystem.rawValue + category.rawValue
       if let logger = loggers[key] {
          return logger
@@ -195,6 +235,9 @@ extension Log.Subsystem {
       case .media: return "\(Log.vendorID).media"
       case .core: return "\(Log.vendorID).core"
       case .io: return "\(Log.vendorID).io"
+      case .viewModel: return "\(Log.vendorID).viewModel"
+      case .service: return "\(Log.vendorID).service"
+      case .test: return "\(Log.vendorID).test"
       }
    }
 }
@@ -213,6 +256,9 @@ extension Log.Category {
       case .response: return "Response"
       case .event: return "Event"
       case .access: return "Access"
+      case .processing: return "Processing"
+      case .save: return "Save"
+      case .diagnostics: return "Diagnostics"
       }
    }
 }
