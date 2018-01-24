@@ -5,7 +5,7 @@
 
 language: objective-c
 osx_image: xcode9.2
-before_install: gem update fastlane --no-ri --no-rdoc --no-document
+before_install: gem update fastlane escape_utils uri_template --no-ri --no-rdoc --no-document
 script: make ci
 
 branches:
