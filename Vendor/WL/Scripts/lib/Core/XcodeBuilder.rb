@@ -35,12 +35,18 @@ class XcodeBuilder
     c = configuration == nil ? "" : "-configuration #{configuration}"
     cmd = "#{@buildExecutable} -project \"#{@projectFilePath}\" -scheme \"#{schema}\" #{c} #{@derivedDataPath} build #{@commonArgsXCPretty}"
     system(cmd)
+    if $?.exitstatus != 0
+      raise "Build failed with status: #{$?.exitstatus}"
+    end
   end
 
   def test(schema, configuration = nil)
     c = configuration == nil ? "" : "-configuration #{configuration}"
     cmd = "#{@buildExecutable} -project \"#{@projectFilePath}\" -scheme \"#{schema}\" #{c} #{@derivedDataPath} test #{@commonArgsXCPretty}"
     system(cmd)
+    if $?.exitstatus != 0
+      raise "Test failed with status: #{$?.exitstatus}"
+    end
   end
  
   def archive(schema, configuration = nil, skipExport = false)
@@ -57,6 +63,9 @@ class XcodeBuilder
     puts "→ Exporting archive to \"#{exportPath}\"".green
     cmd = "xcodebuild -exportArchive -archivePath \"#{archivePath}\" -exportPath \"#{exportPath}\" -exportOptionsPlist \"#{@exportPlistFilePath}\" "
     system(cmd)
+    if $?.exitstatus != 0
+      raise "Archive failed with status: #{$?.exitstatus}"
+    end
   end
 
   def clean(schema)
@@ -75,6 +84,9 @@ class XcodeBuilder
     codesignSettings = "CODE_SIGNING_REQUIRED=NO CODE_SIGN_IDENTITY=''"
     cmd = "#{@buildExecutable} -project \"#{@projectFilePath}\" -scheme \"#{schema}\" -configuration Release #{codesignSettings}  #{@derivedDataPath} build #{@commonArgsXCPretty}"
     system(cmd)
+    if $?.exitstatus != 0
+      raise "Build failed with status: #{$?.exitstatus}"
+    end
   end
 
   def self.validateBinary(path)
