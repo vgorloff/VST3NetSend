@@ -34,7 +34,10 @@ class XcodeBuilder
   def build(schema, configuration = nil)
     c = configuration == nil ? "" : "-configuration #{configuration}"
     cmd = "#{@buildExecutable} -project \"#{@projectFilePath}\" -scheme \"#{schema}\" #{c} #{@derivedDataPath} build #{@commonArgsXCPretty}"
-    `#{cmd}`
+    system(cmd)
+    if $?.exitstatus != 0
+      raise "Build failed with status: #{$?.exitstatus}"
+    end
   end
 
   def test(schema, configuration = nil)
