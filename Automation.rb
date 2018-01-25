@@ -13,6 +13,7 @@ class Automation
    XCodeProjectSchema = "VST3NetSend"
       
    def self.build()
+      puts Tool.announceEnvVars
       XcodeBuilder.new(XCodeProjectFilePath).build(XCodeProjectSchema)
    end
    
