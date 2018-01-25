@@ -1,6 +1,10 @@
-require_relative "Vendor/WL/Scripts/lib/Core.rb"
-require_relative "Vendor/WL/Scripts/lib/Services.rb"
-require 'yaml'
+mainFile = "#{ENV['AWL_LIB_SRC']}/Scripts/Automation.rb"
+if File.exist?(mainFile)
+   require 'yaml'
+   require mainFile
+else
+   require_relative "Vendor/WL/Scripts/lib/Core.rb"
+end
 
 class Automation
 
@@ -24,6 +28,9 @@ class Automation
    end
    
    def self.verify()
+      if Tool.isCIServer
+         return
+      end
       t = Tool.new()
       l = Linter.new(GitRepoDirPath)
       h = FileHeaderChecker.new(["VST3NetSend", "WaveLabs"])
@@ -51,6 +58,9 @@ class Automation
    end
    
    def self.deploy()
+      if Tool.isCIServer
+         return
+      end
       assets = Dir["#{GitRepoDirPath}/**/*.xcarchive/**/*.vst3.zip"]
       releaseInfo = YAML.load_file("#{GitRepoDirPath}/Configuration/Release.yml")
       releaseName = releaseInfo['name']
