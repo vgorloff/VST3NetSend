@@ -20,9 +20,14 @@ class XcodeBuilder
     @buildRoot = buildRoot
     @projectFilePath = projectFilePath
     @buildDir = "#{buildRoot}/DerivedData"
-    @commonArgsXCPretty = "| xcpretty --color --simple"
-    @buildExecutable = "set -o pipefail && xcrun xcodebuild"
     @derivedDataPath = " -derivedDataPath \"#{@buildDir}\" "
+
+    @buildExecutable = 'xcrun xcodebuild'
+    @commonArgsXCPretty = ""
+    if !Tool.isTravisCI
+      @buildExecutable = "set -o pipefail && #{@buildExecutable}"
+      @commonArgsXCPretty = "| xcpretty --color --simple"
+    end
     @exportPlistFilePath = Dir::Tmpname.make_tmpname("/tmp/ruby-automation.xcodeBuilder.", ".xml")
   end
 
