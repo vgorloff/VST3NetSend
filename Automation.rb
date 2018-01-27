@@ -9,10 +9,12 @@ class Automation
    P12FilePath = GitRepoDirPath + '/Configuration/Development.p12'
    XCodeProjectFilePath = GitRepoDirPath + "/VST3NetSend.xcodeproj"
    XCodeProjectSchema = "VST3NetSend"
+   VSTSDKDirPath = GitRepoDirPath + "/Vendor/Steinberg"
       
    def self.ci()
       puts "→ Downloading dependencies..."
-      `git clone --branch vstsdk368_08_11_2017_build_121  https://github.com/steinbergmedia/vst3sdk.git`
+      FileUtils.mkdir_p VSTSDKDirPath
+      `cd #{VSTSDKDirPath} && git clone --branch vstsdk368_08_11_2017_build_121  https://github.com/steinbergmedia/vst3sdk.git`
       `cd vst3sdk && git submodule update --init base pluginterfaces public.sdk`
       puts "→ Preparing environment..."
       FileUtils.mkdir_p TmpDirPath

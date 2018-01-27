@@ -1,4 +1,4 @@
-name: Xcode 9.2 Compatibility update.
+name: Xcode 9.2 and VST SDK 3.6.8 Compatibility update.
 description:
    - Xcode project update.
    - Automation scripts update.
