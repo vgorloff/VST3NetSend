@@ -1,3 +1,4 @@
+require 'fileutils'
 mainFile = "#{ENV['AWL_LIB_SRC']}/Scripts/Automation.rb"
 if File.exist?(mainFile)
    require 'yaml'
@@ -9,11 +10,32 @@ end
 class Automation
 
    GitRepoDirPath = ENV['PWD']
+   TmpDirPath = GitRepoDirPath + "/.tmp"
+   KeyChainPath = TmpDirPath + "/VST3NetSend.keychain"
+   P12FilePath = GitRepoDirPath + '/Configuration/Development.p12'
    XCodeProjectFilePath = GitRepoDirPath + "/VST3NetSend.xcodeproj"
    XCodeProjectSchema = "VST3NetSend"
       
-   def self.build()
+   def self.ci()
+      FileUtils.mkdir_p TmpDirPath
       puts Tool.announceEnvVars
+      kc = KeyChain.create(KeyChainPath)
+      kc.setSettings()
+      kc.info()
+      kc.import(P12FilePath, ENV['AWL_P12_PASSWORD'], ["/usr/bin/codesign"])
+      KeyChain.setDefault(kc.nameOrPath)
+      begin
+         clean()
+         build()
+         KeyChain.setDefault(KeyChain.login)
+         KeyChain.delete(kc.nameOrPath)
+      rescue
+         KeyChain.setDefault(KeyChain.login)
+         KeyChain.delete(kc.nameOrPath)
+      end
+   end
+   
+   def self.build()
       XcodeBuilder.new(XCodeProjectFilePath).build(XCodeProjectSchema)
    end
    
