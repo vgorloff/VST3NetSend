@@ -12,10 +12,10 @@ class Automation
    VSTSDKDirPath = GitRepoDirPath + "/Vendor/Steinberg"
       
    def self.ci()
+      puts "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
       puts "→ Downloading dependencies..."
       FileUtils.mkdir_p VSTSDKDirPath
       `cd \"#{VSTSDKDirPath}\" && git clone --branch vstsdk368_08_11_2017_build_121  https://github.com/steinbergmedia/vst3sdk.git`
-      `ls -l \"#{VSTSDKDirPath}\"`
       `cd \"#{VSTSDKDirPath}/vst3sdk\" && git submodule update --init base pluginterfaces public.sdk`
       
       puts "→ Preparing environment..."
@@ -30,6 +30,7 @@ class Automation
       kc.info()
       kc.import(P12FilePath, ENV['AWL_P12_PASSWORD'], ["/usr/bin/codesign"])
       KeyChain.setDefault(kc.nameOrPath)
+      puts "→ Default keychain now: #{KeyChain.default}"
       begin
          puts "→ Making build..."
          clean()
@@ -40,6 +41,7 @@ class Automation
       rescue
          KeyChain.setDefault(defaultKeyChain)
          KeyChain.delete(kc.nameOrPath)
+         puts "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
          raise
       end
    end
