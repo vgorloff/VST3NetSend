@@ -1,6 +1,9 @@
 ## OS X
 .DS_Store
 
+## Local developer settings
+Developer.xcconfig
+
 ## Build generated
 /Build
 /DerivedData
