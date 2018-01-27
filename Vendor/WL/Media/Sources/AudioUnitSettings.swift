@@ -60,7 +60,7 @@ public struct AudioUnitSettings {
       do {
          let data = UnsafeMutablePointer<T>.allocate(capacity: 1)
          defer {
-            data.deallocate(capacity: 1)
+            data.deallocate()
          }
          var dataSize = expectedDataSize
          let status = AudioUnitGetProperty(unit, propertyID, scope.value, element, data, &dataSize)
