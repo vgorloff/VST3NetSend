@@ -10,3 +10,8 @@
 
 GCC_PREPROCESSOR_DEFINITIONS_NOT_USED_IN_PRECOMPS = APP_PROJECT_VERSION=\"$(APP_PROJECT_VERSION)\" APP_BUNDLE_VERSION=\"$(APP_BUNDLE_VERSION)\" $(inherited)
 HEADER_SEARCH_PATHS = $(GV_VST_SDK)
+
+DEVELOPMENT_TEAM = E27KE6VTF6
+
+// You can use this file to override project settings (such as DEVELOPMENT_TEAM, File/Framework Search Paths, etc.)
+#include? "Developer.xcconfig"
