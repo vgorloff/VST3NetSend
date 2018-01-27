@@ -512,7 +512,6 @@
 				PRODUCT_BUNDLE_IDENTIFIER = ua.com.wavelabs.vst3.VST3NetSendKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 4.0;
 			};
@@ -612,7 +611,6 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				SDKROOT = macosx;
-				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VALID_ARCHS = x86_64;
 			};
@@ -640,10 +638,6 @@
 					"$(inherited)",
 				);
 				GENERATE_PKGINFO_FILE = YES;
-				HEADER_SEARCH_PATHS = (
-					"$(GV_VST_SDK)",
-					"$(GV_COREAUDIO_SDK)",
-				);
 				INFOPLIST_FILE = Sources/VST/Info.plist;
 				INSTALL_PATH = "/Library/Audio/Plug-Ins/VST3/WaveLabs";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks @loader_path/../Frameworks";
@@ -675,10 +669,6 @@
 					"$(inherited)",
 				);
 				GENERATE_PKGINFO_FILE = YES;
-				HEADER_SEARCH_PATHS = (
-					"$(GV_VST_SDK)",
-					"$(GV_COREAUDIO_SDK)",
-				);
 				INFOPLIST_FILE = Sources/VST/Info.plist;
 				INSTALL_PATH = "/Library/Audio/Plug-Ins/VST3/WaveLabs";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks @loader_path/../Frameworks";

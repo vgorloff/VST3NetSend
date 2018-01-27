@@ -1,11 +1,5 @@
-require 'fileutils'
-mainFile = "#{ENV['AWL_LIB_SRC']}/Scripts/Automation.rb"
-if File.exist?(mainFile)
-   require 'yaml'
-   require mainFile
-else
-   require_relative "Vendor/WL/Scripts/lib/Core.rb"
-end
+MainFile = "#{ENV['AWL_LIB_SRC']}/Scripts/Automation.rb"
+if File.exist?(MainFile) then require MainFile else require_relative "Vendor/WL/Scripts/lib/Core.rb" end
 
 class Automation
 
@@ -17,21 +11,26 @@ class Automation
    XCodeProjectSchema = "VST3NetSend"
       
    def self.ci()
+      puts "→ Preparing environment..."
       FileUtils.mkdir_p TmpDirPath
       puts Tool.announceEnvVars
+      puts "→ Setting up keychain..."
       kc = KeyChain.create(KeyChainPath)
       kc.setSettings()
       kc.info()
       kc.import(P12FilePath, ENV['AWL_P12_PASSWORD'], ["/usr/bin/codesign"])
       KeyChain.setDefault(kc.nameOrPath)
       begin
+         puts "→ Making build..."
          clean()
          build()
+         puts "→ Making cleanup..."
          KeyChain.setDefault(KeyChain.login)
          KeyChain.delete(kc.nameOrPath)
       rescue
          KeyChain.setDefault(KeyChain.login)
          KeyChain.delete(kc.nameOrPath)
+         raise
       end
    end
    
@@ -84,6 +83,7 @@ class Automation
       if Tool.isCIServer
          return
       end
+      require 'yaml'
       assets = Dir["#{GitRepoDirPath}/**/*.xcarchive/**/*.vst3.zip"]
       releaseInfo = YAML.load_file("#{GitRepoDirPath}/Configuration/Release.yml")
       releaseName = releaseInfo['name']
