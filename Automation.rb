@@ -17,11 +17,15 @@ class Automation
       `cd \"#{VSTSDKDirPath}\" && git clone --branch vstsdk368_08_11_2017_build_121  https://github.com/steinbergmedia/vst3sdk.git`
       `ls -l \"#{VSTSDKDirPath}\"`
       `cd \"#{VSTSDKDirPath}/vst3sdk\" && git submodule update --init base pluginterfaces public.sdk`
+      
       puts "→ Preparing environment..."
       FileUtils.mkdir_p TmpDirPath
       puts Tool.announceEnvVars
       puts "→ Setting up keychain..."
       kc = KeyChain.create(KeyChainPath)
+      puts KeyChain.list
+      defaultKeyChain = KeyChain.default
+      puts "→ Default keychain: #{defaultKeyChain}"
       kc.setSettings()
       kc.info()
       kc.import(P12FilePath, ENV['AWL_P12_PASSWORD'], ["/usr/bin/codesign"])
@@ -31,10 +35,10 @@ class Automation
          clean()
          build()
          puts "→ Making cleanup..."
-         KeyChain.setDefault(KeyChain.login)
+         KeyChain.setDefault(defaultKeyChain)
          KeyChain.delete(kc.nameOrPath)
       rescue
-         KeyChain.setDefault(KeyChain.login)
+         KeyChain.setDefault(defaultKeyChain)
          KeyChain.delete(kc.nameOrPath)
          raise
       end
