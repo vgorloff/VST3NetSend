@@ -11,6 +11,9 @@ class Automation
    XCodeProjectSchema = "VST3NetSend"
       
    def self.ci()
+      puts "→ Downloading dependencies..."
+      `git clone --branch vstsdk368_08_11_2017_build_121  https://github.com/steinbergmedia/vst3sdk.git`
+      `cd vst3sdk && git submodule update --init base pluginterfaces public.sdk`
       puts "→ Preparing environment..."
       FileUtils.mkdir_p TmpDirPath
       puts Tool.announceEnvVars
