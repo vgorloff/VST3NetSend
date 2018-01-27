@@ -3,8 +3,7 @@ default:
 	@cat Makefile | grep ":$$" | sed 's/://' | xargs -I{} echo " - make {}"
 
 ci:
-	@make clean
-	@make build
+	@ruby -r "`pwd`/Automation.rb" -e "Automation.ci"
 
 build:
 	@ruby -r "`pwd`/Automation.rb" -e "Automation.build"
