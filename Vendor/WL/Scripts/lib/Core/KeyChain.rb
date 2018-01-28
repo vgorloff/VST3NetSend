@@ -1,5 +1,9 @@
 require_relative 'Tool.rb'
 
+# Info:
+# - https://github.com/stuartervine/xcode-sh/blob/master/build.sh
+# - http://blog.koehntopp.info/index.php/143-command-line-access-to-the-mac-keychain/
+
 class KeyChain
 
   def initialize(nameOrPath, password)
@@ -72,6 +76,22 @@ class KeyChain
   def unlock()
     cmd = "#{exe} unlock-keychain -p #{@password} \"#{@nameOrPath}\""
     system(cmd)
+  end
+  
+  def dump()
+    cmd = "#{exe} dump-keychain -a \"#{@nameOrPath}\""
+    system(cmd)
+  end
+  
+  def setKeyPartitionList(list, options = nil)
+    list = list.join(',')
+    options = options ? options : ""
+    cmd = "#{exe} set-key-partition-list -S #{list} -k #{@password} #{options} \"#{@nameOrPath}\""
+    system(cmd)
+  end
+  
+  def setKeyCodesignPartitionList()
+    setKeyPartitionList(['apple-tool:', 'apple:', 'codesign:'], '-s')
   end
   
   def import(filePath, passphrase, tools = nil)
