@@ -8,5 +8,13 @@
 
 #include "Version.xcconfig"
 
-GCC_PREPROCESSOR_DEFINITIONS_NOT_USED_IN_PRECOMPS = AWL_MARKETING_VERSION=\"$(AWL_MARKETING_VERSION)\" AWL_BUILD_VERSION=\"$(AWL_BUILD_VERSION)\" $(inherited)
-HEADER_SEARCH_PATHS = $(GV_VST_SDK)
+GV_VST_SDK = Vendor/Steinberg/vst3sdk
+
+GCC_PREPROCESSOR_DEFINITIONS_NOT_USED_IN_PRECOMPS = APP_PROJECT_VERSION=\"$(APP_PROJECT_VERSION)\" APP_BUNDLE_VERSION=\"$(APP_BUNDLE_VERSION)\" $(inherited)
+HEADER_SEARCH_PATHS = $(GV_VST_SDK)/**
+
+DEVELOPMENT_TEAM = E27KE6VTF6
+
+// You can use this file to override project settings (such as DEVELOPMENT_TEAM, GV_VST_SDK, File/Framework Search Paths, etc.)
+#include? "Developer.xcconfig"
+
