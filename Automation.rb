@@ -32,6 +32,8 @@ class Automation
       kc.setSettings()
       kc.info()
       kc.import(P12FilePath, ENV['AWL_P12_PASSWORD'], ["/usr/bin/codesign"])
+      kc.setKeyCodesignPartitionList()
+      kc.dump()
       KeyChain.setDefault(kc.nameOrPath)
       puts "→ Default keychain now: #{KeyChain.default}"
       begin
