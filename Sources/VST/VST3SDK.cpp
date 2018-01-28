@@ -22,7 +22,7 @@
 #include "base/source/fbuffer.cpp"
 #include "base/source/fdebug.cpp"
 #include "base/source/fdynlib.cpp"
-#include "base/source/flock.cpp"
+#include "base/thread/source/flock.cpp"
 #include "base/source/fobject.cpp"
 #include "base/source/fstreamer.cpp"
 #include "base/source/fstring.cpp"
@@ -30,6 +30,7 @@
 #include "base/source/updatehandler.cpp"
 #include "pluginterfaces/base/conststringtable.cpp"
 #include "pluginterfaces/base/funknown.cpp"
+#include "pluginterfaces/base/coreiids.cpp"
 
 // Others
 #include "pluginterfaces/base/ustring.cpp"

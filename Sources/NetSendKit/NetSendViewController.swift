@@ -11,12 +11,12 @@ import Cocoa
 public class NetSendViewController: NSViewController {
 
    fileprivate lazy var viewModelObjectController: NSObjectController = NSObjectController(content: self.viewModel)
-   @objc public private (set) lazy var viewModel = NetSendViewModel()
+   @objc public private(set) lazy var viewModel = NetSendViewModel()
    @objc public var modelChangeHandler: ((NetSendParameter) -> Void)?
 
    fileprivate var observers = [NSKeyValueObservation]()
 
-   required public init?(coder: NSCoder) {
+   public required init?(coder: NSCoder) {
       super.init(coder: coder)
       Log.initialize(subsystem: .controller)
    }

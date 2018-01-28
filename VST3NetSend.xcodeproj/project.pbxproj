@@ -6,20 +6,6 @@
 	objectVersion = 48;
 	objects = {
 
-/* Begin PBXAggregateTarget section */
-		8014232E1F1BB75500097325 /* Verify */ = {
-			isa = PBXAggregateTarget;
-			buildConfigurationList = 8014232F1F1BB75500097325 /* Build configuration list for PBXAggregateTarget "Verify" */;
-			buildPhases = (
-				801423321F1BB76400097325 /* Run Script: Pre-Build */,
-			);
-			dependencies = (
-			);
-			name = Verify;
-			productName = Verify;
-		};
-/* End PBXAggregateTarget section */
-
 /* Begin PBXBuildFile section */
 		802A6FB71A0997690050FA46 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 802A6FB61A0997690050FA46 /* CoreAudio.framework */; };
 		8063581B1D98509C002DC5E2 /* VST3NetSendKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 806358191D98509C002DC5E2 /* VST3NetSendKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -139,6 +125,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1CED1938EB83A8F081A706C9 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				B6F8D83D0607D4E83280300D /* Logging */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		2C341AFE6E1AE0C72F53A036 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				1CED1938EB83A8F081A706C9 /* Components */,
+				8063582D1D9858EC002DC5E2 /* IntegerFormatter.swift */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
 		806358181D98509C002DC5E2 /* NetSendKit */ = {
 			isa = PBXGroup;
 			children = (
@@ -170,7 +173,6 @@
 			isa = PBXGroup;
 			children = (
 				80733FB41D9889F200756AE4 /* Info.plist */,
-				80733FB51D9889F200756AE4 /* Prefix.h */,
 				CE966E91169A007B0000E00A /* NetSendController.cpp */,
 				CE966E92169A007B0000E00A /* NetSendController.h */,
 				CE966E93169A007B0000E00A /* NetSendFactory.cpp */,
@@ -181,6 +183,7 @@
 				CE966F2A169A5C470000E00A /* NetSendProcessorState.h */,
 				CE966E9F169A20580000E00A /* NetSendView.h */,
 				CE966E9E169A20580000E00A /* NetSendView.mm */,
+				80733FB51D9889F200756AE4 /* Prefix.h */,
 				CE966E96169A007B0000E00A /* VST3SDK.cpp */,
 			);
 			path = VST;
@@ -206,27 +209,34 @@
 		80DC86141F1A9AEE00DE7B32 /* Media */ = {
 			isa = PBXGroup;
 			children = (
-				80DC861D1F1ABCBE00DE7B32 /* AudioUnitSettings.swift */,
-				80DC86151F1A9AEE00DE7B32 /* Extensions */,
+				BA97A3B0C814C137BDB31E2A /* Sources */,
 			);
 			path = Media;
-			sourceTree = "<group>";
-		};
-		80DC86151F1A9AEE00DE7B32 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				80DC86161F1A9AEE00DE7B32 /* AudioComponentDescription.swift */,
-			);
-			path = Extensions;
 			sourceTree = "<group>";
 		};
 		80DC86181F1AA2F800DE7B32 /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				8063582D1D9858EC002DC5E2 /* IntegerFormatter.swift */,
-				80DC86191F1AA2F800DE7B32 /* Log.swift */,
+				2C341AFE6E1AE0C72F53A036 /* Sources */,
 			);
 			path = Core;
+			sourceTree = "<group>";
+		};
+		B6F8D83D0607D4E83280300D /* Logging */ = {
+			isa = PBXGroup;
+			children = (
+				80DC86191F1AA2F800DE7B32 /* Log.swift */,
+			);
+			path = Logging;
+			sourceTree = "<group>";
+		};
+		BA97A3B0C814C137BDB31E2A /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				FF4D480EBE9A9FB9E914D394 /* Extensions */,
+				80DC861D1F1ABCBE00DE7B32 /* AudioUnitSettings.swift */,
+			);
+			path = Sources;
 			sourceTree = "<group>";
 		};
 		CE0534441699F5690013307E = {
@@ -243,8 +253,8 @@
 		CE0534501699F5690013307E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				CE05344F1699F5690013307E /* VST3NetSend.vst3 */,
 				806358171D98509C002DC5E2 /* VST3NetSendKit.framework */,
+				CE05344F1699F5690013307E /* VST3NetSend.vst3 */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -252,11 +262,11 @@
 		CE0534511699F5690013307E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				802A6FB61A0997690050FA46 /* CoreAudio.framework */,
+				CE0534551699F5690013307E /* AppKit.framework */,
 				CE966F30169A985C0000E00A /* AudioToolbox.framework */,
 				CE966F17169A32960000E00A /* AudioUnit.framework */,
 				CE0534521699F5690013307E /* Cocoa.framework */,
-				CE0534551699F5690013307E /* AppKit.framework */,
+				802A6FB61A0997690050FA46 /* CoreAudio.framework */,
 				CE0534561699F5690013307E /* CoreData.framework */,
 				CE0534571699F5690013307E /* Foundation.framework */,
 			);
@@ -270,6 +280,14 @@
 				80DC85F31F1A885000DE7B32 /* VST */,
 			);
 			path = Sources;
+			sourceTree = "<group>";
+		};
+		FF4D480EBE9A9FB9E914D394 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				80DC86161F1A9AEE00DE7B32 /* AudioComponentDescription.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -331,21 +349,16 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = GV;
-				LastUpgradeCheck = 0900;
+				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = "Vlad Gorlov";
 				TargetAttributes = {
-					8014232E1F1BB75500097325 = {
-						CreatedOnToolsVersion = 9.0;
-					};
 					806358161D98509C002DC5E2 = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = E27KE6VTF6;
 						LastSwiftMigration = 0900;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 					CE05344E1699F5690013307E = {
-						DevelopmentTeam = E27KE6VTF6;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 				};
 			};
@@ -363,7 +376,6 @@
 			targets = (
 				CE05344E1699F5690013307E /* VST3NetSend */,
 				806358161D98509C002DC5E2 /* VST3NetSendKit */,
-				8014232E1F1BB75500097325 /* Verify */,
 			);
 		};
 /* End PBXProject section */
@@ -398,22 +410,8 @@
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "[[ -r ~/.bashrc ]] && . ~/.bashrc\n \"$SRCROOT/Scripts/BuildPhase-PreBuild.rb\"";
-		};
-		801423321F1BB76400097325 /* Run Script: Pre-Build */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Run Script: Pre-Build";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "[[ -r ~/.bashrc ]] && . ~/.bashrc\n \"$SRCROOT/Scripts/BuildPhase-PreBuild.rb\"";
+			shellPath = /bin/bash;
+			shellScript = "[[ -r ~/.bashrc ]] && . ~/.bashrc\nmake verify";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -461,35 +459,17 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		801423301F1BB75500097325 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				DEVELOPMENT_TEAM = E27KE6VTF6;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Debug;
-		};
-		801423311F1BB75500097325 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				DEVELOPMENT_TEAM = E27KE6VTF6;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
 		8063581D1D98509C002DC5E2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				APPLICATION_EXTENSION_API_ONLY = YES;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "Mac Developer";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = "$(AWL_BUILD_VERSION)";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CURRENT_PROJECT_VERSION = "$(APP_BUNDLE_VERSION)";
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = "";
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = "$(AWL_BUILD_VERSION)";
+				DYLIB_COMPATIBILITY_VERSION = "$(APP_BUNDLE_VERSION)";
+				DYLIB_CURRENT_VERSION = "$(APP_BUNDLE_VERSION)";
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				FRAMEWORK_VERSION = A;
@@ -504,7 +484,6 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ua.com.wavelabs.vst3.VST3NetSendKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -518,13 +497,11 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				APPLICATION_EXTENSION_API_ONLY = YES;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "Mac Developer";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = "$(AWL_BUILD_VERSION)";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CURRENT_PROJECT_VERSION = "$(APP_BUNDLE_VERSION)";
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = "";
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = "$(AWL_BUILD_VERSION)";
+				DYLIB_COMPATIBILITY_VERSION = "$(APP_BUNDLE_VERSION)";
+				DYLIB_CURRENT_VERSION = "$(APP_BUNDLE_VERSION)";
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -534,7 +511,6 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ua.com.wavelabs.vst3.VST3NetSendKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 4.0;
@@ -554,6 +530,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -561,6 +538,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -602,6 +580,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -609,6 +588,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -639,15 +619,15 @@
 		CE0534621699F5690013307E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = NO;
 				CODE_SIGN_IDENTITY = "Mac Developer";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = "$(AWL_BUILD_VERSION)";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = "$(APP_BUNDLE_VERSION)";
 				DEPLOYMENT_LOCATION = YES;
-				DEVELOPMENT_TEAM = "";
 				DSTROOT = "$(HOME)";
-				DYLIB_COMPATIBILITY_VERSION = 22;
-				DYLIB_CURRENT_VERSION = "$(AWL_BUILD_VERSION)";
+				DYLIB_COMPATIBILITY_VERSION = "$(APP_BUNDLE_VERSION)";
+				DYLIB_CURRENT_VERSION = "$(APP_BUNDLE_VERSION)";
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				EXPORTED_SYMBOLS_FILE = "$(GV_VST_SDK)/public.sdk/source/main/macexport.exp";
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -658,10 +638,6 @@
 					"$(inherited)",
 				);
 				GENERATE_PKGINFO_FILE = YES;
-				HEADER_SEARCH_PATHS = (
-					"$(GV_VST_SDK)",
-					"$(GV_COREAUDIO_SDK)",
-				);
 				INFOPLIST_FILE = Sources/VST/Info.plist;
 				INSTALL_PATH = "/Library/Audio/Plug-Ins/VST3/WaveLabs";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks @loader_path/../Frameworks";
@@ -675,15 +651,15 @@
 		CE0534631699F5690013307E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = NO;
-				CODE_SIGN_IDENTITY = "Mac Developer";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = "$(AWL_BUILD_VERSION)";
+				CODE_SIGN_IDENTITY = "Developer ID Application";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = "$(APP_BUNDLE_VERSION)";
 				DEPLOYMENT_LOCATION = YES;
-				DEVELOPMENT_TEAM = "";
 				DSTROOT = "$(HOME)";
-				DYLIB_COMPATIBILITY_VERSION = 22;
-				DYLIB_CURRENT_VERSION = "$(AWL_BUILD_VERSION)";
+				DYLIB_COMPATIBILITY_VERSION = "$(APP_BUNDLE_VERSION)";
+				DYLIB_CURRENT_VERSION = "$(APP_BUNDLE_VERSION)";
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				EXPORTED_SYMBOLS_FILE = "$(GV_VST_SDK)/public.sdk/source/main/macexport.exp";
 				GCC_PREFIX_HEADER = Sources/VST/Prefix.h;
@@ -693,10 +669,6 @@
 					"$(inherited)",
 				);
 				GENERATE_PKGINFO_FILE = YES;
-				HEADER_SEARCH_PATHS = (
-					"$(GV_VST_SDK)",
-					"$(GV_COREAUDIO_SDK)",
-				);
 				INFOPLIST_FILE = Sources/VST/Info.plist;
 				INSTALL_PATH = "/Library/Audio/Plug-Ins/VST3/WaveLabs";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks @loader_path/../Frameworks";
@@ -710,14 +682,6 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		8014232F1F1BB75500097325 /* Build configuration list for PBXAggregateTarget "Verify" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				801423301F1BB75500097325 /* Debug */,
-				801423311F1BB75500097325 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-		};
 		8063581C1D98509C002DC5E2 /* Build configuration list for PBXNativeTarget "VST3NetSendKit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
