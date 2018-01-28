@@ -6,18 +6,21 @@ class Automation
    GitRepoDirPath = ENV['PWD']
    TmpDirPath = GitRepoDirPath + "/DerivedData"
    KeyChainPath = TmpDirPath + "/VST3NetSend.keychain"
-   P12FilePath = GitRepoDirPath + '/Configuration/Development.p12'
+   P12FilePath = GitRepoDirPath + '/Configuration/Codesign/DeveloperIDApplication.p12'
    XCodeProjectFilePath = GitRepoDirPath + "/VST3NetSend.xcodeproj"
    XCodeProjectSchema = "VST3NetSend"
    VSTSDKDirPath = GitRepoDirPath + "/Vendor/Steinberg"
       
    def self.ci()
+      if !Tool.isCIServer
+         XcodeBuilder.new(XCodeProjectFilePath).archive(XCodeProjectSchema, nil, true)
+         return
+      end
       puts "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
       puts "→ Downloading dependencies..."
       FileUtils.mkdir_p VSTSDKDirPath
       `cd \"#{VSTSDKDirPath}\" && git clone --branch vstsdk368_08_11_2017_build_121  https://github.com/steinbergmedia/vst3sdk.git`
       `cd \"#{VSTSDKDirPath}/vst3sdk\" && git submodule update --init base pluginterfaces public.sdk`
-      
       puts "→ Preparing environment..."
       FileUtils.mkdir_p TmpDirPath
       puts Tool.announceEnvVars
@@ -33,8 +36,7 @@ class Automation
       puts "→ Default keychain now: #{KeyChain.default}"
       begin
          puts "→ Making build..."
-         clean()
-         build()
+         XcodeBuilder.new(XCodeProjectFilePath).archive(XCodeProjectSchema, nil, true)
          puts "→ Making cleanup..."
          KeyChain.setDefault(defaultKeyChain)
          KeyChain.delete(kc.nameOrPath)
