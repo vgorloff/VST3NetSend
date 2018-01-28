@@ -51,6 +51,10 @@ class Automation
       end
    end
    
+   def self.test()
+      puts "Nothing to do."
+   end
+   
    def self.build()
       XcodeBuilder.new(XCodeProjectFilePath).build(XCodeProjectSchema)
    end
