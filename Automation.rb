@@ -14,7 +14,7 @@ class Automation
       
    def self.ci()
       if !Tool.isCIServer
-         XcodeBuilder.new(XCodeProjectFilePath).archive(XCodeProjectSchema, nil, true)
+         release()
          return
       end
       puts "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
