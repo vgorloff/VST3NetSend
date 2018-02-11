@@ -7,15 +7,18 @@ ci:
 
 build:
 	@ruby -r "`pwd`/Automation.rb" -e "Automation.build"
-	
+
 clean:
 	@ruby -r "`pwd`/Automation.rb" -e "Automation.clean"
-	
+
+test:
+	@ruby -r "`pwd`/Automation.rb" -e "Automation.test"
+
 release:
 	@ruby -r "`pwd`/Automation.rb" -e "Automation.release"
 
 verify:
 	@ruby -r "`pwd`/Automation.rb" -e "Automation.verify"
-	
+
 deploy:
 	@ruby -r "`pwd`/Automation.rb" -e "Automation.deploy"
