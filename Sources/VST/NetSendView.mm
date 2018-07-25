@@ -30,9 +30,7 @@ NetSendView::NetSendView (EditController* controller, ViewRect* rectSize)
 : EditorView(controller, rectSize)
 , mViewController(nil) {
 
-   NSBundle* UIFrameworkBundle = [NSBundle bundleForClass:NetSendViewController.class];
-   NSStoryboard *storyboard = [NSStoryboard storyboardWithName:@"VST3NetSend" bundle:UIFrameworkBundle];
-   mViewController = [storyboard instantiateInitialController];
+   mViewController = [[NetSendViewController alloc] init];
    NSSize size = mViewController.view.frame.size;
    Steinberg::ViewRect rect = Steinberg::ViewRect(getRect().left, getRect().top, size.width, size.height);
    setRect(rect);
