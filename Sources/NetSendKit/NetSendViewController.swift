@@ -19,7 +19,7 @@ public class NetSendViewController: NSViewController {
 
    public init() {
       super.init(nibName: nil, bundle: nil)
-      Log.initialize(subsystem: .controller)
+      log.initialize()
    }
 
    public override func loadView() {
@@ -40,7 +40,7 @@ public class NetSendViewController: NSViewController {
    deinit {
       observers.removeAll()
       removeBindings()
-      Log.deinitialize(subsystem: .controller)
+      log.deinitialize()
    }
 
    private func setupObservers() {
