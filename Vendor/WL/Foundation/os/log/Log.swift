@@ -74,7 +74,6 @@ public class Log<T: LogCategory> {
    public init(subsystem: String) {
       self.subsystem = subsystem
    }
-
 }
 
 extension Log {
@@ -216,7 +215,6 @@ extension Log {
          `default`(category, message, function: function, file: file, line: line, dso: dso)
       }
    }
-
 }
 
 extension Log {
@@ -261,7 +259,6 @@ extension Log {
       return "\(message) → \(function) ⋆ \(filename):\(line)"
    }
 }
-
 
 extension OSLogType {
 
