@@ -432,7 +432,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/bash;
-			shellScript = "[[ -r ~/.bashrc ]] && . ~/.bashrc\nmake verify";
+			shellScript = "[[ -r ~/.bashrc ]] && . ~/.bashrc\nmake verify\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
