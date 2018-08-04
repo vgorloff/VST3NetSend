@@ -59,7 +59,7 @@ class Tool
   
   def self.canRunSwiftGen()
     t = Tool.new()
-    return !Tool.isCIServer && t.isCommandExists("swiftgen")
+    return t.isCommandExists("swiftgen")
   end
   
   def self.xcodeBuildVersion()

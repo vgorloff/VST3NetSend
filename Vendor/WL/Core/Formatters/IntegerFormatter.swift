@@ -1,6 +1,6 @@
 //
 //  IntegerFormatter.swift
-//  VST3NetSend
+//  mcCore
 //
 //  Created by Vlad Gorlov on 25/09/2016.
 //  Copyright © 2016 Vlad Gorlov. All rights reserved.
