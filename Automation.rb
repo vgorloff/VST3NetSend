@@ -1,12 +1,16 @@
 MainFile = "#{ENV['AWL_LIB_SRC']}/Scripts/Automation.rb"
-if File.exist?(MainFile) then require MainFile else require_relative "Vendor/WL/Scripts/lib/Core.rb" end
+if File.exist?(MainFile)
+  require MainFile
+else
+  Dir[File.dirname(__FILE__) + "/Vendor/WL/Scripts/**/*.rb"].each { |f| require f }
+end
 
 class Automation
 
    GitRepoDirPath = ENV['PWD']
    TmpDirPath = GitRepoDirPath + "/DerivedData"
    KeyChainPath = TmpDirPath + "/VST3NetSend.keychain"
-   P12FilePath = GitRepoDirPath + '/Configuration/Codesign/DeveloperIDApplication.p12'
+   P12FilePath = GitRepoDirPath + '/Codesign/DeveloperIDApplication.p12'
    XCodeProjectFilePath = GitRepoDirPath + "/VST3NetSend.xcodeproj"
    XCodeProjectSchema = "VST3NetSend"
    VSTSDKDirPath = GitRepoDirPath + "/Vendor/Steinberg"
@@ -91,7 +95,7 @@ class Automation
          puts h.analyseDir(GitRepoDirPath)
          if l.canRunSwiftFormat()
             puts "→ Correcting sources (SwiftFormat)..."
-            l.correctWithSwiftFormat()
+            l.correctWithSwiftFormat(GitRepoDirPath)
          end
          if l.canRunSwiftLint()
             puts "→ Correcting sources (SwiftLint)..."

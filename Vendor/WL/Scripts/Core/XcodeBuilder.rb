@@ -1,6 +1,6 @@
 require 'fileutils'
 require 'tmpdir'
-require_relative 'Extensions/AnsiTextStyles.rb'
+require_relative '../Extensions/AnsiTextStyles.rb'
 require_relative 'PlistTool.rb'
 
 String.include(AnsiTextStyles)
