@@ -15,25 +15,32 @@ public class NetSendViewController: NSViewController {
    @objc public var modelChangeHandler: ((NetSendParameter) -> Void)?
 
    fileprivate var observers = [NSKeyValueObservation]()
+   private lazy var netSendView = NetSendView()
 
-   public required init?(coder: NSCoder) {
-      super.init(coder: coder)
-      Log.initialize(subsystem: .controller)
+   public init() {
+      super.init(nibName: nil, bundle: nil)
+      log.initialize()
    }
 
-   public override func awakeFromNib() {
-      super.awakeFromNib()
+   public override func loadView() {
+      view = netSendView
+   }
+
+   public required init?(coder: NSCoder) {
+      fatalError()
+   }
+
+   public override func viewDidLoad() {
+      super.viewDidLoad()
       setupBindings()
       setupObservers()
-      if let view = view as? NetSendView {
-         view.port.cell?.formatter = IntegerFormatter()
-      }
+      netSendView.port.cell?.formatter = IntegerFormatter()
    }
 
    deinit {
       observers.removeAll()
       removeBindings()
-      Log.deinitialize(subsystem: .controller)
+      log.deinitialize()
    }
 
    private func setupObservers() {
@@ -55,36 +62,35 @@ public class NetSendViewController: NSViewController {
    }
 
    private func setupBindings() {
-      if let view = view as? NetSendView {
-         let connectionButtonTitleBindingOptions = [NSBindingOption.valueTransformer: ConnectionFlagValueTransformer()]
-         let connectionStatusBindingOptions = [NSBindingOption.valueTransformer: ConnectionStatusValueTransformer()]
-         let bindingOptions = [NSBindingOption.nullPlaceholder: ""]
+      let connectionButtonTitleBindingOptions = [NSBindingOption.valueTransformer: ConnectionFlagValueTransformer()]
+      let connectionStatusBindingOptions = [NSBindingOption.valueTransformer: ConnectionStatusValueTransformer()]
+      let bindingOptions = [NSBindingOption.nullPlaceholder: ""]
 
-         view.status.bind(NSBindingName(rawValue: "value"), to: viewModelObjectController,
-                          withKeyPath: "selection.status", options: connectionStatusBindingOptions)
-         view.connectionFlag.bind(NSBindingName(rawValue: "value"), to: viewModelObjectController,
-                                  withKeyPath: "selection.connectionFlag", options: nil)
-         view.connectionFlag.bind(NSBindingName(rawValue: "title"), to: viewModelObjectController,
-                                  withKeyPath: "selection.connectionFlag", options: connectionButtonTitleBindingOptions)
-         view.dataFormat.bind(NSBindingName(rawValue: "selectedTag"), to: viewModelObjectController,
-                              withKeyPath: "selection.dataFormat", options: nil)
-         view.port.bind(NSBindingName(rawValue: "value"), to: viewModelObjectController,
-                        withKeyPath: "selection.port", options: nil)
-         view.bonjourName.bind(NSBindingName(rawValue: "value"), to: viewModelObjectController,
-                               withKeyPath: "selection.bonjourName", options: bindingOptions)
-         view.password.bind(NSBindingName(rawValue: "value"), to: viewModelObjectController,
-                            withKeyPath: "selection.password", options: bindingOptions)
-      }
+      let bindingValue = NSBindingName(rawValue: "value")
+      netSendView.status.bind(bindingValue, to: viewModelObjectController,
+                              withKeyPath: "selection.status", options: connectionStatusBindingOptions)
+      netSendView.connectionFlag.bind(NSBindingName(rawValue: "title"), to: viewModelObjectController,
+                                      withKeyPath: "selection.connectionFlag", options: connectionButtonTitleBindingOptions)
+      netSendView.connectionFlag.bind(bindingValue, to: viewModelObjectController,
+                                      withKeyPath: "selection.connectionFlag", options: nil)
+      netSendView.dataFormat.bind(NSBindingName(rawValue: "selectedTag"), to: viewModelObjectController,
+                                  withKeyPath: "selection.dataFormat", options: nil)
+      netSendView.port.bind(bindingValue, to: viewModelObjectController,
+                            withKeyPath: "selection.port", options: nil)
+      netSendView.bonjourName.bind(bindingValue, to: viewModelObjectController,
+                                   withKeyPath: "selection.bonjourName", options: bindingOptions)
+      netSendView.password.bind(bindingValue, to: viewModelObjectController,
+                                withKeyPath: "selection.password", options: bindingOptions)
    }
 
    private func removeBindings() {
-      if let view = view as? NetSendView {
-         view.status.unbind(NSBindingName(rawValue: "value"))
-         view.connectionFlag.unbind(NSBindingName(rawValue: "value"))
-         view.dataFormat.unbind(NSBindingName(rawValue: "selectedTag"))
-         view.port.unbind(NSBindingName(rawValue: "value"))
-         view.bonjourName.unbind(NSBindingName(rawValue: "value"))
-         view.password.unbind(NSBindingName(rawValue: "value"))
-      }
+      let bindingValue = NSBindingName(rawValue: "value")
+      netSendView.status.unbind(bindingValue)
+      netSendView.connectionFlag.unbind(bindingValue)
+      netSendView.connectionFlag.unbind(NSBindingName(rawValue: "title"))
+      netSendView.dataFormat.unbind(NSBindingName(rawValue: "selectedTag"))
+      netSendView.port.unbind(bindingValue)
+      netSendView.bonjourName.unbind(bindingValue)
+      netSendView.password.unbind(bindingValue)
    }
 }

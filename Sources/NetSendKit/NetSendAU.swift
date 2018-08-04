@@ -25,7 +25,7 @@ public final class NetSendAU: NSObject {
       let sema = DispatchSemaphore(value: 1)
       AVAudioUnit.instantiate(with: desc, options: [.loadInProcess]) { [weak self] avAU, error in
          if let e = error {
-            Log.error(subsystem: .media, category: .initialise, error: e)
+            log.error(.media, e)
          } else if let avAU = avAU {
             self?.au = avAU
          } else {
@@ -34,7 +34,7 @@ public final class NetSendAU: NSObject {
          sema.signal()
       }
       if sema.wait(timeout: .now() + 1) == .timedOut {
-         Log.info(subsystem: .media, category: .initialise, message: "Timout waiting for `AVAudioUnit.instantiate` callback.")
+         log.info(.media, "Timout waiting for `AVAudioUnit.instantiate` callback.")
       }
       timeStamp.mFlags = [.sampleTimeValid]
       timeStamp.mSampleTime = 0
@@ -68,13 +68,13 @@ extension NetSendAU {
       }
       if shouldActivate && !isActive {
          guard AudioUnitInitialize(au) == noErr else {
-            Log.error(subsystem: .media, category: .initialise, message: "Unable to initialize AUNetSend instance.")
+            log.error(.media, "Unable to initialize AUNetSend instance.")
             return
          }
          isActive = true
       } else if isActive {
          guard AudioUnitUninitialize(au) == noErr else {
-            Log.error(subsystem: .media, category: .initialise, message: "Unable to uninitialize AUNetSend instance.")
+            log.error(.media, "Unable to uninitialize AUNetSend instance.")
             return
          }
          isActive = false
@@ -168,7 +168,7 @@ extension NetSendAU {
       do {
          try closure()
       } catch {
-         Log.error(subsystem: .media, category: .event, message: "Unable to set property `\(name)`.")
+         log.error(.media, "Unable to set property `\(name)`.")
       }
    }
 
@@ -176,7 +176,7 @@ extension NetSendAU {
       do {
          try closure()
       } catch {
-         Log.error(subsystem: .media, category: .event, message: "Unable to get parameter `\(name)`.")
+         log.error(.media, "Unable to get parameter `\(name)`.")
       }
    }
 
