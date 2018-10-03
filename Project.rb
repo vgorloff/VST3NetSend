@@ -9,52 +9,16 @@ class Project < AbstractProject
 
    def initialize(rootDirPath)
       super(rootDirPath)
-      @tmpDirPath = rootDirPath + "/DerivedData"
-      @keyChainPath = @tmpDirPath + "/VST3NetSend.keychain"
-      @p12FilePath = rootDirPath + '/Codesign/DeveloperIDApplication.p12'
       @projectFilePath = rootDirPath + "/VST3NetSend.xcodeproj"
       @projectSchema = "VST3NetSend"
       @vstSDKDirPath = rootDirPath + "/Vendor/Steinberg"
-      @versionFilePath = rootDirPath + "/Configuration/Version.xcconfig"
    end
 
-   def ci()
-      unless Environment.isCI
-         release()
-         return
-      end
-      puts "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-      puts "→ Downloading dependencies..."
-      FileUtils.mkdir_p @vstSDKDirPath
-      `cd \"#{@vstSDKDirPath}\" && git clone --branch vstsdk368_08_11_2017_build_121  https://github.com/steinbergmedia/vst3sdk.git`
-      `cd \"#{@vstSDKDirPath}/vst3sdk\" && git submodule update --init base pluginterfaces public.sdk`
-      puts "→ Preparing environment..."
-      FileUtils.mkdir_p @tmpDirPath
-      puts Environment.announceEnvVars
-      puts "→ Setting up keychain..."
-      kc = KeyChain.create(@keyChainPath)
-      puts KeyChain.list
-      defaultKeyChain = KeyChain.default
-      puts "→ Default keychain: #{defaultKeyChain}"
-      kc.setSettings()
-      kc.info()
-      kc.import(@p12FilePath, ENV['AWL_P12_PASSWORD'], ["/usr/bin/codesign"])
-      kc.setKeyCodesignPartitionList()
-      kc.dump()
-      KeyChain.setDefault(kc.nameOrPath)
-      puts "→ Default keychain now: #{KeyChain.default}"
-      begin
-         puts "→ Making build..."
-         release()
-         puts "→ Making cleanup..."
-         KeyChain.setDefault(defaultKeyChain)
-         KeyChain.delete(kc.nameOrPath)
-      rescue StandardError
-         KeyChain.setDefault(defaultKeyChain)
-         KeyChain.delete(kc.nameOrPath)
-         puts "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-         raise
-      end
+   def prepare()
+     puts "→ Downloading dependencies..."
+     FileUtils.mkdir_p @vstSDKDirPath
+     `cd \"#{@vstSDKDirPath}\" && git clone --branch vstsdk368_08_11_2017_build_121  https://github.com/steinbergmedia/vst3sdk.git`
+     `cd \"#{@vstSDKDirPath}/vst3sdk\" && git submodule update --init base pluginterfaces public.sdk`
    end
 
    def build()
@@ -64,29 +28,22 @@ class Project < AbstractProject
    def clean()
       XcodeBuilder.new(@projectFilePath).clean(@projectSchema)
    end
+   
+   def archive()
+     XcodeBuilder.new(@projectFilePath).archive(@projectSchema, nil, true)
+     apps = Dir["#{@rootDirPath}/**/*.xcarchive/**/*.vst3"].select { |f| File.directory?(f) }
+     apps.each { |app| Archive.zip(app) }
+     apps.each { |app| XcodeBuilder.validateBinary(app) }
+   end
 
    def release()
-      XcodeBuilder.new(@projectFilePath).archive(@projectSchema, nil, true)
-      apps = Dir["#{@rootDirPath}/**/*.xcarchive/**/*.vst3"].select { |f| File.directory?(f) }
-      apps.each { |app| Archive.zip(app) }
-      apps.each { |app| XcodeBuilder.validateBinary(app) }
+     XcodeBuilder.new(@projectFilePath).ci(@projectSchema)
    end
 
    def deploy()
       require 'yaml'
       assets = Dir["#{@rootDirPath}/**/*.xcarchive/**/*.vst3.zip"]
-      releaseInfo = YAML.load_file("#{@rootDirPath}/Configuration/Release.yml")
-      releaseName = releaseInfo['name']
-      releaseDescriptions = releaseInfo['description'].map { |l| "* #{l}" }
-      releaseDescription = releaseDescriptions.join("\n")
-      version = Version.new(@versionFilePath).projectVersion
-      puts "! Will make GitHub release → #{version}: \"#{releaseName}\""
-      puts(releaseDescriptions.map { |line| "  #{line}" })
-      assets.each { |file| puts "  #{file}" }
-      gh = GitHubRelease.new("vgorloff", "VST3NetSend")
-      Readline.readline("OK? > ")
-      gh.release(version, releaseName, releaseDescription)
-      assets.each { |file| gh.uploadAsset(file) }
+      gitHubRelease(assets)
    end
 
    def generate()
