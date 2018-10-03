@@ -25,7 +25,7 @@ class Project < AbstractProject
       end
       puts "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
       puts "→ Downloading dependencies..."
-      FileUtils.mkdir_p VSTSDKDirPath
+      FileUtils.mkdir_p @vstSDKDirPath
       `cd \"#{@vstSDKDirPath}\" && git clone --branch vstsdk368_08_11_2017_build_121  https://github.com/steinbergmedia/vst3sdk.git`
       `cd \"#{@vstSDKDirPath}/vst3sdk\" && git submodule update --init base pluginterfaces public.sdk`
       puts "→ Preparing environment..."
