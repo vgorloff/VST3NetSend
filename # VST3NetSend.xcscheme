@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
    LastUpgradeVersion = "1000"
-   version = "2.0">
+   version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
       buildImplicitDependencies = "YES">
@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "E782E5254637D627CE875A01"
+               BlueprintIdentifier = "CE05344E1699F5690013307E"
                BuildableName = "VST3NetSend.vst3"
                BlueprintName = "VST3NetSend"
                ReferencedContainer = "container:VST3NetSend.xcodeproj">
@@ -41,16 +41,15 @@
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
-      allowLocationSimulation = "YES"
-      launchAutomaticallySubstyle = "2">
+      allowLocationSimulation = "YES">
       <PathRunnable
          runnableDebuggingMode = "0"
-         FilePath = "/&lt;placeholder&gt;">
+         FilePath = "/Applications/VST3PluginTestHost.app">
       </PathRunnable>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "E782E5254637D627CE875A01"
+            BlueprintIdentifier = "CE05344E1699F5690013307E"
             BuildableName = "VST3NetSend.vst3"
             BlueprintName = "VST3NetSend"
             ReferencedContainer = "container:VST3NetSend.xcodeproj">

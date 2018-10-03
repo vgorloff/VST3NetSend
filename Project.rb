@@ -90,51 +90,42 @@ class Project < AbstractProject
    end
 
    def generate()
-      project = XcodeProject.new(projectPath: File.join(@rootDirPath, "Attenuator.xcodeproj"), vendorSubpath: 'WL')
-      auHost = project.addApp(name: "AUHost",
-                              sources: ["Shared", "SampleAUHost"], platform: :osx, deploymentTarget: "10.11", buildSettings: {
-                                 "PRODUCT_BUNDLE_IDENTIFIER" => "ua.com.wavelabs.AUHost", "DEPLOYMENT_LOCATION" => "YES"
-                              })
-      addSharedSources(project, auHost)
-
-      attenuator = project.addApp(name: "Attenuator",
-                                  sources: ["Shared", "SampleAUPlugin/Attenuator", "SampleAUPlugin/AttenuatorKit"],
-                                  platform: :osx, deploymentTarget: "10.11", buildSettings: {
-                                     "PRODUCT_BUNDLE_IDENTIFIER" => "ua.com.wavelabs.Attenuator", "DEPLOYMENT_LOCATION" => "YES"
-                                  })
-      addSharedSources(project, attenuator)
-
-      auExtension = project.addAppExtension(name: "AttenuatorAU",
-                                            sources: ["SampleAUPlugin/AttenuatorAU", "SampleAUPlugin/AttenuatorKit"],
-                                            platform: :osx, deploymentTarget: "10.11", buildSettings: {
-                                               "PRODUCT_BUNDLE_IDENTIFIER" => "ua.com.wavelabs.Attenuator.AttenuatorAU",
-                                               "ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES" => "YES"
-                                            })
-      addSharedSources(project, auExtension)
-
-      project.addDependencies(to: attenuator, dependencies: [auExtension])
-      script = "ruby -r \"$SRCROOT/Project.rb\" -e \"Project.new('$SRCROOT').register()\""
-      project.addScript(to: attenuator, script: script, name: "Register Extension", isPostBuild: true)
-
-      project.save()
-   end
-
-   def addSharedSources(project, target)
-      project.useFilters(target: target, filters: [
-                            "Core/Concurrency/*", "Core/Extensions/*", "Core/Converters/*Numeric*",
-                            "Core/Sources/AlternativeValue*", "Core/Sources/*Aliases*",
-                            "Foundation/os/log/*", "Foundation/Sources/*Info*", "Foundation/Testability/*",
-                            "Foundation/ObjectiveC/*", "Foundation/Notification/*",
-                            "Foundation/Sources/Functions*", "Foundation/Extensions/CG*", "Foundation/Extensions/*Insets*",
-                            "Foundation/Extensions/Color*",
-                            "Foundation/Sources/Result*", "Foundation/Sources/Math.swift", "Foundation/Extensions/String*",
-                            "Types/Sources/MinMax*", "Types/Sources/Random*", "Types/Sources/Operators*",
-                            "Media/Extensions/*", "Media/Sources/Waveform*", "Media/Sources/Media*", "Media/Sources/*Utility*",
-                            "Media/Sources/*Type*", "Media/Sources/*Buffer*",
-                            "AppKit/Media/Media*", "AppKit/Media/VU*", "AppKit/Media/*DisplayLink*", "AppKit/Media/*Error*",
-                            "AppKit/Extensions/*Toolbar*",
-                            "Media/DSP/*Value*"
+      project = XcodeProject.new(projectPath: File.join(@rootDirPath, "VST3NetSend.xcodeproj"), vendorSubpath: 'WL')
+      netSendKit = project.addFramework(name: "VST3NetSendKit",
+                                        sources: ["Sources/NetSendKit"], platform: :osx, deploymentTarget: "10.11",
+                                        bundleID: "ua.com.wavelabs.vst3.$(PRODUCT_NAME)",
+                                        buildSettings: {
+                                           "SWIFT_INSTALL_OBJC_HEADER" => "YES",
+                                           "ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES" => "YES",
+                                           "APPLICATION_EXTENSION_API_ONLY" => "YES",
+                                           "OTHER_LDFLAGS" => "-framework AudioToolbox",
+                                           "DEFINES_MODULE" => "YES",
+                                           "LD_RUNPATH_SEARCH_PATHS" => "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks"
+                                        })
+      project.useFilters(target: netSendKit, filters: [
+                            "Core/Formatters/IntegerFormatter*", "Foundation/os/log/*", "Foundation/Sources/*Info*",
+                            "Media/Extensions/AudioComponentDescription*", "Media/Sources/AudioUnit*"
                          ])
+
+      netSend = project.addBundle(name: "VST3NetSend",
+                                  sources: ["Sources/VST"], platform: :osx, deploymentTarget: "10.11",
+                                  bundleID: "ua.com.wavelabs.$(PRODUCT_NAME)",
+                                  buildSettings: {
+                                     "DSTROOT" => "$(HOME)",
+                                     "INSTALL_PATH" => "/Library/Audio/Plug-Ins/VST3/WaveLabs",
+                                     "EXPORTED_SYMBOLS_FILE" => "$(GV_VST_SDK)/public.sdk/source/main/macexport.exp",
+                                     "WRAPPER_EXTENSION" => "vst3",
+                                     "GCC_PREFIX_HEADER" => "Sources/VST/Prefix.h",
+                                     "GCC_PREPROCESSOR_DEFINITIONS_Debug" => "DEVELOPMENT=1 $(inherited)",
+                                     "GCC_PREPROCESSOR_DEFINITIONS_Release" => "RELEASE=1 NDEBUG=1 $(inherited)",
+                                     "DEPLOYMENT_LOCATION" => "YES",
+                                     "GENERATE_PKGINFO_FILE" => "YES",
+                                     "SKIP_INSTALL" => "NO",
+                                     "OTHER_LDFLAGS" => "-framework AudioToolbox -framework CoreAudio -framework Cocoa -framework AudioUnit"
+                                  })
+
+      project.addDependencies(to: netSend, dependencies: [netSendKit])
+      project.save()
    end
 
 end
