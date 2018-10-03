@@ -3,7 +3,7 @@ VST3NetSend
 
 VST3 version of Mac OS X system-supplied AUNetSend audio plugin.
 
-*AUNetSend* - is an audio plugin that streams audio data over a network. Used in conjunction with the AUNetReceive generator audio unit.  
+*AUNetSend* - is an audio plugin that streams audio data over a network. Used in conjunction with the AUNetReceive generator audio unit.
 *VST3NetSend* - is a VST3 version of the plugin which provide similar functionality as AUNetSend. It could be used with Cubase/Nuendo® (by Steinberg®).
 
 
@@ -12,7 +12,7 @@ VST3 version of Mac OS X system-supplied AUNetSend audio plugin.
 Usage:
 -----
 
-[Download binary](https://github.com/vgorloff/VST3NetSend/releases/latest) and copy it to "~/Library/Audio/Plug-Ins/VST3" or "/Library/Audio/Plug-Ins/VST3" folder.  
+[Download binary](https://github.com/vgorloff/VST3NetSend/releases/latest) and copy it to "~/Library/Audio/Plug-Ins/VST3" or "/Library/Audio/Plug-Ins/VST3" folder.
 Launch Cubase/Nuendo®. Add instance to insert slot: ***Tools -> WaveLabs VST3NetSend***.
 
 Features:
@@ -33,7 +33,7 @@ System requirements:
 Troubleshooting:
 ---------------
 
-[Bonjour Browser](http://www.tildesoft.com) application can be used to inspect all AUNetSend providers.  
+[Bonjour Browser](http://www.tildesoft.com) application can be used to inspect all AUNetSend providers.
 Plugin should be listed as "_apple-ausend.tcp." provider.
 
 On new systems (macOS 10.11 and above) AUNetRecieve may not connect to VST3NetSend via Bonjour discovery (seems IPv6 issue in AUNetRecieve).
@@ -45,9 +45,9 @@ To solve this problem enter IP-address manually.
 How to build:
 ------------
 
-To build plugin the following tools, libs and SDKs needed:  
-  
-* [Xcode 9](https://developer.apple.com/xcode/)
+To build plugin the following tools, libs and SDKs needed:
+
+* [Xcode 10](https://developer.apple.com/xcode/)
 * [VST3 SDK 3.6.8](http://www.steinberg.net/en/company/developer.html)
 
 Put downloaded `VST SDK` into folder `Vendor/Steinberg/vst3sdk`. Or create file `Configuration/Developer.xcconfig` with the following contents:
