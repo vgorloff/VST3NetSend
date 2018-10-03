@@ -328,8 +328,7 @@
 				D9916D5C8773EAE9E3843494 /* Media */,
 				BD7E3ECD4A9D5016500FC0EC /* Shared */,
 			);
-			name = WL;
-			path = ../../../../../Developer/Projects/WL;
+			path = WL;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
