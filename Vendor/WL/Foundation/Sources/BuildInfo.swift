@@ -12,17 +12,17 @@ public enum BuildInfo {
 
    public static var isDebug: Bool {
       #if DEBUG // Do not forget to add DEBUG to Compiler Flags
-         return true
+      return true
       #else
-         return false
+      return false
       #endif
    }
 
    public static var isProduction: Bool {
       #if PRODUCTION // Do not forget to add PRODUCTION to Compiler Flags
-         return true
+      return true
       #else
-         return false
+      return false
       #endif
    }
 
