@@ -79,7 +79,7 @@ class Project < AbstractProject
       releaseName = releaseInfo['name']
       releaseDescriptions = releaseInfo['description'].map { |l| "* #{l}" }
       releaseDescription = releaseDescriptions.join("\n")
-      version = Version.new(VersionFilePath).projectVersion
+      version = Version.new(@versionFilePath).projectVersion
       puts "! Will make GitHub release → #{version}: \"#{releaseName}\""
       puts(releaseDescriptions.map { |line| "  #{line}" })
       assets.each { |file| puts "  #{file}" }
