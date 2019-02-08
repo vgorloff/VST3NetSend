@@ -1,13 +1,14 @@
 require 'ffi'
-require_relative '../Archive.rb'
+require_relative '../Core/Archive.rb'
 
 class AutomationHelper
    def self.fwPath
-      path = File.dirname(__FILE__) + '/mcAutomation.framework.zip'
+      path = File.dirname(__FILE__) + '/mcAutomation.framework/mcAutomation'
       if !File.exist?(path)
          path = ENV['AWL_SYS_HOME'] + '/lib/mcAutomation.framework/mcAutomation'
       else
-         Archive.unzip(path)
+         archive = File.dirname(__FILE__) + '/mcAutomation.framework.zip'
+         Archive.unzip(archive)
       end
       return path
    end
