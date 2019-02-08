@@ -3,12 +3,15 @@ require_relative '../Core/Archive.rb'
 
 class AutomationHelper
    def self.fwPath
-      archive = File.dirname(__FILE__) + '/mcAutomation.framework.zip'
+      frameworkPath = File.dirname(__FILE__) + '/mcAutomation.framework'
+      archive = frameworkPath + '.zip'
       if !File.exist?(archive)
          path = ENV['AWL_SYS_HOME'] + '/lib/mcAutomation.framework/mcAutomation'
       else
-         path = File.dirname(__FILE__) + '/mcAutomation.framework/mcAutomation'
-         FileUtils.rm_r(File.dirname(__FILE__) + '/mcAutomation.framework')
+         path = frameworkPath + '/mcAutomation'
+         if File.exist?(frameworkPath)
+            FileUtils.rm_r(frameworkPath)
+         end
          Archive.unzip(archive)
       end
       return path
