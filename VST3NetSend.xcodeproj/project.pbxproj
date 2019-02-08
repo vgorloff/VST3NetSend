@@ -3,606 +3,529 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 50;
 	objects = {
 
-/* Begin PBXAggregateTarget section */
-		539E35D37B4E4DE53924CBBA /* Autocorrect */ = {
-			isa = PBXAggregateTarget;
-			buildPhases = (
-				3FF50218C969F6613A952ECE /* Run Script: Autocorrect */,
-			);
-			dependencies = (
-			);
-			name = Autocorrect;
-		};
-		7C90330C059CF8E76F176A03 /* Verify */ = {
-			isa = PBXAggregateTarget;
-			buildPhases = (
-				E7CF0F901851FC0E91E7ADFF /* Run Script: Verify */,
-			);
-			dependencies = (
-			);
-			name = Verify;
-		};
-/* End PBXAggregateTarget section */
-
 /* Begin PBXBuildFile section */
-		05A9CAE95265101DCB772A99 /* VST3NetSendKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 06DC64ACE996E0D68EC309AB /* VST3NetSendKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0D8CD505275280DF04C999A4 /* RuntimeInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 642AD3B12E03289CA418D7EE /* RuntimeInfo.swift */; };
-		15478C8C17A7087DBE64120D /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D175C4FCE499814FA2FD0B /* Logger.swift */; };
-		1CB1CA8E5A0DB42EFD74DFAE /* NetSendView.h in Headers */ = {isa = PBXBuildFile; fileRef = 77A06E98B0096AF3F530C024 /* NetSendView.h */; };
-		2DAF6A93231F0AC120162817 /* NetSendParameters.h in Headers */ = {isa = PBXBuildFile; fileRef = 2A87CCD9E46B22CABC71324C /* NetSendParameters.h */; };
-		361ACDA01572016A81C39580 /* NetSendProcessSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB033516422FE2FE46623AB /* NetSendProcessSetup.swift */; };
-		39C5C56CF68983D076863091 /* NetSendAU.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A35407100C29F99C4CC715 /* NetSendAU.swift */; };
-		4484BEBCD10BFF96F4FD4D5B /* NetSendViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F99D1195CC185D00B04947E0 /* NetSendViewModel.swift */; };
-		5036CAF4305E61B6EC1CD39B /* NetSendProcessor.mm in Sources */ = {isa = PBXBuildFile; fileRef = 8497C8A8FBD424C268FEE6BF /* NetSendProcessor.mm */; };
-		5204D45A666D197B9B8C05B4 /* VST3NetSendKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 983D2DFFCED13DBE5B63706F /* VST3NetSendKit.framework */; };
-		5934174EE0C7548F8BD6FD60 /* NetSendProcessor.h in Headers */ = {isa = PBXBuildFile; fileRef = 7F2640129A461138F89F9158 /* NetSendProcessor.h */; };
-		5C4A32C4ED1EE8D43376DD7D /* VST3SDK.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8FF633774108E0820A486322 /* VST3SDK.cpp */; };
-		68CD9793879B133DB5B89996 /* NetSendProcessorState.h in Headers */ = {isa = PBXBuildFile; fileRef = DF43D003AF9240A0821312CF /* NetSendProcessorState.h */; };
-		6FD5DBF10C33B40F5A1399D2 /* ConnectionStatusValueTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F225DAAD2424C71B3266012D /* ConnectionStatusValueTransformer.swift */; };
-		715A856D29F989469E600F44 /* Prefix.h in Headers */ = {isa = PBXBuildFile; fileRef = 17735786EDB6C28C9B9D1FA3 /* Prefix.h */; };
-		8C907765FBB69A6472C18E81 /* NetSendView.mm in Sources */ = {isa = PBXBuildFile; fileRef = E2987C9881D614D3BE9D7A0F /* NetSendView.mm */; };
-		98F88A1870F4D82FA1845157 /* VST3NetSendKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 983D2DFFCED13DBE5B63706F /* VST3NetSendKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		9F3BBCE598FFB1761DC6C536 /* NetSendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 611CAEBE541E7BF9C31C9403 /* NetSendView.swift */; };
-		A3D92888E152D96122594A24 /* NetSendController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 79184E0B6290A5689FBF4E6C /* NetSendController.cpp */; };
-		AB92B11E46128778381B9F4F /* NetSendParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79F64A5900E65044A21B7CF1 /* NetSendParameter.swift */; };
-		B32E819084D2C9BA0DDB3703 /* NetSendController.h in Headers */ = {isa = PBXBuildFile; fileRef = 12DFCDB102EADA6C7B8FCDEC /* NetSendController.h */; };
-		B42A186F17B281F4F85210BF /* ConnectionFlagValueTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F9A4C40E89BE30E64228CE4 /* ConnectionFlagValueTransformer.swift */; };
-		B5ECDB7FBFB48B88B7E3816D /* NetSendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9653596A632955232D64118 /* NetSendViewController.swift */; };
-		BEE1C63BA9146BCE5254B097 /* NetSendFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 04FE7035C831709AF4DB5E26 /* NetSendFactory.cpp */; };
-		C9AD36661AE52FD175FDD860 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1FAA37E0CCFE9D7ED9F3B1 /* Log.swift */; };
-		D0D1EE30D4B7B919ECEC79A9 /* IntegerFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D96F6C533E054333BD2D2D41 /* IntegerFormatter.swift */; };
-		D5FD5B65EF30CB09D9A54774 /* BuildInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194110FB54F2E94C5E10FE72 /* BuildInfo.swift */; };
-		F29B352F01BBD6DA703BF581 /* AudioUnitSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4AD7CB495A2E93AB1E45E7 /* AudioUnitSettings.swift */; };
-		F84658153F251B89811F8B13 /* AudioComponentDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBAB3809692B02AFB5E113E8 /* AudioComponentDescription.swift */; };
-		FA1302A5FEF09B003878E458 /* NetSendProcessorState.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 01B7D0AD666190E1AEC10E90 /* NetSendProcessorState.cpp */; };
+		BF_081F4CBF1005BC8AA3CA4CD23BABE643 /* NetSendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_FE807BF36CC3EE3373BBDBE5F9AEB16A /* NetSendView.swift */; };
+		BF_1B5B2F69AFC59032C6D4E06099337023 /* RuntimeInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_8C6F84540EAF12216564EBA81EB11EC3 /* RuntimeInfo.swift */; };
+		BF_1E32C2FCC6BD9E8176FE0C4069CEAA47 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_A90622E8EB380DAFDB546EBBEB3F2E48 /* String.swift */; };
+		BF_22EEBD895FF59A17C77DD8D8405541A4 /* NonRecursiveLocking.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_CAE122224DB5551BF066A9A3B5833952 /* NonRecursiveLocking.swift */; };
+		BF_23BD009028421075E93FD0F701E0745B /* NetSendProcessSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_1F65684AD5B2FD6582DBAC63167CE51E /* NetSendProcessSetup.swift */; };
+		BF_299DE7FBEFA25E0FEA9BCD3C09C9C197 /* VST3SDK.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FR_D029788E708BF27957B3DC81656DB49A /* VST3SDK.cpp */; };
+		BF_2FFD252E53D2FFA3446EC0E76779E0FC /* ConnectionStatusValueTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_EFB546C11CD3CDE84C8C41FBA6307BFE /* ConnectionStatusValueTransformer.swift */; };
+		BF_397586AFBBB996FDDFC49FE0FCB20901 /* NetSendViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_357DB998B193A256D41282566FF7E97C /* NetSendViewModel.swift */; };
+		BF_3A3A416234C63D610A31E7B507E8DB96 /* IntegerFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_2E95CE71BC9603487AA999E57C319D23 /* IntegerFormatter.swift */; };
+		BF_43B789B3204826AC0E49A1C10E3BF79D /* NetSendView.h in Headers */ = {isa = PBXBuildFile; fileRef = FR_DFAC4BA8A9E0CA5612ECD02D123C1589 /* NetSendView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BF_4B10735AF269C3973A613BA076606521 /* NetSendProcessorState.h in Headers */ = {isa = PBXBuildFile; fileRef = FR_D6E0A4AAA23B4465D1BC41C86D38B753 /* NetSendProcessorState.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BF_4B57F2D859468836F1646D2BD0B13312 /* ConnectionFlagValueTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_2C3EF0CE1DE13EFAEF0358E5CD1657F9 /* ConnectionFlagValueTransformer.swift */; };
+		BF_4C6B6D04B82E933C748BEE313D8F54B1 /* NetSendView.mm in Sources */ = {isa = PBXBuildFile; fileRef = FR_DDBBF3462E439F29BA94027ACC3864F6 /* NetSendView.mm */; };
+		BF_570462520EE819E9DEB831B90906EF0D /* NetSendController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FR_2A7FC3BCFD86E2D33FC50EC57680EC88 /* NetSendController.cpp */; };
+		BF_5D8E8EF1550F9B62F627D0CE2C03FDCF /* NetSendController.h in Headers */ = {isa = PBXBuildFile; fileRef = FR_4892482E417FBA8FFAA7F2FA405815B5 /* NetSendController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BF_64B08D27E75112D9B506AB89BF217D7A /* NetSendProcessor.h in Headers */ = {isa = PBXBuildFile; fileRef = FR_DD53756926039DE07C6A6C7791964726 /* NetSendProcessor.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BF_6BC9C76AC696C88CF74F662BCCF3A586 /* AudioUnitSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_82381BDDD7D944FCD0AD2F8293621155 /* AudioUnitSettings.swift */; };
+		BF_70BAA9C76FDD9B2C97C3CE21EA7FD9A2 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_115B0B1A5732DD6E432FEDED1EBCBC18 /* Logger.swift */; };
+		BF_74F63FEF33E2594AA0067B26AC483EC1 /* NetSendAU.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_D107980A09C2FE7C1795055E762B630D /* NetSendAU.swift */; };
+		BF_784D156AD5D780CE58F6BBB21A5F5B6A /* NetSendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_9D9A5150FBD02F2354C80486E8AE3085 /* NetSendViewController.swift */; };
+		BF_A75194A5D64195F752EBE7F99378FA9C /* NetSendParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_CAB1CAD80D8FF9958B756ECFC8DD3B48 /* NetSendParameter.swift */; };
+		BF_A951B89D2CE781C5C66278A75820B9F2 /* NetSendProcessor.mm in Sources */ = {isa = PBXBuildFile; fileRef = FR_3F51906CE06544D3962A75E5BF82EB62 /* NetSendProcessor.mm */; };
+		BF_AA339C2A3CFEDE996F5A9EA36259C5C9 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_BEEBD931933B28250FD76E17F890E8FA /* Log.swift */; };
+		BF_AAFEA1771F3BB7562ADAC74B2458A5FC /* UnfairLock.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_E152873B806CED0293FE077CCA56FDA5 /* UnfairLock.swift */; };
+		BF_B1AC1BD2A24F621922E224065DECD507 /* FileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_3AB366788619E726305670C3301D33C2 /* FileManager.swift */; };
+		BF_B67ADC457B044BBD68E681AADFD23D63 /* NetSendFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FR_DEF2BCB61DAD4F832FD7004CBC255E29 /* NetSendFactory.cpp */; };
+		BF_BBACCFB1A9175A95431B74BDC2BDDAF1 /* NetSendParameters.h in Headers */ = {isa = PBXBuildFile; fileRef = FR_00C3BCCE9285999BFB1DEB4A452D07FC /* NetSendParameters.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BF_BF165BBBD4B0DD745E85180D92BEBCE9 /* NetSendProcessorState.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FR_DE9941EE561986DAF833FEE54943B1F0 /* NetSendProcessorState.cpp */; };
+		BF_C61AA1208880394B0C77716E8700EB0A /* BuildInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_DBC9F5A9264B9F6CA86075DB48F577A2 /* BuildInfo.swift */; };
+		BF_D359BB48383F84F9D7FCCD7191089EC4 /* VST3NetSendKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FR_D6F3D685F76402720A8F31BC1560FFAB /* VST3NetSendKit.framework */; };
+		BF_E400CE77FB21A6010F69DF1494B10348 /* VST3NetSendKit.h in Headers */ = {isa = PBXBuildFile; fileRef = FR_7D553552484BDD6561BE3620AF2A393B /* VST3NetSendKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BF_F223DADA1286607A13F92E453012C0EB /* Prefix.h in Headers */ = {isa = PBXBuildFile; fileRef = FR_204A3161447D379F6E8B258C9BFD3210 /* Prefix.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BF_FBF09651FD28ADAB61D0E9892B2B7C70 /* AudioComponentDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_A6A1184578009E1E15ABAD4946C0772D /* AudioComponentDescription.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		A7365B6C8C44A176BC198166 /* PBXContainerItemProxy */ = {
+		CIP_346B2EFA20E2767104C6A1CD0D083600 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 56D4544F0C5D149C9ADA7818 /* Project object */;
+			containerPortal = P_4072110F23C6E8A277091112F37E579C /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = C937DB8AA0C669369F0D3C32;
-			remoteInfo = VST3NetSendKit;
+			remoteGlobalIDString = NT_0A42EA35381E2A25F216A49C0655721F;
+			remoteInfo = "VST3NetSendKit-macOS";
 		};
 /* End PBXContainerItemProxy section */
 
-/* Begin PBXCopyFilesBuildPhase section */
-		1DD386BDF543ED8EA6DA46BD /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				98F88A1870F4D82FA1845157 /* VST3NetSendKit.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
-
 /* Begin PBXFileReference section */
-		01B7D0AD666190E1AEC10E90 /* NetSendProcessorState.cpp */ = {isa = PBXFileReference; includeInIndex = 1; path = NetSendProcessorState.cpp; sourceTree = "<group>"; };
-		04FE7035C831709AF4DB5E26 /* NetSendFactory.cpp */ = {isa = PBXFileReference; includeInIndex = 1; path = NetSendFactory.cpp; sourceTree = "<group>"; };
-		06DC64ACE996E0D68EC309AB /* VST3NetSendKit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = VST3NetSendKit.h; sourceTree = "<group>"; };
-		0F9A4C40E89BE30E64228CE4 /* ConnectionFlagValueTransformer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ConnectionFlagValueTransformer.swift; sourceTree = "<group>"; };
-		12DFCDB102EADA6C7B8FCDEC /* NetSendController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = NetSendController.h; sourceTree = "<group>"; };
-		17735786EDB6C28C9B9D1FA3 /* Prefix.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = Prefix.h; sourceTree = "<group>"; };
-		194110FB54F2E94C5E10FE72 /* BuildInfo.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BuildInfo.swift; sourceTree = "<group>"; };
-		2A87CCD9E46B22CABC71324C /* NetSendParameters.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = NetSendParameters.h; sourceTree = "<group>"; };
-		2C61443E0A2B017E148C955D /* Project.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Project.xcconfig; sourceTree = "<group>"; };
-		5F753BA2C45EEF4D177244F7 /* VST3NetSend.bundle */ = {isa = PBXFileReference; explicitFileType = "wrapper.plug-in"; includeInIndex = 0; path = VST3NetSend.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
-		611CAEBE541E7BF9C31C9403 /* NetSendView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NetSendView.swift; sourceTree = "<group>"; };
-		63A35407100C29F99C4CC715 /* NetSendAU.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NetSendAU.swift; sourceTree = "<group>"; };
-		642AD3B12E03289CA418D7EE /* RuntimeInfo.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RuntimeInfo.swift; sourceTree = "<group>"; };
-		77A06E98B0096AF3F530C024 /* NetSendView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = NetSendView.h; sourceTree = "<group>"; };
-		79184E0B6290A5689FBF4E6C /* NetSendController.cpp */ = {isa = PBXFileReference; includeInIndex = 1; path = NetSendController.cpp; sourceTree = "<group>"; };
-		79F64A5900E65044A21B7CF1 /* NetSendParameter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NetSendParameter.swift; sourceTree = "<group>"; };
-		7F2640129A461138F89F9158 /* NetSendProcessor.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = NetSendProcessor.h; sourceTree = "<group>"; };
-		8497C8A8FBD424C268FEE6BF /* NetSendProcessor.mm */ = {isa = PBXFileReference; includeInIndex = 1; path = NetSendProcessor.mm; sourceTree = "<group>"; };
-		88D175C4FCE499814FA2FD0B /* Logger.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
-		8C1FAA37E0CCFE9D7ED9F3B1 /* Log.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
-		8FF633774108E0820A486322 /* VST3SDK.cpp */ = {isa = PBXFileReference; includeInIndex = 1; path = VST3SDK.cpp; sourceTree = "<group>"; };
-		983D2DFFCED13DBE5B63706F /* VST3NetSendKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = VST3NetSendKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		9BB033516422FE2FE46623AB /* NetSendProcessSetup.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NetSendProcessSetup.swift; sourceTree = "<group>"; };
-		D96F6C533E054333BD2D2D41 /* IntegerFormatter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = IntegerFormatter.swift; sourceTree = "<group>"; };
-		DC4AD7CB495A2E93AB1E45E7 /* AudioUnitSettings.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AudioUnitSettings.swift; sourceTree = "<group>"; };
-		DF43D003AF9240A0821312CF /* NetSendProcessorState.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = NetSendProcessorState.h; sourceTree = "<group>"; };
-		E2987C9881D614D3BE9D7A0F /* NetSendView.mm */ = {isa = PBXFileReference; includeInIndex = 1; path = NetSendView.mm; sourceTree = "<group>"; };
-		EBAB3809692B02AFB5E113E8 /* AudioComponentDescription.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AudioComponentDescription.swift; sourceTree = "<group>"; };
-		F225DAAD2424C71B3266012D /* ConnectionStatusValueTransformer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ConnectionStatusValueTransformer.swift; sourceTree = "<group>"; };
-		F5FC1C3C5F4576510CFA9498 /* Framework-macOS.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Framework-macOS.xcconfig"; sourceTree = "<group>"; };
-		F9653596A632955232D64118 /* NetSendViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NetSendViewController.swift; sourceTree = "<group>"; };
-		F99D1195CC185D00B04947E0 /* NetSendViewModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NetSendViewModel.swift; sourceTree = "<group>"; };
+		FR_00C3BCCE9285999BFB1DEB4A452D07FC /* NetSendParameters.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; path = NetSendParameters.h; sourceTree = "<group>"; };
+		FR_115B0B1A5732DD6E432FEDED1EBCBC18 /* Logger.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		FR_1F65684AD5B2FD6582DBAC63167CE51E /* NetSendProcessSetup.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = NetSendProcessSetup.swift; sourceTree = "<group>"; };
+		FR_204A3161447D379F6E8B258C9BFD3210 /* Prefix.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; path = Prefix.h; sourceTree = "<group>"; };
+		FR_286AAF86B534AD832D9921F31C540216 /* Framework-macOS.xcconfig */ = {isa = PBXFileReference; explicitFileType = text.xcconfig; path = "Framework-macOS.xcconfig"; sourceTree = "<group>"; };
+		FR_2A7FC3BCFD86E2D33FC50EC57680EC88 /* NetSendController.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = NetSendController.cpp; sourceTree = "<group>"; };
+		FR_2C3EF0CE1DE13EFAEF0358E5CD1657F9 /* ConnectionFlagValueTransformer.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = ConnectionFlagValueTransformer.swift; sourceTree = "<group>"; };
+		FR_2E95CE71BC9603487AA999E57C319D23 /* IntegerFormatter.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = IntegerFormatter.swift; sourceTree = "<group>"; };
+		FR_357DB998B193A256D41282566FF7E97C /* NetSendViewModel.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = NetSendViewModel.swift; sourceTree = "<group>"; };
+		FR_3A6F1770F2E3B515678435543C0C190C /* Project.xcconfig */ = {isa = PBXFileReference; explicitFileType = text.xcconfig; path = Project.xcconfig; sourceTree = "<group>"; };
+		FR_3AB366788619E726305670C3301D33C2 /* FileManager.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = FileManager.swift; sourceTree = "<group>"; };
+		FR_3F51906CE06544D3962A75E5BF82EB62 /* NetSendProcessor.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = NetSendProcessor.mm; sourceTree = "<group>"; };
+		FR_4892482E417FBA8FFAA7F2FA405815B5 /* NetSendController.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; path = NetSendController.h; sourceTree = "<group>"; };
+		FR_6EBE5A61E1BDC89E6F19D02EC0592357 /* VST3NetSend.vst3 */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VST3NetSend.vst3; sourceTree = BUILT_PRODUCTS_DIR; };
+		FR_77917ED78AB9C1C0BFA50D014E347FC3 /* Version.xcconfig */ = {isa = PBXFileReference; explicitFileType = text.xcconfig; path = Version.xcconfig; sourceTree = "<group>"; };
+		FR_7D553552484BDD6561BE3620AF2A393B /* VST3NetSendKit.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; path = VST3NetSendKit.h; sourceTree = "<group>"; };
+		FR_82381BDDD7D944FCD0AD2F8293621155 /* AudioUnitSettings.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = AudioUnitSettings.swift; sourceTree = "<group>"; };
+		FR_8C6F84540EAF12216564EBA81EB11EC3 /* RuntimeInfo.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = RuntimeInfo.swift; sourceTree = "<group>"; };
+		FR_9D9A5150FBD02F2354C80486E8AE3085 /* NetSendViewController.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = NetSendViewController.swift; sourceTree = "<group>"; };
+		FR_A6A1184578009E1E15ABAD4946C0772D /* AudioComponentDescription.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = AudioComponentDescription.swift; sourceTree = "<group>"; };
+		FR_A90622E8EB380DAFDB546EBBEB3F2E48 /* String.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		FR_BEEBD931933B28250FD76E17F890E8FA /* Log.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
+		FR_CAB1CAD80D8FF9958B756ECFC8DD3B48 /* NetSendParameter.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = NetSendParameter.swift; sourceTree = "<group>"; };
+		FR_CAE122224DB5551BF066A9A3B5833952 /* NonRecursiveLocking.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = NonRecursiveLocking.swift; sourceTree = "<group>"; };
+		FR_D029788E708BF27957B3DC81656DB49A /* VST3SDK.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = VST3SDK.cpp; sourceTree = "<group>"; };
+		FR_D107980A09C2FE7C1795055E762B630D /* NetSendAU.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = NetSendAU.swift; sourceTree = "<group>"; };
+		FR_D6E0A4AAA23B4465D1BC41C86D38B753 /* NetSendProcessorState.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; path = NetSendProcessorState.h; sourceTree = "<group>"; };
+		FR_D6F3D685F76402720A8F31BC1560FFAB /* VST3NetSendKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = VST3NetSendKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FR_DBC9F5A9264B9F6CA86075DB48F577A2 /* BuildInfo.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = BuildInfo.swift; sourceTree = "<group>"; };
+		FR_DD53756926039DE07C6A6C7791964726 /* NetSendProcessor.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; path = NetSendProcessor.h; sourceTree = "<group>"; };
+		FR_DDBBF3462E439F29BA94027ACC3864F6 /* NetSendView.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = NetSendView.mm; sourceTree = "<group>"; };
+		FR_DE9941EE561986DAF833FEE54943B1F0 /* NetSendProcessorState.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = NetSendProcessorState.cpp; sourceTree = "<group>"; };
+		FR_DEF2BCB61DAD4F832FD7004CBC255E29 /* NetSendFactory.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = NetSendFactory.cpp; sourceTree = "<group>"; };
+		FR_DFAC4BA8A9E0CA5612ECD02D123C1589 /* NetSendView.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; path = NetSendView.h; sourceTree = "<group>"; };
+		FR_E152873B806CED0293FE077CCA56FDA5 /* UnfairLock.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = UnfairLock.swift; sourceTree = "<group>"; };
+		FR_EFB546C11CD3CDE84C8C41FBA6307BFE /* ConnectionStatusValueTransformer.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = ConnectionStatusValueTransformer.swift; sourceTree = "<group>"; };
+		FR_FE807BF36CC3EE3373BBDBE5F9AEB16A /* NetSendView.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = NetSendView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		DA1AC6E9F33C0FAC5640D978 /* Frameworks */ = {
+		FBP_414050459EA6E22F21CA3F2FBF037B37 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5204D45A666D197B9B8C05B4 /* VST3NetSendKit.framework in Frameworks */,
+				BF_D359BB48383F84F9D7FCCD7191089EC4 /* VST3NetSendKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0ACBEEFEBAD33224ACFDD3E6 /* Sources */ = {
+		G_0BCE1B893BF57087C5A618347FB2762D /* Foundation */ = {
 			isa = PBXGroup;
 			children = (
-				DC4AD7CB495A2E93AB1E45E7 /* AudioUnitSettings.swift */,
+				G_A146541D5472D9D3933DDCEF6246F449 /* Extensions */,
+				G_5D35494156D670109A4B51D85FA6F9B6 /* Sources */,
+				G_8D3E987889EB6A42F096C71FF9AB3267 /* os */,
 			);
-			name = Sources;
-			path = Sources;
-			sourceTree = "<group>";
-		};
-		10DB5C5B11DBEFCB7C9B8A8F /* NetSendKit */ = {
-			isa = PBXGroup;
-			children = (
-				06DC64ACE996E0D68EC309AB /* VST3NetSendKit.h */,
-				0F9A4C40E89BE30E64228CE4 /* ConnectionFlagValueTransformer.swift */,
-				F225DAAD2424C71B3266012D /* ConnectionStatusValueTransformer.swift */,
-				88D175C4FCE499814FA2FD0B /* Logger.swift */,
-				63A35407100C29F99C4CC715 /* NetSendAU.swift */,
-				79F64A5900E65044A21B7CF1 /* NetSendParameter.swift */,
-				9BB033516422FE2FE46623AB /* NetSendProcessSetup.swift */,
-				611CAEBE541E7BF9C31C9403 /* NetSendView.swift */,
-				F9653596A632955232D64118 /* NetSendViewController.swift */,
-				F99D1195CC185D00B04947E0 /* NetSendViewModel.swift */,
-			);
-			name = NetSendKit;
-			path = NetSendKit;
-			sourceTree = "<group>";
-		};
-		1F267A584BD661FB09A4E002 = {
-			isa = PBXGroup;
-			children = (
-				C501F553AC89D254C8D3F4F7 /* Configuration */,
-				8E62DB8C76B2A804043141C8 /* Products */,
-				C191E52FFB8CC306C512DCC9 /* Sources */,
-				CB6A2EC91B8F7522DCD415F7 /* Vendor */,
-				CB6A2EC91B8F7522DCD415F7 /* Vendor */,
-				8E62DB8C76B2A804043141C8 /* Products */,
-			);
-			sourceTree = "<group>";
-		};
-		1FB3AF2E35E18046A82CEC6F /* Sources */ = {
-			isa = PBXGroup;
-			children = (
-				194110FB54F2E94C5E10FE72 /* BuildInfo.swift */,
-				642AD3B12E03289CA418D7EE /* RuntimeInfo.swift */,
-			);
-			name = Sources;
-			path = Sources;
-			sourceTree = "<group>";
-		};
-		21E213BB15EDEA9DA6425C4A /* Configuration */ = {
-			isa = PBXGroup;
-			children = (
-				F5FC1C3C5F4576510CFA9498 /* Framework-macOS.xcconfig */,
-			);
-			name = Configuration;
-			path = Configuration;
-			sourceTree = "<group>";
-		};
-		2BF8FBB2D3E279F2370CA5BC /* Foundation */ = {
-			isa = PBXGroup;
-			children = (
-				1FB3AF2E35E18046A82CEC6F /* Sources */,
-				A0470EB059559E78C910A01C /* os */,
-			);
-			name = Foundation;
 			path = Foundation;
 			sourceTree = "<group>";
 		};
-		7DC1846DDFF4A36FCF4EDFBE /* Extensions */ = {
+		G_200F07A5089460B74376F524256D1717 /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
-				EBAB3809692B02AFB5E113E8 /* AudioComponentDescription.swift */,
+				G_ABE79D3A0AE709501A237A582E08DDFA /* Libs */,
+				G_D7F407AC37F1BF1FD4141436C6E7AB8D /* WL */,
 			);
-			name = Extensions;
-			path = Extensions;
+			name = Vendor;
+			path = ../../../../Developer/Projects;
 			sourceTree = "<group>";
 		};
-		8721B3B5B2C7DED0B8C45550 /* log */ = {
+		G_235D945844F4B7B045B680CE6DF6759B /* Concurrency */ = {
 			isa = PBXGroup;
 			children = (
-				8C1FAA37E0CCFE9D7ED9F3B1 /* Log.swift */,
+				FR_CAE122224DB5551BF066A9A3B5833952 /* NonRecursiveLocking.swift */,
+				FR_E152873B806CED0293FE077CCA56FDA5 /* UnfairLock.swift */,
 			);
-			name = log;
+			path = Concurrency;
+			sourceTree = "<group>";
+		};
+		G_49E44849AEC23535DBA554B203FD55BB /* log */ = {
+			isa = PBXGroup;
+			children = (
+				FR_BEEBD931933B28250FD76E17F890E8FA /* Log.swift */,
+			);
 			path = log;
 			sourceTree = "<group>";
 		};
-		8E62DB8C76B2A804043141C8 /* Products */ = {
+		G_5D35494156D670109A4B51D85FA6F9B6 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				5F753BA2C45EEF4D177244F7 /* VST3NetSend.bundle */,
-				983D2DFFCED13DBE5B63706F /* VST3NetSendKit.framework */,
+				FR_DBC9F5A9264B9F6CA86075DB48F577A2 /* BuildInfo.swift */,
+				FR_8C6F84540EAF12216564EBA81EB11EC3 /* RuntimeInfo.swift */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		G_7FA1A157E608C57BF066E3B55FD8D878 /* Formatters */ = {
+			isa = PBXGroup;
+			children = (
+				FR_2E95CE71BC9603487AA999E57C319D23 /* IntegerFormatter.swift */,
+			);
+			path = Formatters;
+			sourceTree = "<group>";
+		};
+		G_83D1BA419B9D469613463A66AD02FCE4 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				FR_A6A1184578009E1E15ABAD4946C0772D /* AudioComponentDescription.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		G_87D941BB6FA9E32D360F59BCD8807B73 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FR_6EBE5A61E1BDC89E6F19D02EC0592357 /* VST3NetSend.vst3 */,
+				FR_D6F3D685F76402720A8F31BC1560FFAB /* VST3NetSendKit.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		9A7DA1BE126A54806536E74A /* Core */ = {
+		G_8A0F4F50FF976ECCFDC0F7014EF0E4F3 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
-				DB950F5C3FFBA50ABC33B23A /* Formatters */,
+				G_91B15C1DED83A84BE763D8E168F77BB0 /* Configuration */,
 			);
-			name = Core;
-			path = Core;
-			sourceTree = "<group>";
-		};
-		A0470EB059559E78C910A01C /* os */ = {
-			isa = PBXGroup;
-			children = (
-				8721B3B5B2C7DED0B8C45550 /* log */,
-			);
-			name = os;
-			path = os;
-			sourceTree = "<group>";
-		};
-		A83A1EE1281C9F4A467FD203 /* VST */ = {
-			isa = PBXGroup;
-			children = (
-				79184E0B6290A5689FBF4E6C /* NetSendController.cpp */,
-				04FE7035C831709AF4DB5E26 /* NetSendFactory.cpp */,
-				01B7D0AD666190E1AEC10E90 /* NetSendProcessorState.cpp */,
-				8FF633774108E0820A486322 /* VST3SDK.cpp */,
-				12DFCDB102EADA6C7B8FCDEC /* NetSendController.h */,
-				2A87CCD9E46B22CABC71324C /* NetSendParameters.h */,
-				7F2640129A461138F89F9158 /* NetSendProcessor.h */,
-				DF43D003AF9240A0821312CF /* NetSendProcessorState.h */,
-				77A06E98B0096AF3F530C024 /* NetSendView.h */,
-				17735786EDB6C28C9B9D1FA3 /* Prefix.h */,
-				8497C8A8FBD424C268FEE6BF /* NetSendProcessor.mm */,
-				E2987C9881D614D3BE9D7A0F /* NetSendView.mm */,
-			);
-			name = VST;
-			path = VST;
-			sourceTree = "<group>";
-		};
-		BD7E3ECD4A9D5016500FC0EC /* Shared */ = {
-			isa = PBXGroup;
-			children = (
-				21E213BB15EDEA9DA6425C4A /* Configuration */,
-			);
-			name = Shared;
 			path = Shared;
 			sourceTree = "<group>";
 		};
-		C191E52FFB8CC306C512DCC9 /* Sources */ = {
+		G_8D3E987889EB6A42F096C71FF9AB3267 /* os */ = {
 			isa = PBXGroup;
 			children = (
-				10DB5C5B11DBEFCB7C9B8A8F /* NetSendKit */,
-				A83A1EE1281C9F4A467FD203 /* VST */,
+				G_49E44849AEC23535DBA554B203FD55BB /* log */,
 			);
-			name = Sources;
-			path = Sources;
+			path = os;
 			sourceTree = "<group>";
 		};
-		C501F553AC89D254C8D3F4F7 /* Configuration */ = {
+		G_8EC49D497A088E1AF5FFA2965D3A9A3B /* NetSendKit */ = {
 			isa = PBXGroup;
 			children = (
-				2C61443E0A2B017E148C955D /* Project.xcconfig */,
+				FR_7D553552484BDD6561BE3620AF2A393B /* VST3NetSendKit.h */,
+				FR_2C3EF0CE1DE13EFAEF0358E5CD1657F9 /* ConnectionFlagValueTransformer.swift */,
+				FR_EFB546C11CD3CDE84C8C41FBA6307BFE /* ConnectionStatusValueTransformer.swift */,
+				FR_115B0B1A5732DD6E432FEDED1EBCBC18 /* Logger.swift */,
+				FR_D107980A09C2FE7C1795055E762B630D /* NetSendAU.swift */,
+				FR_CAB1CAD80D8FF9958B756ECFC8DD3B48 /* NetSendParameter.swift */,
+				FR_1F65684AD5B2FD6582DBAC63167CE51E /* NetSendProcessSetup.swift */,
+				FR_FE807BF36CC3EE3373BBDBE5F9AEB16A /* NetSendView.swift */,
+				FR_9D9A5150FBD02F2354C80486E8AE3085 /* NetSendViewController.swift */,
+				FR_357DB998B193A256D41282566FF7E97C /* NetSendViewModel.swift */,
 			);
-			name = Configuration;
+			path = NetSendKit;
+			sourceTree = "<group>";
+		};
+		G_91B15C1DED83A84BE763D8E168F77BB0 /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				FR_286AAF86B534AD832D9921F31C540216 /* Framework-macOS.xcconfig */,
+			);
 			path = Configuration;
 			sourceTree = "<group>";
 		};
-		CB6A2EC91B8F7522DCD415F7 /* Vendor */ = {
+		G_A146541D5472D9D3933DDCEF6246F449 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				E14D4B24D27CE09C9228BB5A /* WL */,
+				FR_3AB366788619E726305670C3301D33C2 /* FileManager.swift */,
+				FR_A90622E8EB380DAFDB546EBBEB3F2E48 /* String.swift */,
 			);
-			name = Vendor;
-			path = Vendor;
+			path = Extensions;
 			sourceTree = "<group>";
 		};
-		D9916D5C8773EAE9E3843494 /* Media */ = {
+		G_ABE79D3A0AE709501A237A582E08DDFA /* Libs */ = {
 			isa = PBXGroup;
 			children = (
-				7DC1846DDFF4A36FCF4EDFBE /* Extensions */,
-				0ACBEEFEBAD33224ACFDD3E6 /* Sources */,
 			);
-			name = Media;
+			name = Libs;
+			path = ../libs;
+			sourceTree = "<group>";
+		};
+		G_BA13E726B6B6FD4CEDBE88937C76BB82 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				G_7FA1A157E608C57BF066E3B55FD8D878 /* Formatters */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		G_C228AE1A051D46E6B3E88A73BE699023 /* Media */ = {
+			isa = PBXGroup;
+			children = (
+				G_83D1BA419B9D469613463A66AD02FCE4 /* Extensions */,
+				G_FCEB4A08D42523A42587843576923F10 /* Sources */,
+			);
 			path = Media;
 			sourceTree = "<group>";
 		};
-		DB950F5C3FFBA50ABC33B23A /* Formatters */ = {
+		G_D64BFD95DF12254D7BA4FEB7C84C44B9 = {
 			isa = PBXGroup;
 			children = (
-				D96F6C533E054333BD2D2D41 /* IntegerFormatter.swift */,
+				G_FC812F6CFA74F83906FCE359CE9E7676 /* Configuration */,
+				G_E34F395B442860C0BCBBE95C4545F08C /* Sources */,
+				G_200F07A5089460B74376F524256D1717 /* Vendor */,
+				G_87D941BB6FA9E32D360F59BCD8807B73 /* Products */,
 			);
-			name = Formatters;
-			path = Formatters;
 			sourceTree = "<group>";
 		};
-		E14D4B24D27CE09C9228BB5A /* WL */ = {
+		G_D7F407AC37F1BF1FD4141436C6E7AB8D /* WL */ = {
 			isa = PBXGroup;
 			children = (
-				9A7DA1BE126A54806536E74A /* Core */,
-				2BF8FBB2D3E279F2370CA5BC /* Foundation */,
-				D9916D5C8773EAE9E3843494 /* Media */,
-				BD7E3ECD4A9D5016500FC0EC /* Shared */,
+				G_235D945844F4B7B045B680CE6DF6759B /* Concurrency */,
+				G_BA13E726B6B6FD4CEDBE88937C76BB82 /* Core */,
+				G_0BCE1B893BF57087C5A618347FB2762D /* Foundation */,
+				G_C228AE1A051D46E6B3E88A73BE699023 /* Media */,
+				G_8A0F4F50FF976ECCFDC0F7014EF0E4F3 /* Shared */,
 			);
 			path = WL;
+			sourceTree = "<group>";
+		};
+		G_E34F395B442860C0BCBBE95C4545F08C /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				G_8EC49D497A088E1AF5FFA2965D3A9A3B /* NetSendKit */,
+				G_FDFA9B95A65757E96428A7D05D5BA933 /* VST */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		G_FC812F6CFA74F83906FCE359CE9E7676 /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				FR_3A6F1770F2E3B515678435543C0C190C /* Project.xcconfig */,
+				FR_77917ED78AB9C1C0BFA50D014E347FC3 /* Version.xcconfig */,
+			);
+			path = Configuration;
+			sourceTree = "<group>";
+		};
+		G_FCEB4A08D42523A42587843576923F10 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				FR_82381BDDD7D944FCD0AD2F8293621155 /* AudioUnitSettings.swift */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		G_FDFA9B95A65757E96428A7D05D5BA933 /* VST */ = {
+			isa = PBXGroup;
+			children = (
+				FR_2A7FC3BCFD86E2D33FC50EC57680EC88 /* NetSendController.cpp */,
+				FR_DEF2BCB61DAD4F832FD7004CBC255E29 /* NetSendFactory.cpp */,
+				FR_DE9941EE561986DAF833FEE54943B1F0 /* NetSendProcessorState.cpp */,
+				FR_D029788E708BF27957B3DC81656DB49A /* VST3SDK.cpp */,
+				FR_4892482E417FBA8FFAA7F2FA405815B5 /* NetSendController.h */,
+				FR_00C3BCCE9285999BFB1DEB4A452D07FC /* NetSendParameters.h */,
+				FR_DD53756926039DE07C6A6C7791964726 /* NetSendProcessor.h */,
+				FR_D6E0A4AAA23B4465D1BC41C86D38B753 /* NetSendProcessorState.h */,
+				FR_DFAC4BA8A9E0CA5612ECD02D123C1589 /* NetSendView.h */,
+				FR_204A3161447D379F6E8B258C9BFD3210 /* Prefix.h */,
+				FR_3F51906CE06544D3962A75E5BF82EB62 /* NetSendProcessor.mm */,
+				FR_DDBBF3462E439F29BA94027ACC3864F6 /* NetSendView.mm */,
+			);
+			path = VST;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		1315C5052CCC40164C0CBED1 /* Headers */ = {
+		HBP_18336125B3953216E57570251C13995B /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1CB1CA8E5A0DB42EFD74DFAE /* NetSendView.h in Headers */,
-				68CD9793879B133DB5B89996 /* NetSendProcessorState.h in Headers */,
-				2DAF6A93231F0AC120162817 /* NetSendParameters.h in Headers */,
-				5934174EE0C7548F8BD6FD60 /* NetSendProcessor.h in Headers */,
-				B32E819084D2C9BA0DDB3703 /* NetSendController.h in Headers */,
-				715A856D29F989469E600F44 /* Prefix.h in Headers */,
+				BF_43B789B3204826AC0E49A1C10E3BF79D /* NetSendView.h in Headers */,
+				BF_4B10735AF269C3973A613BA076606521 /* NetSendProcessorState.h in Headers */,
+				BF_BBACCFB1A9175A95431B74BDC2BDDAF1 /* NetSendParameters.h in Headers */,
+				BF_64B08D27E75112D9B506AB89BF217D7A /* NetSendProcessor.h in Headers */,
+				BF_5D8E8EF1550F9B62F627D0CE2C03FDCF /* NetSendController.h in Headers */,
+				BF_F223DADA1286607A13F92E453012C0EB /* Prefix.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E9F5DDF5FA50F01AAC2889FD /* Headers */ = {
+		HBP_AC0BF97F90C6770E9B9A5DF946E2B05F /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				05A9CAE95265101DCB772A99 /* VST3NetSendKit.h in Headers */,
+				BF_E400CE77FB21A6010F69DF1494B10348 /* VST3NetSendKit.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		C937DB8AA0C669369F0D3C32 /* VST3NetSendKit */ = {
+		NT_0A42EA35381E2A25F216A49C0655721F /* VST3NetSendKit-macOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3B78EE424A4FA2C4914B7D12 /* Build configuration list for PBXNativeTarget "VST3NetSendKit" */;
+			buildConfigurationList = CL_E9A2CE2AB38DA0697D8CFE8949CDF180 /* Build configuration list for PBXNativeTarget "VST3NetSendKit-macOS" */;
 			buildPhases = (
-				EA5F54BA62D83C465167FE56 /* Run Script: Verify */,
-				E9F5DDF5FA50F01AAC2889FD /* Headers */,
-				A6206AC26007812C704FD654 /* Sources */,
+				HBP_AC0BF97F90C6770E9B9A5DF946E2B05F /* Headers */,
+				SBP_F20EB71CC4F0A1D612F138EA9D154DEF /* Sources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = VST3NetSendKit;
+			name = "VST3NetSendKit-macOS";
 			productName = VST3NetSendKit;
-			productReference = 983D2DFFCED13DBE5B63706F /* VST3NetSendKit.framework */;
+			productReference = FR_D6F3D685F76402720A8F31BC1560FFAB /* VST3NetSendKit.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		E782E5254637D627CE875A01 /* VST3NetSend */ = {
+		NT_C9310A0048D3D97B871427277C807F3F /* VST3NetSend-macOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 386F45F93885E2BE4701A8E2 /* Build configuration list for PBXNativeTarget "VST3NetSend" */;
+			buildConfigurationList = CL_AE0B3E66FE3747E81AD14C78173899AA /* Build configuration list for PBXNativeTarget "VST3NetSend-macOS" */;
 			buildPhases = (
-				C240623F2F7866CCB8FD0BCB /* Run Script: Verify */,
-				B18134DBEB2DC32D79D97196 /* Sources */,
-				DA1AC6E9F33C0FAC5640D978 /* Frameworks */,
-				1315C5052CCC40164C0CBED1 /* Headers */,
-				1DD386BDF543ED8EA6DA46BD /* Embed Frameworks */,
+				HBP_18336125B3953216E57570251C13995B /* Headers */,
+				SBP_D293B8A1DBBE9B1DA505078319ABC255 /* Sources */,
+				FBP_414050459EA6E22F21CA3F2FBF037B37 /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				33E5E8A2FFFC6338E471FD98 /* PBXTargetDependency */,
+				TD_5B45681A4A260B9C226494E6DF748529 /* PBXTargetDependency */,
 			);
-			name = VST3NetSend;
+			name = "VST3NetSend-macOS";
 			productName = VST3NetSend;
-			productReference = 5F753BA2C45EEF4D177244F7 /* VST3NetSend.bundle */;
+			productReference = FR_6EBE5A61E1BDC89E6F19D02EC0592357 /* VST3NetSend.vst3 */;
 			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		56D4544F0C5D149C9ADA7818 /* Project object */ = {
+		P_4072110F23C6E8A277091112F37E579C /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0930;
-				LastUpgradeCheck = 1000;
+				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = WaveLabs;
 			};
-			buildConfigurationList = 7C65A5BC2FEDCBC823344274 /* Build configuration list for PBXProject "VST3NetSend" */;
-			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			buildConfigurationList = CL_A619698699E0EB1F43D6A4FA95CA7B28 /* Build configuration list for PBXProject "VST3NetSend" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 			);
-			mainGroup = 1F267A584BD661FB09A4E002;
-			productRefGroup = 8E62DB8C76B2A804043141C8 /* Products */;
+			mainGroup = G_D64BFD95DF12254D7BA4FEB7C84C44B9;
+			productRefGroup = G_87D941BB6FA9E32D360F59BCD8807B73 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				C937DB8AA0C669369F0D3C32 /* VST3NetSendKit */,
-				E782E5254637D627CE875A01 /* VST3NetSend */,
-				7C90330C059CF8E76F176A03 /* Verify */,
-				539E35D37B4E4DE53924CBBA /* Autocorrect */,
+				NT_0A42EA35381E2A25F216A49C0655721F /* VST3NetSendKit-macOS */,
+				NT_C9310A0048D3D97B871427277C807F3F /* VST3NetSend-macOS */,
 			);
 		};
 /* End PBXProject section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		3FF50218C969F6613A952ECE /* Run Script: Autocorrect */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = "Run Script: Autocorrect";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/bash;
-			shellScript = "[[ -r ~/.bashrc ]] && . ~/.bashrc\nruby -r \"$SRCROOT/Project.rb\" -e \"Project.new('$SRCROOT').autocorrect()\"";
-			showEnvVarsInLog = 1;
-		};
-		C240623F2F7866CCB8FD0BCB /* Run Script: Verify */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = "Run Script: Verify";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/bash;
-			shellScript = "[[ -r ~/.bashrc ]] && . ~/.bashrc\nruby -r \"$SRCROOT/Project.rb\" -e \"Project.new('$SRCROOT').verify('Sources/VST')\"";
-			showEnvVarsInLog = 1;
-		};
-		E7CF0F901851FC0E91E7ADFF /* Run Script: Verify */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = "Run Script: Verify";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/bash;
-			shellScript = "[[ -r ~/.bashrc ]] && . ~/.bashrc\nruby -r \"$SRCROOT/Project.rb\" -e \"Project.new('$SRCROOT').verify()\"";
-			showEnvVarsInLog = 1;
-		};
-		EA5F54BA62D83C465167FE56 /* Run Script: Verify */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = "Run Script: Verify";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/bash;
-			shellScript = "[[ -r ~/.bashrc ]] && . ~/.bashrc\nruby -r \"$SRCROOT/Project.rb\" -e \"Project.new('$SRCROOT').verify('Sources/NetSendKit')\"";
-			showEnvVarsInLog = 1;
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
-		A6206AC26007812C704FD654 /* Sources */ = {
+		SBP_D293B8A1DBBE9B1DA505078319ABC255 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9F3BBCE598FFB1761DC6C536 /* NetSendView.swift in Sources */,
-				15478C8C17A7087DBE64120D /* Logger.swift in Sources */,
-				6FD5DBF10C33B40F5A1399D2 /* ConnectionStatusValueTransformer.swift in Sources */,
-				B5ECDB7FBFB48B88B7E3816D /* NetSendViewController.swift in Sources */,
-				39C5C56CF68983D076863091 /* NetSendAU.swift in Sources */,
-				4484BEBCD10BFF96F4FD4D5B /* NetSendViewModel.swift in Sources */,
-				361ACDA01572016A81C39580 /* NetSendProcessSetup.swift in Sources */,
-				AB92B11E46128778381B9F4F /* NetSendParameter.swift in Sources */,
-				B42A186F17B281F4F85210BF /* ConnectionFlagValueTransformer.swift in Sources */,
-				D0D1EE30D4B7B919ECEC79A9 /* IntegerFormatter.swift in Sources */,
-				C9AD36661AE52FD175FDD860 /* Log.swift in Sources */,
-				D5FD5B65EF30CB09D9A54774 /* BuildInfo.swift in Sources */,
-				0D8CD505275280DF04C999A4 /* RuntimeInfo.swift in Sources */,
-				F84658153F251B89811F8B13 /* AudioComponentDescription.swift in Sources */,
-				F29B352F01BBD6DA703BF581 /* AudioUnitSettings.swift in Sources */,
+				BF_299DE7FBEFA25E0FEA9BCD3C09C9C197 /* VST3SDK.cpp in Sources */,
+				BF_B67ADC457B044BBD68E681AADFD23D63 /* NetSendFactory.cpp in Sources */,
+				BF_4C6B6D04B82E933C748BEE313D8F54B1 /* NetSendView.mm in Sources */,
+				BF_570462520EE819E9DEB831B90906EF0D /* NetSendController.cpp in Sources */,
+				BF_BF165BBBD4B0DD745E85180D92BEBCE9 /* NetSendProcessorState.cpp in Sources */,
+				BF_A951B89D2CE781C5C66278A75820B9F2 /* NetSendProcessor.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B18134DBEB2DC32D79D97196 /* Sources */ = {
+		SBP_F20EB71CC4F0A1D612F138EA9D154DEF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5C4A32C4ED1EE8D43376DD7D /* VST3SDK.cpp in Sources */,
-				BEE1C63BA9146BCE5254B097 /* NetSendFactory.cpp in Sources */,
-				A3D92888E152D96122594A24 /* NetSendController.cpp in Sources */,
-				FA1302A5FEF09B003878E458 /* NetSendProcessorState.cpp in Sources */,
-				8C907765FBB69A6472C18E81 /* NetSendView.mm in Sources */,
-				5036CAF4305E61B6EC1CD39B /* NetSendProcessor.mm in Sources */,
+				BF_081F4CBF1005BC8AA3CA4CD23BABE643 /* NetSendView.swift in Sources */,
+				BF_70BAA9C76FDD9B2C97C3CE21EA7FD9A2 /* Logger.swift in Sources */,
+				BF_2FFD252E53D2FFA3446EC0E76779E0FC /* ConnectionStatusValueTransformer.swift in Sources */,
+				BF_784D156AD5D780CE58F6BBB21A5F5B6A /* NetSendViewController.swift in Sources */,
+				BF_74F63FEF33E2594AA0067B26AC483EC1 /* NetSendAU.swift in Sources */,
+				BF_397586AFBBB996FDDFC49FE0FCB20901 /* NetSendViewModel.swift in Sources */,
+				BF_23BD009028421075E93FD0F701E0745B /* NetSendProcessSetup.swift in Sources */,
+				BF_A75194A5D64195F752EBE7F99378FA9C /* NetSendParameter.swift in Sources */,
+				BF_4B57F2D859468836F1646D2BD0B13312 /* ConnectionFlagValueTransformer.swift in Sources */,
+				BF_3A3A416234C63D610A31E7B507E8DB96 /* IntegerFormatter.swift in Sources */,
+				BF_B1AC1BD2A24F621922E224065DECD507 /* FileManager.swift in Sources */,
+				BF_1E32C2FCC6BD9E8176FE0C4069CEAA47 /* String.swift in Sources */,
+				BF_C61AA1208880394B0C77716E8700EB0A /* BuildInfo.swift in Sources */,
+				BF_1B5B2F69AFC59032C6D4E06099337023 /* RuntimeInfo.swift in Sources */,
+				BF_AA339C2A3CFEDE996F5A9EA36259C5C9 /* Log.swift in Sources */,
+				BF_AAFEA1771F3BB7562ADAC74B2458A5FC /* UnfairLock.swift in Sources */,
+				BF_22EEBD895FF59A17C77DD8D8405541A4 /* NonRecursiveLocking.swift in Sources */,
+				BF_FBF09651FD28ADAB61D0E9892B2B7C70 /* AudioComponentDescription.swift in Sources */,
+				BF_6BC9C76AC696C88CF74F662BCCF3A586 /* AudioUnitSettings.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		33E5E8A2FFFC6338E471FD98 /* PBXTargetDependency */ = {
+		TD_5B45681A4A260B9C226494E6DF748529 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = VST3NetSendKit;
-			target = C937DB8AA0C669369F0D3C32 /* VST3NetSendKit */;
-			targetProxy = A7365B6C8C44A176BC198166 /* PBXContainerItemProxy */;
+			name = "VST3NetSendKit-macOS";
+			target = NT_0A42EA35381E2A25F216A49C0655721F /* VST3NetSendKit-macOS */;
+			targetProxy = CIP_346B2EFA20E2767104C6A1CD0D083600 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		323EDB002A6A5773F7AF556A /* Debug */ = {
+		BC_4E9EC6E24F6C2F2BDB5E781E62329450 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2C61443E0A2B017E148C955D /* Project.xcconfig */;
+			baseConfigurationReference = FR_3A6F1770F2E3B515678435543C0C190C /* Project.xcconfig */;
 			buildSettings = {
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 			};
 			name = Debug;
 		};
-		33047580C94196B8FC5D6565 /* Debug */ = {
+		BC_59698823E450A8D2865FAD61413F1B71 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F5FC1C3C5F4576510CFA9498 /* Framework-macOS.xcconfig */;
+			baseConfigurationReference = FR_286AAF86B534AD832D9921F31C540216 /* Framework-macOS.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				APPLICATION_EXTENSION_API_ONLY = YES;
 				DEFINES_MODULE = YES;
 				INFOPLIST_FILE = Sources/NetSendKit/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
 				OTHER_LDFLAGS = (
 					"-framework",
 					AudioToolbox,
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "ua.com.wavelabs.vst3.$(PRODUCT_NAME)";
 				PRODUCT_NAME = VST3NetSendKit;
+				SWIFT_INCLUDE_PATHS = Sources/NetSendKit;
 				SWIFT_INSTALL_OBJC_HEADER = YES;
 			};
 			name = Debug;
 		};
-		3ED1A12D7DED26C07A850D7E /* Release */ = {
+		BC_6B7C93A68C7BDF2876FA19F6BA60C141 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F5FC1C3C5F4576510CFA9498 /* Framework-macOS.xcconfig */;
+			baseConfigurationReference = FR_3A6F1770F2E3B515678435543C0C190C /* Project.xcconfig */;
+			buildSettings = {
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+			};
+			name = Release;
+		};
+		BC_81A08789D145DA7B94E7A5C2E3531F8B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FR_286AAF86B534AD832D9921F31C540216 /* Framework-macOS.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				APPLICATION_EXTENSION_API_ONLY = YES;
 				DEFINES_MODULE = YES;
 				INFOPLIST_FILE = Sources/NetSendKit/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
 				OTHER_LDFLAGS = (
 					"-framework",
 					AudioToolbox,
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "ua.com.wavelabs.vst3.$(PRODUCT_NAME)";
 				PRODUCT_NAME = VST3NetSendKit;
+				SWIFT_INCLUDE_PATHS = Sources/NetSendKit;
 				SWIFT_INSTALL_OBJC_HEADER = YES;
 			};
 			name = Release;
 		};
-		8D154A84D0C2531A0B141C07 /* Release */ = {
+		BC_C5820EB5B4AB55728DA09A3CF6EFA638 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F5FC1C3C5F4576510CFA9498 /* Framework-macOS.xcconfig */;
+			baseConfigurationReference = FR_286AAF86B534AD832D9921F31C540216 /* Framework-macOS.xcconfig */;
 			buildSettings = {
+				DEFINES_MODULE = YES;
 				DEPLOYMENT_LOCATION = YES;
 				DSTROOT = "$(HOME)";
 				EXPORTED_SYMBOLS_FILE = "$(GV_VST_SDK)/public.sdk/source/main/macexport.exp";
@@ -612,38 +535,6 @@
 				GENERATE_PKGINFO_FILE = YES;
 				INFOPLIST_FILE = Sources/VST/Info.plist;
 				INSTALL_PATH = "/Library/Audio/Plug-Ins/VST3/WaveLabs";
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
-				OTHER_LDFLAGS = (
-					"-framework",
-					AudioToolbox,
-					"-framework",
-					CoreAudio,
-					"-framework",
-					Cocoa,
-					"-framework",
-					AudioUnit,
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "ua.com.wavelabs.$(PRODUCT_NAME)";
-				PRODUCT_NAME = VST3NetSend;
-				SKIP_INSTALL = NO;
-				WRAPPER_EXTENSION = vst3;
-			};
-			name = Release;
-		};
-		B80529C4D4E37977A3C36B99 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = F5FC1C3C5F4576510CFA9498 /* Framework-macOS.xcconfig */;
-			buildSettings = {
-				DEPLOYMENT_LOCATION = YES;
-				DSTROOT = "$(HOME)";
-				EXPORTED_SYMBOLS_FILE = "$(GV_VST_SDK)/public.sdk/source/main/macexport.exp";
-				GCC_PREFIX_HEADER = Sources/VST/Prefix.h;
-				GCC_PREPROCESSOR_DEFINITIONS_Debug = "DEVELOPMENT=1 $(inherited)";
-				GCC_PREPROCESSOR_DEFINITIONS_Release = "RELEASE=1 NDEBUG=1 $(inherited)";
-				GENERATE_PKGINFO_FILE = YES;
-				INFOPLIST_FILE = Sources/VST/Info.plist;
-				INSTALL_PATH = "/Library/Audio/Plug-Ins/VST3/WaveLabs";
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				OTHER_LDFLAGS = (
 					"-framework",
 					AudioToolbox,
@@ -661,44 +552,68 @@
 			};
 			name = Debug;
 		};
-		CB75AC09FA648300529E74B7 /* Release */ = {
+		BC_E0FC13E3E189D22D188AE22D487BD6F5 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2C61443E0A2B017E148C955D /* Project.xcconfig */;
+			baseConfigurationReference = FR_286AAF86B534AD832D9921F31C540216 /* Framework-macOS.xcconfig */;
 			buildSettings = {
+				DEFINES_MODULE = YES;
+				DEPLOYMENT_LOCATION = YES;
+				DSTROOT = "$(HOME)";
+				EXPORTED_SYMBOLS_FILE = "$(GV_VST_SDK)/public.sdk/source/main/macexport.exp";
+				GCC_PREFIX_HEADER = Sources/VST/Prefix.h;
+				GCC_PREPROCESSOR_DEFINITIONS_Debug = "DEVELOPMENT=1 $(inherited)";
+				GCC_PREPROCESSOR_DEFINITIONS_Release = "RELEASE=1 NDEBUG=1 $(inherited)";
+				GENERATE_PKGINFO_FILE = YES;
+				INFOPLIST_FILE = Sources/VST/Info.plist;
+				INSTALL_PATH = "/Library/Audio/Plug-Ins/VST3/WaveLabs";
+				OTHER_LDFLAGS = (
+					"-framework",
+					AudioToolbox,
+					"-framework",
+					CoreAudio,
+					"-framework",
+					Cocoa,
+					"-framework",
+					AudioUnit,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "ua.com.wavelabs.$(PRODUCT_NAME)";
+				PRODUCT_NAME = VST3NetSend;
+				SKIP_INSTALL = NO;
+				WRAPPER_EXTENSION = vst3;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		386F45F93885E2BE4701A8E2 /* Build configuration list for PBXNativeTarget "VST3NetSend" */ = {
+		CL_A619698699E0EB1F43D6A4FA95CA7B28 /* Build configuration list for PBXProject "VST3NetSend" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				8D154A84D0C2531A0B141C07 /* Release */,
-				B80529C4D4E37977A3C36B99 /* Debug */,
+				BC_4E9EC6E24F6C2F2BDB5E781E62329450 /* Debug */,
+				BC_6B7C93A68C7BDF2876FA19F6BA60C141 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3B78EE424A4FA2C4914B7D12 /* Build configuration list for PBXNativeTarget "VST3NetSendKit" */ = {
+		CL_AE0B3E66FE3747E81AD14C78173899AA /* Build configuration list for PBXNativeTarget "VST3NetSend-macOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				3ED1A12D7DED26C07A850D7E /* Release */,
-				33047580C94196B8FC5D6565 /* Debug */,
+				BC_C5820EB5B4AB55728DA09A3CF6EFA638 /* Debug */,
+				BC_E0FC13E3E189D22D188AE22D487BD6F5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		7C65A5BC2FEDCBC823344274 /* Build configuration list for PBXProject "VST3NetSend" */ = {
+		CL_E9A2CE2AB38DA0697D8CFE8949CDF180 /* Build configuration list for PBXNativeTarget "VST3NetSendKit-macOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				323EDB002A6A5773F7AF556A /* Debug */,
-				CB75AC09FA648300529E74B7 /* Release */,
+				BC_59698823E450A8D2865FAD61413F1B71 /* Debug */,
+				BC_81A08789D145DA7B94E7A5C2E3531F8B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 56D4544F0C5D149C9ADA7818 /* Project object */;
+	rootObject = P_4072110F23C6E8A277091112F37E579C /* Project object */;
 }
