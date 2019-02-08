@@ -1,14 +1,20 @@
 require 'ffi'
 
-file = File.dirname(__FILE__) + '/mcAutomation.framework/mcAutomation'
-if !File.exist?(file)
-   file = ENV['AWL_SYS_HOME'] + '/lib/mcAutomation.framework/mcAutomation'
+class AutomationHelper
+   def self.fwPath
+      path = File.dirname(__FILE__) + '/mcAutomation.framework/mcAutomation'
+      if !File.exist?(path)
+         path = ENV['AWL_SYS_HOME'] + '/lib/mcAutomation.framework/mcAutomation'
+      end
+      return path
+   end
 end
 
 # See also: https://github.com/ffi/ffi/wiki/Examples
 module AutomationProxy
    extend FFI::Library
-   ffi_lib file
+
+   ffi_lib AutomationHelper.fwPath
    attach_function :mod_prepare, [], :void
    attach_function :mod_construct, [], :pointer
    attach_function :mod_sync, [:pointer, :pointer, :int, :pointer], :void
