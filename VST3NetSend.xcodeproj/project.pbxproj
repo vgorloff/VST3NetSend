@@ -120,8 +120,7 @@
 				G_ABE79D3A0AE709501A237A582E08DDFA /* Libs */,
 				G_D7F407AC37F1BF1FD4141436C6E7AB8D /* WL */,
 			);
-			name = Vendor;
-			path = ../../../../Developer/Projects;
+			path = Vendor;
 			sourceTree = "<group>";
 		};
 		G_235D945844F4B7B045B680CE6DF6759B /* Concurrency */ = {
