@@ -5,7 +5,7 @@
 
 language: objective-c
 osx_image: xcode10.1
-install: true # Skipping install - https://docs.travis-ci.com/user/customizing-the-build
+install: gem install ffi
 script: make ci
 
 branches:
