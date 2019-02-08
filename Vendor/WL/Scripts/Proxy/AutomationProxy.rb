@@ -7,8 +7,9 @@ class AutomationHelper
       if !File.exist?(archive)
          path = ENV['AWL_SYS_HOME'] + '/lib/mcAutomation.framework/mcAutomation'
       else
-         Archive.unzip(archive)
          path = File.dirname(__FILE__) + '/mcAutomation.framework/mcAutomation'
+         FileUtils.rm_r(File.dirname(__FILE__) + '/mcAutomation.framework')
+         Archive.unzip(archive)
       end
       return path
    end
