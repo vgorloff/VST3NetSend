@@ -29,4 +29,5 @@ module AutomationProxy
    attach_function :mod_diff, [:pointer, :string, :string, :bool, :pointer], :void
    attach_function :xc_build, [:string, :string], :void
    attach_function :xc_clean, [:string, :string], :void
+   attach_function :xc_ci, [:string, :string], :void
 end

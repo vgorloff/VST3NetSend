@@ -70,12 +70,7 @@ class XcodeBuilder
    end
 
    def ci(schema)
-      codesignSettings = "CODE_SIGNING_REQUIRED=NO CODE_SIGN_IDENTITY=''"
-      cmd = "#{@buildExecutable} -project \"#{@projectFilePath}\" -scheme \"#{schema}\" -configuration Release #{codesignSettings}  #{@derivedDataPath} build #{@commonArgsXCPretty}"
-      system(cmd)
-      if $?.exitstatus != 0
-         raise "Build failed with status: #{$?.exitstatus}"
-      end
+      AutomationProxy.xc_ci(@projectFilePath, schema)
    end
 
    def self.validateBinary(path)
