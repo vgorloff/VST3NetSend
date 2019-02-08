@@ -66,7 +66,7 @@ extension NetSendAU {
       guard let au = au?.audioUnit else {
          return
       }
-      if shouldActivate && !isActive {
+      if shouldActivate, !isActive {
          guard AudioUnitInitialize(au) == noErr else {
             log.error(.media, "Unable to initialize AUNetSend instance.")
             return
