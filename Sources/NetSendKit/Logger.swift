@@ -9,7 +9,7 @@
 import Foundation
 
 enum ModuleLogCategory: String, LogCategory {
-   case media
+   case media, core
 }
 
 let log = Log<ModuleLogCategory>(subsystem: "netSend")
