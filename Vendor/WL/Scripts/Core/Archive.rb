@@ -1,6 +1,6 @@
 class Archive
 
-   def self.zip(fileOrDir)
+   def self.zip(fileOrDir, output = nil)
       if File.directory?(fileOrDir)
          targetDir = File.dirname(fileOrDir)
          fileName = File.basename(fileOrDir)
@@ -11,7 +11,10 @@ class Archive
             File.delete(outputFilePath)
          end
          puts "→ Making archive \"#{outputFilePath}\"."
-         `cd \"#{targetDir}\" && zip -r \"#{archiveName}\" \"#{fileName}\"`
+         `cd \"#{targetDir}\" && zip --symlinks -r \"#{archiveName}\" \"#{fileName}\"`
+         if !output.nil?
+            FileUtils.mv(outputFilePath, output)
+         end
       else
          raise "Not implemented"
       end
