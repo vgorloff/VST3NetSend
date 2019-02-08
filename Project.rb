@@ -10,7 +10,7 @@ class Project < AbstractProject
    def initialize(rootDirPath)
       super(rootDirPath)
       @projectFilePath = rootDirPath + "/VST3NetSend.xcodeproj"
-      @projectSchema = "VST3NetSend"
+      @projectSchema = "VST3NetSend-macOS"
       @vstSDKDirPath = rootDirPath + "/Vendor/Steinberg"
    end
 
@@ -22,11 +22,11 @@ class Project < AbstractProject
    end
 
    def build()
-      # Done
+      XcodeBuilder.new(@projectFilePath).build(@projectSchema)
    end
 
    def clean()
-      # Done
+      XcodeBuilder.new(@projectFilePath).clean(@projectSchema)
    end
 
    def archive()
