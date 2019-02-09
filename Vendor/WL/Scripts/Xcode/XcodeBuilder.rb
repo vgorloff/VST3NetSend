@@ -1,10 +1,7 @@
 require 'fileutils'
-require 'tmpdir'
 require_relative '../Extensions/AnsiTextStyles.rb'
-require_relative 'PlistTool.rb'
-require_relative 'Environment.rb'
-
-String.include(AnsiTextStyles)
+require_relative '../Core/PlistTool.rb'
+require_relative '../Core/Environment.rb'
 
 module BuildConfiguration
    DEBUG = 'Debug'.freeze
@@ -18,7 +15,9 @@ end
 class XcodeBuilder
 
    def initialize(projectFilePath, buildRoot = ENV['PWD'])
+      require_relative '../Proxy/AutomationProxy.rb'
       require 'securerandom'
+      require 'tmpdir'
       @isVerbodeMode = Environment.isDebug
       @buildRoot = buildRoot
       @projectFilePath = projectFilePath
@@ -34,13 +33,8 @@ class XcodeBuilder
       @exportPlistFilePath = File.join(Dir.tmpdir, "ruby-automation.#{SecureRandom.uuid}.xml")
    end
 
-   def build(schema, configuration = nil)
-      c = configuration.nil? ? "" : "-configuration #{configuration}"
-      cmd = "#{@buildExecutable} -project \"#{@projectFilePath}\" -scheme \"#{schema}\" #{c} #{@derivedDataPath} build #{@commonArgsXCPretty}"
-      system(cmd)
-      if $?.exitstatus != 0
-         raise "Build failed with status: #{$?.exitstatus}"
-      end
+   def build(schema)
+      AutomationProxy.xc_build(@projectFilePath, schema)
    end
 
    def test(schema, configuration = nil)
@@ -72,24 +66,11 @@ class XcodeBuilder
    end
 
    def clean(schema)
-      configurations = ["Debug", "Release"]
-      configurations.each { |c|
-         cmd = "#{@buildExecutable} -project \"#{@projectFilePath}\" -scheme \"#{schema}\" -configuration #{c} #{@derivedDataPath} clean #{@commonArgsXCPretty}"
-         system(cmd)
-      }
-      if File.directory?(@buildDir)
-         puts("→ Deleting directory #{@buildDir}")
-         FileUtils.rm_r(@buildDir)
-      end
+      AutomationProxy.xc_clean(@projectFilePath, schema)
    end
 
    def ci(schema)
-      codesignSettings = "CODE_SIGNING_REQUIRED=NO CODE_SIGN_IDENTITY=''"
-      cmd = "#{@buildExecutable} -project \"#{@projectFilePath}\" -scheme \"#{schema}\" -configuration Release #{codesignSettings}  #{@derivedDataPath} build #{@commonArgsXCPretty}"
-      system(cmd)
-      if $?.exitstatus != 0
-         raise "Build failed with status: #{$?.exitstatus}"
-      end
+      AutomationProxy.xc_ci(@projectFilePath, schema)
    end
 
    def self.validateBinary(path)
