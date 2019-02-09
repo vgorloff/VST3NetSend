@@ -6,16 +6,15 @@ VST3 version of Mac OS X system-supplied AUNetSend audio plugin.
 *AUNetSend* - is an audio plugin that streams audio data over a network. Used in conjunction with the AUNetReceive generator audio unit.
 *VST3NetSend* - is a VST3 version of the plugin which provide similar functionality as AUNetSend. It could be used with Cubase/Nuendo® (by Steinberg®).
 
-
 ![VST3NetSend User Interface](https://raw.githubusercontent.com/vgorloff/VST3NetSend/master/Media/VST3NetSend.png)
 
-Usage:
+Usage
 -----
 
 [Download binary](https://github.com/vgorloff/VST3NetSend/releases/latest) and copy it to "~/Library/Audio/Plug-Ins/VST3" or "/Library/Audio/Plug-Ins/VST3" folder.
 Launch Cubase/Nuendo®. Add instance to insert slot: ***Tools -> WaveLabs VST3NetSend***.
 
-Features:
+Features
 --------
 
 * Supports any sample rate and audio buffer size.
@@ -23,14 +22,14 @@ Features:
 * CPU safe.
 * Fully utilize features of original AUNetSend audio plugin.
 
-System requirements:
+System requirements
 -------------------
 
 * macOS 10.11 and above.
 * 64-bit VST3 host application (DAW).
 * Gigabit LAN connection between computers.
 
-Troubleshooting:
+Troubleshooting
 ---------------
 
 [Bonjour Browser](http://www.tildesoft.com) application can be used to inspect all AUNetSend providers.
@@ -42,7 +41,7 @@ To solve this problem enter IP-address manually.
 ![Troubleshooting AUNetRecieve. Step 1.](https://raw.githubusercontent.com/vgorloff/VST3NetSend/master/Media/Troubleshooting_AUNetRecieve_01.png)
 ![Troubleshooting AUNetRecieve. Step 2.](https://raw.githubusercontent.com/vgorloff/VST3NetSend/master/Media/Troubleshooting_AUNetRecieve_02.png)
 
-How to build:
+How to build
 ------------
 
 To build plugin the following tools, libs and SDKs needed:
