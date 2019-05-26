@@ -22,7 +22,7 @@ class Project < AbstractProject
    def deploy()
       require 'yaml'
       assets = Dir["#{@rootDirPath}/**/*.xcarchive/**/*.vst3.zip"]
-      gitHubRelease(assets)
+      gitHubRelease(assets: assets)
    end
 
    def generate()
