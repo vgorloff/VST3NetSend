@@ -1,9 +1,4 @@
-MAIN_FILE = "#{ENV['AWL_SCRIPTS']}/Automation.rb".freeze
-if File.exist?(MAIN_FILE)
-   require MAIN_FILE
-else
-   Dir[File.dirname(__FILE__) + "/Vendor/WL/Scripts/**/*.rb"].each { |file| require file }
-end
+require "#{ENV['AWL_SCRIPTS']}/Automation.rb"
 
 class Project < AbstractProject
 
