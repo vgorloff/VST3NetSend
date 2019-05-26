@@ -11,6 +11,8 @@ Developer.xcconfig
 
 ## Package managers
 /Vendor/Carthage
+/Project.js
+/node_modules
 
 ## IDE
 .idea

@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -27,6 +27,7 @@
 		BF_70BAA9C76FDD9B2C97C3CE21EA7FD9A2 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_115B0B1A5732DD6E432FEDED1EBCBC18 /* Logger.swift */; };
 		BF_74F63FEF33E2594AA0067B26AC483EC1 /* NetSendAU.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_D107980A09C2FE7C1795055E762B630D /* NetSendAU.swift */; };
 		BF_784D156AD5D780CE58F6BBB21A5F5B6A /* NetSendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_9D9A5150FBD02F2354C80486E8AE3085 /* NetSendViewController.swift */; };
+		BF_971A62F5E3C78212D1DF74B79C8529A5 /* String.Index.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_984B1742F35947A160DB49AFB88BDB01 /* String.Index.swift */; };
 		BF_A75194A5D64195F752EBE7F99378FA9C /* NetSendParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_CAB1CAD80D8FF9958B756ECFC8DD3B48 /* NetSendParameter.swift */; };
 		BF_A951B89D2CE781C5C66278A75820B9F2 /* NetSendProcessor.mm in Sources */ = {isa = PBXBuildFile; fileRef = FR_3F51906CE06544D3962A75E5BF82EB62 /* NetSendProcessor.mm */; };
 		BF_AA339C2A3CFEDE996F5A9EA36259C5C9 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_BEEBD931933B28250FD76E17F890E8FA /* Log.swift */; };
@@ -71,6 +72,7 @@
 		FR_7D553552484BDD6561BE3620AF2A393B /* VST3NetSendKit.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; path = VST3NetSendKit.h; sourceTree = "<group>"; };
 		FR_82381BDDD7D944FCD0AD2F8293621155 /* AudioUnitSettings.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = AudioUnitSettings.swift; sourceTree = "<group>"; };
 		FR_8C6F84540EAF12216564EBA81EB11EC3 /* RuntimeInfo.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = RuntimeInfo.swift; sourceTree = "<group>"; };
+		FR_984B1742F35947A160DB49AFB88BDB01 /* String.Index.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = String.Index.swift; sourceTree = "<group>"; };
 		FR_9D9A5150FBD02F2354C80486E8AE3085 /* NetSendViewController.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = NetSendViewController.swift; sourceTree = "<group>"; };
 		FR_A6A1184578009E1E15ABAD4946C0772D /* AudioComponentDescription.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = AudioComponentDescription.swift; sourceTree = "<group>"; };
 		FR_A90622E8EB380DAFDB546EBBEB3F2E48 /* String.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
@@ -219,6 +221,7 @@
 			isa = PBXGroup;
 			children = (
 				FR_3AB366788619E726305670C3301D33C2 /* FileManager.swift */,
+				FR_984B1742F35947A160DB49AFB88BDB01 /* String.Index.swift */,
 				FR_A90622E8EB380DAFDB546EBBEB3F2E48 /* String.swift */,
 			);
 			path = Extensions;
@@ -383,15 +386,16 @@
 		P_4072110F23C6E8A277091112F37E579C /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 1010;
+				LastUpgradeCheck = 1020;
 				ORGANIZATIONNAME = WaveLabs;
 			};
 			buildConfigurationList = CL_A619698699E0EB1F43D6A4FA95CA7B28 /* Build configuration list for PBXProject "VST3NetSend" */;
-			compatibilityVersion = "Xcode 9.3";
+			compatibilityVersion = "Xcode 10.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = G_D64BFD95DF12254D7BA4FEB7C84C44B9;
 			productRefGroup = G_87D941BB6FA9E32D360F59BCD8807B73 /* Products */;
@@ -432,6 +436,7 @@
 				BF_A75194A5D64195F752EBE7F99378FA9C /* NetSendParameter.swift in Sources */,
 				BF_4B57F2D859468836F1646D2BD0B13312 /* ConnectionFlagValueTransformer.swift in Sources */,
 				BF_3A3A416234C63D610A31E7B507E8DB96 /* IntegerFormatter.swift in Sources */,
+				BF_971A62F5E3C78212D1DF74B79C8529A5 /* String.Index.swift in Sources */,
 				BF_B1AC1BD2A24F621922E224065DECD507 /* FileManager.swift in Sources */,
 				BF_1E32C2FCC6BD9E8176FE0C4069CEAA47 /* String.swift in Sources */,
 				BF_C61AA1208880394B0C77716E8700EB0A /* BuildInfo.swift in Sources */,
