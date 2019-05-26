@@ -10,18 +10,10 @@ class Project < AbstractProject
    def initialize(rootDirPath)
       super(rootDirPath)
       @projectFilePath = rootDirPath + "/VST3NetSend.xcodeproj"
-      @projectSchema = "VST3NetSend-macOS"
-   end
-
-   def prepare()
-      puts "→ Downloading dependencies..."
-      FileUtils.mkdir_p @vstSDKDirPath
-      `cd \"#{@vstSDKDirPath}\" && git clone --branch vstsdk368_08_11_2017_build_121  https://github.com/steinbergmedia/vst3sdk.git`
-      `cd \"#{@vstSDKDirPath}/vst3sdk\" && git submodule update --init base pluginterfaces public.sdk`
    end
 
    def archive()
-      XcodeBuilder.new(@projectFilePath).archive(@projectSchema, nil, true)
+      XcodeBuilder.new(@projectFilePath).archive("VST3NetSend-macOS", nil, true)
       apps = Dir["#{@rootDirPath}/**/*.xcarchive/**/*.vst3"].select { |file| File.directory?(file) }
       apps.each { |app| Archive.zip(app) }
       apps.each { |app| XcodeBuilder.validateBinary(app) }
@@ -35,7 +27,7 @@ class Project < AbstractProject
 
    def generate()
       deleteXcodeFiles()
-      gen = XCGen.new(File.join(@rootDirPath, "VST3NetSend.xcodeproj"))
+      gen = XCGen.new(@projectFilePath)
       netSendKit = gen.addFramework("VST3NetSendKit", "Sources/NetSendKit", "macOS", false, false)
       netSend = gen.addBundle("VST3NetSend", "Sources/VST", "macOS")
       gen.addComponentFiles(netSendKit, [
