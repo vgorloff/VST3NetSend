@@ -4,8 +4,8 @@
 # - Building Swift Project: https://docs.travis-ci.com/user/languages/objective-c/
 
 language: objective-c
-osx_image: xcode10.1
-install: gem install ffi
+osx_image: xcode10.2
+install: npm install && npm run build
 script: make ci
 
 branches:
