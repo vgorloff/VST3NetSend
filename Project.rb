@@ -11,7 +11,6 @@ class Project < AbstractProject
       super(rootDirPath)
       @projectFilePath = rootDirPath + "/VST3NetSend.xcodeproj"
       @projectSchema = "VST3NetSend-macOS"
-      @vstSDKDirPath = rootDirPath + "/Vendor/Steinberg"
    end
 
    def prepare()
@@ -21,23 +20,11 @@ class Project < AbstractProject
       `cd \"#{@vstSDKDirPath}/vst3sdk\" && git submodule update --init base pluginterfaces public.sdk`
    end
 
-   def build()
-      XcodeBuilder.new(@projectFilePath).build(@projectSchema)
-   end
-
-   def clean()
-      XcodeBuilder.new(@projectFilePath).clean(@projectSchema)
-   end
-
    def archive()
       XcodeBuilder.new(@projectFilePath).archive(@projectSchema, nil, true)
       apps = Dir["#{@rootDirPath}/**/*.xcarchive/**/*.vst3"].select { |file| File.directory?(file) }
       apps.each { |app| Archive.zip(app) }
       apps.each { |app| XcodeBuilder.validateBinary(app) }
-   end
-
-   def release()
-      XcodeBuilder.new(@projectFilePath).ci(@projectSchema)
    end
 
    def deploy()
@@ -49,11 +36,11 @@ class Project < AbstractProject
    def generate()
       deleteXcodeFiles()
       gen = XCGen.new(File.join(@rootDirPath, "VST3NetSend.xcodeproj"))
-      netSendKit = gen.addFramework("VST3NetSendKit", "Sources/NetSendKit", false, "macOS")
+      netSendKit = gen.addFramework("VST3NetSendKit", "Sources/NetSendKit", "macOS", false, false)
       netSend = gen.addBundle("VST3NetSend", "Sources/VST", "macOS")
       gen.addComponentFiles(netSendKit, [
                                "IntegerFormatter.swift", "Log.swift", "BuildInfo.swift", "RuntimeInfo.swift", "UnfairLock.swift", "FileManager.swift",
-                               "NonRecursiveLocking.swift", "AudioUnitSettings.swift", "String.swift", "AudioComponentDescription.swift"
+                               "NonRecursiveLocking.swift", "AudioUnitSettings.swift", "String.swift", "String.Index.swift", "AudioComponentDescription.swift"
                             ])
       gen.addBuildSettings(netSendKit, {
                               "SWIFT_INSTALL_OBJC_HEADER" => "YES",
