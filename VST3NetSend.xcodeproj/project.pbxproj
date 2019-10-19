@@ -119,7 +119,6 @@
 		G_200F07A5089460B74376F524256D1717 /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
-				G_ABE79D3A0AE709501A237A582E08DDFA /* Libs */,
 				G_D7F407AC37F1BF1FD4141436C6E7AB8D /* WL */,
 			);
 			path = Vendor;
@@ -225,14 +224,6 @@
 				FR_A90622E8EB380DAFDB546EBBEB3F2E48 /* String.swift */,
 			);
 			path = Extensions;
-			sourceTree = "<group>";
-		};
-		G_ABE79D3A0AE709501A237A582E08DDFA /* Libs */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Libs;
-			path = ../libs;
 			sourceTree = "<group>";
 		};
 		G_BA13E726B6B6FD4CEDBE88937C76BB82 /* Core */ = {
