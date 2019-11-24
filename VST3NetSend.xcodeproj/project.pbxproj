@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		80E37AE6238B363800B23015 /* VST3NetSendShared in Frameworks */ = {isa = PBXBuildFile; productRef = 80E37AE5238B363800B23015 /* VST3NetSendShared */; };
 		BF_081F4CBF1005BC8AA3CA4CD23BABE643 /* NetSendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_FE807BF36CC3EE3373BBDBE5F9AEB16A /* NetSendView.swift */; };
 		BF_1B5B2F69AFC59032C6D4E06099337023 /* RuntimeInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_8C6F84540EAF12216564EBA81EB11EC3 /* RuntimeInfo.swift */; };
 		BF_1E32C2FCC6BD9E8176FE0C4069CEAA47 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_A90622E8EB380DAFDB546EBBEB3F2E48 /* String.swift */; };
@@ -54,11 +55,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		80E37AE2238B35D000B23015 /* Dependencies */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Dependencies; sourceTree = "<group>"; };
+		80E37AE9238B37A200B23015 /* Common.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Common.xcconfig; sourceTree = "<group>"; };
+		80E37AEA238B37A200B23015 /* Framework-macOS.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Framework-macOS.xcconfig"; sourceTree = "<group>"; };
 		FR_00C3BCCE9285999BFB1DEB4A452D07FC /* NetSendParameters.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; path = NetSendParameters.h; sourceTree = "<group>"; };
 		FR_115B0B1A5732DD6E432FEDED1EBCBC18 /* Logger.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		FR_1F65684AD5B2FD6582DBAC63167CE51E /* NetSendProcessSetup.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = NetSendProcessSetup.swift; sourceTree = "<group>"; };
 		FR_204A3161447D379F6E8B258C9BFD3210 /* Prefix.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; path = Prefix.h; sourceTree = "<group>"; };
-		FR_286AAF86B534AD832D9921F31C540216 /* Framework-macOS.xcconfig */ = {isa = PBXFileReference; explicitFileType = text.xcconfig; path = "Framework-macOS.xcconfig"; sourceTree = "<group>"; };
 		FR_2A7FC3BCFD86E2D33FC50EC57680EC88 /* NetSendController.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = NetSendController.cpp; sourceTree = "<group>"; };
 		FR_2C3EF0CE1DE13EFAEF0358E5CD1657F9 /* ConnectionFlagValueTransformer.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = ConnectionFlagValueTransformer.swift; sourceTree = "<group>"; };
 		FR_2E95CE71BC9603487AA999E57C319D23 /* IntegerFormatter.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = IntegerFormatter.swift; sourceTree = "<group>"; };
@@ -95,6 +98,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		80E37AE3238B363300B23015 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				80E37AE6238B363800B23015 /* VST3NetSendShared in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FBP_414050459EA6E22F21CA3F2FBF037B37 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -106,6 +117,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		80E37AE4238B363800B23015 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		G_0BCE1B893BF57087C5A618347FB2762D /* Foundation */ = {
 			isa = PBXGroup;
 			children = (
@@ -175,14 +193,6 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		G_8A0F4F50FF976ECCFDC0F7014EF0E4F3 /* Shared */ = {
-			isa = PBXGroup;
-			children = (
-				G_91B15C1DED83A84BE763D8E168F77BB0 /* Configuration */,
-			);
-			path = Shared;
-			sourceTree = "<group>";
-		};
 		G_8D3E987889EB6A42F096C71FF9AB3267 /* os */ = {
 			isa = PBXGroup;
 			children = (
@@ -206,14 +216,6 @@
 				FR_357DB998B193A256D41282566FF7E97C /* NetSendViewModel.swift */,
 			);
 			path = NetSendKit;
-			sourceTree = "<group>";
-		};
-		G_91B15C1DED83A84BE763D8E168F77BB0 /* Configuration */ = {
-			isa = PBXGroup;
-			children = (
-				FR_286AAF86B534AD832D9921F31C540216 /* Framework-macOS.xcconfig */,
-			);
-			path = Configuration;
 			sourceTree = "<group>";
 		};
 		G_A146541D5472D9D3933DDCEF6246F449 /* Extensions */ = {
@@ -246,10 +248,12 @@
 		G_D64BFD95DF12254D7BA4FEB7C84C44B9 = {
 			isa = PBXGroup;
 			children = (
+				80E37AE2238B35D000B23015 /* Dependencies */,
 				G_FC812F6CFA74F83906FCE359CE9E7676 /* Configuration */,
 				G_E34F395B442860C0BCBBE95C4545F08C /* Sources */,
 				G_200F07A5089460B74376F524256D1717 /* Vendor */,
 				G_87D941BB6FA9E32D360F59BCD8807B73 /* Products */,
+				80E37AE4238B363800B23015 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -260,7 +264,6 @@
 				G_BA13E726B6B6FD4CEDBE88937C76BB82 /* Core */,
 				G_0BCE1B893BF57087C5A618347FB2762D /* Foundation */,
 				G_C228AE1A051D46E6B3E88A73BE699023 /* Media */,
-				G_8A0F4F50FF976ECCFDC0F7014EF0E4F3 /* Shared */,
 			);
 			path = WL;
 			sourceTree = "<group>";
@@ -277,6 +280,8 @@
 		G_FC812F6CFA74F83906FCE359CE9E7676 /* Configuration */ = {
 			isa = PBXGroup;
 			children = (
+				80E37AE9238B37A200B23015 /* Common.xcconfig */,
+				80E37AEA238B37A200B23015 /* Framework-macOS.xcconfig */,
 				FR_3A6F1770F2E3B515678435543C0C190C /* Project.xcconfig */,
 				FR_77917ED78AB9C1C0BFA50D014E347FC3 /* Version.xcconfig */,
 			);
@@ -343,12 +348,16 @@
 			buildPhases = (
 				HBP_AC0BF97F90C6770E9B9A5DF946E2B05F /* Headers */,
 				SBP_F20EB71CC4F0A1D612F138EA9D154DEF /* Sources */,
+				80E37AE3238B363300B23015 /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = "VST3NetSendKit-macOS";
+			packageProductDependencies = (
+				80E37AE5238B363800B23015 /* VST3NetSendShared */,
+			);
 			productName = VST3NetSendKit;
 			productReference = FR_D6F3D685F76402720A8F31BC1560FFAB /* VST3NetSendKit.framework */;
 			productType = "com.apple.product-type.framework";
@@ -462,7 +471,7 @@
 		};
 		BC_59698823E450A8D2865FAD61413F1B71 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FR_286AAF86B534AD832D9921F31C540216 /* Framework-macOS.xcconfig */;
+			baseConfigurationReference = 80E37AEA238B37A200B23015 /* Framework-macOS.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				APPLICATION_EXTENSION_API_ONLY = YES;
@@ -479,7 +488,6 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "ua.com.wavelabs.vst3.$(PRODUCT_NAME)";
 				PRODUCT_NAME = VST3NetSendKit;
-				SWIFT_INCLUDE_PATHS = Sources/NetSendKit;
 				SWIFT_INSTALL_OBJC_HEADER = YES;
 			};
 			name = Debug;
@@ -494,7 +502,7 @@
 		};
 		BC_81A08789D145DA7B94E7A5C2E3531F8B /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FR_286AAF86B534AD832D9921F31C540216 /* Framework-macOS.xcconfig */;
+			baseConfigurationReference = 80E37AEA238B37A200B23015 /* Framework-macOS.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				APPLICATION_EXTENSION_API_ONLY = YES;
@@ -511,14 +519,13 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "ua.com.wavelabs.vst3.$(PRODUCT_NAME)";
 				PRODUCT_NAME = VST3NetSendKit;
-				SWIFT_INCLUDE_PATHS = Sources/NetSendKit;
 				SWIFT_INSTALL_OBJC_HEADER = YES;
 			};
 			name = Release;
 		};
 		BC_C5820EB5B4AB55728DA09A3CF6EFA638 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FR_286AAF86B534AD832D9921F31C540216 /* Framework-macOS.xcconfig */;
+			baseConfigurationReference = 80E37AEA238B37A200B23015 /* Framework-macOS.xcconfig */;
 			buildSettings = {
 				DEFINES_MODULE = YES;
 				DEPLOYMENT_LOCATION = YES;
@@ -549,7 +556,7 @@
 		};
 		BC_E0FC13E3E189D22D188AE22D487BD6F5 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FR_286AAF86B534AD832D9921F31C540216 /* Framework-macOS.xcconfig */;
+			baseConfigurationReference = 80E37AEA238B37A200B23015 /* Framework-macOS.xcconfig */;
 			buildSettings = {
 				DEFINES_MODULE = YES;
 				DEPLOYMENT_LOCATION = YES;
@@ -609,6 +616,13 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		80E37AE5238B363800B23015 /* VST3NetSendShared */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = VST3NetSendShared;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = P_4072110F23C6E8A277091112F37E579C /* Project object */;
 }

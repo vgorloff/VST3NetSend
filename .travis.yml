@@ -4,11 +4,11 @@
 # - Building Swift Project: https://docs.travis-ci.com/user/languages/objective-c/
 
 language: objective-c
-osx_image: xcode10.2
-install: npm install && npm run build
-script: make ci
+osx_image: xcode11.2
+install: npm install
+script: source "./node_modules/wl-scripting/index.sh" && p.ci
 
 branches:
-  only:
-  - master
-  - /^release\/.*$/
+   only:
+      - master
+      - /^release\/.*$/

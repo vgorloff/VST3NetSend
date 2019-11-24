@@ -1,5 +1,5 @@
 {
-  "dependencies": {
-    "wl-scripting": "^1.0.18"
-  }
+   "dependencies": {
+      "wl-scripting": "1.0.20"
+   }
 }
