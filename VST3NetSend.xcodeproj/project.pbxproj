@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		807F741D238C92F6007B14FA /* VST3NetSendKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = FR_D6F3D685F76402720A8F31BC1560FFAB /* VST3NetSendKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		80E37AE6238B363800B23015 /* VST3NetSendShared in Frameworks */ = {isa = PBXBuildFile; productRef = 80E37AE5238B363800B23015 /* VST3NetSendShared */; };
 		BF_081F4CBF1005BC8AA3CA4CD23BABE643 /* NetSendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_FE807BF36CC3EE3373BBDBE5F9AEB16A /* NetSendView.swift */; };
 		BF_23BD009028421075E93FD0F701E0745B /* NetSendProcessSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_1F65684AD5B2FD6582DBAC63167CE51E /* NetSendProcessSetup.swift */; };
@@ -42,6 +43,19 @@
 			remoteInfo = "VST3NetSendKit-macOS";
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		807F741C238C92ED007B14FA /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				807F741D238C92F6007B14FA /* VST3NetSendKit.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		80E37AE2238B35D000B23015 /* Dependencies */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Dependencies; sourceTree = "<group>"; };
@@ -232,6 +246,7 @@
 				HBP_18336125B3953216E57570251C13995B /* Headers */,
 				SBP_D293B8A1DBBE9B1DA505078319ABC255 /* Sources */,
 				FBP_414050459EA6E22F21CA3F2FBF037B37 /* Frameworks */,
+				807F741C238C92ED007B14FA /* CopyFiles */,
 			);
 			buildRules = (
 			);
