@@ -7,6 +7,7 @@
 //
 
 import Cocoa
+import mcFoundationFormatters
 
 public class NetSendViewController: NSViewController {
 
