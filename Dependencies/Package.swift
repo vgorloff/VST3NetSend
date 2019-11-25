@@ -20,6 +20,6 @@ pkg.dependencies = [
 
 pkg.targets = [
    .target(name: "VST3NetSendShared",
-           dependencies: ["mcConcurrencyLocking", "mcFoundationExtensions", "mcFoundationLogging"],
+           dependencies: ["mcConcurrencyLocking", "mcFoundationExtensions", "mcFoundationLogging", "mcFoundationFormatters"],
            path: "Sources"),
 ]
