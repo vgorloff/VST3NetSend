@@ -7,6 +7,8 @@
 //
 
 import AVFoundation
+import mcMediaExtensions
+import mcMediaAU
 
 public final class NetSendAU: NSObject {
 

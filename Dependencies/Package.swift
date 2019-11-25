@@ -15,11 +15,13 @@ pkg.products = [
 
 pkg.dependencies = [
     .package(path: "../../Shared/mcConcurrency"),
-    .package(path: "../../Shared/mcFoundation")
+    .package(path: "../../Shared/mcFoundation"),
+    .package(path: "../../Shared/mcMedia")
 ]
 
 pkg.targets = [
    .target(name: "VST3NetSendShared",
-           dependencies: ["mcConcurrencyLocking", "mcFoundationExtensions", "mcFoundationLogging", "mcFoundationFormatters"],
+           dependencies: ["mcConcurrencyLocking", "mcFoundationExtensions", "mcFoundationLogging", "mcFoundationFormatters",
+                          "mcMediaExtensions", "mcMediaAU"],
            path: "Sources"),
 ]
