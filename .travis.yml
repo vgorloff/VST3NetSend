@@ -4,6 +4,8 @@
 # - Building Swift Project: https://docs.travis-ci.com/user/languages/objective-c/
 
 language: objective-c
+node_js:
+  - "10"
 osx_image: xcode11.2
 install: npm install
 script: source "./node_modules/wl-scripting/index.sh" && p.ci
