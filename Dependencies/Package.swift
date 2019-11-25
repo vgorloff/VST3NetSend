@@ -15,18 +15,11 @@ pkg.products = [
 
 pkg.dependencies = [
     .package(path: "../../Shared/mcConcurrency"),
-   // .package(path: "../../mcUIKit"),
-   // .package(path: "../../mcDB"),
-   // .package(path: "../../mcAppServices"),
-   // .package(path: "../../mcTestability"),
-   // .package(path: "../../mcFoundation"),
-   // .package(path: "../../mcRuntime"),
-   // .package(path: "../../mcSecurity"),
-   // .package(path: "../../mcMath")
+    .package(path: "../../Shared/mcFoundation")
 ]
 
 pkg.targets = [
    .target(name: "VST3NetSendShared",
-           dependencies: ["mcConcurrency"],
+           dependencies: ["mcConcurrencyLocking", "mcFoundationExtensions", "mcFoundationLogging"],
            path: "Sources"),
 ]
