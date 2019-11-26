@@ -109,13 +109,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		80E37AE4238B363800B23015 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		G_87D941BB6FA9E32D360F59BCD8807B73 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -149,7 +142,6 @@
 				G_FC812F6CFA74F83906FCE359CE9E7676 /* Configuration */,
 				G_E34F395B442860C0BCBBE95C4545F08C /* Sources */,
 				G_87D941BB6FA9E32D360F59BCD8807B73 /* Products */,
-				80E37AE4238B363800B23015 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};

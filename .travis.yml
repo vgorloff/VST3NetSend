@@ -5,7 +5,7 @@
 
 language: objective-c
 osx_image: xcode11.2
-install: npm install
+install: nvm use v10.17.0 && npm install
 script: source "./node_modules/wl-scripting/index.sh" && p.ci
 
 branches:
