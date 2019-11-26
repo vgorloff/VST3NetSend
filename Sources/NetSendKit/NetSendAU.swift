@@ -7,8 +7,8 @@
 //
 
 import AVFoundation
-import mcMediaExtensions
 import mcMediaAU
+import mcMediaExtensions
 
 public final class NetSendAU: NSObject {
 
@@ -107,7 +107,7 @@ extension NetSendAU {
       }
       setProperty("ServiceName") {
          try AudioUnitSettings.setProperty(for: au, propertyID: kAUNetSendProperty_ServiceName,
-                                           scope: .global, element: 0, data: (serviceName as CFString))
+                                           scope: .global, element: 0, data: serviceName as CFString)
       }
    }
 
@@ -117,7 +117,7 @@ extension NetSendAU {
       }
       setProperty("Password") {
          try AudioUnitSettings.setProperty(for: au, propertyID: kAUNetSendProperty_Password,
-                                           scope: .global, element: 0, data: (password as CFString))
+                                           scope: .global, element: 0, data: password as CFString)
       }
    }
 
