@@ -3,19 +3,17 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		807F741D238C92F6007B14FA /* VST3NetSendKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = FR_D6F3D685F76402720A8F31BC1560FFAB /* VST3NetSendKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		80E37AE6238B363800B23015 /* VST3NetSendShared in Frameworks */ = {isa = PBXBuildFile; productRef = 80E37AE5238B363800B23015 /* VST3NetSendShared */; };
 		BF_081F4CBF1005BC8AA3CA4CD23BABE643 /* NetSendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_FE807BF36CC3EE3373BBDBE5F9AEB16A /* NetSendView.swift */; };
-		BF_1B5B2F69AFC59032C6D4E06099337023 /* RuntimeInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_8C6F84540EAF12216564EBA81EB11EC3 /* RuntimeInfo.swift */; };
-		BF_1E32C2FCC6BD9E8176FE0C4069CEAA47 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_A90622E8EB380DAFDB546EBBEB3F2E48 /* String.swift */; };
-		BF_22EEBD895FF59A17C77DD8D8405541A4 /* NonRecursiveLocking.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_CAE122224DB5551BF066A9A3B5833952 /* NonRecursiveLocking.swift */; };
 		BF_23BD009028421075E93FD0F701E0745B /* NetSendProcessSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_1F65684AD5B2FD6582DBAC63167CE51E /* NetSendProcessSetup.swift */; };
 		BF_299DE7FBEFA25E0FEA9BCD3C09C9C197 /* VST3SDK.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FR_D029788E708BF27957B3DC81656DB49A /* VST3SDK.cpp */; };
 		BF_2FFD252E53D2FFA3446EC0E76779E0FC /* ConnectionStatusValueTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_EFB546C11CD3CDE84C8C41FBA6307BFE /* ConnectionStatusValueTransformer.swift */; };
 		BF_397586AFBBB996FDDFC49FE0FCB20901 /* NetSendViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_357DB998B193A256D41282566FF7E97C /* NetSendViewModel.swift */; };
-		BF_3A3A416234C63D610A31E7B507E8DB96 /* IntegerFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_2E95CE71BC9603487AA999E57C319D23 /* IntegerFormatter.swift */; };
 		BF_43B789B3204826AC0E49A1C10E3BF79D /* NetSendView.h in Headers */ = {isa = PBXBuildFile; fileRef = FR_DFAC4BA8A9E0CA5612ECD02D123C1589 /* NetSendView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BF_4B10735AF269C3973A613BA076606521 /* NetSendProcessorState.h in Headers */ = {isa = PBXBuildFile; fileRef = FR_D6E0A4AAA23B4465D1BC41C86D38B753 /* NetSendProcessorState.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BF_4B57F2D859468836F1646D2BD0B13312 /* ConnectionFlagValueTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_2C3EF0CE1DE13EFAEF0358E5CD1657F9 /* ConnectionFlagValueTransformer.swift */; };
@@ -23,24 +21,17 @@
 		BF_570462520EE819E9DEB831B90906EF0D /* NetSendController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FR_2A7FC3BCFD86E2D33FC50EC57680EC88 /* NetSendController.cpp */; };
 		BF_5D8E8EF1550F9B62F627D0CE2C03FDCF /* NetSendController.h in Headers */ = {isa = PBXBuildFile; fileRef = FR_4892482E417FBA8FFAA7F2FA405815B5 /* NetSendController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BF_64B08D27E75112D9B506AB89BF217D7A /* NetSendProcessor.h in Headers */ = {isa = PBXBuildFile; fileRef = FR_DD53756926039DE07C6A6C7791964726 /* NetSendProcessor.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		BF_6BC9C76AC696C88CF74F662BCCF3A586 /* AudioUnitSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_82381BDDD7D944FCD0AD2F8293621155 /* AudioUnitSettings.swift */; };
 		BF_70BAA9C76FDD9B2C97C3CE21EA7FD9A2 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_115B0B1A5732DD6E432FEDED1EBCBC18 /* Logger.swift */; };
 		BF_74F63FEF33E2594AA0067B26AC483EC1 /* NetSendAU.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_D107980A09C2FE7C1795055E762B630D /* NetSendAU.swift */; };
 		BF_784D156AD5D780CE58F6BBB21A5F5B6A /* NetSendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_9D9A5150FBD02F2354C80486E8AE3085 /* NetSendViewController.swift */; };
-		BF_971A62F5E3C78212D1DF74B79C8529A5 /* String.Index.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_984B1742F35947A160DB49AFB88BDB01 /* String.Index.swift */; };
 		BF_A75194A5D64195F752EBE7F99378FA9C /* NetSendParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_CAB1CAD80D8FF9958B756ECFC8DD3B48 /* NetSendParameter.swift */; };
 		BF_A951B89D2CE781C5C66278A75820B9F2 /* NetSendProcessor.mm in Sources */ = {isa = PBXBuildFile; fileRef = FR_3F51906CE06544D3962A75E5BF82EB62 /* NetSendProcessor.mm */; };
-		BF_AA339C2A3CFEDE996F5A9EA36259C5C9 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_BEEBD931933B28250FD76E17F890E8FA /* Log.swift */; };
-		BF_AAFEA1771F3BB7562ADAC74B2458A5FC /* UnfairLock.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_E152873B806CED0293FE077CCA56FDA5 /* UnfairLock.swift */; };
-		BF_B1AC1BD2A24F621922E224065DECD507 /* FileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_3AB366788619E726305670C3301D33C2 /* FileManager.swift */; };
 		BF_B67ADC457B044BBD68E681AADFD23D63 /* NetSendFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FR_DEF2BCB61DAD4F832FD7004CBC255E29 /* NetSendFactory.cpp */; };
 		BF_BBACCFB1A9175A95431B74BDC2BDDAF1 /* NetSendParameters.h in Headers */ = {isa = PBXBuildFile; fileRef = FR_00C3BCCE9285999BFB1DEB4A452D07FC /* NetSendParameters.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BF_BF165BBBD4B0DD745E85180D92BEBCE9 /* NetSendProcessorState.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FR_DE9941EE561986DAF833FEE54943B1F0 /* NetSendProcessorState.cpp */; };
-		BF_C61AA1208880394B0C77716E8700EB0A /* BuildInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_DBC9F5A9264B9F6CA86075DB48F577A2 /* BuildInfo.swift */; };
 		BF_D359BB48383F84F9D7FCCD7191089EC4 /* VST3NetSendKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FR_D6F3D685F76402720A8F31BC1560FFAB /* VST3NetSendKit.framework */; };
 		BF_E400CE77FB21A6010F69DF1494B10348 /* VST3NetSendKit.h in Headers */ = {isa = PBXBuildFile; fileRef = FR_7D553552484BDD6561BE3620AF2A393B /* VST3NetSendKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BF_F223DADA1286607A13F92E453012C0EB /* Prefix.h in Headers */ = {isa = PBXBuildFile; fileRef = FR_204A3161447D379F6E8B258C9BFD3210 /* Prefix.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		BF_FBF09651FD28ADAB61D0E9892B2B7C70 /* AudioComponentDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_A6A1184578009E1E15ABAD4946C0772D /* AudioComponentDescription.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,48 +44,60 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		807F741C238C92ED007B14FA /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				807F741D238C92F6007B14FA /* VST3NetSendKit.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		80E37AE2238B35D000B23015 /* Dependencies */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Dependencies; sourceTree = "<group>"; };
+		80E37AE9238B37A200B23015 /* Common.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Common.xcconfig; sourceTree = "<group>"; };
+		80E37AEA238B37A200B23015 /* Framework-macOS.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Framework-macOS.xcconfig"; sourceTree = "<group>"; };
 		FR_00C3BCCE9285999BFB1DEB4A452D07FC /* NetSendParameters.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; path = NetSendParameters.h; sourceTree = "<group>"; };
 		FR_115B0B1A5732DD6E432FEDED1EBCBC18 /* Logger.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		FR_1F65684AD5B2FD6582DBAC63167CE51E /* NetSendProcessSetup.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = NetSendProcessSetup.swift; sourceTree = "<group>"; };
 		FR_204A3161447D379F6E8B258C9BFD3210 /* Prefix.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; path = Prefix.h; sourceTree = "<group>"; };
-		FR_286AAF86B534AD832D9921F31C540216 /* Framework-macOS.xcconfig */ = {isa = PBXFileReference; explicitFileType = text.xcconfig; path = "Framework-macOS.xcconfig"; sourceTree = "<group>"; };
 		FR_2A7FC3BCFD86E2D33FC50EC57680EC88 /* NetSendController.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = NetSendController.cpp; sourceTree = "<group>"; };
 		FR_2C3EF0CE1DE13EFAEF0358E5CD1657F9 /* ConnectionFlagValueTransformer.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = ConnectionFlagValueTransformer.swift; sourceTree = "<group>"; };
-		FR_2E95CE71BC9603487AA999E57C319D23 /* IntegerFormatter.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = IntegerFormatter.swift; sourceTree = "<group>"; };
 		FR_357DB998B193A256D41282566FF7E97C /* NetSendViewModel.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = NetSendViewModel.swift; sourceTree = "<group>"; };
 		FR_3A6F1770F2E3B515678435543C0C190C /* Project.xcconfig */ = {isa = PBXFileReference; explicitFileType = text.xcconfig; path = Project.xcconfig; sourceTree = "<group>"; };
-		FR_3AB366788619E726305670C3301D33C2 /* FileManager.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = FileManager.swift; sourceTree = "<group>"; };
 		FR_3F51906CE06544D3962A75E5BF82EB62 /* NetSendProcessor.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = NetSendProcessor.mm; sourceTree = "<group>"; };
 		FR_4892482E417FBA8FFAA7F2FA405815B5 /* NetSendController.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; path = NetSendController.h; sourceTree = "<group>"; };
 		FR_6EBE5A61E1BDC89E6F19D02EC0592357 /* VST3NetSend.vst3 */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VST3NetSend.vst3; sourceTree = BUILT_PRODUCTS_DIR; };
 		FR_77917ED78AB9C1C0BFA50D014E347FC3 /* Version.xcconfig */ = {isa = PBXFileReference; explicitFileType = text.xcconfig; path = Version.xcconfig; sourceTree = "<group>"; };
 		FR_7D553552484BDD6561BE3620AF2A393B /* VST3NetSendKit.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; path = VST3NetSendKit.h; sourceTree = "<group>"; };
-		FR_82381BDDD7D944FCD0AD2F8293621155 /* AudioUnitSettings.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = AudioUnitSettings.swift; sourceTree = "<group>"; };
-		FR_8C6F84540EAF12216564EBA81EB11EC3 /* RuntimeInfo.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = RuntimeInfo.swift; sourceTree = "<group>"; };
-		FR_984B1742F35947A160DB49AFB88BDB01 /* String.Index.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = String.Index.swift; sourceTree = "<group>"; };
 		FR_9D9A5150FBD02F2354C80486E8AE3085 /* NetSendViewController.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = NetSendViewController.swift; sourceTree = "<group>"; };
-		FR_A6A1184578009E1E15ABAD4946C0772D /* AudioComponentDescription.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = AudioComponentDescription.swift; sourceTree = "<group>"; };
-		FR_A90622E8EB380DAFDB546EBBEB3F2E48 /* String.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
-		FR_BEEBD931933B28250FD76E17F890E8FA /* Log.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
 		FR_CAB1CAD80D8FF9958B756ECFC8DD3B48 /* NetSendParameter.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = NetSendParameter.swift; sourceTree = "<group>"; };
-		FR_CAE122224DB5551BF066A9A3B5833952 /* NonRecursiveLocking.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = NonRecursiveLocking.swift; sourceTree = "<group>"; };
 		FR_D029788E708BF27957B3DC81656DB49A /* VST3SDK.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = VST3SDK.cpp; sourceTree = "<group>"; };
 		FR_D107980A09C2FE7C1795055E762B630D /* NetSendAU.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = NetSendAU.swift; sourceTree = "<group>"; };
 		FR_D6E0A4AAA23B4465D1BC41C86D38B753 /* NetSendProcessorState.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; path = NetSendProcessorState.h; sourceTree = "<group>"; };
 		FR_D6F3D685F76402720A8F31BC1560FFAB /* VST3NetSendKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = VST3NetSendKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		FR_DBC9F5A9264B9F6CA86075DB48F577A2 /* BuildInfo.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = BuildInfo.swift; sourceTree = "<group>"; };
 		FR_DD53756926039DE07C6A6C7791964726 /* NetSendProcessor.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; path = NetSendProcessor.h; sourceTree = "<group>"; };
 		FR_DDBBF3462E439F29BA94027ACC3864F6 /* NetSendView.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = NetSendView.mm; sourceTree = "<group>"; };
 		FR_DE9941EE561986DAF833FEE54943B1F0 /* NetSendProcessorState.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = NetSendProcessorState.cpp; sourceTree = "<group>"; };
 		FR_DEF2BCB61DAD4F832FD7004CBC255E29 /* NetSendFactory.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = NetSendFactory.cpp; sourceTree = "<group>"; };
 		FR_DFAC4BA8A9E0CA5612ECD02D123C1589 /* NetSendView.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; path = NetSendView.h; sourceTree = "<group>"; };
-		FR_E152873B806CED0293FE077CCA56FDA5 /* UnfairLock.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = UnfairLock.swift; sourceTree = "<group>"; };
 		FR_EFB546C11CD3CDE84C8C41FBA6307BFE /* ConnectionStatusValueTransformer.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = ConnectionStatusValueTransformer.swift; sourceTree = "<group>"; };
 		FR_FE807BF36CC3EE3373BBDBE5F9AEB16A /* NetSendView.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = NetSendView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		80E37AE3238B363300B23015 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				80E37AE6238B363800B23015 /* VST3NetSendShared in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FBP_414050459EA6E22F21CA3F2FBF037B37 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -106,67 +109,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		G_0BCE1B893BF57087C5A618347FB2762D /* Foundation */ = {
-			isa = PBXGroup;
-			children = (
-				G_A146541D5472D9D3933DDCEF6246F449 /* Extensions */,
-				G_5D35494156D670109A4B51D85FA6F9B6 /* Sources */,
-				G_8D3E987889EB6A42F096C71FF9AB3267 /* os */,
-			);
-			path = Foundation;
-			sourceTree = "<group>";
-		};
-		G_200F07A5089460B74376F524256D1717 /* Vendor */ = {
-			isa = PBXGroup;
-			children = (
-				G_ABE79D3A0AE709501A237A582E08DDFA /* Libs */,
-				G_D7F407AC37F1BF1FD4141436C6E7AB8D /* WL */,
-			);
-			path = Vendor;
-			sourceTree = "<group>";
-		};
-		G_235D945844F4B7B045B680CE6DF6759B /* Concurrency */ = {
-			isa = PBXGroup;
-			children = (
-				FR_CAE122224DB5551BF066A9A3B5833952 /* NonRecursiveLocking.swift */,
-				FR_E152873B806CED0293FE077CCA56FDA5 /* UnfairLock.swift */,
-			);
-			path = Concurrency;
-			sourceTree = "<group>";
-		};
-		G_49E44849AEC23535DBA554B203FD55BB /* log */ = {
-			isa = PBXGroup;
-			children = (
-				FR_BEEBD931933B28250FD76E17F890E8FA /* Log.swift */,
-			);
-			path = log;
-			sourceTree = "<group>";
-		};
-		G_5D35494156D670109A4B51D85FA6F9B6 /* Sources */ = {
-			isa = PBXGroup;
-			children = (
-				FR_DBC9F5A9264B9F6CA86075DB48F577A2 /* BuildInfo.swift */,
-				FR_8C6F84540EAF12216564EBA81EB11EC3 /* RuntimeInfo.swift */,
-			);
-			path = Sources;
-			sourceTree = "<group>";
-		};
-		G_7FA1A157E608C57BF066E3B55FD8D878 /* Formatters */ = {
-			isa = PBXGroup;
-			children = (
-				FR_2E95CE71BC9603487AA999E57C319D23 /* IntegerFormatter.swift */,
-			);
-			path = Formatters;
-			sourceTree = "<group>";
-		};
-		G_83D1BA419B9D469613463A66AD02FCE4 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				FR_A6A1184578009E1E15ABAD4946C0772D /* AudioComponentDescription.swift */,
-			);
-			path = Extensions;
-			sourceTree = "<group>";
-		};
 		G_87D941BB6FA9E32D360F59BCD8807B73 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -174,22 +116,6 @@
 				FR_D6F3D685F76402720A8F31BC1560FFAB /* VST3NetSendKit.framework */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		G_8A0F4F50FF976ECCFDC0F7014EF0E4F3 /* Shared */ = {
-			isa = PBXGroup;
-			children = (
-				G_91B15C1DED83A84BE763D8E168F77BB0 /* Configuration */,
-			);
-			path = Shared;
-			sourceTree = "<group>";
-		};
-		G_8D3E987889EB6A42F096C71FF9AB3267 /* os */ = {
-			isa = PBXGroup;
-			children = (
-				G_49E44849AEC23535DBA554B203FD55BB /* log */,
-			);
-			path = os;
 			sourceTree = "<group>";
 		};
 		G_8EC49D497A088E1AF5FFA2965D3A9A3B /* NetSendKit */ = {
@@ -209,69 +135,14 @@
 			path = NetSendKit;
 			sourceTree = "<group>";
 		};
-		G_91B15C1DED83A84BE763D8E168F77BB0 /* Configuration */ = {
-			isa = PBXGroup;
-			children = (
-				FR_286AAF86B534AD832D9921F31C540216 /* Framework-macOS.xcconfig */,
-			);
-			path = Configuration;
-			sourceTree = "<group>";
-		};
-		G_A146541D5472D9D3933DDCEF6246F449 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				FR_3AB366788619E726305670C3301D33C2 /* FileManager.swift */,
-				FR_984B1742F35947A160DB49AFB88BDB01 /* String.Index.swift */,
-				FR_A90622E8EB380DAFDB546EBBEB3F2E48 /* String.swift */,
-			);
-			path = Extensions;
-			sourceTree = "<group>";
-		};
-		G_ABE79D3A0AE709501A237A582E08DDFA /* Libs */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Libs;
-			path = ../libs;
-			sourceTree = "<group>";
-		};
-		G_BA13E726B6B6FD4CEDBE88937C76BB82 /* Core */ = {
-			isa = PBXGroup;
-			children = (
-				G_7FA1A157E608C57BF066E3B55FD8D878 /* Formatters */,
-			);
-			path = Core;
-			sourceTree = "<group>";
-		};
-		G_C228AE1A051D46E6B3E88A73BE699023 /* Media */ = {
-			isa = PBXGroup;
-			children = (
-				G_83D1BA419B9D469613463A66AD02FCE4 /* Extensions */,
-				G_FCEB4A08D42523A42587843576923F10 /* Sources */,
-			);
-			path = Media;
-			sourceTree = "<group>";
-		};
 		G_D64BFD95DF12254D7BA4FEB7C84C44B9 = {
 			isa = PBXGroup;
 			children = (
+				80E37AE2238B35D000B23015 /* Dependencies */,
 				G_FC812F6CFA74F83906FCE359CE9E7676 /* Configuration */,
 				G_E34F395B442860C0BCBBE95C4545F08C /* Sources */,
-				G_200F07A5089460B74376F524256D1717 /* Vendor */,
 				G_87D941BB6FA9E32D360F59BCD8807B73 /* Products */,
 			);
-			sourceTree = "<group>";
-		};
-		G_D7F407AC37F1BF1FD4141436C6E7AB8D /* WL */ = {
-			isa = PBXGroup;
-			children = (
-				G_235D945844F4B7B045B680CE6DF6759B /* Concurrency */,
-				G_BA13E726B6B6FD4CEDBE88937C76BB82 /* Core */,
-				G_0BCE1B893BF57087C5A618347FB2762D /* Foundation */,
-				G_C228AE1A051D46E6B3E88A73BE699023 /* Media */,
-				G_8A0F4F50FF976ECCFDC0F7014EF0E4F3 /* Shared */,
-			);
-			path = WL;
 			sourceTree = "<group>";
 		};
 		G_E34F395B442860C0BCBBE95C4545F08C /* Sources */ = {
@@ -286,18 +157,12 @@
 		G_FC812F6CFA74F83906FCE359CE9E7676 /* Configuration */ = {
 			isa = PBXGroup;
 			children = (
+				80E37AE9238B37A200B23015 /* Common.xcconfig */,
+				80E37AEA238B37A200B23015 /* Framework-macOS.xcconfig */,
 				FR_3A6F1770F2E3B515678435543C0C190C /* Project.xcconfig */,
 				FR_77917ED78AB9C1C0BFA50D014E347FC3 /* Version.xcconfig */,
 			);
 			path = Configuration;
-			sourceTree = "<group>";
-		};
-		G_FCEB4A08D42523A42587843576923F10 /* Sources */ = {
-			isa = PBXGroup;
-			children = (
-				FR_82381BDDD7D944FCD0AD2F8293621155 /* AudioUnitSettings.swift */,
-			);
-			path = Sources;
 			sourceTree = "<group>";
 		};
 		G_FDFA9B95A65757E96428A7D05D5BA933 /* VST */ = {
@@ -352,12 +217,16 @@
 			buildPhases = (
 				HBP_AC0BF97F90C6770E9B9A5DF946E2B05F /* Headers */,
 				SBP_F20EB71CC4F0A1D612F138EA9D154DEF /* Sources */,
+				80E37AE3238B363300B23015 /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = "VST3NetSendKit-macOS";
+			packageProductDependencies = (
+				80E37AE5238B363800B23015 /* VST3NetSendShared */,
+			);
 			productName = VST3NetSendKit;
 			productReference = FR_D6F3D685F76402720A8F31BC1560FFAB /* VST3NetSendKit.framework */;
 			productType = "com.apple.product-type.framework";
@@ -369,6 +238,7 @@
 				HBP_18336125B3953216E57570251C13995B /* Headers */,
 				SBP_D293B8A1DBBE9B1DA505078319ABC255 /* Sources */,
 				FBP_414050459EA6E22F21CA3F2FBF037B37 /* Frameworks */,
+				807F741C238C92ED007B14FA /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -386,7 +256,7 @@
 		P_4072110F23C6E8A277091112F37E579C /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 1020;
+				LastUpgradeCheck = 1120;
 				ORGANIZATIONNAME = WaveLabs;
 			};
 			buildConfigurationList = CL_A619698699E0EB1F43D6A4FA95CA7B28 /* Build configuration list for PBXProject "VST3NetSend" */;
@@ -435,17 +305,6 @@
 				BF_23BD009028421075E93FD0F701E0745B /* NetSendProcessSetup.swift in Sources */,
 				BF_A75194A5D64195F752EBE7F99378FA9C /* NetSendParameter.swift in Sources */,
 				BF_4B57F2D859468836F1646D2BD0B13312 /* ConnectionFlagValueTransformer.swift in Sources */,
-				BF_3A3A416234C63D610A31E7B507E8DB96 /* IntegerFormatter.swift in Sources */,
-				BF_971A62F5E3C78212D1DF74B79C8529A5 /* String.Index.swift in Sources */,
-				BF_B1AC1BD2A24F621922E224065DECD507 /* FileManager.swift in Sources */,
-				BF_1E32C2FCC6BD9E8176FE0C4069CEAA47 /* String.swift in Sources */,
-				BF_C61AA1208880394B0C77716E8700EB0A /* BuildInfo.swift in Sources */,
-				BF_1B5B2F69AFC59032C6D4E06099337023 /* RuntimeInfo.swift in Sources */,
-				BF_AA339C2A3CFEDE996F5A9EA36259C5C9 /* Log.swift in Sources */,
-				BF_AAFEA1771F3BB7562ADAC74B2458A5FC /* UnfairLock.swift in Sources */,
-				BF_22EEBD895FF59A17C77DD8D8405541A4 /* NonRecursiveLocking.swift in Sources */,
-				BF_FBF09651FD28ADAB61D0E9892B2B7C70 /* AudioComponentDescription.swift in Sources */,
-				BF_6BC9C76AC696C88CF74F662BCCF3A586 /* AudioUnitSettings.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -465,13 +324,40 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = FR_3A6F1770F2E3B515678435543C0C190C /* Project.xcconfig */;
 			buildSettings = {
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				ONLY_ACTIVE_ARCH = YES;
 			};
 			name = Debug;
 		};
 		BC_59698823E450A8D2865FAD61413F1B71 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FR_286AAF86B534AD832D9921F31C540216 /* Framework-macOS.xcconfig */;
+			baseConfigurationReference = 80E37AEA238B37A200B23015 /* Framework-macOS.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				APPLICATION_EXTENSION_API_ONLY = YES;
@@ -488,7 +374,6 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "ua.com.wavelabs.vst3.$(PRODUCT_NAME)";
 				PRODUCT_NAME = VST3NetSendKit;
-				SWIFT_INCLUDE_PATHS = Sources/NetSendKit;
 				SWIFT_INSTALL_OBJC_HEADER = YES;
 			};
 			name = Debug;
@@ -497,13 +382,38 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = FR_3A6F1770F2E3B515678435543C0C190C /* Project.xcconfig */;
 			buildSettings = {
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 			};
 			name = Release;
 		};
 		BC_81A08789D145DA7B94E7A5C2E3531F8B /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FR_286AAF86B534AD832D9921F31C540216 /* Framework-macOS.xcconfig */;
+			baseConfigurationReference = 80E37AEA238B37A200B23015 /* Framework-macOS.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				APPLICATION_EXTENSION_API_ONLY = YES;
@@ -520,14 +430,14 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "ua.com.wavelabs.vst3.$(PRODUCT_NAME)";
 				PRODUCT_NAME = VST3NetSendKit;
-				SWIFT_INCLUDE_PATHS = Sources/NetSendKit;
+				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_INSTALL_OBJC_HEADER = YES;
 			};
 			name = Release;
 		};
 		BC_C5820EB5B4AB55728DA09A3CF6EFA638 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FR_286AAF86B534AD832D9921F31C540216 /* Framework-macOS.xcconfig */;
+			baseConfigurationReference = 80E37AEA238B37A200B23015 /* Framework-macOS.xcconfig */;
 			buildSettings = {
 				DEFINES_MODULE = YES;
 				DEPLOYMENT_LOCATION = YES;
@@ -558,7 +468,7 @@
 		};
 		BC_E0FC13E3E189D22D188AE22D487BD6F5 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FR_286AAF86B534AD832D9921F31C540216 /* Framework-macOS.xcconfig */;
+			baseConfigurationReference = 80E37AEA238B37A200B23015 /* Framework-macOS.xcconfig */;
 			buildSettings = {
 				DEFINES_MODULE = YES;
 				DEPLOYMENT_LOCATION = YES;
@@ -618,6 +528,13 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		80E37AE5238B363800B23015 /* VST3NetSendShared */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = VST3NetSendShared;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = P_4072110F23C6E8A277091112F37E579C /* Project object */;
 }
