@@ -11,8 +11,9 @@ Developer.xcconfig
 
 ## Package managers
 /Vendor/Carthage
-/Project.js
 /node_modules
+/package-lock.json
+Package.resolved
 
 ## IDE
 .idea
