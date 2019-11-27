@@ -33,12 +33,14 @@ class Project extends AbstractProject {
    }
 
    prepare() {
+      puts('→ Installing packages...');
+      execute('npm i ffi ref ref-array');
+
       puts('→ Downloading dependencies...');
       fs.mkdirSync(this.vstSDKDirPath, { recursive: true });
       process.chdir(this.vstSDKDirPath);
       execute(`git clone --branch vstsdk368_08_11_2017_build_121 https://github.com/steinbergmedia/vst3sdk.git`);
       process.chdir(Path.join(this.vstSDKDirPath, 'vst3sdk'));
       execute(`git submodule update --init base pluginterfaces public.sdk`);
-      execute('npm i ffi ref ref-array');
    }
 }
