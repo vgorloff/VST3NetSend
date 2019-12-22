@@ -211,9 +211,9 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		NT_0A42EA35381E2A25F216A49C0655721F /* VST3NetSendKit-macOS */ = {
+		NT_0A42EA35381E2A25F216A49C0655721F /* VST3NetSendKit */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = CL_E9A2CE2AB38DA0697D8CFE8949CDF180 /* Build configuration list for PBXNativeTarget "VST3NetSendKit-macOS" */;
+			buildConfigurationList = CL_E9A2CE2AB38DA0697D8CFE8949CDF180 /* Build configuration list for PBXNativeTarget "VST3NetSendKit" */;
 			buildPhases = (
 				HBP_AC0BF97F90C6770E9B9A5DF946E2B05F /* Headers */,
 				SBP_F20EB71CC4F0A1D612F138EA9D154DEF /* Sources */,
@@ -223,7 +223,7 @@
 			);
 			dependencies = (
 			);
-			name = "VST3NetSendKit-macOS";
+			name = VST3NetSendKit;
 			packageProductDependencies = (
 				80E37AE5238B363800B23015 /* VST3NetSendShared */,
 			);
@@ -231,9 +231,9 @@
 			productReference = FR_D6F3D685F76402720A8F31BC1560FFAB /* VST3NetSendKit.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		NT_C9310A0048D3D97B871427277C807F3F /* VST3NetSend-macOS */ = {
+		NT_C9310A0048D3D97B871427277C807F3F /* VST3NetSend */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = CL_AE0B3E66FE3747E81AD14C78173899AA /* Build configuration list for PBXNativeTarget "VST3NetSend-macOS" */;
+			buildConfigurationList = CL_AE0B3E66FE3747E81AD14C78173899AA /* Build configuration list for PBXNativeTarget "VST3NetSend" */;
 			buildPhases = (
 				HBP_18336125B3953216E57570251C13995B /* Headers */,
 				SBP_D293B8A1DBBE9B1DA505078319ABC255 /* Sources */,
@@ -245,7 +245,7 @@
 			dependencies = (
 				TD_5B45681A4A260B9C226494E6DF748529 /* PBXTargetDependency */,
 			);
-			name = "VST3NetSend-macOS";
+			name = VST3NetSend;
 			productName = VST3NetSend;
 			productReference = FR_6EBE5A61E1BDC89E6F19D02EC0592357 /* VST3NetSend.vst3 */;
 			productType = "com.apple.product-type.bundle";
@@ -256,7 +256,7 @@
 		P_4072110F23C6E8A277091112F37E579C /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 1120;
+				LastUpgradeCheck = 1130;
 				ORGANIZATIONNAME = WaveLabs;
 			};
 			buildConfigurationList = CL_A619698699E0EB1F43D6A4FA95CA7B28 /* Build configuration list for PBXProject "VST3NetSend" */;
@@ -272,8 +272,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				NT_0A42EA35381E2A25F216A49C0655721F /* VST3NetSendKit-macOS */,
-				NT_C9310A0048D3D97B871427277C807F3F /* VST3NetSend-macOS */,
+				NT_0A42EA35381E2A25F216A49C0655721F /* VST3NetSendKit */,
+				NT_C9310A0048D3D97B871427277C807F3F /* VST3NetSend */,
 			);
 		};
 /* End PBXProject section */
@@ -314,7 +314,7 @@
 		TD_5B45681A4A260B9C226494E6DF748529 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "VST3NetSendKit-macOS";
-			target = NT_0A42EA35381E2A25F216A49C0655721F /* VST3NetSendKit-macOS */;
+			target = NT_0A42EA35381E2A25F216A49C0655721F /* VST3NetSendKit */;
 			targetProxy = CIP_346B2EFA20E2767104C6A1CD0D083600 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -509,7 +509,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		CL_AE0B3E66FE3747E81AD14C78173899AA /* Build configuration list for PBXNativeTarget "VST3NetSend-macOS" */ = {
+		CL_AE0B3E66FE3747E81AD14C78173899AA /* Build configuration list for PBXNativeTarget "VST3NetSend" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				BC_C5820EB5B4AB55728DA09A3CF6EFA638 /* Debug */,
@@ -518,7 +518,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		CL_E9A2CE2AB38DA0697D8CFE8949CDF180 /* Build configuration list for PBXNativeTarget "VST3NetSendKit-macOS" */ = {
+		CL_E9A2CE2AB38DA0697D8CFE8949CDF180 /* Build configuration list for PBXNativeTarget "VST3NetSendKit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				BC_59698823E450A8D2865FAD61413F1B71 /* Debug */,
