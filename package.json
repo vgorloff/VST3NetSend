@@ -1,5 +1,8 @@
 {
    "dependencies": {
-      "wl-scripting": "1.0.20"
+      "ffi": "^2.3.0",
+      "ref": "^1.3.5",
+      "ref-array": "^1.2.0",
+      "wl-scripting": "1.0.21"
    }
 }
