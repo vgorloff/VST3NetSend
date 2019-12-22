@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "1120"
+   LastUpgradeVersion = "1130"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -16,7 +16,7 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "NT_C9310A0048D3D97B871427277C807F3F"
                BuildableName = "VST3NetSend.vst3"
-               BlueprintName = "VST3NetSend-macOS"
+               BlueprintName = "VST3NetSend"
                ReferencedContainer = "container:VST3NetSend.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -45,7 +45,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "NT_C9310A0048D3D97B871427277C807F3F"
             BuildableName = "VST3NetSend.vst3"
-            BlueprintName = "VST3NetSend-macOS"
+            BlueprintName = "VST3NetSend"
             ReferencedContainer = "container:VST3NetSend.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

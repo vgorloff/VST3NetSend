@@ -9,6 +9,12 @@
          "options": {
             "tabWidth": 1
          }
+      },
+      {
+         "files": "*.yml",
+         "options": {
+            "tabWidth": 2
+         }
       }
    ]
 }
