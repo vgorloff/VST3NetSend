@@ -1,11 +1,3 @@
-//
-//  Framework.xcconfig
-//  mc
-//
-//  Created by Vlad Gorlov on 13.06.17.
-//  Copyright © 2017 Good Hood GmbH. All rights reserved.
-//
-
 #include "Common.xcconfig"
 
 SDKROOT = macosx
