@@ -9,13 +9,17 @@ pkg.platforms = [.macOS(.v10_13)]
 
 pkg.products = [.library(name: "VST3NetSendShared", targets: ["VST3NetSendShared"])]
 
-pkg.dependencies = [.package(url: "https://bitbucket.org/vgorloff/mcConcurrencyLocking.git", .exact("1.0.0")),
-                    .package(url: "https://bitbucket.org/vgorloff/mcFoundationExtensions.git", .exact("1.0.1")),
-                    .package(url: "https://bitbucket.org/vgorloff/mcFoundationLogging.git", .exact("1.0.1")),
-                    .package(url: "https://bitbucket.org/vgorloff/mcFoundationFormatters.git", .exact("1.0.0")),
-                    .package(url: "https://bitbucket.org/vgorloff/mcMediaExtensions.git", .exact("1.0.1")),
-                    .package(url: "https://bitbucket.org/vgorloff/mcMediaAU.git", .exact("1.0.0"))]
+pkg.dependencies = [
+   .package(url: "https://bitbucket.org/vgorloff/mcConcurrencyLocking.git", .upToNextMinor(from: "1.0.1")),
+   .package(url: "https://bitbucket.org/vgorloff/mcFoundationExtensions.git", .upToNextMinor(from: "1.0.5")),
+   .package(url: "https://bitbucket.org/vgorloff/mcFoundationLogging.git", .upToNextMinor(from: "1.0.3")),
+   .package(url: "https://bitbucket.org/vgorloff/mcFoundationFormatters.git", .upToNextMinor(from: "1.0.3")),
+   .package(url: "https://bitbucket.org/vgorloff/mcMediaExtensions.git", .upToNextMinor(from: "1.0.2")),
+   .package(url: "https://bitbucket.org/vgorloff/mcMediaAU.git", .upToNextMinor(from: "1.0.1"))
+]
 
-pkg.targets = [.target(name: "VST3NetSendShared",
-                       dependencies: ["mcConcurrencyLocking", "mcFoundationExtensions", "mcFoundationLogging", "mcFoundationFormatters", "mcMediaExtensions", "mcMediaAU"],
-                       path: "Sources")]
+pkg.targets = [
+   .target(name: "VST3NetSendShared",
+           dependencies: ["mcConcurrencyLocking", "mcFoundationExtensions", "mcFoundationLogging", "mcFoundationFormatters", "mcMediaExtensions", "mcMediaAU"],
+           path: "Sources")
+]
