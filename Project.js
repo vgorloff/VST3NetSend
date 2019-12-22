@@ -15,32 +15,8 @@ class Project extends AbstractProject {
       this.archiveRoot = Path.join(this.buildRoot, 'VST3NetSend.xcarchive');
    }
 
-   build() {
-      execute(`xcodebuild -project ${this.projectFilePath} -scheme ${this.projectSchema} build | xcpretty`);
-   }
-
-   archive() {
-      execute(
-         `xcodebuild -project ${this.projectFilePath} -scheme ${this.projectSchema} -archivePath ${this.archiveRoot} archive | xcpretty`,
-      );
-      execute(
-         `cd ${this.archiveRoot}/Products/Library/Audio/Plug-Ins/VST3/WaveLabs && zip -q --symlinks -r VST3NetSend.vst3.zip VST3NetSend.vst3`,
-      );
-   }
-
-   clean() {
-      FileSystem.rmdirIfExists(`${this.buildRoot}`);
-   }
-
    ci() {
       this.prepare();
-      execute(
-         `xcodebuild -project ${this.projectFilePath} -scheme ${this.projectSchema} CODE_SIGNING_REQUIRED=NO CODE_SIGN_STYLE=Manual DEVELOPMENT_TEAM= CODE_SIGN_IDENTITY= build | xcpretty`,
-      );
-   }
-
-   deploy() {
-      console.log('OK');
    }
 
    prepare() {
