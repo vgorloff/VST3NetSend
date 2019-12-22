@@ -7,12 +7,13 @@ disabled_rules:
 excluded:
   - Build
   - Vendor
-  - "*/*.bundle"
+  - '*/*.bundle'
+  - node_modules
 
 cyclomatic_complexity:
   warning: 24
   error: 36
-  
+
 function_body_length:
   warning: 80
   error: 120
