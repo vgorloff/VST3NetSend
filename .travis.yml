@@ -5,10 +5,10 @@
 
 language: objective-c
 osx_image: xcode11.2
-install: nvm use v10.17.0 && npm install && gem install xcpretty
-script: source "./node_modules/wl-scripting/index.sh" && p.ci
+install: nvm use v10.17.0 && ./Scripts/install.sh
+script: ./Scripts/ci.sh
 
 branches:
-   only:
-      - master
-      - /^release\/.*$/
+  only:
+    - master
+    - /^release\/.*$/
