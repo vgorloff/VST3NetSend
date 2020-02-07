@@ -6,7 +6,7 @@
       {
          "label": "Swift: Build",
          "type": "shell",
-         "command": "source \"./node_modules/wl-scripting/index.sh\" && p.build",
+         "command": "./Scripts/build.sh",
          "presentation": {
             "panel": "shared",
             "focus": false,
@@ -21,7 +21,7 @@
       {
          "label": "Swift: Archive",
          "type": "shell",
-         "command": "source \"./node_modules/wl-scripting/index.sh\" && p.archive",
+         "command": "./Scripts/archive.sh",
          "presentation": {
             "panel": "shared",
             "focus": false,
@@ -33,7 +33,7 @@
       {
          "label": "Swift: CI",
          "type": "shell",
-         "command": "source \"./node_modules/wl-scripting/index.sh\" && p.ci",
+         "command": "./Scripts/ci.sh",
          "presentation": {
             "panel": "shared",
             "focus": false,
@@ -45,7 +45,7 @@
       {
          "label": "Swift: Clean",
          "type": "shell",
-         "command": "source \"./node_modules/wl-scripting/index.sh\" && p.clean",
+         "command": "./Scripts/clean.sh",
          "presentation": {
             "panel": "shared",
             "focus": false,
@@ -57,7 +57,7 @@
       {
          "label": "Deploy",
          "type": "shell",
-         "command": "source \"./node_modules/wl-scripting/index.sh\" && p.deploy",
+         "command": "echo Not Implemented",
          "presentation": {
             "panel": "shared",
             "focus": false,
