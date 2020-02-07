@@ -1,11 +1,3 @@
-//
-//  Common.xcconfig
-//  mc
-//
-//  Created by Vlad Gorlov on 25.06.17.
-//  Copyright © 2017 WaveLabs. All rights reserved.
-//
-
 AWL_COPYRIGHT = Copyright © 2018 Volodymyr Gorlov. All rights reserved.
 
 DEVELOPMENT_TEAM = E27KE6VTF6

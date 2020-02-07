@@ -11,8 +11,8 @@ import Cocoa
 class NetSendView: NSView {
 
    lazy var bonjourName = NSTextField()
-   lazy var box1 = NSBox()
-   lazy var box2 = NSBox()
+   lazy var boxTop = NSBox()
+   lazy var boxOptions = NSBox()
    lazy var connectionFlag = NSButton()
    lazy var customMenu = NSMenu()
    lazy var customMenuItem0 = NSMenuItem()
@@ -42,10 +42,10 @@ class NetSendView: NSView {
    lazy var port = NSTextField()
    lazy var status = NSTextField()
    lazy var textField1 = NSTextField()
-   lazy var textField2 = NSTextField()
+   lazy var textFieldPort = NSTextField()
    lazy var textField3 = NSTextField()
-   lazy var textField4 = NSTextField()
-   lazy var textField5 = NSTextField()
+   lazy var textFieldBonjourName = NSTextField()
+   lazy var textFieldPassword = NSTextField()
 
    override func draw(_ dirtyRect: NSRect) {
       NSColor.controlColor.setFill()
@@ -65,51 +65,48 @@ class NetSendView: NSView {
 
       frame = CGRect(origin: .zero, size: CGSize(width: 358, height: 218))
 
-      addSubview(box1)
-      addSubview(box2)
+      addSubview(boxTop)
+      addSubview(boxOptions)
 
-      box2.autoresizesSubviews = false
-      box2.autoresizingMask = [.maxXMargin, .minYMargin]
-      box2.borderType = .lineBorder
-      box2.frame = CGRect(x: 12, y: 12, width: 334, height: 88)
-      box2.title = "Options"
+      boxOptions.autoresizesSubviews = false
+      boxOptions.autoresizingMask = [.maxXMargin, .minYMargin]
+      boxOptions.borderType = .lineBorder
+      boxOptions.frame = CGRect(x: 12, y: 12, width: 334, height: 88)
+      boxOptions.title = "Options"
+      boxOptions.contentView?.addSubview(bonjourName)
+      boxOptions.contentView?.addSubview(password)
+      boxOptions.contentView?.addSubview(textFieldBonjourName)
+      boxOptions.contentView?.addSubview(textFieldPassword)
 
-      box2.contentView?.addSubview(bonjourName)
-      box2.contentView?.addSubview(password)
-      box2.contentView?.addSubview(textField4)
-      box2.contentView?.addSubview(textField5)
+      textFieldPassword.alignment = .right
+      textFieldPassword.autoresizingMask = [.maxXMargin, .minYMargin]
+      textFieldPassword.backgroundColor = .controlColor
+      textFieldPassword.controlSize = .small
+      textFieldPassword.font = NSFont.systemFont(ofSize: NSFont.systemFontSize(for: .small), weight: .regular)
+      textFieldPassword.frame = CGRect(x: 12, y: 16, width: 82, height: 14)
+      textFieldPassword.lineBreakMode = .byClipping
+      textFieldPassword.setContentHuggingPriority(.defaultHigh, for: .vertical)
+      textFieldPassword.stringValue = "Password:"
+      textFieldPassword.textColor = .controlTextColor
+      textFieldPassword.isBezeled = false
+      textFieldPassword.isEditable = false
+      (textFieldPassword.cell as? NSTextFieldCell)?.isScrollable = true
+      (textFieldPassword.cell as? NSTextFieldCell)?.sendsActionOnEndEditing = true
 
-      textField5.alignment = .right
-      textField5.autoresizingMask = [.maxXMargin, .minYMargin]
-      textField5.backgroundColor = .controlColor
-      textField5.controlSize = .small
-      textField5.font = NSFont.systemFont(ofSize: NSFont.systemFontSize(for: .small), weight: .regular)
-      textField5.frame = CGRect(x: 12, y: 16, width: 82, height: 14)
-      textField5.lineBreakMode = .byClipping
-      textField5.setContentHuggingPriority(.defaultHigh, for: .vertical)
-      textField5.stringValue = "Password:"
-      textField5.textColor = .controlTextColor
-      textField5.isBezeled = false
-      textField5.isEditable = false
-
-      (textField5.cell as? NSTextFieldCell)?.isScrollable = true
-      (textField5.cell as? NSTextFieldCell)?.sendsActionOnEndEditing = true
-
-      textField4.alignment = .right
-      textField4.autoresizingMask = [.maxXMargin, .minYMargin]
-      textField4.backgroundColor = .controlColor
-      textField4.controlSize = .small
-      textField4.font = NSFont.systemFont(ofSize: NSFont.systemFontSize(for: .small), weight: .regular)
-      textField4.frame = CGRect(x: 12, y: 42, width: 82, height: 14)
-      textField4.lineBreakMode = .byClipping
-      textField4.setContentHuggingPriority(.defaultHigh, for: .vertical)
-      textField4.stringValue = "Bonjour name:"
-      textField4.textColor = .controlTextColor
-      textField4.isBezeled = false
-      textField4.isEditable = false
-
-      (textField4.cell as? NSTextFieldCell)?.isScrollable = true
-      (textField4.cell as? NSTextFieldCell)?.sendsActionOnEndEditing = true
+      textFieldBonjourName.alignment = .right
+      textFieldBonjourName.autoresizingMask = [.maxXMargin, .minYMargin]
+      textFieldBonjourName.backgroundColor = .controlColor
+      textFieldBonjourName.controlSize = .small
+      textFieldBonjourName.font = NSFont.systemFont(ofSize: NSFont.systemFontSize(for: .small), weight: .regular)
+      textFieldBonjourName.frame = CGRect(x: 12, y: 42, width: 82, height: 14)
+      textFieldBonjourName.lineBreakMode = .byClipping
+      textFieldBonjourName.setContentHuggingPriority(.defaultHigh, for: .vertical)
+      textFieldBonjourName.stringValue = "Bonjour name:"
+      textFieldBonjourName.textColor = .controlTextColor
+      textFieldBonjourName.isBezeled = false
+      textFieldBonjourName.isEditable = false
+      (textFieldBonjourName.cell as? NSTextFieldCell)?.isScrollable = true
+      (textFieldBonjourName.cell as? NSTextFieldCell)?.sendsActionOnEndEditing = true
 
       password.autoresizingMask = [.maxXMargin, .minYMargin]
       password.backgroundColor = .textBackgroundColor
@@ -123,7 +120,6 @@ class NetSendView: NSView {
       password.lineBreakMode = .byClipping
       password.setContentHuggingPriority(.defaultHigh, for: .vertical)
       password.textColor = .textColor
-
       (password.cell as? NSTextFieldCell)?.allowedInputSourceLocales = [NSAllRomanInputSourcesLocaleIdentifier]
       (password.cell as? NSTextFieldCell)?.isScrollable = true
       (password.cell as? NSTextFieldCell)?.sendsActionOnEndEditing = true
@@ -142,25 +138,22 @@ class NetSendView: NSView {
       bonjourName.setContentHuggingPriority(.defaultHigh, for: .vertical)
       bonjourName.stringValue = "VST3NetSend"
       bonjourName.textColor = .textColor
-
       (bonjourName.cell as? NSTextFieldCell)?.isScrollable = true
       (bonjourName.cell as? NSTextFieldCell)?.sendsActionOnEndEditing = true
       (bonjourName.cell as? NSTextFieldCell)?.state = .on
 
-      box1.autoresizesSubviews = false
-      box1.autoresizingMask = [.maxXMargin, .minYMargin]
-      box1.borderType = .lineBorder
-      box1.frame = CGRect(x: 12, y: 104, width: 334, height: 100)
-      box1.title = "Box"
-      box1.titlePosition = .noTitle
-
-      box1.contentView?.addSubview(port)
-      box1.contentView?.addSubview(textField1)
-      box1.contentView?.addSubview(status)
-      box1.contentView?.addSubview(textField2)
-      box1.contentView?.addSubview(textField3)
-      box1.contentView?.addSubview(dataFormat)
-      box1.contentView?.addSubview(connectionFlag)
+      boxTop.autoresizesSubviews = false
+      boxTop.autoresizingMask = [.maxXMargin, .minYMargin]
+      boxTop.borderType = .lineBorder
+      boxTop.frame = CGRect(x: 12, y: 104, width: 334, height: 100)
+      boxTop.titlePosition = .noTitle
+      boxTop.contentView?.addSubview(port)
+      boxTop.contentView?.addSubview(textField1)
+      boxTop.contentView?.addSubview(status)
+      boxTop.contentView?.addSubview(textFieldPort)
+      boxTop.contentView?.addSubview(textField3)
+      boxTop.contentView?.addSubview(dataFormat)
+      boxTop.contentView?.addSubview(connectionFlag)
 
       connectionFlag.alignment = .center
       connectionFlag.autoresizingMask = [.maxXMargin, .minYMargin]
@@ -172,7 +165,6 @@ class NetSendView: NSView {
       connectionFlag.setContentHuggingPriority(.defaultHigh, for: .vertical)
       connectionFlag.title = "Disconnect"
       connectionFlag.setButtonType(.toggle)
-
       connectionFlag.cell?.isBordered = true
       connectionFlag.cell?.state = .on
 
@@ -185,7 +177,6 @@ class NetSendView: NSView {
       dataFormat.imageScaling = .scaleProportionallyDown
       dataFormat.lineBreakMode = .byTruncatingTail
       dataFormat.setContentHuggingPriority(.defaultHigh, for: .vertical)
-
       dataFormat.cell?.isBezeled = true
       dataFormat.menu = customMenu
 
@@ -304,25 +295,23 @@ class NetSendView: NSView {
       textField3.textColor = .controlTextColor
       textField3.isBezeled = false
       textField3.isEditable = false
-
       (textField3.cell as? NSTextFieldCell)?.isScrollable = true
       (textField3.cell as? NSTextFieldCell)?.sendsActionOnEndEditing = true
 
-      textField2.alignment = .right
-      textField2.autoresizingMask = [.maxXMargin, .minYMargin]
-      textField2.backgroundColor = .controlColor
-      textField2.controlSize = .small
-      textField2.font = NSFont.systemFont(ofSize: NSFont.systemFontSize(for: .small), weight: .regular)
-      textField2.frame = CGRect(x: 12, y: 16, width: 82, height: 14)
-      textField2.lineBreakMode = .byClipping
-      textField2.setContentHuggingPriority(.defaultHigh, for: .vertical)
-      textField2.stringValue = "Port:"
-      textField2.textColor = .controlTextColor
-      textField2.isBezeled = false
-      textField2.isEditable = false
-
-      (textField2.cell as? NSTextFieldCell)?.isScrollable = true
-      (textField2.cell as? NSTextFieldCell)?.sendsActionOnEndEditing = true
+      textFieldPort.alignment = .right
+      textFieldPort.autoresizingMask = [.maxXMargin, .minYMargin]
+      textFieldPort.backgroundColor = .controlColor
+      textFieldPort.controlSize = .small
+      textFieldPort.font = NSFont.systemFont(ofSize: NSFont.systemFontSize(for: .small), weight: .regular)
+      textFieldPort.frame = CGRect(x: 12, y: 16, width: 82, height: 14)
+      textFieldPort.lineBreakMode = .byClipping
+      textFieldPort.setContentHuggingPriority(.defaultHigh, for: .vertical)
+      textFieldPort.stringValue = "Port:"
+      textFieldPort.textColor = .controlTextColor
+      textFieldPort.isBezeled = false
+      textFieldPort.isEditable = false
+      (textFieldPort.cell as? NSTextFieldCell)?.isScrollable = true
+      (textFieldPort.cell as? NSTextFieldCell)?.sendsActionOnEndEditing = true
 
       status.autoresizingMask = [.maxXMargin, .minYMargin]
       status.backgroundColor = .controlColor
@@ -335,7 +324,6 @@ class NetSendView: NSView {
       status.textColor = .controlTextColor
       status.isBezeled = false
       status.isEditable = false
-
       (status.cell as? NSTextFieldCell)?.isScrollable = true
       (status.cell as? NSTextFieldCell)?.sendsActionOnEndEditing = true
 
@@ -351,7 +339,6 @@ class NetSendView: NSView {
       textField1.textColor = .controlTextColor
       textField1.isBezeled = false
       textField1.isEditable = false
-
       (textField1.cell as? NSTextFieldCell)?.isScrollable = true
       (textField1.cell as? NSTextFieldCell)?.sendsActionOnEndEditing = true
 
@@ -368,7 +355,6 @@ class NetSendView: NSView {
       port.setContentHuggingPriority(.defaultHigh, for: .vertical)
       port.stringValue = "52800"
       port.textColor = .textColor
-
       (port.cell as? NSTextFieldCell)?.isScrollable = true
       (port.cell as? NSTextFieldCell)?.sendsActionOnEndEditing = true
       (port.cell as? NSTextFieldCell)?.state = .on
