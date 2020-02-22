@@ -11,6 +11,7 @@ Developer.xcconfig
 
 ## Package managers
 /node_modules/wl-scripting
+/node_modules/**/package.json
 /package-lock.json
 Package.resolved
 
