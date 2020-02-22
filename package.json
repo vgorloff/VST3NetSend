@@ -2,7 +2,7 @@
    "dependencies": {
       "mc-concurrency-locking": "1.0.14",
       "mc-foundation-extensions": "1.0.20",
-      "mc-foundation-formatters": "1.0.14",
+      "mc-foundation-formatters": "1.0.15",
       "mc-foundation-logging": "1.0.13",
       "mc-media-au": "1.0.13",
       "mc-media-extensions": "1.0.7",
