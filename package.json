@@ -5,7 +5,6 @@
       "mc-foundation-formatters": "1.0.15",
       "mc-foundation-logging": "1.0.14",
       "mc-media-au": "1.0.13",
-      "mc-media-extensions": "1.0.7",
-      "wl-scripting": "1.0.23"
+      "mc-media-extensions": "1.0.7"
    }
 }
