@@ -10,8 +10,8 @@ Developer.xcconfig
 .tmp
 
 ## Package managers
-/Vendor/Carthage
-/node_modules
+/node_modules/wl-scripting
+/node_modules/**/package.json
 /package-lock.json
 Package.resolved
 
