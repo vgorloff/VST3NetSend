@@ -12,8 +12,8 @@
 #include "Framework.xcconfig"
 
 DEPLOYMENT_LOCATION = YES
-DSTROOT = $(HOME)/Library/Audio/Plug-Ins/VST3/Development
-INSTALL_PATH = /
+DSTROOT = $(HOME)
+INSTALL_PATH = /Library/Audio/Plug-Ins/VST3/Development
 SKIP_INSTALL = NO
 
 GCC_PREFIX_HEADER = Sources/VST/Prefix.h
