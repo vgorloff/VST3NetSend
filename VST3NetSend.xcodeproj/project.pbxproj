@@ -65,6 +65,7 @@
 		80584E3B2433F25500C1B2D1 /* mc-foundation-formatters */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "mc-foundation-formatters"; sourceTree = "<group>"; };
 		80584E422433F34F00C1B2D1 /* VST3NetSend.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = VST3NetSend.xcconfig; sourceTree = "<group>"; };
 		80584E432433F38D00C1B2D1 /* VST3NetSendKit.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = VST3NetSendKit.xcconfig; sourceTree = "<group>"; };
+		80584E462434019500C1B2D1 /* package.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = package.json; sourceTree = "<group>"; };
 		80BA0B002433F1E400BB3A9B /* mc-foundation-logging */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "mc-foundation-logging"; sourceTree = "<group>"; };
 		80E37AE9238B37A200B23015 /* Common.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Common.xcconfig; sourceTree = "<group>"; };
 		80E37AEA238B37A200B23015 /* Framework.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Framework.xcconfig; sourceTree = "<group>"; };
@@ -156,9 +157,10 @@
 		G_D64BFD95DF12254D7BA4FEB7C84C44B9 = {
 			isa = PBXGroup;
 			children = (
-				801D21D62433EFDA00305A24 /* Vendor */,
+				80584E462434019500C1B2D1 /* package.json */,
 				G_FC812F6CFA74F83906FCE359CE9E7676 /* Configuration */,
 				G_E34F395B442860C0BCBBE95C4545F08C /* Sources */,
+				801D21D62433EFDA00305A24 /* Vendor */,
 				G_87D941BB6FA9E32D360F59BCD8807B73 /* Products */,
 			);
 			sourceTree = "<group>";
