@@ -4,7 +4,6 @@
       "mc-foundation-logging": "1.0.15",
       "mc-media-au": "1.0.15",
       "mc-media-extensions": "1.0.8",
-
       "mc-math": "1.0.12",
       "mc-runtime": "1.0.2",
       "mc-concurrency-locking": "1.0.15",
