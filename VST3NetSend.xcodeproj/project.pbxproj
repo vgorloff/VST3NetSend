@@ -37,12 +37,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		CIP_346B2EFA20E2767104C6A1CD0D083600 /* PBXContainerItemProxy */ = {
+		80584E442433FAEC00C1B2D1 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = P_4072110F23C6E8A277091112F37E579C /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = NT_0A42EA35381E2A25F216A49C0655721F;
-			remoteInfo = "VST3NetSendKit-macOS";
+			remoteInfo = VST3NetSendKit;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -257,7 +257,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				TD_5B45681A4A260B9C226494E6DF748529 /* PBXTargetDependency */,
+				80584E452433FAEC00C1B2D1 /* PBXTargetDependency */,
 			);
 			name = VST3NetSend;
 			productName = VST3NetSend;
@@ -325,11 +325,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		TD_5B45681A4A260B9C226494E6DF748529 /* PBXTargetDependency */ = {
+		80584E452433FAEC00C1B2D1 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = "VST3NetSendKit-macOS";
 			target = NT_0A42EA35381E2A25F216A49C0655721F /* VST3NetSendKit */;
-			targetProxy = CIP_346B2EFA20E2767104C6A1CD0D083600 /* PBXContainerItemProxy */;
+			targetProxy = 80584E442433FAEC00C1B2D1 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
