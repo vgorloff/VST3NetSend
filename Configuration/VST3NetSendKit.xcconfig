@@ -1,0 +1,22 @@
+//
+//  VST3NetSendKit.xcconfig
+//  VST3NetSend
+//
+//  Created by Vlad Gorlov on 31.03.20.
+//  Copyright © 2020 WaveLabs. All rights reserved.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+#include "Framework.xcconfig"
+
+ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES
+APPLICATION_EXTENSION_API_ONLY = YES
+
+OTHER_LDFLAGS = -framework AudioToolbox
+LD_RUNPATH_SEARCH_PATHS = $(inherited) @executable_path/../Frameworks @loader_path/Frameworks
+
+DEFINES_MODULE = YES
+INFOPLIST_FILE = Sources/NetSendKit/Info.plist
+SWIFT_INSTALL_OBJC_HEADER = YES
