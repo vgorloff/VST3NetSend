@@ -9,7 +9,11 @@
 #ifndef __VST3NetSend__VST3Controller__
 #define __VST3NetSend__VST3Controller__
 
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wpragma-pack"
 #include "public.sdk/source/vst/vsteditcontroller.h"
+#pragma clang diagnostic pop
+
 #include "NetSendView.h"
 
 GV_NAMESPACE_BEGIN

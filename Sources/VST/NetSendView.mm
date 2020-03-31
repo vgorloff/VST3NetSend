@@ -51,7 +51,7 @@ tresult PLUGIN_API NetSendView::attached (void* ptr, Steinberg::FIDString type) 
    [mViewController.view setFrame:frame];
 
    mViewController.modelChangeHandler = ^(enum NetSendParameter sourceID) {
-      this->handleViewModelChanges(sourceID);
+      this->handleViewModelChanges(int(sourceID));
    };
 
    tresult result = CPluginView::attached(ptr, type);
