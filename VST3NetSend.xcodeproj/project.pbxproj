@@ -66,6 +66,7 @@
 		80584E422433F34F00C1B2D1 /* VST3NetSend.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = VST3NetSend.xcconfig; sourceTree = "<group>"; };
 		80584E432433F38D00C1B2D1 /* VST3NetSendKit.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = VST3NetSendKit.xcconfig; sourceTree = "<group>"; };
 		80584E462434019500C1B2D1 /* package.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = package.json; sourceTree = "<group>"; };
+		80584E6624340E9E00C1B2D1 /* VST3NetSend.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = VST3NetSend.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		80BA0B002433F1E400BB3A9B /* mc-foundation-logging */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "mc-foundation-logging"; sourceTree = "<group>"; };
 		80E37AE9238B37A200B23015 /* Common.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Common.xcconfig; sourceTree = "<group>"; };
 		80E37AEA238B37A200B23015 /* Framework.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Framework.xcconfig; sourceTree = "<group>"; };
@@ -157,6 +158,7 @@
 		G_D64BFD95DF12254D7BA4FEB7C84C44B9 = {
 			isa = PBXGroup;
 			children = (
+				80584E6624340E9E00C1B2D1 /* VST3NetSend.playground */,
 				80584E462434019500C1B2D1 /* package.json */,
 				G_FC812F6CFA74F83906FCE359CE9E7676 /* Configuration */,
 				G_E34F395B442860C0BCBBE95C4545F08C /* Sources */,
@@ -190,17 +192,17 @@
 			isa = PBXGroup;
 			children = (
 				FR_2A7FC3BCFD86E2D33FC50EC57680EC88 /* NetSendController.cpp */,
-				FR_DEF2BCB61DAD4F832FD7004CBC255E29 /* NetSendFactory.cpp */,
-				FR_DE9941EE561986DAF833FEE54943B1F0 /* NetSendProcessorState.cpp */,
-				FR_D029788E708BF27957B3DC81656DB49A /* VST3SDK.cpp */,
 				FR_4892482E417FBA8FFAA7F2FA405815B5 /* NetSendController.h */,
+				FR_DEF2BCB61DAD4F832FD7004CBC255E29 /* NetSendFactory.cpp */,
 				FR_00C3BCCE9285999BFB1DEB4A452D07FC /* NetSendParameters.h */,
 				FR_DD53756926039DE07C6A6C7791964726 /* NetSendProcessor.h */,
+				FR_3F51906CE06544D3962A75E5BF82EB62 /* NetSendProcessor.mm */,
+				FR_DE9941EE561986DAF833FEE54943B1F0 /* NetSendProcessorState.cpp */,
 				FR_D6E0A4AAA23B4465D1BC41C86D38B753 /* NetSendProcessorState.h */,
 				FR_DFAC4BA8A9E0CA5612ECD02D123C1589 /* NetSendView.h */,
-				FR_204A3161447D379F6E8B258C9BFD3210 /* Prefix.h */,
-				FR_3F51906CE06544D3962A75E5BF82EB62 /* NetSendProcessor.mm */,
 				FR_DDBBF3462E439F29BA94027ACC3864F6 /* NetSendView.mm */,
+				FR_204A3161447D379F6E8B258C9BFD3210 /* Prefix.h */,
+				FR_D029788E708BF27957B3DC81656DB49A /* VST3SDK.cpp */,
 			);
 			path = VST;
 			sourceTree = "<group>";
