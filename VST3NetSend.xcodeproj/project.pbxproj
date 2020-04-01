@@ -128,7 +128,8 @@
 				801D21D72433F03B00305A24 /* mc-media-au */,
 			);
 			name = Vendor;
-			sourceTree = AWL_LIB_SRC;
+			path = node_modules;
+			sourceTree = "<group>";
 		};
 		G_87D941BB6FA9E32D360F59BCD8807B73 /* Products */ = {
 			isa = PBXGroup;
