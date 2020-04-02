@@ -9,6 +9,9 @@
       "mc-concurrency-locking": "1.0.15",
       "mc-foundation-extensions": "1.0.21",
       "mc-foundation-observables": "1.0.17",
-      "mc-foundation-testability": "1.0.5"
+      "mc-foundation-testability": "1.0.5",
+      "mc-ui-reusable": "1.0.5",
+      "mc-ui-extensions": "1.0.2",
+      "mc-types": "1.0.1"
    }
 }
