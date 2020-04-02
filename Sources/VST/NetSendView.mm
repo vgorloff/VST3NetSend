@@ -31,7 +31,9 @@ NetSendView::NetSendView (EditController* controller, ViewRect* rectSize)
 , mViewController(nil) {
 
    mViewController = [[NetSendViewController alloc] init];
-   NSSize size = mViewController.view.frame.size;
+   mViewController.view.needsLayout = true;
+   [mViewController.view layoutSubtreeIfNeeded];
+   NSSize size = mViewController.view.fittingSize;
    Steinberg::ViewRect rect = Steinberg::ViewRect(getRect().left, getRect().top, size.width, size.height);
    setRect(rect);
 }
