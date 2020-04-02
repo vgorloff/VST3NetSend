@@ -52,22 +52,29 @@ class NetSendView: NSView {
    
    private func setupUI() {
             
+      let label = Label(title: "Options")
+      label.font = labelFont
+      let title = StackView(views: label, NSView())
+      title.edgeInsets = NSEdgeInsets(horizontal: 4)
       let stackView = StackView(axis: .vertical)
-      stackView.addArrangedSubviews(boxTop, boxOptions)
-      stackView.spacing = 8
+      stackView.addArrangedSubviews(boxTop, title, boxOptions)
+      stackView.spacing = 6
+      stackView.setCustomSpacing(2, after: title)
       
       addSubviews(stackView)
       LayoutConstraint.pin(to: .insets(.init(dimension: 15)), stackView).activate()
       
       let stackViewOptions = StackView(axis: .vertical)
+      stackViewOptions.spacing = 6
       stackViewOptions.translatesAutoresizingMaskIntoConstraints = true
       
       boxOptions.borderType = .lineBorder
-      boxOptions.title = "Options"
+      boxOptions.titlePosition = .noTitle
       boxOptions.contentView = stackViewOptions
       boxOptions.contentViewMargins = NSSize(squareSide: 8)
       
       let stackViewTop = StackView(axis: .vertical)
+      stackViewTop.spacing = 6
       stackViewTop.translatesAutoresizingMaskIntoConstraints = true
       
       boxTop.borderType = .lineBorder
