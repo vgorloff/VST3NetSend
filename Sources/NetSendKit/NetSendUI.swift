@@ -15,15 +15,31 @@ import mcMediaExtensions
 
 @objc public class NetSendUI: NSView {
    
-   fileprivate lazy var viewModelObjectController: NSObjectController = NSObjectController(content: self.viewModel)
-   @objc public private(set) lazy var viewModel = NetSendViewModel()
-   @objc public var modelChangeHandler: ((NetSendParameter) -> Void)?
-   fileprivate var observers = [NSKeyValueObservation]()
+   private let defaultPort = 52800
+   
+   @objc public var onChange: ((NetSendParameter) -> Void)?
    
    @objc public var status: Int = 0 {
       didSet {
          let title = AUNetStatus(auNetStatus: status)?.title ?? "Unknown"
          statusValue.text = title
+      }
+   }
+   
+   @objc public var port: Int {
+      get {
+         return portValue.integerValue
+      } set {
+         portValue.integerValue = newValue
+      }
+   }
+   
+   @objc public var dataFormat: Int {
+      get {
+         return dataFormatValue.selectedTag()
+      } set {
+         let item = dataFormatValue.itemArray.first(where: { $0.tag == newValue })
+         dataFormatValue.select(item)
       }
    }
    
@@ -64,10 +80,10 @@ import mcMediaExtensions
    private lazy var statusValue = Label()
    
    private lazy var portLabel = Label(title: "Port:")
-   private lazy var port = TextField()
+   private lazy var portValue = TextField()
    
    private lazy var dataFormatLabel = Label(title: "Data format:")
-   private lazy var dataFormat = PopUpButton()
+   private lazy var dataFormatValue = PopUpButton()
    
    private lazy var bonjourNameLabel = Label(title: "Bonjour name:")
    private lazy var bonjourNameValue = TextField()
@@ -87,14 +103,11 @@ import mcMediaExtensions
       log.initialize()
       setupUI()
       setupLayout()
-      setupBindings()
       setupObservers()
       setupDefaults()
    }
    
    deinit {
-      observers.removeAll()
-      removeBindings()
       log.deinitialize()
    }
 
@@ -105,6 +118,8 @@ import mcMediaExtensions
    private func setupDefaults() {
       status = -1
       connectionFlag = 0
+      port = defaultPort
+      dataFormat = 0
    }
    
    private func setupUI() {
@@ -157,17 +172,17 @@ import mcMediaExtensions
       portLabel.font = labelFont
       portLabel.usesSingleLineMode = true
       
-      port.controlSize = .small
-      port.font = labelFont
-      port.cell?.sendsActionOnEndEditing = true
-      port.cell?.formatter = IntegerFormatter()
+      portValue.controlSize = .small
+      portValue.font = labelFont
+      portValue.cell?.sendsActionOnEndEditing = true
+      portValue.cell?.formatter = IntegerFormatter()
       
       dataFormatLabel.alignment = .right
       dataFormatLabel.font = labelFont
       dataFormatLabel.usesSingleLineMode = true
       
-      dataFormat.controlSize = .small
-      dataFormat.font = labelFont
+      dataFormatValue.controlSize = .small
+      dataFormatValue.font = labelFont
       
       statusLabel.alignment = .right
       statusLabel.font = labelFont
@@ -202,13 +217,13 @@ import mcMediaExtensions
       
       do {
          let stackView = StackView()
-         stackView.addArrangedSubviews(portLabel, port)
+         stackView.addArrangedSubviews(portLabel, portValue)
          stackViewTop.addArrangedSubviews(stackView)
       }
       
       do {
          let stackView = StackView()
-         stackView.addArrangedSubviews(dataFormatLabel, dataFormat)
+         stackView.addArrangedSubviews(dataFormatLabel, dataFormatValue)
          stackViewTop.addArrangedSubviews(stackView)
       }
       
@@ -235,7 +250,7 @@ import mcMediaExtensions
       customMenu.addItem(NSMenuItem(title: "AAC Low Delay 48 kbps per channel", tag: 15))
       customMenu.addItem(NSMenuItem(title: "AAC Low Delay 40 kbps per channel", tag: 16))
       customMenu.addItem(NSMenuItem(title: "AAC Low Delay 32 kbps per channel", tag: 17))
-      dataFormat.menu = customMenu
+      dataFormatValue.menu = customMenu
    }
    
    private func setupLayout() {
@@ -244,40 +259,28 @@ import mcMediaExtensions
       LayoutConstraint.equalWidth(viewA: passwordLabel, viewB: dataFormatLabel).activate()
       LayoutConstraint.equalWidth(viewA: bonjourNameLabel, viewB: passwordLabel).activate()
    }
-   
-   private func setupObservers() {
-      observers.append(viewModel.observe(\.dataFormat) { [weak self] _, _ in
-         self?.modelChangeHandler?(.dataFormat)
-      })
-      observers.append(viewModel.observe(\.port) { [weak self] _, _ in
-         self?.modelChangeHandler?(.port)
-      })
-   }
 
-   private func setupBindings() {
+   private func setupObservers() {
       connectionButton.setHandler(self) {
          $0.connectionFlag = $0.connectionButton.doubleValue
-         $0.modelChangeHandler?(.connectionFlag)
+         $0.onChange?(.connectionFlag)
          log.debug(.media, "Changed \(NetSendParameter.connectionFlag) to value \($0.connectionFlag)")
       }
       passwordValue.setHandler(self) {
          log.debug(.media, "Changed \(NetSendParameter.password) to value \($0.password)")
-         $0.modelChangeHandler?(.password)
+         $0.onChange?(.password)
       }
       bonjourNameValue.setHandler(self) {
          log.debug(.media, "Changed \(NetSendParameter.bonjourName) to value \($0.bonjourName)")
-         $0.modelChangeHandler?(.bonjourName)
+         $0.onChange?(.bonjourName)
       }
-      let bindingValue = NSBindingName(rawValue: "value")
-      dataFormat.bind(NSBindingName(rawValue: "selectedTag"), to: viewModelObjectController,
-                                  withKeyPath: "selection.dataFormat", options: nil)
-      port.bind(bindingValue, to: viewModelObjectController,
-                            withKeyPath: "selection.port", options: nil)
-   }
-
-   private func removeBindings() {
-      let bindingValue = NSBindingName(rawValue: "value")
-      dataFormat.unbind(NSBindingName(rawValue: "selectedTag"))
-      port.unbind(bindingValue)
+      portValue.setHandler(self) {
+         log.debug(.media, "Changed \(NetSendParameter.port) to value \($0.port)")
+         $0.onChange?(.port)
+      }
+      dataFormatValue.setHandler(self) {
+         log.debug(.media, "Changed \(NetSendParameter.dataFormat) to value \($0.dataFormat)")
+         $0.onChange?(.port)
+      }
    }
 }
