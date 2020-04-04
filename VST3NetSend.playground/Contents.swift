@@ -25,6 +25,7 @@ view.modelChangeHandler = {
 
 DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
    view.status = kAUNetStatus_Overflow
+   view.connectionFlag = 1
 }
 
 PlaygroundPage.current.setLiveView(view)

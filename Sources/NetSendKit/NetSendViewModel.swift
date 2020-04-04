@@ -10,7 +10,6 @@ import Foundation
 
 public class NetSendViewModel: NSObject {
 
-   @objc public var connectionFlag: NSNumber = 0
    @objc public var dataFormat: NSNumber = 0
    @objc public var port: NSNumber = 0
    @objc public var bonjourName: NSString = ""
