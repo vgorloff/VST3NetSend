@@ -27,19 +27,18 @@ Steinberg::ViewRect VSTViewRectFromNSRect(NSRect rect) {
 GV_NAMESPACE_BEGIN
 
 NetSendView::NetSendView (EditController* controller, ViewRect* rectSize)
-: EditorView(controller, rectSize)
-, mViewController(nil) {
+: EditorView(controller, rectSize) {
 
-   mViewController = [[NetSendViewController alloc] init];
-   mViewController.view.needsLayout = true;
-   [mViewController.view layoutSubtreeIfNeeded];
-   NSSize size = mViewController.view.fittingSize;
+   mView = [[NetSendUI alloc] init];
+   mView.needsLayout = true;
+   [mView layoutSubtreeIfNeeded];
+   NSSize size = mView.fittingSize;
    Steinberg::ViewRect rect = Steinberg::ViewRect(getRect().left, getRect().top, size.width, size.height);
    setRect(rect);
 }
 
 NetSendView::~NetSendView () {
-   mViewController = nil;
+   mView = nil;
 }
 
 tresult PLUGIN_API NetSendView::attached (void* ptr, Steinberg::FIDString type) {
@@ -48,11 +47,11 @@ tresult PLUGIN_API NetSendView::attached (void* ptr, Steinberg::FIDString type) 
    }
 
    NSView *superview = (__bridge NSView*)ptr;
-   [superview addSubview:mViewController.view]; // view initialised lazy
+   [superview addSubview:mView]; // view initialised lazy
    NSRect frame = NSRectFromVSTViewRect(getRect());
-   [mViewController.view setFrame:frame];
+   [mView setFrame:frame];
 
-   mViewController.modelChangeHandler = ^(enum NetSendParameter sourceID) {
+   mView.modelChangeHandler = ^(enum NetSendParameter sourceID) {
       this->handleViewModelChanges(int(sourceID));
    };
 
@@ -62,8 +61,8 @@ tresult PLUGIN_API NetSendView::attached (void* ptr, Steinberg::FIDString type) 
 }
 
 tresult PLUGIN_API NetSendView::removed () {
-   mViewController.modelChangeHandler = nil;
-   [mViewController.view removeFromSuperviewWithoutNeedingDisplay];
+   mView.modelChangeHandler = nil;
+   [mView removeFromSuperviewWithoutNeedingDisplay];
    Steinberg::tresult result = CPluginView::removed();
    assert(result == kResultOk);
    return result;
@@ -82,8 +81,8 @@ void NetSendView::notifyParameterChanges (unsigned int index) {
       case kGVConnectionFlagParameter: {
          ParamValue normValue = getController()->getParamNormalized(index);
          NSNumber* connectionFlag = (normValue > 0.5f) ? [NSNumber numberWithBool:TRUE]: [NSNumber numberWithBool:FALSE];
-         if ([connectionFlag compare:mViewController.viewModel.connectionFlag] != NSOrderedSame) { // Preverting infinite loop
-            mViewController.viewModel.connectionFlag = connectionFlag;
+         if ([connectionFlag compare:mView.viewModel.connectionFlag] != NSOrderedSame) { // Preverting infinite loop
+            mView.viewModel.connectionFlag = connectionFlag;
          }
          break;
       }
@@ -91,8 +90,7 @@ void NetSendView::notifyParameterChanges (unsigned int index) {
 }
 
 void NetSendView::setConnectionStatus(int64 stat) {
-   NSNumber* status = [NSNumber numberWithFloat:stat];
-   mViewController.viewModel.status = status;
+   mView.status = stat;
 }
 
 void NetSendView::handleStateChanges (const NetSendProcessorState& state) {
@@ -102,23 +100,23 @@ void NetSendView::handleStateChanges (const NetSendProcessorState& state) {
    NSString* bonjourName = [NSString stringWithUTF8String:state.bonjourName];
    NSString* password    = [NSString stringWithUTF8String:state.password];
    
-   if ([dataFormat compare:mViewController.viewModel.dataFormat] != NSOrderedSame) {
-      mViewController.viewModel.dataFormat = dataFormat;
+   if ([dataFormat compare:mView.viewModel.dataFormat] != NSOrderedSame) {
+      mView.viewModel.dataFormat = dataFormat;
    }
-   if ([port compare:mViewController.viewModel.port] != NSOrderedSame) {
-      mViewController.viewModel.port = port;
+   if ([port compare:mView.viewModel.port] != NSOrderedSame) {
+      mView.viewModel.port = port;
    }
-   if ([bonjourName compare:mViewController.viewModel.bonjourName] != NSOrderedSame) {
-      mViewController.viewModel.bonjourName = bonjourName;
+   if ([bonjourName compare:mView.viewModel.bonjourName] != NSOrderedSame) {
+      mView.viewModel.bonjourName = bonjourName;
    }
-   if ([password compare:mViewController.viewModel.password] != NSOrderedSame) {
-      mViewController.viewModel.password = password;
+   if ([password compare:mView.viewModel.password] != NSOrderedSame) {
+      mView.viewModel.password = password;
    }
 }
 
 void NetSendView::handleViewModelChanges(int sourceID) {
    NetSendParameter source = (NetSendParameter)sourceID;
-   NetSendViewModel *model = mViewController.viewModel;
+   NetSendViewModel *model = mView.viewModel;
    EditController *editController = getController();
    OPtr<IMessage> message = editController->allocateMessage();
    if (message) {

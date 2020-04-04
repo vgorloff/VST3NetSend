@@ -3,24 +3,33 @@ import Foundation
 import Combine
 import PlaygroundSupport
 import SwiftUI
+import AudioToolbox
 @testable import VST3NetSendKit
 
-let vc = NetSendViewController()
-vc.view.needsLayout = true
-vc.view.layoutSubtreeIfNeeded()
+let view = NetSendUI()
+view.needsLayout = true
+view.layoutSubtreeIfNeeded()
 
-vc.view.fittingSize
-vc.view.intrinsicContentSize
-vc.view.sizeToFit()
-print(vc.view.frame)
+view.fittingSize
+view.intrinsicContentSize
+view.sizeToFit()
+print(view.frame)
 DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-   print(vc.view.dump())
-   vc.view.intrinsicContentSize
+   print(view.dump())
+   view.intrinsicContentSize
 }
 
-PlaygroundPage.current.setLiveView(vc)
+view.modelChangeHandler = {
+   print($0)
+}
 
+DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+   view.status = kAUNetStatus_Overflow
+}
 
-   
-               
- 
+PlaygroundPage.current.setLiveView(view)
+
+     
+      
+                      
+     

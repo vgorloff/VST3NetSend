@@ -13,10 +13,9 @@
 		80584E412433F2B600C1B2D1 /* mcMediaExtensions in Frameworks */ = {isa = PBXBuildFile; productRef = 80584E402433F2B600C1B2D1 /* mcMediaExtensions */; };
 		807F741D238C92F6007B14FA /* VST3NetSendKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = FR_D6F3D685F76402720A8F31BC1560FFAB /* VST3NetSendKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		80C9411F243547CB00C4762A /* mcUIReusable in Frameworks */ = {isa = PBXBuildFile; productRef = 80C9411E243547CB00C4762A /* mcUIReusable */; };
-		BF_081F4CBF1005BC8AA3CA4CD23BABE643 /* NetSendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_FE807BF36CC3EE3373BBDBE5F9AEB16A /* NetSendView.swift */; };
+		BF_081F4CBF1005BC8AA3CA4CD23BABE643 /* NetSendUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_FE807BF36CC3EE3373BBDBE5F9AEB16A /* NetSendUI.swift */; };
 		BF_23BD009028421075E93FD0F701E0745B /* NetSendProcessSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_1F65684AD5B2FD6582DBAC63167CE51E /* NetSendProcessSetup.swift */; };
 		BF_299DE7FBEFA25E0FEA9BCD3C09C9C197 /* VST3SDK.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FR_D029788E708BF27957B3DC81656DB49A /* VST3SDK.cpp */; };
-		BF_2FFD252E53D2FFA3446EC0E76779E0FC /* ConnectionStatusValueTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_EFB546C11CD3CDE84C8C41FBA6307BFE /* ConnectionStatusValueTransformer.swift */; };
 		BF_397586AFBBB996FDDFC49FE0FCB20901 /* NetSendViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_357DB998B193A256D41282566FF7E97C /* NetSendViewModel.swift */; };
 		BF_43B789B3204826AC0E49A1C10E3BF79D /* NetSendView.h in Headers */ = {isa = PBXBuildFile; fileRef = FR_DFAC4BA8A9E0CA5612ECD02D123C1589 /* NetSendView.h */; };
 		BF_4B10735AF269C3973A613BA076606521 /* NetSendProcessorState.h in Headers */ = {isa = PBXBuildFile; fileRef = FR_D6E0A4AAA23B4465D1BC41C86D38B753 /* NetSendProcessorState.h */; };
@@ -27,7 +26,6 @@
 		BF_64B08D27E75112D9B506AB89BF217D7A /* NetSendProcessor.h in Headers */ = {isa = PBXBuildFile; fileRef = FR_DD53756926039DE07C6A6C7791964726 /* NetSendProcessor.h */; };
 		BF_70BAA9C76FDD9B2C97C3CE21EA7FD9A2 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_115B0B1A5732DD6E432FEDED1EBCBC18 /* Logger.swift */; };
 		BF_74F63FEF33E2594AA0067B26AC483EC1 /* NetSendAU.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_D107980A09C2FE7C1795055E762B630D /* NetSendAU.swift */; };
-		BF_784D156AD5D780CE58F6BBB21A5F5B6A /* NetSendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_9D9A5150FBD02F2354C80486E8AE3085 /* NetSendViewController.swift */; };
 		BF_A75194A5D64195F752EBE7F99378FA9C /* NetSendParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_CAB1CAD80D8FF9958B756ECFC8DD3B48 /* NetSendParameter.swift */; };
 		BF_A951B89D2CE781C5C66278A75820B9F2 /* NetSendProcessor.mm in Sources */ = {isa = PBXBuildFile; fileRef = FR_3F51906CE06544D3962A75E5BF82EB62 /* NetSendProcessor.mm */; };
 		BF_B67ADC457B044BBD68E681AADFD23D63 /* NetSendFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FR_DEF2BCB61DAD4F832FD7004CBC255E29 /* NetSendFactory.cpp */; };
@@ -83,7 +81,6 @@
 		FR_4892482E417FBA8FFAA7F2FA405815B5 /* NetSendController.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; path = NetSendController.h; sourceTree = "<group>"; };
 		FR_6EBE5A61E1BDC89E6F19D02EC0592357 /* VST3NetSend.vst3 */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VST3NetSend.vst3; sourceTree = BUILT_PRODUCTS_DIR; };
 		FR_77917ED78AB9C1C0BFA50D014E347FC3 /* Version.xcconfig */ = {isa = PBXFileReference; explicitFileType = text.xcconfig; path = Version.xcconfig; sourceTree = "<group>"; };
-		FR_9D9A5150FBD02F2354C80486E8AE3085 /* NetSendViewController.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = NetSendViewController.swift; sourceTree = "<group>"; };
 		FR_CAB1CAD80D8FF9958B756ECFC8DD3B48 /* NetSendParameter.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = NetSendParameter.swift; sourceTree = "<group>"; };
 		FR_D029788E708BF27957B3DC81656DB49A /* VST3SDK.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = VST3SDK.cpp; sourceTree = "<group>"; };
 		FR_D107980A09C2FE7C1795055E762B630D /* NetSendAU.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = NetSendAU.swift; sourceTree = "<group>"; };
@@ -94,8 +91,7 @@
 		FR_DE9941EE561986DAF833FEE54943B1F0 /* NetSendProcessorState.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = NetSendProcessorState.cpp; sourceTree = "<group>"; };
 		FR_DEF2BCB61DAD4F832FD7004CBC255E29 /* NetSendFactory.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = NetSendFactory.cpp; sourceTree = "<group>"; };
 		FR_DFAC4BA8A9E0CA5612ECD02D123C1589 /* NetSendView.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; path = NetSendView.h; sourceTree = "<group>"; };
-		FR_EFB546C11CD3CDE84C8C41FBA6307BFE /* ConnectionStatusValueTransformer.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = ConnectionStatusValueTransformer.swift; sourceTree = "<group>"; };
-		FR_FE807BF36CC3EE3373BBDBE5F9AEB16A /* NetSendView.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = NetSendView.swift; sourceTree = "<group>"; };
+		FR_FE807BF36CC3EE3373BBDBE5F9AEB16A /* NetSendUI.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = NetSendUI.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,13 +150,11 @@
 			isa = PBXGroup;
 			children = (
 				FR_2C3EF0CE1DE13EFAEF0358E5CD1657F9 /* ConnectionFlagValueTransformer.swift */,
-				FR_EFB546C11CD3CDE84C8C41FBA6307BFE /* ConnectionStatusValueTransformer.swift */,
 				FR_115B0B1A5732DD6E432FEDED1EBCBC18 /* Logger.swift */,
 				FR_D107980A09C2FE7C1795055E762B630D /* NetSendAU.swift */,
 				FR_CAB1CAD80D8FF9958B756ECFC8DD3B48 /* NetSendParameter.swift */,
 				FR_1F65684AD5B2FD6582DBAC63167CE51E /* NetSendProcessSetup.swift */,
-				FR_FE807BF36CC3EE3373BBDBE5F9AEB16A /* NetSendView.swift */,
-				FR_9D9A5150FBD02F2354C80486E8AE3085 /* NetSendViewController.swift */,
+				FR_FE807BF36CC3EE3373BBDBE5F9AEB16A /* NetSendUI.swift */,
 				FR_357DB998B193A256D41282566FF7E97C /* NetSendViewModel.swift */,
 			);
 			path = NetSendKit;
@@ -327,10 +321,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BF_081F4CBF1005BC8AA3CA4CD23BABE643 /* NetSendView.swift in Sources */,
+				BF_081F4CBF1005BC8AA3CA4CD23BABE643 /* NetSendUI.swift in Sources */,
 				BF_70BAA9C76FDD9B2C97C3CE21EA7FD9A2 /* Logger.swift in Sources */,
-				BF_2FFD252E53D2FFA3446EC0E76779E0FC /* ConnectionStatusValueTransformer.swift in Sources */,
-				BF_784D156AD5D780CE58F6BBB21A5F5B6A /* NetSendViewController.swift in Sources */,
 				BF_74F63FEF33E2594AA0067B26AC483EC1 /* NetSendAU.swift in Sources */,
 				BF_397586AFBBB996FDDFC49FE0FCB20901 /* NetSendViewModel.swift in Sources */,
 				BF_23BD009028421075E93FD0F701E0745B /* NetSendProcessSetup.swift in Sources */,

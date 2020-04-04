@@ -1,5 +1,5 @@
 //
-//  NetSendView.swift
+//  NetSendUI.swift
 //  VST3NetSend
 //
 //  Created by Vlad Gorlov on 25.07.18.
@@ -10,44 +10,72 @@ import Cocoa
 import mcUIExtensions
 import mcUIReusable
 import mcUI
+import mcFoundationFormatters
+import mcMediaExtensions
 
-class NetSendView: NSView {
+@objc public class NetSendUI: NSView {
+   
+   fileprivate lazy var viewModelObjectController: NSObjectController = NSObjectController(content: self.viewModel)
+   @objc public private(set) lazy var viewModel = NetSendViewModel()
+   @objc public var modelChangeHandler: ((NetSendParameter) -> Void)?
+   fileprivate var observers = [NSKeyValueObservation]()
+   
+   @objc public var status: Int = 0 {
+      didSet {
+         let title = AUNetStatus(auNetStatus: status)?.title ?? "Unknown"
+         statusValue.text = title
+      }
+   }
    
    private lazy var boxTop = Box()
    private lazy var boxOptions = Box()
    
-   private (set) lazy var connectionFlag = Button()
+   private lazy var connectionFlag = Button()
    
    private lazy var statusLabel = Label(title: "Status:")
-   private (set) lazy var status = Label()
+   private lazy var statusValue = Label()
    
    private lazy var portLabel = Label(title: "Port:")
-   private (set) lazy var port = TextField()
+   private lazy var port = TextField()
    
    private lazy var dataFormatLabel = Label(title: "Data format:")
-   private (set) lazy var dataFormat = PopUpButton()
+   private lazy var dataFormat = PopUpButton()
    
    private lazy var bonjourNameLabel = Label(title: "Bonjour name:")
-   private (set) lazy var bonjourName = TextField()
+   private lazy var bonjourName = TextField()
    
    private lazy var passwordLabel = Label(title: "Password:")
-   private (set) lazy var password = SecureTextField()
+   private lazy var password = SecureTextField()
    
    private let labelFont = NSFont.systemFont(ofSize: NSFont.systemFontSize(for: .small), weight: .regular)
    
-   override func draw(_ dirtyRect: NSRect) {
+   public override func draw(_ dirtyRect: NSRect) {
       NSColor.controlColor.setFill()
       dirtyRect.fill()
    }
 
-   override init(frame frameRect: NSRect) {
+   public override init(frame frameRect: NSRect) {
       super.init(frame: frameRect)
+      log.initialize()
       setupUI()
       setupLayout()
+      setupBindings()
+      setupObservers()
+      setupDefaults()
+   }
+   
+   deinit {
+      observers.removeAll()
+      removeBindings()
+      log.deinitialize()
    }
 
    required init?(coder decoder: NSCoder) {
       fatalError()
+   }
+   
+   private func setupDefaults() {
+      status = -1
    }
    
    private func setupUI() {
@@ -94,7 +122,7 @@ class NetSendView: NSView {
       
       password.controlSize = .small
       password.font = labelFont
-      //(password.cell as? NSTextFieldCell)?.sendsActionOnEndEditing = true
+      password.cell?.sendsActionOnEndEditing = true
       
       portLabel.alignment = .right
       portLabel.font = labelFont
@@ -102,7 +130,8 @@ class NetSendView: NSView {
       
       port.controlSize = .small
       port.font = labelFont
-      //(port.cell as? NSTextFieldCell)?.sendsActionOnEndEditing = true
+      port.cell?.sendsActionOnEndEditing = true
+      port.cell?.formatter = IntegerFormatter()
       
       dataFormatLabel.alignment = .right
       dataFormatLabel.font = labelFont
@@ -115,7 +144,7 @@ class NetSendView: NSView {
       statusLabel.font = labelFont
       statusLabel.usesSingleLineMode = true
    
-      status.font = labelFont
+      statusValue.font = labelFont
       
       bonjourNameLabel.alignment = .right
       bonjourNameLabel.font = labelFont
@@ -123,6 +152,7 @@ class NetSendView: NSView {
       
       bonjourName.controlSize = .small
       bonjourName.font = labelFont
+      bonjourName.cell?.sendsActionOnEndEditing = true
 
       do {
          let stackView = StackView()
@@ -137,7 +167,7 @@ class NetSendView: NSView {
       
       do {
          let stackView = StackView()
-         stackView.addArrangedSubviews(statusLabel, status, NSView(), connectionFlag)
+         stackView.addArrangedSubviews(statusLabel, statusValue, NSView(), connectionFlag)
          stackViewTop.addArrangedSubviews(stackView)
       }
       
@@ -184,5 +214,52 @@ class NetSendView: NSView {
       LayoutConstraint.equalWidth(viewA: portLabel, viewB: dataFormatLabel).activate()
       LayoutConstraint.equalWidth(viewA: passwordLabel, viewB: dataFormatLabel).activate()
       LayoutConstraint.equalWidth(viewA: bonjourNameLabel, viewB: passwordLabel).activate()
+   }
+   
+   private func setupObservers() {
+      observers.append(viewModel.observe(\.dataFormat) { [weak self] _, _ in
+         self?.modelChangeHandler?(.dataFormat)
+      })
+      observers.append(viewModel.observe(\.connectionFlag) { [weak self] _, _ in
+         self?.modelChangeHandler?(.connectionFlag)
+      })
+      observers.append(viewModel.observe(\.port) { [weak self] _, _ in
+         self?.modelChangeHandler?(.port)
+      })
+      observers.append(viewModel.observe(\.bonjourName) { [weak self] _, _ in
+         self?.modelChangeHandler?(.bonjourName)
+      })
+      observers.append(viewModel.observe(\.password) { [weak self] _, _ in
+         self?.modelChangeHandler?(.password)
+      })
+   }
+
+   private func setupBindings() {
+      let connectionButtonTitleBindingOptions = [NSBindingOption.valueTransformer: ConnectionFlagValueTransformer()]
+      let bindingOptions = [NSBindingOption.nullPlaceholder: ""]
+
+      let bindingValue = NSBindingName(rawValue: "value")
+      connectionFlag.bind(NSBindingName(rawValue: "title"), to: viewModelObjectController,
+                                      withKeyPath: "selection.connectionFlag", options: connectionButtonTitleBindingOptions)
+      connectionFlag.bind(bindingValue, to: viewModelObjectController,
+                                      withKeyPath: "selection.connectionFlag", options: nil)
+      dataFormat.bind(NSBindingName(rawValue: "selectedTag"), to: viewModelObjectController,
+                                  withKeyPath: "selection.dataFormat", options: nil)
+      port.bind(bindingValue, to: viewModelObjectController,
+                            withKeyPath: "selection.port", options: nil)
+      bonjourName.bind(bindingValue, to: viewModelObjectController,
+                                   withKeyPath: "selection.bonjourName", options: bindingOptions)
+      password.bind(bindingValue, to: viewModelObjectController,
+                                withKeyPath: "selection.password", options: bindingOptions)
+   }
+
+   private func removeBindings() {
+      let bindingValue = NSBindingName(rawValue: "value")
+      connectionFlag.unbind(bindingValue)
+      connectionFlag.unbind(NSBindingName(rawValue: "title"))
+      dataFormat.unbind(NSBindingName(rawValue: "selectedTag"))
+      port.unbind(bindingValue)
+      bonjourName.unbind(bindingValue)
+      password.unbind(bindingValue)
    }
 }
