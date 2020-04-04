@@ -8,6 +8,22 @@
 
 import Foundation
 
-@objc public enum NetSendParameter: Int {
+@objc public enum NetSendParameter: Int, CustomStringConvertible {
+   
    case dataFormat, port, bonjourName, password, connectionFlag
+   
+   public var description: String {
+      switch self {
+      case .bonjourName:
+         return "bonjourName"
+      case .connectionFlag:
+         return "connectionFlag"
+      case .dataFormat:
+         return "dataFormat"
+      case .port:
+         return "port"
+      case .password:
+         return "password"
+      }
+   }
 }

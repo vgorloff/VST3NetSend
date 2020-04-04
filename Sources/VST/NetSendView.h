@@ -13,9 +13,9 @@
 #include "NetSendProcessorState.h"
 
 #ifdef __OBJC__
-@class NetSendViewController;
+@class NetSendUI;
 #else
-typedef struct objc_object NetSendViewController;
+typedef struct objc_object NetSendUI;
 #endif
 
 GV_NAMESPACE_BEGIN
@@ -46,7 +46,7 @@ public:
    NetSendView(NetSendView&&) = delete;
    
 private:
-   NetSendViewController* mViewController;
+   NetSendUI* mView;
    void handleViewModelChanges(int sourceID);
    
 };

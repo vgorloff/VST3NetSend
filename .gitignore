@@ -32,3 +32,4 @@ xcbaselines
 *.moved-aside
 *.xcscmblueprint
 
+*timeline.xctimeline
