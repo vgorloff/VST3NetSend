@@ -106,9 +106,7 @@ void NetSendView::handleStateChanges (const NetSendProcessorState& state) {
    if ([bonjourName compare:mView.viewModel.bonjourName] != NSOrderedSame) {
       mView.viewModel.bonjourName = bonjourName;
    }
-   if ([password compare:mView.viewModel.password] != NSOrderedSame) {
-      mView.viewModel.password = password;
-   }
+   mView.password = password;
 }
 
 void NetSendView::handleViewModelChanges(int sourceID) {
@@ -142,8 +140,7 @@ void NetSendView::handleViewModelChanges(int sourceID) {
          }
          case NetSendParameterPassword: {
             String128 string;
-            NSString *password = model.password ? model.password : @"";
-            UString(string, tStrBufferSize(String128)).fromAscii ([password UTF8String]);
+            UString(string, tStrBufferSize(String128)).fromAscii ([mView.password UTF8String]);
             message->setMessageID(kGVPasswordMsgId);
             message->getAttributes()->setString(kGVPasswordMsgId, string);
             editController->sendMessage(message);

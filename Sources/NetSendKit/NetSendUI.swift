@@ -36,7 +36,14 @@ import mcMediaExtensions
          let title = connectionFlag > 0 ? "Connect" : "Disconnect"
          connectionButton.title = title
          connectionButton.doubleValue = connectionFlag
-         log.debug(.media, "Changed \(NetSendParameter.connectionFlag) to value \(connectionFlag)")
+      }
+   }
+   
+   @objc public var password: String {
+      get {
+         return passwordValue.text
+      } set {
+         passwordValue.text = newValue
       }
    }
    
@@ -58,7 +65,7 @@ import mcMediaExtensions
    private lazy var bonjourName = TextField()
    
    private lazy var passwordLabel = Label(title: "Password:")
-   private lazy var password = SecureTextField()
+   private lazy var passwordValue = SecureTextField()
    
    private let labelFont = NSFont.systemFont(ofSize: NSFont.systemFontSize(for: .small), weight: .regular)
    
@@ -134,9 +141,9 @@ import mcMediaExtensions
       passwordLabel.font = labelFont
       passwordLabel.usesSingleLineMode = true
       
-      password.controlSize = .small
-      password.font = labelFont
-      password.cell?.sendsActionOnEndEditing = true
+      passwordValue.controlSize = .small
+      passwordValue.font = labelFont
+      passwordValue.cell?.sendsActionOnEndEditing = true
       
       portLabel.alignment = .right
       portLabel.font = labelFont
@@ -175,7 +182,7 @@ import mcMediaExtensions
       }
       do {
          let stackView = StackView()
-         stackView.addArrangedSubviews(passwordLabel, password)
+         stackView.addArrangedSubviews(passwordLabel, passwordValue)
          stackViewOptions.addArrangedSubviews(stackView)
       }
       
@@ -240,15 +247,17 @@ import mcMediaExtensions
       observers.append(viewModel.observe(\.bonjourName) { [weak self] _, _ in
          self?.modelChangeHandler?(.bonjourName)
       })
-      observers.append(viewModel.observe(\.password) { [weak self] _, _ in
-         self?.modelChangeHandler?(.password)
-      })
    }
 
    private func setupBindings() {
       connectionButton.setHandler(self) {
          $0.connectionFlag = $0.connectionButton.doubleValue
          $0.modelChangeHandler?(.connectionFlag)
+         log.debug(.media, "Changed \(NetSendParameter.connectionFlag) to value \($0.connectionFlag)")
+      }
+      passwordValue.setHandler(self) {
+         log.debug(.media, "Changed \(NetSendParameter.password) to value \($0.password)")
+         $0.modelChangeHandler?(.password)
       }
       let bindingOptions = [NSBindingOption.nullPlaceholder: ""]
       let bindingValue = NSBindingName(rawValue: "value")
@@ -258,8 +267,6 @@ import mcMediaExtensions
                             withKeyPath: "selection.port", options: nil)
       bonjourName.bind(bindingValue, to: viewModelObjectController,
                                    withKeyPath: "selection.bonjourName", options: bindingOptions)
-      password.bind(bindingValue, to: viewModelObjectController,
-                                withKeyPath: "selection.password", options: bindingOptions)
    }
 
    private func removeBindings() {
@@ -267,6 +274,5 @@ import mcMediaExtensions
       dataFormat.unbind(NSBindingName(rawValue: "selectedTag"))
       port.unbind(bindingValue)
       bonjourName.unbind(bindingValue)
-      password.unbind(bindingValue)
    }
 }
