@@ -51,7 +51,7 @@ tresult PLUGIN_API NetSendView::attached (void* ptr, Steinberg::FIDString type) 
    NSRect frame = NSRectFromVSTViewRect(getRect());
    [mView setFrame:frame];
 
-   mView.modelChangeHandler = ^(enum NetSendParameter sourceID) {
+   mView.onChange = ^(enum NetSendParameter sourceID) {
       this->handleViewModelChanges(int(sourceID));
    };
 
@@ -61,7 +61,7 @@ tresult PLUGIN_API NetSendView::attached (void* ptr, Steinberg::FIDString type) 
 }
 
 tresult PLUGIN_API NetSendView::removed () {
-   mView.modelChangeHandler = nil;
+   mView.onChange = nil;
    [mView removeFromSuperviewWithoutNeedingDisplay];
    Steinberg::tresult result = CPluginView::removed();
    assert(result == kResultOk);
@@ -92,24 +92,16 @@ void NetSendView::setConnectionStatus(int64 stat) {
 
 void NetSendView::handleStateChanges (const NetSendProcessorState& state) {
 
-   NSNumber* dataFormat  = [NSNumber numberWithInt:state.dataFormat];
-   NSNumber* port        = [NSNumber numberWithLong:state.port];
    NSString* bonjourName = [NSString stringWithUTF8String:state.bonjourName];
    NSString* password    = [NSString stringWithUTF8String:state.password];
-   
-   if ([dataFormat compare:mView.viewModel.dataFormat] != NSOrderedSame) {
-      mView.viewModel.dataFormat = dataFormat;
-   }
-   if ([port compare:mView.viewModel.port] != NSOrderedSame) {
-      mView.viewModel.port = port;
-   }
+   mView.dataFormat = state.dataFormat;
+   mView.port = state.port;
    mView.bonjourName = bonjourName;
    mView.password = password;
 }
 
 void NetSendView::handleViewModelChanges(int sourceID) {
    NetSendParameter source = (NetSendParameter)sourceID;
-   NetSendViewModel *model = mView.viewModel;
    EditController *editController = getController();
    OPtr<IMessage> message = editController->allocateMessage();
    if (message) {
@@ -117,13 +109,13 @@ void NetSendView::handleViewModelChanges(int sourceID) {
       switch (source) {
          case NetSendParameterDataFormat: {
             message->setMessageID(kGVDataFormatMsgId);
-            message->getAttributes()->setInt(kGVDataFormatMsgId, model.dataFormat.longValue);
+            message->getAttributes()->setInt(kGVDataFormatMsgId, mView.dataFormat);
             editController->sendMessage(message);
             break;
          }
          case NetSendParameterPort: {
             message->setMessageID(kGVPortMsgId);
-            message->getAttributes()->setInt(kGVPortMsgId, model.port.longValue);
+            message->getAttributes()->setInt(kGVPortMsgId, mView.port);
             editController->sendMessage(message);
             break;
          }

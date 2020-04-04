@@ -19,7 +19,7 @@ DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
    view.intrinsicContentSize
 }
 
-view.modelChangeHandler = {
+view.onChange = {
    print($0)
 }
 
@@ -28,6 +28,8 @@ DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
    view.connectionFlag = 1
    view.password = "ABCD"
    view.bonjourName = "Name"
+   view.port = 200
+   view.dataFormat = 2
 }
 
 PlaygroundPage.current.setLiveView(view)
