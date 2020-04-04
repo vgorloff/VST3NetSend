@@ -65,6 +65,18 @@
          },
          "group": "build",
          "problemMatcher": []
+      },
+      {
+         "label": "Make Standalone",
+         "type": "shell",
+         "command": "git apply ${workspaceFolder}/standalone.diff",
+         "presentation": {
+            "panel": "shared",
+            "focus": false,
+            "clear": true
+         },
+         "group": "build",
+         "problemMatcher": []
       }
    ]
 }

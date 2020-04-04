@@ -1,17 +1,18 @@
 {
    "dependencies": {
-      "mc-foundation-formatters": "1.0.16",
-      "mc-foundation-logging": "1.0.15",
-      "mc-media-au": "1.0.15",
-      "mc-media-extensions": "1.0.8",
-      "mc-math": "1.0.12",
-      "mc-runtime": "1.0.2",
-      "mc-concurrency-locking": "1.0.15",
-      "mc-foundation-extensions": "1.0.21",
-      "mc-foundation-observables": "1.0.17",
-      "mc-foundation-testability": "1.0.5",
-      "mc-ui-reusable": "1.0.5",
-      "mc-ui-extensions": "1.0.2",
-      "mc-types": "1.0.1"
+      "mc-foundation-formatters": "1.0.30",
+      "mc-foundation-logging": "1.0.30",
+      "mc-media-au": "1.0.30",
+      "mc-media-extensions": "1.0.30",
+      "mc-math": "1.0.30",
+      "mc-runtime": "1.0.30",
+      "mc-concurrency-locking": "1.0.30",
+      "mc-foundation-extensions": "1.0.30",
+      "mc-foundation-observables": "1.0.30",
+      "mc-foundation-testability": "1.0.30",
+      "mc-ui-reusable": "1.0.30",
+      "mc-ui-core": "1.0.30",
+      "mc-ui-extensions": "1.0.30",
+      "mc-types": "1.0.30"
    }
 }
