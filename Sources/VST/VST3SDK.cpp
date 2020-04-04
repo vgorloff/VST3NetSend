@@ -16,6 +16,8 @@
 #pragma clang diagnostic ignored "-Wunused-function"
 #pragma clang diagnostic ignored "-Wswitch"
 #pragma clang diagnostic ignored "-Wempty-body"
+#pragma clang diagnostic ignored "-Wpointer-bool-conversion"
+#pragma clang diagnostic ignored "-Wpragma-pack"
 
 // Base
 #include "base/source/baseiids.cpp"

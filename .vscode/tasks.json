@@ -4,7 +4,7 @@
    "version": "2.0.0",
    "tasks": [
       {
-         "label": "Swift: Build",
+         "label": "Build",
          "type": "shell",
          "command": "./Scripts/build.sh",
          "presentation": {
@@ -19,7 +19,7 @@
          "problemMatcher": []
       },
       {
-         "label": "Swift: Archive",
+         "label": "Archive",
          "type": "shell",
          "command": "./Scripts/archive.sh",
          "presentation": {
@@ -31,7 +31,7 @@
          "problemMatcher": []
       },
       {
-         "label": "Swift: CI",
+         "label": "CI",
          "type": "shell",
          "command": "./Scripts/ci.sh",
          "presentation": {
@@ -43,7 +43,7 @@
          "problemMatcher": []
       },
       {
-         "label": "Swift: Clean",
+         "label": "Clean",
          "type": "shell",
          "command": "./Scripts/clean.sh",
          "presentation": {
@@ -58,6 +58,30 @@
          "label": "Deploy",
          "type": "shell",
          "command": "echo Not Implemented",
+         "presentation": {
+            "panel": "shared",
+            "focus": false,
+            "clear": true
+         },
+         "group": "build",
+         "problemMatcher": []
+      },
+      {
+         "label": "Make Standalone",
+         "type": "shell",
+         "command": "git apply ${workspaceFolder}/standalone.diff",
+         "presentation": {
+            "panel": "shared",
+            "focus": false,
+            "clear": true
+         },
+         "group": "build",
+         "problemMatcher": []
+      },
+      {
+         "label": "Make Local",
+         "type": "shell",
+         "command": "git apply ${workspaceFolder}/local.diff",
          "presentation": {
             "panel": "shared",
             "focus": false,
