@@ -12,7 +12,7 @@ view.layoutSubtreeIfNeeded()
 
 view.fittingSize
 view.intrinsicContentSize
-view.sizeToFit()
+view.sizeToFittingSize()
 print(view.frame)
 DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
    print(view.dump())
