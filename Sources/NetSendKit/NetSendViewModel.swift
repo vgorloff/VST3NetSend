@@ -12,5 +12,4 @@ public class NetSendViewModel: NSObject {
 
    @objc public var dataFormat: NSNumber = 0
    @objc public var port: NSNumber = 0
-   @objc public var bonjourName: NSString = ""
 }

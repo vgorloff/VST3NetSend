@@ -47,6 +47,14 @@ import mcMediaExtensions
       }
    }
    
+   @objc public var bonjourName: String {
+      get {
+         return bonjourNameValue.text
+      } set {
+         bonjourNameValue.text = newValue
+      }
+   }
+   
    private lazy var boxTop = Box()
    private lazy var boxOptions = Box()
    
@@ -62,7 +70,7 @@ import mcMediaExtensions
    private lazy var dataFormat = PopUpButton()
    
    private lazy var bonjourNameLabel = Label(title: "Bonjour name:")
-   private lazy var bonjourName = TextField()
+   private lazy var bonjourNameValue = TextField()
    
    private lazy var passwordLabel = Label(title: "Password:")
    private lazy var passwordValue = SecureTextField()
@@ -171,13 +179,13 @@ import mcMediaExtensions
       bonjourNameLabel.font = labelFont
       bonjourNameLabel.usesSingleLineMode = true
       
-      bonjourName.controlSize = .small
-      bonjourName.font = labelFont
-      bonjourName.cell?.sendsActionOnEndEditing = true
+      bonjourNameValue.controlSize = .small
+      bonjourNameValue.font = labelFont
+      bonjourNameValue.cell?.sendsActionOnEndEditing = true
 
       do {
          let stackView = StackView()
-         stackView.addArrangedSubviews(bonjourNameLabel, bonjourName)
+         stackView.addArrangedSubviews(bonjourNameLabel, bonjourNameValue)
          stackViewOptions.addArrangedSubviews(stackView)
       }
       do {
@@ -244,9 +252,6 @@ import mcMediaExtensions
       observers.append(viewModel.observe(\.port) { [weak self] _, _ in
          self?.modelChangeHandler?(.port)
       })
-      observers.append(viewModel.observe(\.bonjourName) { [weak self] _, _ in
-         self?.modelChangeHandler?(.bonjourName)
-      })
    }
 
    private func setupBindings() {
@@ -259,20 +264,20 @@ import mcMediaExtensions
          log.debug(.media, "Changed \(NetSendParameter.password) to value \($0.password)")
          $0.modelChangeHandler?(.password)
       }
-      let bindingOptions = [NSBindingOption.nullPlaceholder: ""]
+      bonjourNameValue.setHandler(self) {
+         log.debug(.media, "Changed \(NetSendParameter.bonjourName) to value \($0.bonjourName)")
+         $0.modelChangeHandler?(.bonjourName)
+      }
       let bindingValue = NSBindingName(rawValue: "value")
       dataFormat.bind(NSBindingName(rawValue: "selectedTag"), to: viewModelObjectController,
                                   withKeyPath: "selection.dataFormat", options: nil)
       port.bind(bindingValue, to: viewModelObjectController,
                             withKeyPath: "selection.port", options: nil)
-      bonjourName.bind(bindingValue, to: viewModelObjectController,
-                                   withKeyPath: "selection.bonjourName", options: bindingOptions)
    }
 
    private func removeBindings() {
       let bindingValue = NSBindingName(rawValue: "value")
       dataFormat.unbind(NSBindingName(rawValue: "selectedTag"))
       port.unbind(bindingValue)
-      bonjourName.unbind(bindingValue)
    }
 }
