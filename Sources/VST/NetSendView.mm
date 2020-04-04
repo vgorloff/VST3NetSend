@@ -27,17 +27,18 @@ Steinberg::ViewRect VSTViewRectFromNSRect(NSRect rect) {
 GV_NAMESPACE_BEGIN
 
 NetSendView::NetSendView (EditController* controller, ViewRect* rectSize)
-: EditorView(controller, rectSize)
-, mViewController(nil) {
+: EditorView(controller, rectSize) {
 
-   mViewController = [[NetSendViewController alloc] init];
-   NSSize size = mViewController.view.frame.size;
+   mView = [[NetSendUI alloc] init];
+   mView.needsLayout = true;
+   [mView layoutSubtreeIfNeeded];
+   NSSize size = mView.fittingSize;
    Steinberg::ViewRect rect = Steinberg::ViewRect(getRect().left, getRect().top, size.width, size.height);
    setRect(rect);
 }
 
 NetSendView::~NetSendView () {
-   mViewController = nil;
+   mView = nil;
 }
 
 tresult PLUGIN_API NetSendView::attached (void* ptr, Steinberg::FIDString type) {
@@ -46,12 +47,12 @@ tresult PLUGIN_API NetSendView::attached (void* ptr, Steinberg::FIDString type) 
    }
 
    NSView *superview = (__bridge NSView*)ptr;
-   [superview addSubview:mViewController.view]; // view initialised lazy
+   [superview addSubview:mView]; // view initialised lazy
    NSRect frame = NSRectFromVSTViewRect(getRect());
-   [mViewController.view setFrame:frame];
+   [mView setFrame:frame];
 
-   mViewController.modelChangeHandler = ^(enum NetSendParameter sourceID) {
-      this->handleViewModelChanges(sourceID);
+   mView.onChange = ^(enum NetSendParameter sourceID) {
+      this->handleViewModelChanges(int(sourceID));
    };
 
    tresult result = CPluginView::attached(ptr, type);
@@ -60,8 +61,8 @@ tresult PLUGIN_API NetSendView::attached (void* ptr, Steinberg::FIDString type) 
 }
 
 tresult PLUGIN_API NetSendView::removed () {
-   mViewController.modelChangeHandler = nil;
-   [mViewController.view removeFromSuperviewWithoutNeedingDisplay];
+   mView.onChange = nil;
+   [mView removeFromSuperviewWithoutNeedingDisplay];
    Steinberg::tresult result = CPluginView::removed();
    assert(result == kResultOk);
    return result;
@@ -79,44 +80,28 @@ void NetSendView::notifyParameterChanges (unsigned int index) {
    switch (index) {
       case kGVConnectionFlagParameter: {
          ParamValue normValue = getController()->getParamNormalized(index);
-         NSNumber* connectionFlag = (normValue > 0.5f) ? [NSNumber numberWithBool:TRUE]: [NSNumber numberWithBool:FALSE];
-         if ([connectionFlag compare:mViewController.viewModel.connectionFlag] != NSOrderedSame) { // Preverting infinite loop
-            mViewController.viewModel.connectionFlag = connectionFlag;
-         }
+         mView.connectionFlag = normValue;
          break;
       }
    }
 }
 
 void NetSendView::setConnectionStatus(int64 stat) {
-   NSNumber* status = [NSNumber numberWithFloat:stat];
-   mViewController.viewModel.status = status;
+   mView.status = stat;
 }
 
 void NetSendView::handleStateChanges (const NetSendProcessorState& state) {
 
-   NSNumber* dataFormat  = [NSNumber numberWithInt:state.dataFormat];
-   NSNumber* port        = [NSNumber numberWithLong:state.port];
    NSString* bonjourName = [NSString stringWithUTF8String:state.bonjourName];
    NSString* password    = [NSString stringWithUTF8String:state.password];
-   
-   if ([dataFormat compare:mViewController.viewModel.dataFormat] != NSOrderedSame) {
-      mViewController.viewModel.dataFormat = dataFormat;
-   }
-   if ([port compare:mViewController.viewModel.port] != NSOrderedSame) {
-      mViewController.viewModel.port = port;
-   }
-   if ([bonjourName compare:mViewController.viewModel.bonjourName] != NSOrderedSame) {
-      mViewController.viewModel.bonjourName = bonjourName;
-   }
-   if ([password compare:mViewController.viewModel.password] != NSOrderedSame) {
-      mViewController.viewModel.password = password;
-   }
+   mView.dataFormat = state.dataFormat;
+   mView.port = state.port;
+   mView.bonjourName = bonjourName;
+   mView.password = password;
 }
 
 void NetSendView::handleViewModelChanges(int sourceID) {
    NetSendParameter source = (NetSendParameter)sourceID;
-   NetSendViewModel *model = mViewController.viewModel;
    EditController *editController = getController();
    OPtr<IMessage> message = editController->allocateMessage();
    if (message) {
@@ -124,20 +109,19 @@ void NetSendView::handleViewModelChanges(int sourceID) {
       switch (source) {
          case NetSendParameterDataFormat: {
             message->setMessageID(kGVDataFormatMsgId);
-            message->getAttributes()->setInt(kGVDataFormatMsgId, model.dataFormat.longValue);
+            message->getAttributes()->setInt(kGVDataFormatMsgId, mView.dataFormat);
             editController->sendMessage(message);
             break;
          }
          case NetSendParameterPort: {
             message->setMessageID(kGVPortMsgId);
-            message->getAttributes()->setInt(kGVPortMsgId, model.port.longValue);
+            message->getAttributes()->setInt(kGVPortMsgId, mView.port);
             editController->sendMessage(message);
             break;
          }
          case NetSendParameterBonjourName: {
             String128 string;
-            NSString *bonjourName = model.bonjourName ? model.bonjourName : @"";
-            UString(string, tStrBufferSize(String128)).fromAscii ([bonjourName UTF8String]);
+            UString(string, tStrBufferSize(String128)).fromAscii ([mView.bonjourName UTF8String]);
             message->setMessageID(kGVBonjourNameMsgId);
             message->getAttributes()->setString(kGVBonjourNameMsgId, string);
             editController->sendMessage(message);
@@ -145,15 +129,14 @@ void NetSendView::handleViewModelChanges(int sourceID) {
          }
          case NetSendParameterPassword: {
             String128 string;
-            NSString *password = model.password ? model.password : @"";
-            UString(string, tStrBufferSize(String128)).fromAscii ([password UTF8String]);
+            UString(string, tStrBufferSize(String128)).fromAscii ([mView.password UTF8String]);
             message->setMessageID(kGVPasswordMsgId);
             message->getAttributes()->setString(kGVPasswordMsgId, string);
             editController->sendMessage(message);
             break;
          }
          case NetSendParameterConnectionFlag: {
-            ParamValue normValue = model.connectionFlag.doubleValue;
+            ParamValue normValue = mView.connectionFlag;
             editController->beginEdit(kGVConnectionFlagParameter);
             editController->setParamNormalized(kGVConnectionFlagParameter, normValue);
             editController->performEdit(kGVConnectionFlagParameter, normValue);

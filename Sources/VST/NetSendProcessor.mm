@@ -9,7 +9,10 @@
 #import "NetSendParameters.h"
 #import "NetSendProcessor.h"
 #import "pluginterfaces/base/ustring.h"
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wpragma-pack"
 #import "pluginterfaces/vst/ivstparameterchanges.h"
+#pragma clang diagnostic pop
 #import <AppKit/AppKit.h>
 #import <VST3NetSendKit/VST3NetSendKit-Swift.h>
 

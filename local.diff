@@ -1,0 +1,14 @@
+diff --git a/VST3NetSend.xcodeproj/project.pbxproj b/VST3NetSend.xcodeproj/project.pbxproj
+index 9b59cbec510735259fe826b9533e41025f9fac7d..33337f3f8d08e7fcfba24a9c1063a0a28f17eab4 100644
+--- a/VST3NetSend.xcodeproj/project.pbxproj
++++ b/VST3NetSend.xcodeproj/project.pbxproj
+@@ -124,8 +124,7 @@
+ 				801D21D72433F03B00305A24 /* mc-media-au */,
+ 			);
+ 			name = Vendor;
+-			path = node_modules;
+-			sourceTree = "<group>";
++			sourceTree = AWL_LIB_SRC;
+ 		};
+ 		80C9411D243547CB00C4762A /* Frameworks */ = {
+ 			isa = PBXGroup;

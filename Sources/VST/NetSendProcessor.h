@@ -10,7 +10,12 @@
 #define __VST3NetSend__Processor__
 
 #include "base/source/timer.h"
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wpragma-pack"
 #include "public.sdk/source/vst/vstaudioeffect.h"
+#pragma clang diagnostic pop
+
 #include "NetSendController.h"
 #include <AudioUnit/AudioUnit.h>
 
