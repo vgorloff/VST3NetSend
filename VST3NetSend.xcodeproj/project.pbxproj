@@ -124,7 +124,8 @@
 				801D21D72433F03B00305A24 /* mc-media-au */,
 			);
 			name = Vendor;
-			sourceTree = AWL_LIB_SRC;
+			path = node_modules;
+			sourceTree = "<group>";
 		};
 		80C9411D243547CB00C4762A /* Frameworks */ = {
 			isa = PBXGroup;
