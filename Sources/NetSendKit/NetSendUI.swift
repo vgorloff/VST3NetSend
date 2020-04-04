@@ -27,10 +27,23 @@ import mcMediaExtensions
       }
    }
    
+   @objc public var connectionFlag: Double = 0 {
+      didSet {
+         // Value == "0" in AU means "Connected"
+         // Value > "0" in AU means "Disconnected"
+         // But button should showd opposite title.
+         // So, when value not "0" we need to show title "Connect"
+         let title = connectionFlag > 0 ? "Connect" : "Disconnect"
+         connectionButton.title = title
+         connectionButton.doubleValue = connectionFlag
+         log.debug(.media, "Changed \(NetSendParameter.connectionFlag) to value \(connectionFlag)")
+      }
+   }
+   
    private lazy var boxTop = Box()
    private lazy var boxOptions = Box()
    
-   private lazy var connectionFlag = Button()
+   private lazy var connectionButton = Button()
    
    private lazy var statusLabel = Label(title: "Status:")
    private lazy var statusValue = Label()
@@ -76,6 +89,7 @@ import mcMediaExtensions
    
    private func setupDefaults() {
       status = -1
+      connectionFlag = 0
    }
    
    private func setupUI() {
@@ -112,9 +126,9 @@ import mcMediaExtensions
       
       LayoutConstraint.equalWidth(viewA: boxOptions, viewB: boxTop).activate()
       
-      connectionFlag.controlSize = .small
-      connectionFlag.font = labelFont
-      connectionFlag.setButtonType(.toggle)
+      connectionButton.controlSize = .small
+      connectionButton.font = labelFont
+      connectionButton.setButtonType(.toggle)
       
       passwordLabel.alignment = .right
       passwordLabel.font = labelFont
@@ -167,7 +181,7 @@ import mcMediaExtensions
       
       do {
          let stackView = StackView()
-         stackView.addArrangedSubviews(statusLabel, statusValue, NSView(), connectionFlag)
+         stackView.addArrangedSubviews(statusLabel, statusValue, NSView(), connectionButton)
          stackViewTop.addArrangedSubviews(stackView)
       }
       
@@ -220,9 +234,6 @@ import mcMediaExtensions
       observers.append(viewModel.observe(\.dataFormat) { [weak self] _, _ in
          self?.modelChangeHandler?(.dataFormat)
       })
-      observers.append(viewModel.observe(\.connectionFlag) { [weak self] _, _ in
-         self?.modelChangeHandler?(.connectionFlag)
-      })
       observers.append(viewModel.observe(\.port) { [weak self] _, _ in
          self?.modelChangeHandler?(.port)
       })
@@ -235,14 +246,12 @@ import mcMediaExtensions
    }
 
    private func setupBindings() {
-      let connectionButtonTitleBindingOptions = [NSBindingOption.valueTransformer: ConnectionFlagValueTransformer()]
+      connectionButton.setHandler(self) {
+         $0.connectionFlag = $0.connectionButton.doubleValue
+         $0.modelChangeHandler?(.connectionFlag)
+      }
       let bindingOptions = [NSBindingOption.nullPlaceholder: ""]
-
       let bindingValue = NSBindingName(rawValue: "value")
-      connectionFlag.bind(NSBindingName(rawValue: "title"), to: viewModelObjectController,
-                                      withKeyPath: "selection.connectionFlag", options: connectionButtonTitleBindingOptions)
-      connectionFlag.bind(bindingValue, to: viewModelObjectController,
-                                      withKeyPath: "selection.connectionFlag", options: nil)
       dataFormat.bind(NSBindingName(rawValue: "selectedTag"), to: viewModelObjectController,
                                   withKeyPath: "selection.dataFormat", options: nil)
       port.bind(bindingValue, to: viewModelObjectController,
@@ -255,8 +264,6 @@ import mcMediaExtensions
 
    private func removeBindings() {
       let bindingValue = NSBindingName(rawValue: "value")
-      connectionFlag.unbind(bindingValue)
-      connectionFlag.unbind(NSBindingName(rawValue: "title"))
       dataFormat.unbind(NSBindingName(rawValue: "selectedTag"))
       port.unbind(bindingValue)
       bonjourName.unbind(bindingValue)

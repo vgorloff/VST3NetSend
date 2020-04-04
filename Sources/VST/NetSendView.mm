@@ -80,10 +80,7 @@ void NetSendView::notifyParameterChanges (unsigned int index) {
    switch (index) {
       case kGVConnectionFlagParameter: {
          ParamValue normValue = getController()->getParamNormalized(index);
-         NSNumber* connectionFlag = (normValue > 0.5f) ? [NSNumber numberWithBool:TRUE]: [NSNumber numberWithBool:FALSE];
-         if ([connectionFlag compare:mView.viewModel.connectionFlag] != NSOrderedSame) { // Preverting infinite loop
-            mView.viewModel.connectionFlag = connectionFlag;
-         }
+         mView.connectionFlag = normValue;
          break;
       }
    }
@@ -153,7 +150,7 @@ void NetSendView::handleViewModelChanges(int sourceID) {
             break;
          }
          case NetSendParameterConnectionFlag: {
-            ParamValue normValue = model.connectionFlag.doubleValue;
+            ParamValue normValue = mView.connectionFlag;
             editController->beginEdit(kGVConnectionFlagParameter);
             editController->setParamNormalized(kGVConnectionFlagParameter, normValue);
             editController->performEdit(kGVConnectionFlagParameter, normValue);
