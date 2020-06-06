@@ -303,7 +303,6 @@
 		8052F01624368ECF009DA7C0 /* VST3NetSend.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = VST3NetSend.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		80584E422433F34F00C1B2D1 /* VST3NetSend.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = VST3NetSend.xcconfig; sourceTree = "<group>"; };
 		80584E432433F38D00C1B2D1 /* VST3NetSendKit.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = VST3NetSendKit.xcconfig; sourceTree = "<group>"; };
-		80584E462434019500C1B2D1 /* package.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = package.json; sourceTree = "<group>"; };
 		80E37AE9238B37A200B23015 /* Common.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Common.xcconfig; sourceTree = "<group>"; };
 		80E37AEA238B37A200B23015 /* Framework.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Framework.xcconfig; sourceTree = "<group>"; };
 		FR_00C3BCCE9285999BFB1DEB4A452D07FC /* NetSendParameters.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; path = NetSendParameters.h; sourceTree = "<group>"; };
@@ -435,7 +434,6 @@
 			children = (
 				80080CBC248B158F001EBF35 /* Shared.xcodeproj */,
 				8052F01624368ECF009DA7C0 /* VST3NetSend.playground */,
-				80584E462434019500C1B2D1 /* package.json */,
 				G_FC812F6CFA74F83906FCE359CE9E7676 /* Configuration */,
 				G_E34F395B442860C0BCBBE95C4545F08C /* Sources */,
 				G_87D941BB6FA9E32D360F59BCD8807B73 /* Products */,
