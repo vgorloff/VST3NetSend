@@ -1,0 +1,14 @@
+include:
+  - ../../../Projects/mc/templates.yml
+  - ../../../Projects/mc/mcUIReusable/project.yml
+  - ../../../Projects/mc/mcMediaExtensions/project.yml
+  - ../../../Projects/mc/mcFoundationFormatters/project.yml
+  - ../../../Projects/mc/mcMediaAU/project.yml
+name: Shared
+aggregateTargets:
+  Shared:
+    targets:
+      - mcUIReusable_macOS
+      - mcMediaExtensions_macOS
+      - mcFoundationFormatters_macOS
+      - mcMediaAU_macOS
