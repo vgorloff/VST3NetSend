@@ -11,7 +11,7 @@ import UIKit
 
 public class Window: UIWindow {
 
-   public override init(frame: CGRect) {
+   override public init(frame: CGRect) {
       super.init(frame: frame)
       backgroundColor = .white
    }

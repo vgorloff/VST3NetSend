@@ -11,7 +11,7 @@ import AppKit
 
 open class Scroller: NSScroller {
 
-   public override init(frame frameRect: NSRect) {
+   override public init(frame frameRect: NSRect) {
       super.init(frame: frameRect)
       setupUI()
       setupLayout()

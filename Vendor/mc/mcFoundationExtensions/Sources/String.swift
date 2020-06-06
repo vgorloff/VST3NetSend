@@ -247,7 +247,7 @@ extension String {
       return entities
          .reduce(self) { string, entity in
             string.replacingOccurrences(of: entity.value, with: entity.key)
-      }
-      .replacingOccurrences(of: "\\\\", with: "\\")
+         }
+         .replacingOccurrences(of: "\\\\", with: "\\")
    }
 }

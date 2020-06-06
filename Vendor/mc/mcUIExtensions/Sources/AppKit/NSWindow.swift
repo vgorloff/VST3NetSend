@@ -41,7 +41,7 @@ extension NSWindow {
       }
    }
 
-   public var anchor: LayoutConstraint  {
+   public var anchor: LayoutConstraint {
       return LayoutConstraint()
    }
 }

@@ -13,7 +13,7 @@ open class StackViewController: ViewController {
 
    public private(set) lazy var stackView = UIStackView().autolayoutView()
 
-   open override func loadView() {
+   override open func loadView() {
       view = UIView()
       view.backgroundColor = .white
       view.addSubview(stackView)

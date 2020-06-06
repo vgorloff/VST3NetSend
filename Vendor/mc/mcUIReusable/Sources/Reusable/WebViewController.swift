@@ -27,7 +27,7 @@ public class WebViewController: ViewController {
       fatalError()
    }
 
-   public override func setupUI() {
+   override public func setupUI() {
       view.addSubview(webView)
       anchor.pin.toMargins(webView).activate()
       webView.loadHTMLString(html, baseURL: nil)

@@ -57,7 +57,7 @@ public final class KeyValueObserver<ValueType: Any>: NSObject, Observable {
 
    // MARK: -
 
-   public override func observeValue(forKeyPath keyPath: String?, of object: Any?,
+   override public func observeValue(forKeyPath keyPath: String?, of object: Any?,
                                      change: [NSKeyValueChangeKey: Any]?, context: UnsafeMutableRawPointer?) {
       if context == &self.context, keyPath == self.keyPath {
          if !isSuspended, let change = change, let result = KeyValueObserverResult<ValueType>(change: change) {

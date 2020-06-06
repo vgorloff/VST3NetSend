@@ -14,7 +14,7 @@ open class StackViewController: ViewController {
 
    public private(set) lazy var stackView = StackView().autolayoutView()
 
-   open override func loadView() {
+   override open func loadView() {
       super.loadView()
       content.view.addSubview(stackView)
 

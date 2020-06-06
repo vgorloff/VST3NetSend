@@ -9,7 +9,7 @@
 import Foundation
 import mcTypes
 
-public class __DictionaryAsExisting<K: Hashable, V>: InstanceHolder<Dictionary<K, V>> {
+public class __DictionaryAsExisting<K: Hashable, V>: InstanceHolder<[K: V]> {
 
    public func string(forKeyPath: String) throws -> String {
       if let value = instance.string(forKeyPath: forKeyPath) {
@@ -36,12 +36,11 @@ public class __DictionaryAsExisting<K: Hashable, V>: InstanceHolder<Dictionary<K
       }
       guard let resultValue = existingValue as? T else {
          throw DictionaryError.Key.requiredKeyHasWrongType(key: "\(key)",
-                                                              type: String(describing: type(of: existingValue)))
+                                                           type: String(describing: type(of: existingValue)))
       }
       return resultValue
    }
 }
-
 
 extension Dictionary {
 

@@ -11,21 +11,19 @@ import AppKit
 
 extension NSButton.BezelStyle: CustomStringConvertible {
 
-   public static let allStyles: [NSButton.BezelStyle] = [
-      .texturedRounded,
-      .texturedSquare,
-      .smallSquare,
-      .shadowlessSquare,
-      .roundRect,
-      .roundedDisclosure,
-      .rounded,
-      .regularSquare,
-      .recessed,
-      .inline,
-      .helpButton,
-      .disclosure,
-      .circular
-   ]
+   public static let allStyles: [NSButton.BezelStyle] = [.texturedRounded,
+                                                         .texturedSquare,
+                                                         .smallSquare,
+                                                         .shadowlessSquare,
+                                                         .roundRect,
+                                                         .roundedDisclosure,
+                                                         .rounded,
+                                                         .regularSquare,
+                                                         .recessed,
+                                                         .inline,
+                                                         .helpButton,
+                                                         .disclosure,
+                                                         .circular]
 
    public var description: String {
       switch self {

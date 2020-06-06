@@ -22,20 +22,20 @@ open class TabViewController: NSTabViewController {
       fatalError()
    }
 
-   open override func viewDidLayout() {
+   override open func viewDidLayout() {
       super.viewDidLayout()
       layoutUntil.performIfNeeded {
          setupLayoutDefaults()
       }
    }
 
-   open override func viewDidAppear() {
+   override open func viewDidAppear() {
       super.viewDidAppear()
       layoutUntil.fulfill()
       view.assertOnAmbiguityInSubviewsLayout()
    }
 
-   open override func viewDidLoad() {
+   override open func viewDidLoad() {
       super.viewDidLoad()
       setupUI()
       setupLayout()

@@ -39,7 +39,7 @@ open class FullContentWindowController: WindowController {
       titleOffsetConstraint.constant = standardWindowButtonsRect.maxX
    }
 
-   open override func prepareForInterfaceBuilder() {
+   override open func prepareForInterfaceBuilder() {
       titleBarContentContainer.backgroundColor = .green
       contentContainer.backgroundColor = .yellow
       fullContentViewController.content.view.backgroundColor = .blue

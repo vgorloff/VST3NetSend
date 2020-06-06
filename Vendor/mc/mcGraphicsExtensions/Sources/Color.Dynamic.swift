@@ -25,7 +25,6 @@ public class DynamicColor {
       self.light = light
       dynamic = NSColor.dynamicColor(light: light, dark: dark)
    }
-
 }
 
 extension NSColor {
@@ -41,7 +40,7 @@ extension NSColor {
             }
          }
       } else {
-        return light
+         return light
       }
    }
 }

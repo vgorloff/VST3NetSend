@@ -11,7 +11,7 @@ import AppKit
 
 open class TextView: NSTextView {
 
-   public override init(frame frameRect: NSRect, textContainer container: NSTextContainer?) {
+   override public init(frame frameRect: NSRect, textContainer container: NSTextContainer?) {
       super.init(frame: frameRect, textContainer: container)
       setupUI()
       setupLayout()
@@ -20,7 +20,7 @@ open class TextView: NSTextView {
       translatesAutoresizingMaskIntoConstraints = false
    }
 
-   public override init(frame frameRect: NSRect) {
+   override public init(frame frameRect: NSRect) {
       super.init(frame: frameRect)
    }
 
@@ -39,6 +39,5 @@ open class TextView: NSTextView {
 
    @objc open dynamic func setupDefaults() {
    }
-
 }
 #endif

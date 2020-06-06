@@ -16,7 +16,7 @@ open class CollectionViewItem: NSCollectionViewItem {
    public let contentView = View()
    private let layoutUntil = DispatchUntil()
 
-   open override func loadView() {
+   override open func loadView() {
       contentView.onAppearanceDidChanged = { [weak self] in
          self?.setupAppearance($0)
       }
@@ -27,7 +27,7 @@ open class CollectionViewItem: NSCollectionViewItem {
       super.init(nibName: nil, bundle: nil)
    }
 
-   public override init(nibName nibNameOrNil: NSNib.Name?, bundle nibBundleOrNil: Bundle?) {
+   override public init(nibName nibNameOrNil: NSNib.Name?, bundle nibBundleOrNil: Bundle?) {
       super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
    }
 
@@ -35,19 +35,19 @@ open class CollectionViewItem: NSCollectionViewItem {
       fatalError()
    }
 
-   open override func viewDidLayout() {
+   override open func viewDidLayout() {
       super.viewDidLayout()
       layoutUntil.performIfNeeded {
          setupLayoutDefaults()
       }
    }
 
-   open override func viewDidAppear() {
+   override open func viewDidAppear() {
       super.viewDidAppear()
       layoutUntil.fulfill()
    }
 
-   open override func viewDidLoad() {
+   override open func viewDidLoad() {
       super.viewDidLoad()
       setupUI()
       setupAppearance(contentView.systemAppearance)

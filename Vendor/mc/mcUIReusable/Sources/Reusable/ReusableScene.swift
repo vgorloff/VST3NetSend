@@ -21,7 +21,7 @@ open class ReusableScene: UIView, ReusableContentView {
 
    open func didDisappear(_: Bool) {}
 
-   public override init(frame: CGRect) {
+   override public init(frame: CGRect) {
       super.init(frame: frame)
       translatesAutoresizingMaskIntoConstraints = false
    }

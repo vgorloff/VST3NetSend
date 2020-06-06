@@ -7,8 +7,8 @@
 //
 
 #if canImport(UIKit)
-import UIKit
 import mcRuntime
+import UIKit
 
 extension UIModalPresentationStyle: CustomStringConvertible {
 

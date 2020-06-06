@@ -11,7 +11,7 @@ import AppKit
 
 open class TableView: NSTableView {
 
-   public override init(frame frameRect: NSRect) {
+   override public init(frame frameRect: NSRect) {
       super.init(frame: frameRect)
       intercellSpacing = CGSize(height: convertFromBacking(1))
       gridStyleMask = .solidHorizontalGridLineMask
@@ -22,13 +22,12 @@ open class TableView: NSTableView {
       fatalError()
    }
 
-   open override func drawGrid(inClipRect clipRect: NSRect) {
+   override open func drawGrid(inClipRect clipRect: NSRect) {
       // See: Draw grid lines in NSTableView only for populated rows - https://stackoverflow.com/q/5606796/1418981
       let lastRowRect = rect(ofRow: numberOfRows - 1)
       let newClipRect = CGRect(x: 0, y: 0, width: lastRowRect.size.width, height: lastRowRect.maxY)
       let finalClipRect = clipRect.intersection(newClipRect)
       super.drawGrid(inClipRect: finalClipRect)
    }
-
 }
 #endif

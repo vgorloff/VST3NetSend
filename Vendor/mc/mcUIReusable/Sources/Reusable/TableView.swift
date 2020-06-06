@@ -11,7 +11,7 @@ import UIKit
 
 open class TableView: UITableView {
 
-   public override init(frame: CGRect, style: UITableView.Style) {
+   override public init(frame: CGRect, style: UITableView.Style) {
       super.init(frame: frame, style: style)
       translatesAutoresizingMaskIntoConstraints = false
       setupUI()
@@ -24,7 +24,7 @@ open class TableView: UITableView {
       super.init(coder: aDecoder)
    }
 
-   open override func awakeFromNib() {
+   override open func awakeFromNib() {
       super.awakeFromNib()
       translatesAutoresizingMaskIntoConstraints = true
       setupUI()

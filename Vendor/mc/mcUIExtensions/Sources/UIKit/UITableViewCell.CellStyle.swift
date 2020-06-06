@@ -7,8 +7,8 @@
 //
 
 #if canImport(UIKit)
-import UIKit
 import mcRuntime
+import UIKit
 
 extension UITableViewCell.CellStyle {
 
@@ -23,8 +23,8 @@ extension UITableViewCell.CellStyle {
       case .value2:
          return "value2"
       @unknown default:
-        Assertion.unknown(self)
-        return "unknown"
+         Assertion.unknown(self)
+         return "unknown"
       }
    }
 }

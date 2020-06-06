@@ -29,13 +29,13 @@ public class InnerShadowLayer: CALayer {
 
    private var layers: [RectEdge: CALayer] = [:]
 
-   public override var bounds: CGRect {
+   override public var bounds: CGRect {
       didSet {
          update()
       }
    }
 
-   public override init(layer: Any) {
+   override public init(layer: Any) {
       if let layer = layer as? InnerShadowLayer {
          edges = layer.edges
          radius = layer.radius

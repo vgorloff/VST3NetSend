@@ -22,7 +22,7 @@ open class ClipView: NSClipView {
 
    private var mIsFlipped: Bool?
 
-   open override var isFlipped: Bool {
+   override open var isFlipped: Bool {
       return mIsFlipped ?? super.isFlipped
    }
 

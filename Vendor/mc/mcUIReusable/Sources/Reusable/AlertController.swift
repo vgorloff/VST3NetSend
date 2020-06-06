@@ -10,8 +10,8 @@
 import mcFoundation
 import mcFoundationObservables
 import mcTypes
-import UIKit
 import mcUIExtensions
+import UIKit
 
 public class AlertController: UIAlertController {
 
@@ -20,7 +20,7 @@ public class AlertController: UIAlertController {
    private var screenshotImage: UIImage?
    private var shouldTakeScreenshot = false
 
-   public override func viewDidAppear(_ animated: Bool) {
+   override public func viewDidAppear(_ animated: Bool) {
       super.viewDidAppear(animated)
       if shouldTakeScreenshot {
          screenshotImage = UIApplication.shared.takeMainWindowScreenshot()

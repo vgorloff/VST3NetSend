@@ -11,7 +11,7 @@ import AppKit
 
 public class ImageView: NSImageView {
 
-   public override init(frame frameRect: NSRect) {
+   override public init(frame frameRect: NSRect) {
       super.init(frame: frameRect)
       translatesAutoresizingMaskIntoConstraints = false
    }

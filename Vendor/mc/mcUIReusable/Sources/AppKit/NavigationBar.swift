@@ -21,7 +21,7 @@ open class NavigationBar: View {
       }
    }
 
-   public private (set) var items: [NavigationItem] = []
+   public private(set) var items: [NavigationItem] = []
 
    public var topItem: NavigationItem? {
       return items.last
@@ -105,7 +105,7 @@ open class NavigationBar: View {
       }
    }
 
-   open override func setupLayout() {
+   override open func setupLayout() {
       heightAnchor.constraint(equalToConstant: 36).activate()
    }
 

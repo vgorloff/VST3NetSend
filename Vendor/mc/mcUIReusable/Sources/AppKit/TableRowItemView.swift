@@ -17,7 +17,7 @@ open class TableRowItemView: View {
       self.isSelected = isSelected
    }
 
-   public override init() {
+   override public init() {
       super.init()
       setSelected(false)
    }

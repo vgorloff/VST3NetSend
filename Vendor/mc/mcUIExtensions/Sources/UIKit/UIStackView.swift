@@ -39,7 +39,7 @@ extension UIStackView {
    public var edgeInsets: UIEdgeInsets {
       @available(*, unavailable)
       get {
-         return layoutMargins
+         layoutMargins
       } set {
          isLayoutMarginsRelativeArrangement = true
          layoutMargins = newValue

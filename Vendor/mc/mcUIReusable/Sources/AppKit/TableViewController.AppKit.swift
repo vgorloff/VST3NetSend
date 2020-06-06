@@ -16,7 +16,7 @@ open class TableViewController: NSViewController {
    public private(set) lazy var scrollView = ScrollView(document: tableView).autolayoutView()
    private let layoutUntil = DispatchUntil()
 
-   open override func loadView() {
+   override open func loadView() {
       view = scrollView
    }
 
@@ -34,20 +34,20 @@ open class TableViewController: NSViewController {
       fatalError()
    }
 
-   open override func viewDidLayout() {
+   override open func viewDidLayout() {
       super.viewDidLayout()
       layoutUntil.performIfNeeded {
          setupLayoutDefaults()
       }
    }
 
-   open override func viewDidAppear() {
+   override open func viewDidAppear() {
       super.viewDidAppear()
       layoutUntil.fulfill()
       view.assertOnAmbiguityInSubviewsLayout()
    }
 
-   open override func viewDidLoad() {
+   override open func viewDidLoad() {
       super.viewDidLoad()
 
       scrollView.hasVerticalScroller = true

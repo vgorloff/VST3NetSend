@@ -47,7 +47,7 @@ public class ReusableViewController<T: ReusableContentView>: UIViewController {
       fatalError()
    }
 
-   open override func loadView() {
+   override open func loadView() {
       super.loadView()
       scene.translatesAutoresizingMaskIntoConstraints = true
       view = scene
@@ -56,22 +56,22 @@ public class ReusableViewController<T: ReusableContentView>: UIViewController {
       }
    }
 
-   open override func viewWillAppear(_ animated: Bool) {
+   override open func viewWillAppear(_ animated: Bool) {
       super.viewWillAppear(animated)
       scene.willAppear(animated)
    }
 
-   open override func viewDidAppear(_ animated: Bool) {
+   override open func viewDidAppear(_ animated: Bool) {
       super.viewDidAppear(animated)
       scene.didAppear(animated)
    }
 
-   open override func viewWillDisappear(_ animated: Bool) {
+   override open func viewWillDisappear(_ animated: Bool) {
       super.viewWillDisappear(animated)
       scene.willDisappear(animated)
    }
 
-   public override func viewDidDisappear(_ animated: Bool) {
+   override public func viewDidDisappear(_ animated: Bool) {
       super.viewDidDisappear(animated)
       scene.didDisappear(animated)
    }

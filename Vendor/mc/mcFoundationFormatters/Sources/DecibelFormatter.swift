@@ -15,21 +15,21 @@ public final class DecibelFormatter: Formatter {
    public var maxValue = 0.0
    public var unit = "dB"
 
-   public override func string(for obj: Any?) -> String? {
+   override public func string(for obj: Any?) -> String? {
       guard let value = obj as? NSNumber else {
          return nil
       }
       return stringForNumberValue(value, forEditing: false)
    }
 
-   public override func editingString(for obj: Any) -> String? {
+   override public func editingString(for obj: Any) -> String? {
       guard let value = obj as? NSNumber else {
          return nil
       }
       return stringForNumberValue(value, forEditing: true)
    }
 
-   public override func getObjectValue(_ obj: AutoreleasingUnsafeMutablePointer<AnyObject?>?, for string: String,
+   override public func getObjectValue(_ obj: AutoreleasingUnsafeMutablePointer<AnyObject?>?, for string: String,
                                        errorDescription error: AutoreleasingUnsafeMutablePointer<NSString?>?) -> Bool {
       var doubleResult = 0.0
       var returnValue = false

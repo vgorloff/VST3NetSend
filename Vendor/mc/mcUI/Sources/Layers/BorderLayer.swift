@@ -27,7 +27,7 @@ public class BorderLayer: CALayer {
 
    private var layers: [RectEdge: CALayer] = [:]
 
-   public override var bounds: CGRect {
+   override public var bounds: CGRect {
       didSet {
          update()
       }

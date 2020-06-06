@@ -71,7 +71,7 @@ public final class ValueObserver<T: Any>: NSObject {
       object.removeObserver(self, forKeyPath: keyPath, context: &context)
    }
 
-   public override func observeValue(forKeyPath aKeyPath: String?, of object: Any?,
+   override public func observeValue(forKeyPath aKeyPath: String?, of object: Any?,
                                      change aChange: [NSKeyValueChangeKey: Any]?,
                                      context aContext: UnsafeMutableRawPointer?) {
       if aContext == &context, aKeyPath == keyPath {

@@ -9,8 +9,8 @@
 #if canImport(AppKit) && !targetEnvironment(macCatalyst)
 import AppKit
 import mcGraphicsExtensions
-import mcTypes
 import mcRuntime
+import mcTypes
 import mcUI
 
 // See also:
@@ -18,13 +18,13 @@ import mcUI
 // - https://github.com/bfolder/BFNavigationController/blob/master/BFNavigationController/NSView%2BBFUtilities.m
 public class NavigationController: NSViewController {
 
-   public private (set) lazy var navigationBar = NavigationBar(frame: CGRect.w100h100)
+   public private(set) lazy var navigationBar = NavigationBar(frame: CGRect.w100h100)
    private var containerView = View(frame: CGRect.w100h100)
    private var stackView = StackView(axis: .vertical)
 
    public private(set) var viewControllers: [NSViewController] = []
 
-   open override func loadView() {
+   override open func loadView() {
       view = NSView()
       view.addSubview(stackView)
       stackView.spacing = 0

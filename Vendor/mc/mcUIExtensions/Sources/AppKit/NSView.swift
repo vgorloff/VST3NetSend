@@ -165,7 +165,7 @@ extension NSView {
 extension NSView {
 
    public func setNeedsLayout() {
-      self.needsLayout = true
+      needsLayout = true
    }
 
    public func layoutIfNeeded() {
@@ -222,7 +222,6 @@ extension NSView {
          }
       }
    }
-
 }
 
 extension NSView {

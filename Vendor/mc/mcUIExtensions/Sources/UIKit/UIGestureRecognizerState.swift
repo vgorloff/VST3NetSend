@@ -7,8 +7,8 @@
 //
 
 #if canImport(UIKit)
-import UIKit
 import mcRuntime
+import UIKit
 
 extension UIGestureRecognizer.State: CustomDebugStringConvertible {
    public var debugDescription: String {

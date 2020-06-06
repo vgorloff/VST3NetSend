@@ -30,13 +30,13 @@ public class TableRowView: NSTableRowView {
       }
    }
 
-   public override var isSelected: Bool {
+   override public var isSelected: Bool {
       didSet {
          (0 ..< numberOfColumns).compactMap { view(atColumn: $0) as? TableRowItemView }.forEach { $0.setSelected(isSelected) }
       }
    }
 
-   public override init(frame frameRect: NSRect) {
+   override public init(frame frameRect: NSRect) {
       super.init(frame: frameRect)
       separatorHeight = convertFromBacking(1)
    }
@@ -45,13 +45,13 @@ public class TableRowView: NSTableRowView {
       fatalError()
    }
 
-   public override func drawSelection(in dirtyRect: NSRect) {
+   override public func drawSelection(in dirtyRect: NSRect) {
       let rect = bounds.insetBottom(by: -separatorHeight)
       selectionColor.setFill()
       rect.fill()
    }
 
-   public override func drawSeparator(in dirtyRect: NSRect) {
+   override public func drawSeparator(in dirtyRect: NSRect) {
       let rect = bounds.insetTop(by: bounds.height - separatorHeight)
       separatorColor.setFill()
       rect.fill()

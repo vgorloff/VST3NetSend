@@ -37,7 +37,7 @@ public class QuickLookProxy: NSObject {
       return object
    }
 
-   public override var description: String {
+   override public var description: String {
       return object?.description ?? "nil"
    }
 }

@@ -63,7 +63,6 @@ open class BarButtonItem {
    public func setHandler<T: AnyObject>(_ caller: T, _ handler: @escaping (T) -> Void) {
       button.setHandler(caller, handler)
    }
-
 }
 #else
 public class BarButtonItem: UIBarButtonItem {

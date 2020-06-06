@@ -71,7 +71,6 @@ extension NSMutableAttributedString {
    public var asComposable: _NSMutableAttributedStringAsComposable {
       return _NSMutableAttributedStringAsComposable(instance: self)
    }
-
 }
 
 extension NSMutableAttributedString {

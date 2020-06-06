@@ -32,11 +32,11 @@ open class View: NSView {
 
    private var mIsFlipped: Bool?
 
-   open override var isFlipped: Bool {
+   override open var isFlipped: Bool {
       return mIsFlipped ?? super.isFlipped
    }
 
-   open override var intrinsicContentSize: CGSize {
+   override open var intrinsicContentSize: CGSize {
       return userDefinedIntrinsicContentSize ?? super.intrinsicContentSize
    }
 
@@ -50,7 +50,7 @@ open class View: NSView {
       commonSetup()
    }
 
-   public override init(frame: NSRect) {
+   override public init(frame: NSRect) {
       super.init(frame: frame)
       commonSetup()
    }
@@ -76,7 +76,7 @@ open class View: NSView {
       fatalError()
    }
 
-   open override func draw(_ dirtyRect: NSRect) {
+   override open func draw(_ dirtyRect: NSRect) {
       if let backgroundColor = backgroundColor {
          backgroundColor.setFill()
          dirtyRect.fill()
@@ -89,7 +89,7 @@ open class View: NSView {
    }
 
    @available(OSX 10.14, *)
-   open override func viewDidChangeEffectiveAppearance() {
+   override open func viewDidChangeEffectiveAppearance() {
       super.viewDidChangeEffectiveAppearance()
       notifySystemAppearanceDidChange()
    }
@@ -122,9 +122,9 @@ extension View {
    }
 
    public func addDrawingBlock<T: AnyObject>(_ context: T, _ callback: @escaping (T, DrawingContext) -> Void) {
-      drawingCallbacks.append({ [weak context] drawingContext in guard let ctx = context else { return }
+      drawingCallbacks.append { [weak context] drawingContext in guard let ctx = context else { return }
          callback(ctx, drawingContext)
-      })
+      }
    }
 
    // MARK: -

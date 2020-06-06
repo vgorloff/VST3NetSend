@@ -44,7 +44,7 @@ extension NSViewController {
       return view.systemAppearance
    }
 
-   public var anchor: LayoutConstraint  {
+   public var anchor: LayoutConstraint {
       return LayoutConstraint()
    }
 }

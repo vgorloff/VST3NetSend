@@ -9,8 +9,8 @@
 #if canImport(UIKit) || targetEnvironment(macCatalyst)
 import mcFoundation
 import mcUI
-import UIKit
 import mcUIExtensions
+import UIKit
 
 public struct ViewsFactory {
 

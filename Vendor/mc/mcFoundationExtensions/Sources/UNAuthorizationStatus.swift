@@ -7,8 +7,8 @@
 //
 
 import Foundation
-import UserNotifications
 import mcRuntime
+import UserNotifications
 
 extension UNAuthorizationStatus: CustomStringConvertible {
 

@@ -6,7 +6,7 @@
 //  Copyright © 2018 Vlad Gorlov. All rights reserved.
 //
 
-#if canImport(AppKit)  && !targetEnvironment(macCatalyst)
+#if canImport(AppKit) && !targetEnvironment(macCatalyst)
 import AppKit
 import Foundation
 import mcUI
@@ -50,7 +50,7 @@ public class TabBarView<T: Equatable, TabItem: TabBarTabViewItem<T>>: View, NSCo
       }
    }
 
-   public override var backgroundColor: NSColor? {
+   override public var backgroundColor: NSColor? {
       didSet {
          (collectionView.backgroundView as? View)?.backgroundColor = backgroundColor
       }
@@ -105,21 +105,21 @@ public class TabBarView<T: Equatable, TabItem: TabBarTabViewItem<T>>: View, NSCo
 
    // MARK: -
 
-   public override var intrinsicContentSize: NSSize {
+   override public var intrinsicContentSize: NSSize {
       return CGSize(intrinsicHeight: tabBarHeight)
    }
 
-   public override func mouseEntered(with event: NSEvent) {
+   override public func mouseEntered(with event: NSEvent) {
       isMouseOverTheView = true
       updateNavigation()
    }
 
-   public override func mouseExited(with event: NSEvent) {
+   override public func mouseExited(with event: NSEvent) {
       isMouseOverTheView = false
       updateNavigation()
    }
 
-   public override func updateTrackingAreas() {
+   override public func updateTrackingAreas() {
       removeTrackingArea(area)
       area = makeTrackingArea()
       addTrackingArea(area)
@@ -127,7 +127,7 @@ public class TabBarView<T: Equatable, TabItem: TabBarTabViewItem<T>>: View, NSCo
 
    // MARK: -
 
-   public override func setupHandlers() {
+   override public func setupHandlers() {
       collectionView.delegate = self
       collectionView.dataSource = self
       collectionView.register(TabItem.self, forItemWithIdentifier: cellID)
@@ -143,7 +143,7 @@ public class TabBarView<T: Equatable, TabItem: TabBarTabViewItem<T>>: View, NSCo
       }
    }
 
-   public override func setupUI() {
+   override public func setupUI() {
       addSubviews(scrollView)
 
       wantsLayer = true
@@ -154,12 +154,12 @@ public class TabBarView<T: Equatable, TabItem: TabBarTabViewItem<T>>: View, NSCo
       collectionView.collectionViewLayout = gridLayout
    }
 
-   public override func setupLayout() {
+   override public func setupLayout() {
       anchor.withFormat("|[*]|", scrollView).activate()
       anchor.withFormat("V:|[*]|", scrollView).activate()
    }
 
-   public override func setupDefaults() {
+   override public func setupDefaults() {
       updateNavigation()
    }
 
@@ -207,7 +207,7 @@ public class TabBarView<T: Equatable, TabItem: TabBarTabViewItem<T>>: View, NSCo
    }
 
    private func updateNavigation() {
-      if isMouseOverTheView && shouldShowSuplementaryViews() {
+      if isMouseOverTheView, shouldShowSuplementaryViews() {
          leadingSupplementaryView?.isVisible = true
          trailingSupplementaryView?.isVisible = true
       } else {
@@ -398,7 +398,7 @@ private class SeparatorView: NSView, NSCollectionViewElement {
       backgroundColor = (layoutAttributes as? ColoredCollectionViewLayoutAttributes)?.color
    }
 
-   open override func draw(_ dirtyRect: NSRect) {
+   override open func draw(_ dirtyRect: NSRect) {
       if let backgroundColor = backgroundColor {
          backgroundColor.setFill()
          dirtyRect.fill()

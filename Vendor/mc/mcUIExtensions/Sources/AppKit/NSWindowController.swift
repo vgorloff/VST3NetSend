@@ -12,7 +12,7 @@ import mcUI
 
 extension NSWindowController {
 
-   public var anchor: LayoutConstraint  {
+   public var anchor: LayoutConstraint {
       return LayoutConstraint()
    }
 }

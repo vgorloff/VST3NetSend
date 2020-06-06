@@ -30,7 +30,7 @@ open class Label: UILabel {
       }
    }
 
-   public override init(frame: CGRect) {
+   override public init(frame: CGRect) {
       // Fix for wrong value of `layoutMarginsGuide` on iOS 10 https://stackoverflow.com/a/49255958/1418981
       var adjustedFrame = frame
       if frame.size.width == 0 {
@@ -49,16 +49,16 @@ open class Label: UILabel {
       fatalError()
    }
 
-   open override var intrinsicContentSize: CGSize {
+   override open var intrinsicContentSize: CGSize {
       let size = super.intrinsicContentSize
       return CGSize(width: size.width + textInsets.horizontal, height: size.height + textInsets.vertical)
    }
 
-   open override func drawText(in rect: CGRect) {
+   override open func drawText(in rect: CGRect) {
       super.drawText(in: rect.insetBy(insets: textInsets))
    }
 
-   open override func layoutSubviews() {
+   override open func layoutSubviews() {
       super.layoutSubviews()
       if let value = isRounded {
          if value {

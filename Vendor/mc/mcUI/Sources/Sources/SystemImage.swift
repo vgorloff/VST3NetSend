@@ -306,5 +306,4 @@ public enum SystemImage: String, CaseIterable {
    }
 }
 
-
 #endif

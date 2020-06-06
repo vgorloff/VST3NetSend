@@ -13,7 +13,7 @@ open class ImageView: UIImageView {
 
    private var userDefinedIntrinsicContentSize: CGSize?
 
-   public override init(frame: CGRect) {
+   override public init(frame: CGRect) {
       // Fix for wrong value of `layoutMarginsGuide` on iOS 10 https://stackoverflow.com/a/49255958/1418981
       var adjustedFrame = frame
       if frame.size.width == 0 {
@@ -35,7 +35,7 @@ open class ImageView: UIImageView {
       self.contentMode = contentMode
    }
 
-   public override init(image: UIImage?) {
+   override public init(image: UIImage?) {
       super.init(image: image)
    }
 
@@ -48,7 +48,7 @@ open class ImageView: UIImageView {
       fatalError()
    }
 
-   open override var intrinsicContentSize: CGSize {
+   override open var intrinsicContentSize: CGSize {
       return userDefinedIntrinsicContentSize ?? super.intrinsicContentSize
    }
 

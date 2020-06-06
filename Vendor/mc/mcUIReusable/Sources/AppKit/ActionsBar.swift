@@ -100,12 +100,12 @@ extension ActionsBar {
 
 extension ActionsBar {
 
-   public override func setupDefaults() {
+   override public func setupDefaults() {
       updateSpacing()
       edgesConstraint.configure(insets: edgeInsets)
    }
 
-   public override func setupUI() {
+   override public func setupUI() {
       addSubview(containerView)
 
       containerView.addSubviews(leftItemsStackView, rightItemsStackView)
@@ -113,7 +113,7 @@ extension ActionsBar {
       rightItemsStackView.distribution = .fillProportionally
    }
 
-   public override func setupLayout() {
+   override public func setupLayout() {
       edgesConstraint.activate()
       stackViewsSpacing.activate()
       anchor.pinLeading(leftItemsStackView).activate()

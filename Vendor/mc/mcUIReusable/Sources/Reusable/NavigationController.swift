@@ -15,7 +15,7 @@ open class NavigationController: UINavigationController {
       super.init(nibName: nil, bundle: nil)
    }
 
-   public override init(rootViewController: UIViewController) {
+   override public init(rootViewController: UIViewController) {
       super.init(nibName: nil, bundle: nil)
       setViewControllers([rootViewController], animated: false)
    }
@@ -24,7 +24,7 @@ open class NavigationController: UINavigationController {
       fatalError()
    }
 
-   open override func viewDidLoad() {
+   override open func viewDidLoad() {
       super.viewDidLoad()
       setupUI()
    }

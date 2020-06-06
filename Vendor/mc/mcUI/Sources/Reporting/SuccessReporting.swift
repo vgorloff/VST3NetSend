@@ -34,6 +34,7 @@ private struct FakeError: Swift.Error, LocalizedError, CustomStringConvertible {
       return description
    }
 }
+
 extension SuccessReporting where Self: NSViewController {
    public func reportSuccess(message: String) {
       presentError(FakeError(description: message))

@@ -72,7 +72,7 @@ extension UIViewController {
 
    public func presentAnimated(_ viewController: UIViewController, completion: (() -> Void)? = nil) {
       if viewController.modalPresentationStyle == .popover, let popoverController = viewController.popoverPresentationController {
-         if popoverController.sourceView == nil && popoverController.barButtonItem == nil {
+         if popoverController.sourceView == nil, popoverController.barButtonItem == nil {
             log.info(.controller, "Both `sourceView` and `barButtonItem` are nil. Presenting view controller at the center of the view.")
             popoverController.sourceView = view
             popoverController.sourceRect = CGRect(x: view.bounds.midX, y: view.bounds.midY, width: 0, height: 0)

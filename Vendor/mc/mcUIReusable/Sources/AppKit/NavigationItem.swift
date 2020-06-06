@@ -7,8 +7,8 @@
 //
 
 import Foundation
-import mcUI
 import mcTypes
+import mcUI
 
 #if os(macOS)
 
@@ -20,6 +20,7 @@ public class NavigationItem {
          updateBackButtonTitle()
       }
    }
+
    var internalBackButtonIsHidden: Bool {
       get {
          return _backBarButtonItem.view.isHidden
@@ -28,9 +29,9 @@ public class NavigationItem {
       }
    }
 
-   private (set) var onBack = CompletionHandler()
+   private(set) var onBack = CompletionHandler()
 
-   private (set) var view = NavigationItemView()
+   private(set) var view = NavigationItemView()
    private var _backBarButtonItem = BarButtonItem(title: "")
 
    init() {

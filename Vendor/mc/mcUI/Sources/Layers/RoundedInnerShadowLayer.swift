@@ -24,13 +24,13 @@ public class RoundedInnerShadowLayer: CALayer {
    public typealias BezierPath = NSBezierPath
    #endif
 
-   public override var bounds: CGRect {
+   override public var bounds: CGRect {
       didSet {
          update()
       }
    }
 
-   public override init(layer: Any) {
+   override public init(layer: Any) {
       super.init(layer: layer)
    }
 

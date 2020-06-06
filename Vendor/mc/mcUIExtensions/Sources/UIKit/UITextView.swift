@@ -17,7 +17,7 @@ extension UITextView {
       public var eventHandler: ((Event) -> Void)?
       public var actionHandler: ((Action) -> Bool)?
 
-      public override init() {
+      override public init() {
          super.init()
       }
 

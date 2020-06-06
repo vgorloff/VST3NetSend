@@ -14,25 +14,25 @@ open class TabBarController: UITabBarController {
 
    private let layoutUntil = DispatchUntil()
 
-   open override func loadView() {
+   override open func loadView() {
       super.loadView()
       view.backgroundColor = .white
    }
 
-   open override func viewDidLayoutSubviews() {
+   override open func viewDidLayoutSubviews() {
       super.viewDidLayoutSubviews()
       layoutUntil.performIfNeeded {
          setupLayoutDefaults()
       }
    }
 
-   open override func viewDidAppear(_ animated: Bool) {
+   override open func viewDidAppear(_ animated: Bool) {
       super.viewDidAppear(animated)
       layoutUntil.fulfill()
       handleDidAppear()
    }
 
-   open override func viewDidLoad() {
+   override open func viewDidLoad() {
       super.viewDidLoad()
       setupUI()
       setupLayout()

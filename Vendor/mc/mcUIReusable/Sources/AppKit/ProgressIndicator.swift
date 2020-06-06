@@ -11,7 +11,7 @@ import AppKit
 
 public class ProgressIndicator: NSProgressIndicator {
 
-   public override init(frame frameRect: NSRect) {
+   override public init(frame frameRect: NSRect) {
       super.init(frame: frameRect)
       translatesAutoresizingMaskIntoConstraints = false
    }

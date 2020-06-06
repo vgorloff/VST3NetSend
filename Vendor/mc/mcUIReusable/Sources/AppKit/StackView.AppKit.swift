@@ -14,7 +14,7 @@ open class StackView: NSStackView {
    public var backgroundColor: NSColor? {
       @available(*, unavailable)
       get {
-         return nil
+         nil
       } set {
          wantsLayer = true
          layer?.backgroundColor = newValue?.cgColor

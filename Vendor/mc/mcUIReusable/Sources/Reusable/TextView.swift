@@ -20,7 +20,7 @@ open class TextView: UITextView {
    private var userDefinedIntrinsicContentSize: CGSize?
    private var observers: [NotificationObserver] = []
 
-   public override init(frame: CGRect, textContainer: NSTextContainer?) {
+   override public init(frame: CGRect, textContainer: NSTextContainer?) {
       var adjustedFrame = frame
       if frame.size.width < CGFloat.leastNormalMagnitude {
          adjustedFrame.size.width = CGFloat.leastNormalMagnitude
@@ -57,11 +57,11 @@ open class TextView: UITextView {
       // Base class does nothing.
    }
 
-   open override var intrinsicContentSize: CGSize {
+   override open var intrinsicContentSize: CGSize {
       return userDefinedIntrinsicContentSize ?? super.intrinsicContentSize
    }
 
-   open override func layoutSubviews() {
+   override open func layoutSubviews() {
       super.layoutSubviews()
       updatePlaceholder()
    }

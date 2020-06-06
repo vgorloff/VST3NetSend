@@ -13,7 +13,7 @@ import AppKit
 #endif
 import mcTypes
 
-fileprivate enum Target {
+private enum Target {
    case center, margins, bounds
    case vertically, horizontally
    case verticallyToMargins, horizontallyToMargins
@@ -162,10 +162,9 @@ public class __LayoutConstraintCenter: InstanceHolder<LayoutConstraint> {
    }
 }
 
-
 public struct LayoutConstraint {
 
-   public init() { }
+   public init() {}
 
    public var pin: __LayoutConstraintPin {
       return __LayoutConstraintPin(instance: self)
@@ -251,15 +250,11 @@ extension LayoutConstraint {
          result += pin(in: container, to: .horizontallyToMargins, view: view)
          result += pin(in: container, to: .verticallyToMargins, view: view)
       case .horizontally:
-         result += [
-            view.leadingAnchor.constraint(equalTo: container.leadingAnchor),
-            container.trailingAnchor.constraint(equalTo: view.trailingAnchor)
-         ]
+         result += [view.leadingAnchor.constraint(equalTo: container.leadingAnchor),
+                    container.trailingAnchor.constraint(equalTo: view.trailingAnchor)]
       case .vertically:
-         result += [
-            view.topAnchor.constraint(equalTo: container.topAnchor),
-            container.bottomAnchor.constraint(equalTo: view.bottomAnchor)
-         ]
+         result += [view.topAnchor.constraint(equalTo: container.topAnchor),
+                    container.bottomAnchor.constraint(equalTo: view.bottomAnchor)]
       case .horizontallyToMargins:
          result = NSLayoutConstraint.constraints(withVisualFormat: "|-[v]-|", options: [], metrics: nil, views: ["v": view])
       case .verticallyToMargins:
@@ -283,7 +278,7 @@ extension LayoutConstraint {
             + pin(in: container, to: .verticallyToSafeArea, view: view)
       case .horizontallyWithInsets(let insets):
          result = NSLayoutConstraint.constraints(withVisualFormat: "|-\(insets.left)-[v]-\(insets.right)-|",
-            options: [], metrics: nil, views: ["v": view])
+                                                 options: [], metrics: nil, views: ["v": view])
       }
       return result
    }
@@ -394,11 +389,11 @@ extension LayoutConstraint {
       case .bottomTrailing:
          result = [container.bottomAnchor.constraint(equalTo: view.bottomAnchor),
                    container.trailingAnchor.constraint(equalTo: view.trailingAnchor)]
-         #if os(iOS) || os(tvOS)
+      #if os(iOS) || os(tvOS)
       case .bottomTrailingMargins:
          result = [container.layoutMarginsGuide.bottomAnchor.constraint(equalTo: view.bottomAnchor),
                    container.layoutMarginsGuide.trailingAnchor.constraint(equalTo: view.trailingAnchor)]
-         #endif
+      #endif
       }
       return result
    }

@@ -26,7 +26,7 @@ open class ViewController: UIViewController {
    #if os(iOS)
    private var supportedInterfaceOrientationsValue: UIInterfaceOrientationMask?
 
-   open override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+   override open var supportedInterfaceOrientations: UIInterfaceOrientationMask {
       return supportedInterfaceOrientationsValue ?? super.supportedInterfaceOrientations
    }
    #endif
@@ -35,7 +35,7 @@ open class ViewController: UIViewController {
       return __ViewControllerContent(instance: self)
    }
 
-   open override func loadView() {
+   override open func loadView() {
       super.loadView()
       view = contentView
       contentView.backgroundColor = .white
@@ -55,26 +55,26 @@ open class ViewController: UIViewController {
       fatalError()
    }
 
-   open override func viewDidLayoutSubviews() {
+   override open func viewDidLayoutSubviews() {
       super.viewDidLayoutSubviews()
       layoutUntil.performIfNeeded {
          setupLayoutDefaults()
       }
    }
 
-   open override func viewWillAppear(_ animated: Bool) {
+   override open func viewWillAppear(_ animated: Bool) {
       super.viewWillAppear(animated)
       onViewWillAppear(isAnimated: animated)
    }
 
-   open override func viewDidAppear(_ animated: Bool) {
+   override open func viewDidAppear(_ animated: Bool) {
       super.viewDidAppear(animated)
       layoutUntil.fulfill()
       onViewDidAppear(isAnimated: animated)
       view.assertOnAmbiguityInSubviewsLayout()
    }
 
-   open override func viewDidLoad() {
+   override open func viewDidLoad() {
       super.viewDidLoad()
       setupUI()
       setupDataSource()
@@ -83,14 +83,14 @@ open class ViewController: UIViewController {
       applyFixForUnsatisfiableConstraintsIfNeeded()
    }
 
-   open override func viewWillLayoutSubviews() {
+   override open func viewWillLayoutSubviews() {
       super.viewWillLayoutSubviews()
       setupConstraintsOnce.perform {
          setupLayout()
       }
    }
 
-   open override func viewWillDisappear(_ animated: Bool) {
+   override open func viewWillDisappear(_ animated: Bool) {
       super.viewWillDisappear(animated)
       // Below fix is disabled because it wasn't working on my side.
       // I ended up with UIBarButtonItem with custom view (UIButton) inside.

@@ -23,7 +23,6 @@ extension NSProgressIndicator.Style: CustomStringConvertible {
          return "Unknown"
       }
    }
-
 }
 
 extension NSProgressIndicator {

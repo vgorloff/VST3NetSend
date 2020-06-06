@@ -13,7 +13,7 @@ open class TextField: NSTextField {
 
    public var onTextDidChangeHandler: ((String) -> Void)?
 
-   public override init(frame: CGRect) {
+   override public init(frame: CGRect) {
       super.init(frame: frame)
       translatesAutoresizingMaskIntoConstraints = false
       initializeView()
@@ -23,7 +23,7 @@ open class TextField: NSTextField {
       fatalError()
    }
 
-   open override func textDidChange(_ notification: Notification) {
+   override open func textDidChange(_ notification: Notification) {
       super.textDidChange(notification)
       onTextDidChangeHandler?(text)
    }

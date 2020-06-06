@@ -6,7 +6,7 @@
 //  Copyright © 2018 Vlad Gorlov. All rights reserved.
 //
 
-#if canImport(AppKit)  && !targetEnvironment(macCatalyst)
+#if canImport(AppKit) && !targetEnvironment(macCatalyst)
 import AppKit
 import mcUI
 
@@ -14,7 +14,7 @@ open class SplitViewController: NSSplitViewController {
 
    public private(set) lazy var contentView = SplitView().autolayoutView()
 
-   open override func loadView() {
+   override open func loadView() {
       contentView.onAppearanceDidChanged = { [weak self] in
          self?.setupAppearance($0)
       }
@@ -33,7 +33,7 @@ open class SplitViewController: NSSplitViewController {
       fatalError()
    }
 
-   open override func viewDidLoad() {
+   override open func viewDidLoad() {
       super.viewDidLoad()
       setupUI()
       setupAppearance(contentView.systemAppearance)

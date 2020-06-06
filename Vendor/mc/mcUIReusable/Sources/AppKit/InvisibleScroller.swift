@@ -14,18 +14,18 @@ import Foundation
 // See: https://stackoverflow.com/questions/9364953/hide-scrollers-while-leaving-scrolling-itself-enabled-in-nsscrollview
 public class InvisibleScroller: Scroller {
 
-   public override class var isCompatibleWithOverlayScrollers: Bool {
+   override public class var isCompatibleWithOverlayScrollers: Bool {
       return true
    }
 
-   public override class func scrollerWidth(for controlSize: NSControl.ControlSize, scrollerStyle: NSScroller.Style) -> CGFloat {
+   override public class func scrollerWidth(for controlSize: NSControl.ControlSize, scrollerStyle: NSScroller.Style) -> CGFloat {
       return CGFloat.leastNormalMagnitude // Dimension of scroller is equal to `FLT_MIN`
    }
 }
 
 extension InvisibleScroller {
 
-   public override func setupUI() {
+   override public func setupUI() {
       // Below assignments not really needed, but why not.
       scrollerStyle = .overlay
       alphaValue = 0

@@ -23,7 +23,7 @@ open class ScrollViewController: ViewController {
       super.init()
    }
 
-   open override func viewDidLoad() {
+   override open func viewDidLoad() {
       content.view.addSubview(scrollView)
       anchor.withFormat("|[*]|", scrollView).activate()
       anchor.withFormat("V:|[*]|", scrollView).activate()

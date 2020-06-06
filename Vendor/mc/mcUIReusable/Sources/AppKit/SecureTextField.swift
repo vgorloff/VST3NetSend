@@ -12,7 +12,7 @@ import AppKit
 
 open class SecureTextField: NSSecureTextField {
 
-   public override init(frame frameRect: NSRect) {
+   override public init(frame frameRect: NSRect) {
       super.init(frame: frameRect)
       translatesAutoresizingMaskIntoConstraints = false
    }

@@ -8,8 +8,8 @@
 
 #if !os(macOS)
 import Foundation
-import UIKit
 import mcRuntime
+import UIKit
 
 extension UIBackgroundRefreshStatus: CustomStringConvertible {
    public var description: String {

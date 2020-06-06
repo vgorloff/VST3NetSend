@@ -11,7 +11,7 @@ import mcFoundationTestability
 
 extension AVAudioPCMBuffer {
 
-   @objc public override func debugQuickLookObject() -> AnyObject? {
+   @objc override public func debugQuickLookObject() -> AnyObject? {
       return QuickLookProxy(self)
    }
 }

@@ -14,7 +14,7 @@ open class StackViewTableViewCell: UITableViewCell {
 
    public private(set) lazy var stackView = StackView().autolayoutView()
 
-   public override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+   override public init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
       super.init(style: style, reuseIdentifier: reuseIdentifier)
       contentView.addSubview(stackView)
       let constraints = [stackView.topAnchor.constraint(equalTo: contentView.topAnchor),

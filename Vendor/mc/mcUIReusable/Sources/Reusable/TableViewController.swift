@@ -14,7 +14,7 @@ open class TableViewController: UITableViewController {
 
    private let layoutUntil = DispatchUntil()
 
-   open override func loadView() {
+   override open func loadView() {
       super.loadView()
       view.backgroundColor = .white
    }
@@ -23,7 +23,7 @@ open class TableViewController: UITableViewController {
       super.init(nibName: nil, bundle: nil)
    }
 
-   public override init(style: UITableView.Style) {
+   override public init(style: UITableView.Style) {
       super.init(style: style)
    }
 
@@ -31,7 +31,7 @@ open class TableViewController: UITableViewController {
       super.init(coder: coder)
    }
 
-   open override func viewDidLayoutSubviews() {
+   override open func viewDidLayoutSubviews() {
       super.viewDidLayoutSubviews()
       applyFixForNotUpToDateViewFrameIfNeeded(view: tableView.tableHeaderView)
       applyFixForNotUpToDateViewFrameIfNeeded(view: tableView.tableFooterView)
@@ -40,14 +40,14 @@ open class TableViewController: UITableViewController {
       }
    }
 
-   open override func viewDidAppear(_ animated: Bool) {
+   override open func viewDidAppear(_ animated: Bool) {
       super.viewDidAppear(animated)
       layoutUntil.fulfill()
       handleViewDidAppear(isAnimated: animated)
       view.assertOnAmbiguityInSubviewsLayout()
    }
 
-   open override func viewDidLoad() {
+   override open func viewDidLoad() {
       super.viewDidLoad()
       #if os(iOS)
       if ProcessInfo.processInfo.operatingSystemVersion.majorVersion < 11 {

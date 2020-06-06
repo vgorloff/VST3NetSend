@@ -36,7 +36,7 @@ public class FullContentWindow: Window {
       self.titleBarHeight = max(titleBarHeight, calculatedTitleBarHeight)
    }
 
-   public override func layoutIfNeeded() {
+   override public func layoutIfNeeded() {
       super.layoutIfNeeded()
       if originalLeadingOffsets.isEmpty {
          let firstButtonOffset = buttons.first?.frame.origin.x ?? 0

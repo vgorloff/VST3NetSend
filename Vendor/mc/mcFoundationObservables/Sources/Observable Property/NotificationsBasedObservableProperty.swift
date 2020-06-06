@@ -57,7 +57,7 @@ public class NotificationsBasedObservableProperty<T> {
    private let notificationName = Notification.Name(rawValue: "app.notificaion.didSet")
 
    public func addObserver(fireWithInitialValue: Bool = true, on queue: DispatchQueue? = nil,
-                       _ observer: @escaping (T) -> Void) -> Disposable {
+                           _ observer: @escaping (T) -> Void) -> Disposable {
       var opQueue: OperationQueue?
       if let queue = queue {
          if queue == DispatchQueue.main {

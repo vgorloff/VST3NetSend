@@ -11,7 +11,7 @@ import UIKit
 
 open class VisualEffectView: UIVisualEffectView {
 
-   public override init(effect: UIVisualEffect?) {
+   override public init(effect: UIVisualEffect?) {
       super.init(effect: effect)
       setupUI()
       setupLayout()

@@ -50,10 +50,10 @@ extension NSButton {
    public var textColor: NSColor {
       @available(*, unavailable)
       get {
-         return .white
+         .white
       }
       set {
-         attributedTitle = NSAttributedString(string: title, attributes: [NSAttributedString.Key.foregroundColor : newValue])
+         attributedTitle = NSAttributedString(string: title, attributes: [NSAttributedString.Key.foregroundColor: newValue])
       }
    }
 }

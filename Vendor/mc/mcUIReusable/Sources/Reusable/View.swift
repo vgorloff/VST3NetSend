@@ -26,7 +26,7 @@ open class View: UIView {
       return instance
    }()
 
-   public override init(frame: CGRect) {
+   override public init(frame: CGRect) {
       // Fix for wrong value of `layoutMarginsGuide` on iOS 10 https://stackoverflow.com/a/49255958/1418981
       var adjustedFrame = frame
       if frame.size.width == 0 {
@@ -48,7 +48,7 @@ open class View: UIView {
       super.init(coder: aDecoder)
    }
 
-   open override func awakeFromNib() {
+   override open func awakeFromNib() {
       super.awakeFromNib()
       setupUI()
       setupLayout()
@@ -57,14 +57,14 @@ open class View: UIView {
       setupDefaults()
    }
 
-   open override func draw(_ rect: CGRect) {
+   override open func draw(_ rect: CGRect) {
       super.draw(rect)
       if let ctx = UIGraphicsGetCurrentContext() {
          drawingCallbacks.forEach { $0(DrawingContext(context: ctx, bounds: bounds, dirtyRect: rect)) }
       }
    }
 
-   open override var intrinsicContentSize: CGSize {
+   override open var intrinsicContentSize: CGSize {
       return userDefinedIntrinsicContentSize ?? super.intrinsicContentSize
    }
 
@@ -97,9 +97,9 @@ extension View {
    }
 
    public func addDrawingBlock<T: AnyObject>(_ context: T, _ callback: @escaping (T, DrawingContext) -> Void) {
-      drawingCallbacks.append({ [weak context] drawingContext in guard let ctx = context else { return }
+      drawingCallbacks.append { [weak context] drawingContext in guard let ctx = context else { return }
          callback(ctx, drawingContext)
-      })
+      }
    }
 }
 #endif

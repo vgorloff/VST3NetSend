@@ -19,7 +19,7 @@ open class ScrollView: NSScrollView {
    public var onDidLiveScroll: (() -> Void)?
    public var onDidEndLiveScroll: (() -> Void)?
 
-   public override init(frame frameRect: NSRect) {
+   override public init(frame frameRect: NSRect) {
       super.init(frame: frameRect)
       translatesAutoresizingMaskIntoConstraints = false
       setupUI()
@@ -43,12 +43,12 @@ open class ScrollView: NSScrollView {
    }
 
    @available(OSX 10.14, *)
-   open override func viewDidChangeEffectiveAppearance() {
+   override open func viewDidChangeEffectiveAppearance() {
       super.viewDidChangeEffectiveAppearance()
       notifySystemAppearanceDidChange()
    }
 
-   open override func layout() {
+   override open func layout() {
       documentView?.setNeedsLayout() // Without this table view may not load and will be empty.
       super.layout()
    }

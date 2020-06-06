@@ -11,7 +11,7 @@ import UIKit
 
 open class StackView: UIStackView {
 
-   public override init(frame: CGRect) {
+   override public init(frame: CGRect) {
       // Fix for wrong value of `layoutMarginsGuide` on iOS 10 https://stackoverflow.com/a/49255958/1418981
       var adjustedFrame = frame
       if frame.size.width == 0 {

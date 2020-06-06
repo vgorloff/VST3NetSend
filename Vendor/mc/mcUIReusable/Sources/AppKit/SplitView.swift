@@ -21,11 +21,11 @@ open class SplitView: NSSplitView {
    var onAppearanceDidChanged: ((SystemAppearance) -> Void)?
    private var observers: [NotificationObserver] = []
 
-   open override var dividerColor: NSColor {
+   override open var dividerColor: NSColor {
       return mDividerColor ?? super.dividerColor
    }
 
-   open override var dividerThickness: CGFloat {
+   override open var dividerThickness: CGFloat {
       return mDividerThickness ?? super.dividerThickness
    }
 
@@ -47,7 +47,7 @@ open class SplitView: NSSplitView {
       fatalError()
    }
 
-   open override func draw(_ dirtyRect: NSRect) {
+   override open func draw(_ dirtyRect: NSRect) {
       if let backgroundColor = backgroundColor {
          backgroundColor.setFill()
          dirtyRect.fill()
@@ -56,7 +56,7 @@ open class SplitView: NSSplitView {
    }
 
    @available(OSX 10.14, *)
-   open override func viewDidChangeEffectiveAppearance() {
+   override open func viewDidChangeEffectiveAppearance() {
       super.viewDidChangeEffectiveAppearance()
       notifySystemAppearanceDidChange()
    }

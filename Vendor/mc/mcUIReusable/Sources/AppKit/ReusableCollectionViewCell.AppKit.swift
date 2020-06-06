@@ -15,7 +15,7 @@ public class ReusableCollectionViewCell<T: NSView>: NSCollectionViewItem {
    public let contentView = T()
    private let layoutUntil = DispatchUntil()
 
-   open override func loadView() {
+   override open func loadView() {
       view = contentView
    }
 
@@ -23,7 +23,7 @@ public class ReusableCollectionViewCell<T: NSView>: NSCollectionViewItem {
       super.init(nibName: nil, bundle: nil)
    }
 
-   public override init(nibName nibNameOrNil: NSNib.Name?, bundle nibBundleOrNil: Bundle?) {
+   override public init(nibName nibNameOrNil: NSNib.Name?, bundle nibBundleOrNil: Bundle?) {
       super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
    }
 
@@ -31,19 +31,19 @@ public class ReusableCollectionViewCell<T: NSView>: NSCollectionViewItem {
       fatalError()
    }
 
-   open override func viewDidLayout() {
+   override open func viewDidLayout() {
       super.viewDidLayout()
       layoutUntil.performIfNeeded {
          setupLayoutDefaults()
       }
    }
 
-   open override func viewDidAppear() {
+   override open func viewDidAppear() {
       super.viewDidAppear()
       layoutUntil.fulfill()
    }
 
-   open override func viewDidLoad() {
+   override open func viewDidLoad() {
       super.viewDidLoad()
       setupUI()
       setupLayout()

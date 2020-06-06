@@ -7,8 +7,8 @@
 //
 
 #if canImport(UIKit) || targetEnvironment(macCatalyst)
-import UIKit
 import mcUI
+import UIKit
 
 extension UIView {
 

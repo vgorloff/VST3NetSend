@@ -6,7 +6,7 @@
 //  Copyright © 2018 Vlad Gorlov. All rights reserved.
 //
 
-#if canImport(AppKit)  && !targetEnvironment(macCatalyst)
+#if canImport(AppKit) && !targetEnvironment(macCatalyst)
 import AppKit
 
 open class PopUpButton: NSPopUpButton {
@@ -16,7 +16,7 @@ open class PopUpButton: NSPopUpButton {
       translatesAutoresizingMaskIntoConstraints = false
    }
 
-   public override init(frame frameRect: NSRect) {
+   override public init(frame frameRect: NSRect) {
       super.init(frame: frameRect)
       translatesAutoresizingMaskIntoConstraints = false
    }

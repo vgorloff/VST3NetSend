@@ -14,7 +14,7 @@ open class TableViewCell: UITableViewCell {
 
    private var userDefinedIntrinsicContentSize: CGSize?
 
-   public override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+   override public init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
       super.init(style: style, reuseIdentifier: reuseIdentifier)
       setupUI()
       setupLayout()
@@ -26,7 +26,7 @@ open class TableViewCell: UITableViewCell {
       super.init(coder: aDecoder)
    }
 
-   open override func awakeFromNib() {
+   override open func awakeFromNib() {
       super.awakeFromNib()
       setupUI()
       setupLayout()
@@ -34,7 +34,7 @@ open class TableViewCell: UITableViewCell {
       setupDefaults()
    }
 
-   open override var intrinsicContentSize: CGSize {
+   override open var intrinsicContentSize: CGSize {
       return userDefinedIntrinsicContentSize ?? super.intrinsicContentSize
    }
 

@@ -18,7 +18,6 @@ public class __ViewControllerContent: InstanceHolder<ViewController> {
    }
 }
 
-
 open class ViewController: NSViewController {
 
    fileprivate let contentView: View
@@ -28,7 +27,7 @@ open class ViewController: NSViewController {
       return __ViewControllerContent(instance: self)
    }
 
-   open override func loadView() {
+   override open func loadView() {
       view = contentView
    }
 
@@ -54,20 +53,20 @@ open class ViewController: NSViewController {
       fatalError()
    }
 
-   open override func viewDidLayout() {
+   override open func viewDidLayout() {
       super.viewDidLayout()
       layoutUntil.performIfNeeded {
          setupLayoutDefaults()
       }
    }
 
-   open override func viewDidAppear() {
+   override open func viewDidAppear() {
       super.viewDidAppear()
       layoutUntil.fulfill()
       view.assertOnAmbiguityInSubviewsLayout()
    }
 
-   open override func viewDidLoad() {
+   override open func viewDidLoad() {
       super.viewDidLoad()
       setupUI()
       setupAppearance(contentView.systemAppearance)

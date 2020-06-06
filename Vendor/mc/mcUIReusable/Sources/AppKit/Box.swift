@@ -26,7 +26,7 @@ open class Box: NSBox {
       return __BoxContent(instance: self)
    }
 
-   public override init(frame frameRect: NSRect) {
+   override public init(frame frameRect: NSRect) {
       super.init(frame: frameRect)
       translatesAutoresizingMaskIntoConstraints = false
       setupUI()

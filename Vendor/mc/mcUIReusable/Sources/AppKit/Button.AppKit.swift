@@ -11,7 +11,7 @@ import AppKit
 
 public class Button: NSButton {
 
-   public override init(frame frameRect: NSRect) {
+   override public init(frame frameRect: NSRect) {
       super.init(frame: frameRect)
       bezelStyle = .rounded
       translatesAutoresizingMaskIntoConstraints = false

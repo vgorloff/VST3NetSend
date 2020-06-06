@@ -18,7 +18,7 @@ open class Label: NSTextField {
 
    public convenience init(text: String) {
       self.init()
-      self.title = text
+      title = text
    }
 
    public init() {

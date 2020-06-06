@@ -14,18 +14,18 @@ public final class IntegerFormatter: Formatter {
       return String(format: "%d", number.intValue)
    }
 
-   public override func string(for obj: Any?) -> String? {
+   override public func string(for obj: Any?) -> String? {
       guard let number = obj as? NSNumber else {
          return nil
       }
       return string(forNumber: number)
    }
 
-   public override func editingString(for obj: Any) -> String? {
+   override public func editingString(for obj: Any) -> String? {
       return string(for: obj)
    }
 
-   public override func getObjectValue(_ obj: AutoreleasingUnsafeMutablePointer<AnyObject?>?, for string: String,
+   override public func getObjectValue(_ obj: AutoreleasingUnsafeMutablePointer<AnyObject?>?, for string: String,
                                        errorDescription error: AutoreleasingUnsafeMutablePointer<NSString?>?) -> Bool {
 
       var integerResult = 0

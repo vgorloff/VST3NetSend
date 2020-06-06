@@ -54,7 +54,7 @@ open class Toolbar<T: ToolbarEvent>: NSToolbar {
 
    public let toolbarDelegate = GenericDelegate()
 
-   public override init(identifier: NSToolbar.Identifier) {
+   override public init(identifier: NSToolbar.Identifier) {
       super.init(identifier: identifier)
 
       allowsUserCustomization = true

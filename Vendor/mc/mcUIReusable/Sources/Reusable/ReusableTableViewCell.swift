@@ -45,7 +45,7 @@ public class ReusableTableViewCell<T: UIView>: UITableViewCell {
       fatalError()
    }
 
-   public override func prepareForReuse() {
+   override public func prepareForReuse() {
       super.prepareForReuse()
       if let view = view as? ReusableCellContentView {
          view.prepareForReuse()

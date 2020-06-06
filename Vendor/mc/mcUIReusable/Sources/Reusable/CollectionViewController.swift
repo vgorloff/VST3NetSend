@@ -15,7 +15,7 @@ open class CollectionViewController: UICollectionViewController {
 
    private let layoutUntil = DispatchUntil()
 
-   open override func loadView() {
+   override open func loadView() {
       super.loadView()
       collectionView.backgroundColor = .white
    }
@@ -28,7 +28,7 @@ open class CollectionViewController: UICollectionViewController {
       super.init(coder: coder)
    }
 
-   open override func viewDidLoad() {
+   override open func viewDidLoad() {
       super.viewDidLoad()
       setupUI()
       setupLayout()
@@ -37,13 +37,13 @@ open class CollectionViewController: UICollectionViewController {
       setupDefaults()
    }
 
-   open override func viewDidAppear(_ animated: Bool) {
+   override open func viewDidAppear(_ animated: Bool) {
       super.viewDidAppear(animated)
       layoutUntil.fulfill()
       view.assertOnAmbiguityInSubviewsLayout()
    }
 
-   open override func viewDidLayoutSubviews() {
+   override open func viewDidLayoutSubviews() {
       super.viewDidLayoutSubviews()
       layoutUntil.performIfNeeded {
          setupLayoutDefaults()

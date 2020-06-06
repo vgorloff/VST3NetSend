@@ -14,7 +14,7 @@ public class ReusableCollectionViewCell<T: UIView>: UICollectionViewCell {
 
    public let view: T
 
-   public override init(frame: CGRect) {
+   override public init(frame: CGRect) {
       view = T().autolayoutView()
       super.init(frame: frame)
       setPinnedToMargins(false)
@@ -36,7 +36,7 @@ public class ReusableCollectionViewCell<T: UIView>: UICollectionViewCell {
       fatalError()
    }
 
-   public override func prepareForReuse() {
+   override public func prepareForReuse() {
       super.prepareForReuse()
       if let view = view as? ReusableCellContentView {
          view.prepareForReuse()

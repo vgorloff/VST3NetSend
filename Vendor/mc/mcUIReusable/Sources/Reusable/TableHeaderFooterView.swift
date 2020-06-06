@@ -15,7 +15,7 @@ open class TableHeaderFooterView: UITableViewHeaderFooterView {
       self.init(reuseIdentifier: nil)
    }
 
-   public override init(reuseIdentifier: String?) {
+   override public init(reuseIdentifier: String?) {
       super.init(reuseIdentifier: reuseIdentifier)
       initializeView()
    }

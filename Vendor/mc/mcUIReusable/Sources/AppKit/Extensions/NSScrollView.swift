@@ -26,7 +26,6 @@ extension NSScrollView {
          setup(mode: .byUsingAutolayout, view: view)
       }
    }
-
 }
 
 extension NSScrollView {

@@ -18,7 +18,7 @@ open class ScrollableContentViewController<T: UIView>: UIViewController {
 
    private let layoutUntil = DispatchUntil()
 
-   open override func loadView() {
+   override open func loadView() {
       super.loadView()
       view = UIView()
 
@@ -44,19 +44,19 @@ open class ScrollableContentViewController<T: UIView>: UIViewController {
       fatalError()
    }
 
-   open override func viewDidLayoutSubviews() {
+   override open func viewDidLayoutSubviews() {
       super.viewDidLayoutSubviews()
       layoutUntil.performIfNeeded {
          setupLayoutDefaults()
       }
    }
 
-   open override func viewDidAppear(_ animated: Bool) {
+   override open func viewDidAppear(_ animated: Bool) {
       super.viewDidAppear(animated)
       layoutUntil.fulfill()
    }
 
-   open override func viewDidLoad() {
+   override open func viewDidLoad() {
       super.viewDidLoad()
       setupUI()
       setupLayout()

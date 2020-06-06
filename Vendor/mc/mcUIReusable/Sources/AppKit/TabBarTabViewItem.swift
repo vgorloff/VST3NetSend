@@ -11,7 +11,7 @@ import Foundation
 
 open class TabBarTabViewItem<T>: CollectionViewItem {
 
-   open override func loadView() {
+   override open func loadView() {
       super.loadView()
       view.wantsLayer = true
    }
