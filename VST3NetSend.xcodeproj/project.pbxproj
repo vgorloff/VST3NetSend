@@ -300,6 +300,7 @@
 
 /* Begin PBXFileReference section */
 		80080CBC248B158F001EBF35 /* Shared.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = Shared.xcodeproj; sourceTree = "<group>"; };
+		8051C146248BE088003F0C43 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		8052F01624368ECF009DA7C0 /* VST3NetSend.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = VST3NetSend.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		80584E422433F34F00C1B2D1 /* VST3NetSend.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = VST3NetSend.xcconfig; sourceTree = "<group>"; };
 		80584E432433F38D00C1B2D1 /* VST3NetSendKit.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = VST3NetSendKit.xcconfig; sourceTree = "<group>"; };
@@ -432,6 +433,7 @@
 		G_D64BFD95DF12254D7BA4FEB7C84C44B9 = {
 			isa = PBXGroup;
 			children = (
+				8051C146248BE088003F0C43 /* README.md */,
 				80080CBC248B158F001EBF35 /* Shared.xcodeproj */,
 				8052F01624368ECF009DA7C0 /* VST3NetSend.playground */,
 				G_FC812F6CFA74F83906FCE359CE9E7676 /* Configuration */,
@@ -545,7 +547,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1140;
-				LastUpgradeCheck = 1140;
+				LastUpgradeCheck = 1150;
 				ORGANIZATIONNAME = WaveLabs;
 			};
 			buildConfigurationList = CL_A619698699E0EB1F43D6A4FA95CA7B28 /* Build configuration list for PBXProject "VST3NetSend" */;
