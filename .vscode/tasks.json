@@ -69,7 +69,7 @@
       {
          "label": "Make Standalone",
          "type": "shell",
-         "command": "git apply ${workspaceFolder}/standalone.diff",
+         "command": "./Scripts/standalone.rb",
          "presentation": {
             "panel": "shared",
             "focus": false,
@@ -79,9 +79,9 @@
          "problemMatcher": []
       },
       {
-         "label": "Make Local",
+         "label": "Generate",
          "type": "shell",
-         "command": "git apply ${workspaceFolder}/local.diff",
+         "command": "xcodegen",
          "presentation": {
             "panel": "shared",
             "focus": false,

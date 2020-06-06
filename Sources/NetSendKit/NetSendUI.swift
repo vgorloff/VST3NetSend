@@ -134,7 +134,7 @@ import mcMediaExtensions
       stackView.setCustomSpacing(2, after: title)
       
       addSubviews(stackView)
-      LayoutConstraint.pin(to: .insets(.init(dimension: 15)), stackView).activate()
+      anchor.pin.toBounds(insets: .init(dimension: 15), stackView).activate()
       
       let stackViewOptions = StackView(axis: .vertical)
       stackViewOptions.spacing = 6
@@ -143,7 +143,7 @@ import mcMediaExtensions
       boxOptions.borderType = .lineBorder
       boxOptions.titlePosition = .noTitle
       boxOptions.contentView = stackViewOptions
-      boxOptions.contentViewMargins = NSSize(squareSide: 8)
+      boxOptions.contentViewMargins = NSSize(dimension: 8)
       
       let stackViewTop = StackView(axis: .vertical)
       stackViewTop.spacing = 6
@@ -152,9 +152,9 @@ import mcMediaExtensions
       boxTop.borderType = .lineBorder
       boxTop.titlePosition = .noTitle
       boxTop.contentView = stackViewTop
-      boxTop.contentViewMargins = NSSize(squareSide: 8)
+      boxTop.contentViewMargins = NSSize(dimension: 8)
       
-      LayoutConstraint.equalWidth(viewA: boxOptions, viewB: boxTop).activate()
+      anchor.equalWidth(viewA: boxOptions, viewB: boxTop).activate()
       
       connectionButton.controlSize = .small
       connectionButton.font = labelFont
@@ -198,31 +198,32 @@ import mcMediaExtensions
       bonjourNameValue.font = labelFont
       bonjourNameValue.cell?.sendsActionOnEndEditing = true
 
+      let spacing = CGFloat(4)
       do {
-         let stackView = StackView()
+         let stackView = StackView(spacing: spacing)
          stackView.addArrangedSubviews(bonjourNameLabel, bonjourNameValue)
          stackViewOptions.addArrangedSubviews(stackView)
       }
       do {
-         let stackView = StackView()
+         let stackView = StackView(spacing: spacing)
          stackView.addArrangedSubviews(passwordLabel, passwordValue)
          stackViewOptions.addArrangedSubviews(stackView)
       }
       
       do {
-         let stackView = StackView()
+         let stackView = StackView(spacing: spacing)
          stackView.addArrangedSubviews(statusLabel, statusValue, NSView(), connectionButton)
          stackViewTop.addArrangedSubviews(stackView)
       }
       
       do {
-         let stackView = StackView()
+         let stackView = StackView(spacing: spacing)
          stackView.addArrangedSubviews(portLabel, portValue)
          stackViewTop.addArrangedSubviews(stackView)
       }
       
       do {
-         let stackView = StackView()
+         let stackView = StackView(spacing: spacing)
          stackView.addArrangedSubviews(dataFormatLabel, dataFormatValue)
          stackViewTop.addArrangedSubviews(stackView)
       }
@@ -254,10 +255,10 @@ import mcMediaExtensions
    }
    
    private func setupLayout() {
-      LayoutConstraint.equalWidth(viewA: portLabel, viewB: statusLabel).activate()
-      LayoutConstraint.equalWidth(viewA: portLabel, viewB: dataFormatLabel).activate()
-      LayoutConstraint.equalWidth(viewA: passwordLabel, viewB: dataFormatLabel).activate()
-      LayoutConstraint.equalWidth(viewA: bonjourNameLabel, viewB: passwordLabel).activate()
+      anchor.equalWidth(viewA: portLabel, viewB: statusLabel).activate()
+      anchor.equalWidth(viewA: portLabel, viewB: dataFormatLabel).activate()
+      anchor.equalWidth(viewA: passwordLabel, viewB: dataFormatLabel).activate()
+      anchor.equalWidth(viewA: bonjourNameLabel, viewB: passwordLabel).activate()
    }
 
    private func setupObservers() {
