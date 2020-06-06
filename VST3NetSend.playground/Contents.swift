@@ -33,8 +33,3 @@ DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
 }
 
 PlaygroundPage.current.setLiveView(view)
-
-     
-      
-                      
-     
