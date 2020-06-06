@@ -40,8 +40,7 @@ To solve this problem enter IP-address manually.
 
 To build plugin the following tools, libs and SDKs needed:
 
-- [Node](https://nodejs.org/en/download/)
-- [Xcode 11.4](https://developer.apple.com/xcode/)
+- [Xcode 11.5](https://developer.apple.com/xcode/)
 - [VST3 SDK 3.6.8](http://www.steinberg.net/en/company/developer.html)
 
 1. Put downloaded `VST SDK` into folder `Vendor/Steinberg/vst3sdk`. Or create file `Configuration/Developer.xcconfig` with the following contents:
@@ -49,7 +48,5 @@ To build plugin the following tools, libs and SDKs needed:
     ```plain
     GV_VST_SDK = /Path/To/Custom/Location/VSTSDKv3.6.8/VST3_SDK
     ```
-
-2. Run `npm install` to install dependencies.
 
 Now you are ready to build the project from Xcode.
