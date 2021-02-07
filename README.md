@@ -10,7 +10,7 @@ _VST3NetSend_ - is a VST3 version of the plugin which provide similar functional
 ## Usage
 
 [Download binary](https://github.com/vgorloff/VST3NetSend/releases/latest) and copy it to "~/Library/Audio/Plug-Ins/VST3" or "/Library/Audio/Plug-Ins/VST3" folder.
-Launch Cubase/Nuendo®. Add instance to insert slot: **_Tools -> WaveLabs VST3NetSend_**.
+Launch Cubase/Nuendo®. Add instance to insert slot: **_Network -> MCA VST3NetSend_**.
 
 ## Features
 
@@ -21,7 +21,7 @@ Launch Cubase/Nuendo®. Add instance to insert slot: **_Tools -> WaveLabs VST3Ne
 
 ## System requirements
 
-- macOS 10.13 and above.
+- macOS 10.14 and above.
 - 64-bit VST3 host application (DAW).
 - Gigabit LAN connection between computers.
 
@@ -30,7 +30,7 @@ Launch Cubase/Nuendo®. Add instance to insert slot: **_Tools -> WaveLabs VST3Ne
 [Bonjour Browser](http://www.tildesoft.com) application can be used to inspect all AUNetSend providers.
 Plugin should be listed as "\_apple-ausend.tcp." provider.
 
-On new systems (macOS 10.14 and above) AUNetReceive may not connect to VST3NetSend via Bonjour discovery (seems IPv6 issue in AUNetReceive).
+On new systems (macOS 10.13 and above) AUNetReceive may not connect to VST3NetSend via Bonjour discovery (seems IPv6 issue in AUNetReceive).
 To solve this problem enter IP-address manually.
 
 ![Troubleshooting AUNetReceive. Step 1.](https://raw.githubusercontent.com/vgorloff/VST3NetSend/master/Media/Troubleshooting_AUNetRecieve_01.png)
@@ -40,7 +40,7 @@ To solve this problem enter IP-address manually.
 
 To build plugin the following tools, libs and SDKs needed:
 
-- [Xcode 12.54(https://developer.apple.com/xcode/)
+- [Xcode 12.4](https://developer.apple.com/xcode/)
 - [VST3 SDK 3.7.1](http://www.steinberg.net/en/company/developer.html)
 
 1. Make symbolic link to downloaded VST3 SDK like shown below:
@@ -55,4 +55,4 @@ To build plugin the following tools, libs and SDKs needed:
 
 Now you are ready to build the project from Xcode.
 
-Once build completed, plugin will be available at `~/Library/Audio/Plug-Ins/VST3/Development/VST3NetSend.vst3`.
+Once build completed, plugin can be found at `~/Library/Audio/Plug-Ins/VST3/Development/VST3NetSend.vst3`.
