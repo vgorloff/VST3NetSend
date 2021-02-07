@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -euf -o pipefail
+
 echo "Archive: Started..."
 source $(dirname "$0")/common.sh
 
