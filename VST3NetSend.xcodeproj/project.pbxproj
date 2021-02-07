@@ -24,6 +24,8 @@
 		80B1D73C248B8980008D40CB /* libmcUI.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 80FED5E9248B190500E3AC6E /* libmcUI.a */; };
 		80B1D73D248B8980008D40CB /* libmcUIExtensions.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 80FED5E1248B190500E3AC6E /* libmcUIExtensions.a */; };
 		80B1D73E248B8980008D40CB /* libmcUIReusable.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 80FED5E5248B190500E3AC6E /* libmcUIReusable.a */; };
+		80DCF9CE25D0877B007CE2E2 /* libmcUIPreviews.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 80DCF9CD25D0877B007CE2E2 /* libmcUIPreviews.a */; };
+		80DCF9D125D087A9007CE2E2 /* NetSendUI.Previews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80DCF9D025D087A9007CE2E2 /* NetSendUI.Previews.swift */; };
 		BF_081F4CBF1005BC8AA3CA4CD23BABE643 /* NetSendUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_FE807BF36CC3EE3373BBDBE5F9AEB16A /* NetSendUI.swift */; };
 		BF_23BD009028421075E93FD0F701E0745B /* NetSendProcessSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_1F65684AD5B2FD6582DBAC63167CE51E /* NetSendProcessSetup.swift */; };
 		BF_299DE7FBEFA25E0FEA9BCD3C09C9C197 /* VST3SDK.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FR_D029788E708BF27957B3DC81656DB49A /* VST3SDK.cpp */; };
@@ -86,6 +88,20 @@
 			proxyType = 1;
 			remoteGlobalIDString = 85CA98C059B40D950DCD0CC7;
 			remoteInfo = Shared;
+		};
+		80DCF9CA25D0877B007CE2E2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 80080CBC248B158F001EBF35 /* Shared.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 74ED93455F19BE00D81C02D1;
+			remoteInfo = mcUIPreviews_iOS;
+		};
+		80DCF9CC25D0877B007CE2E2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 80080CBC248B158F001EBF35 /* Shared.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 33157F64B502CB945190B8C3;
+			remoteInfo = mcUIPreviews_macOS;
 		};
 		80FED5BE248B190500E3AC6E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -301,10 +317,10 @@
 /* Begin PBXFileReference section */
 		80080CBC248B158F001EBF35 /* Shared.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = Shared.xcodeproj; sourceTree = "<group>"; };
 		8051C146248BE088003F0C43 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		8052F01624368ECF009DA7C0 /* VST3NetSend.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = VST3NetSend.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		80584E422433F34F00C1B2D1 /* VST3NetSend.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = VST3NetSend.xcconfig; sourceTree = "<group>"; };
 		80584E432433F38D00C1B2D1 /* VST3NetSendKit.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = VST3NetSendKit.xcconfig; sourceTree = "<group>"; };
 		80D589E025D07D1B00D3CE06 /* VST3SDK.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = VST3SDK.xcconfig; sourceTree = "<group>"; };
+		80DCF9D025D087A9007CE2E2 /* NetSendUI.Previews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetSendUI.Previews.swift; sourceTree = "<group>"; };
 		80E37AE9238B37A200B23015 /* Common.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Common.xcconfig; sourceTree = "<group>"; };
 		80E37AEA238B37A200B23015 /* Framework.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Framework.xcconfig; sourceTree = "<group>"; };
 		FR_00C3BCCE9285999BFB1DEB4A452D07FC /* NetSendParameters.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; path = NetSendParameters.h; sourceTree = "<group>"; };
@@ -334,6 +350,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				80DCF9CE25D0877B007CE2E2 /* libmcUIPreviews.a in Frameworks */,
 				80B1D72F248B8980008D40CB /* libmcConcurrencyLocking.a in Frameworks */,
 				80B1D730248B8980008D40CB /* libmcFoundationExtensions.a in Frameworks */,
 				80B1D731248B8980008D40CB /* libmcFoundationFormatters.a in Frameworks */,
@@ -395,6 +412,8 @@
 				80FED5DD248B190500E3AC6E /* libmcTypography.a */,
 				80FED5DF248B190500E3AC6E /* libmcUIExtensions.a */,
 				80FED5E1248B190500E3AC6E /* libmcUIExtensions.a */,
+				80DCF9CB25D0877B007CE2E2 /* libmcUIPreviews.a */,
+				80DCF9CD25D0877B007CE2E2 /* libmcUIPreviews.a */,
 				80FED5E3248B190500E3AC6E /* libmcUIReusable.a */,
 				80FED5E5248B190500E3AC6E /* libmcUIReusable.a */,
 				80FED5E7248B190500E3AC6E /* libmcUI.a */,
@@ -427,6 +446,7 @@
 				FR_CAB1CAD80D8FF9958B756ECFC8DD3B48 /* NetSendParameter.swift */,
 				FR_1F65684AD5B2FD6582DBAC63167CE51E /* NetSendProcessSetup.swift */,
 				FR_FE807BF36CC3EE3373BBDBE5F9AEB16A /* NetSendUI.swift */,
+				80DCF9D025D087A9007CE2E2 /* NetSendUI.Previews.swift */,
 			);
 			path = NetSendKit;
 			sourceTree = "<group>";
@@ -436,7 +456,6 @@
 			children = (
 				8051C146248BE088003F0C43 /* README.md */,
 				80080CBC248B158F001EBF35 /* Shared.xcodeproj */,
-				8052F01624368ECF009DA7C0 /* VST3NetSend.playground */,
 				G_FC812F6CFA74F83906FCE359CE9E7676 /* Configuration */,
 				G_E34F395B442860C0BCBBE95C4545F08C /* Sources */,
 				G_87D941BB6FA9E32D360F59BCD8807B73 /* Products */,
@@ -604,6 +623,20 @@
 			fileType = archive.ar;
 			path = libmcMath.a;
 			remoteRef = 80B1D726248B856E008D40CB /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		80DCF9CB25D0877B007CE2E2 /* libmcUIPreviews.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libmcUIPreviews.a;
+			remoteRef = 80DCF9CA25D0877B007CE2E2 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		80DCF9CD25D0877B007CE2E2 /* libmcUIPreviews.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libmcUIPreviews.a;
+			remoteRef = 80DCF9CC25D0877B007CE2E2 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		80FED5BF248B190500E3AC6E /* libmcConcurrencyLocking.a */ = {
@@ -823,6 +856,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BF_081F4CBF1005BC8AA3CA4CD23BABE643 /* NetSendUI.swift in Sources */,
+				80DCF9D125D087A9007CE2E2 /* NetSendUI.Previews.swift in Sources */,
 				BF_70BAA9C76FDD9B2C97C3CE21EA7FD9A2 /* Logger.swift in Sources */,
 				BF_74F63FEF33E2594AA0067B26AC483EC1 /* NetSendAU.swift in Sources */,
 				BF_23BD009028421075E93FD0F701E0745B /* NetSendProcessSetup.swift in Sources */,
