@@ -2,10 +2,11 @@
 
 DEVELOPMENT_TEAM = TAGGGN65SW
 
-GV_VST_SDK = Vendor/Steinberg/vst3sdk
+MCA_VST_SDK_VERSION = 3.7.1
+MCA_VST_SDK_PATH = /usr/local/vst/VSTSDKv$(MCA_VST_SDK_VERSION)
 
 GCC_PREPROCESSOR_DEFINITIONS_NOT_USED_IN_PRECOMPS = APP_PROJECT_VERSION=\"$(APP_PROJECT_VERSION)\" APP_BUNDLE_VERSION=\"$(APP_BUNDLE_VERSION)\" $(inherited)
-HEADER_SEARCH_PATHS = $(GV_VST_SDK)/**
+HEADER_SEARCH_PATHS = $(MCA_VST_SDK_PATH)/**
 
 AWL_COPYRIGHT = Copyright © 2020 Volodymyr Gorlov. All rights reserved.
 CURRENT_PROJECT_VERSION = $(AWL_BUNDLE_VERSION)
@@ -125,5 +126,5 @@ VALIDATE_PRODUCT_Debug = NO
 VALIDATE_PRODUCT_Release = YES
 VALIDATE_PRODUCT = $(VALIDATE_PRODUCT_$(CONFIGURATION))
 
-// You can use this file to override project settings (such as DEVELOPMENT_TEAM, GV_VST_SDK, File/Framework Search Paths, etc.)
+// You can use this file to override project settings (such as DEVELOPMENT_TEAM, MCA_VST_SDK_PATH, File/Framework Search Paths, etc.)
 #include? "Developer.xcconfig"
