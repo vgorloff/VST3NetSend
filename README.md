@@ -40,13 +40,17 @@ To solve this problem enter IP-address manually.
 
 To build plugin the following tools, libs and SDKs needed:
 
-- [Xcode 11.5](https://developer.apple.com/xcode/)
-- [VST3 SDK 3.6.8](http://www.steinberg.net/en/company/developer.html)
+- [Xcode 12.54(https://developer.apple.com/xcode/)
+- [VST3 SDK 3.7.1](http://www.steinberg.net/en/company/developer.html)
 
-1. Put downloaded `VST SDK` into folder `Vendor/Steinberg/vst3sdk`. Or create file `Configuration/Developer.xcconfig` with the following contents:
+1. Make symbolic link to downloaded VST3 SDK like shown below:
 
-    ```plain
-    GV_VST_SDK = /Path/To/Custom/Location/VSTSDKv3.6.8/VST3_SDK
+    ```sh
+    # Create root folder for VST SDKs (if not exists)
+    sudo mkdir -p /usr/local/vst
+
+    # Make symbolic link
+    sudo ln -vsi /Path/To/Custom/Location/VSTSDKv3.7.1 /usr/local/vst/VSTSDKv3.7.1
     ```
 
 Now you are ready to build the project from Xcode.

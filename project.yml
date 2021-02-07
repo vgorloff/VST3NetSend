@@ -5,6 +5,8 @@ include:
   - ../../../Projects/mc/mcFoundationFormatters/project.yml
   - ../../../Projects/mc/mcMediaAU/project.yml
 name: Shared
+fileGroups:
+   - project.yml
 aggregateTargets:
   Shared:
     targets:
