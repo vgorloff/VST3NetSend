@@ -54,3 +54,5 @@ To build plugin the following tools, libs and SDKs needed:
     ```
 
 Now you are ready to build the project from Xcode.
+
+Once build completed, plugin will be available at `~/Library/Audio/Plug-Ins/VST3/Development/VST3NetSend.vst3`.

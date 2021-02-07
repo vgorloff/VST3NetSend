@@ -876,6 +876,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 80584E422433F34F00C1B2D1 /* VST3NetSend.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
 			};
 			name = Debug;
 		};
@@ -883,6 +884,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 80584E422433F34F00C1B2D1 /* VST3NetSend.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
 			};
 			name = Release;
 		};
