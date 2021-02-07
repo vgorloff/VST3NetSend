@@ -30,7 +30,7 @@ Launch Cubase/Nuendo®. Add instance to insert slot: **_Tools -> WaveLabs VST3Ne
 [Bonjour Browser](http://www.tildesoft.com) application can be used to inspect all AUNetSend providers.
 Plugin should be listed as "\_apple-ausend.tcp." provider.
 
-On new systems (macOS 10.13 and above) AUNetReceive may not connect to VST3NetSend via Bonjour discovery (seems IPv6 issue in AUNetReceive).
+On new systems (macOS 10.14 and above) AUNetReceive may not connect to VST3NetSend via Bonjour discovery (seems IPv6 issue in AUNetReceive).
 To solve this problem enter IP-address manually.
 
 ![Troubleshooting AUNetReceive. Step 1.](https://raw.githubusercontent.com/vgorloff/VST3NetSend/master/Media/Troubleshooting_AUNetRecieve_01.png)
