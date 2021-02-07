@@ -1225,7 +1225,7 @@
 		0DAD783CD6DB12FC58BC1A00 /* NSToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSToolbar.swift; sourceTree = "<group>"; };
 		0E7C063BCC9EFA4BDE28A2A7 /* SegmentedControl.AppKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentedControl.AppKit.swift; sourceTree = "<group>"; };
 		0EBB2CA3CC9F8C8EF60A0964 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
-		0F6406A8364CF13C4BE9987C /* project.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; name = project.yml; path = ../../../../Projects/mc/mcMediaExtensions/project.yml; sourceTree = "<group>"; };
+		0F6406A8364CF13C4BE9987C /* project.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; name = project.yml; path = ./mc/mcMediaExtensions/project.yml; sourceTree = "<group>"; };
 		1056AC60366E8168066B037D /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		106C2A0440D90B1F2C129D52 /* AddressFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressFormatter.swift; sourceTree = "<group>"; };
 		111F479C5D837907AA30EAB8 /* Dictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dictionary.swift; sourceTree = "<group>"; };
@@ -1264,7 +1264,7 @@
 		2685E35750DDA52D7B87A1F2 /* UIViewControllerTransitionCoordinatorContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerTransitionCoordinatorContext.swift; sourceTree = "<group>"; };
 		26981FFFF9AD6F1403A6B32F /* UnsafeMutableAudioBufferListPointer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsafeMutableAudioBufferListPointer.swift; sourceTree = "<group>"; };
 		276069398340737AB2C673F0 /* ObserversContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObserversContainer.swift; sourceTree = "<group>"; };
-		276ED717F0D1475E4DC8CE5F /* project.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; name = project.yml; path = ../../../../Projects/mc/mcConcurrencyLocking/project.yml; sourceTree = "<group>"; };
+		276ED717F0D1475E4DC8CE5F /* project.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; name = project.yml; path = ./mc/mcConcurrencyLocking/project.yml; sourceTree = "<group>"; };
 		282373FB2C41850334E95C1E /* UniqueNumberGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniqueNumberGenerator.swift; sourceTree = "<group>"; };
 		28E84EB09B8804FF2B778363 /* libmcUIExtensions.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libmcUIExtensions.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		291D94008808BB98E7C60E7B /* libmcFoundationLogging.a */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = archive.ar; path = libmcFoundationLogging.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1317,7 +1317,7 @@
 		45A5D5972CAAECA28D93235E /* NSLayoutYAxisAnchor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSLayoutYAxisAnchor.swift; sourceTree = "<group>"; };
 		462F44EF2E1B8B74629A7548 /* URL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URL.swift; sourceTree = "<group>"; };
 		47D0EEBE85E5F5728E080857 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
-		4896DD757C337C48B1F4397C /* project.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; name = project.yml; path = ../../../../Projects/mc/mcFoundationTestability/project.yml; sourceTree = "<group>"; };
+		4896DD757C337C48B1F4397C /* project.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; name = project.yml; path = ./mc/mcFoundationTestability/project.yml; sourceTree = "<group>"; };
 		48A4C34C9CC367E5B473E544 /* libmcFoundationObservables.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libmcFoundationObservables.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		4AF4C59058163C5AEF6F474C /* NSWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSWindow.swift; sourceTree = "<group>"; };
 		4B43455FF1E490CDB960BF5E /* AudioBuffer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioBuffer.swift; sourceTree = "<group>"; };
@@ -1336,16 +1336,16 @@
 		5121B3924BE387D82B333BC1 /* NSStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSStackView.swift; sourceTree = "<group>"; };
 		52ED31359D30703A349A5A52 /* UITableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewController.swift; sourceTree = "<group>"; };
 		53257943C5C2252333B6AB1B /* AudioComponentsUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioComponentsUtility.swift; sourceTree = "<group>"; };
-		538B1984D2AC8D8708307AAC /* project.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; name = project.yml; path = ../../../../Projects/mc/mcMediaAU/project.yml; sourceTree = "<group>"; };
+		538B1984D2AC8D8708307AAC /* project.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; name = project.yml; path = ./mc/mcMediaAU/project.yml; sourceTree = "<group>"; };
 		53EC52D1ADE222D47B9EE535 /* NSMenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSMenuItem.swift; sourceTree = "<group>"; };
 		55141577DD178DFCE93598AF /* String+Ranges.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Ranges.swift"; sourceTree = "<group>"; };
 		553650487118F9C2392FC5D4 /* GenericNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericNotification.swift; sourceTree = "<group>"; };
 		55F13A9A9E011556310E01FE /* libmcTypes.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libmcTypes.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		55FD03FC068A14C50E4BB4CE /* NSLocker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSLocker.swift; sourceTree = "<group>"; };
-		56058F863438708B18E4E5A4 /* project.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; name = project.yml; path = ../../../../Projects/mc/mcMath/project.yml; sourceTree = "<group>"; };
+		56058F863438708B18E4E5A4 /* project.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; name = project.yml; path = ./mc/mcMath/project.yml; sourceTree = "<group>"; };
 		56E86735775DD2780E5747B1 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		5798C484399D2489C0DA7BB5 /* Pipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pipe.swift; sourceTree = "<group>"; };
-		581BD1FE34BC0C0FDE3CB09F /* project.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; name = project.yml; path = ../../../../Projects/mc/mcUIPreviews/project.yml; sourceTree = "<group>"; };
+		581BD1FE34BC0C0FDE3CB09F /* project.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; name = project.yml; path = ./mc/mcUIPreviews/project.yml; sourceTree = "<group>"; };
 		590119B8707B26A3A9C9B48B /* SecureTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureTextField.swift; sourceTree = "<group>"; };
 		592504EBBC73686EC05134E5 /* UIStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStackView.swift; sourceTree = "<group>"; };
 		59301D16A416F3DAB8B046E7 /* UIUserInterfaceSizeClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIUserInterfaceSizeClass.swift; sourceTree = "<group>"; };
@@ -1360,7 +1360,7 @@
 		5F56EADBB3C62E772CE36F3B /* NSNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSNotification.swift; sourceTree = "<group>"; };
 		5F8ED9B55C1FF937C5BD4538 /* libmcUIReusable.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libmcUIReusable.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		6024B7ED8AC796842AC473B9 /* Assertion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assertion.swift; sourceTree = "<group>"; };
-		6089FE8D84F0BE0296062481 /* project.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; name = project.yml; path = ../../../../Projects/mc/mcUIReusable/project.yml; sourceTree = "<group>"; };
+		6089FE8D84F0BE0296062481 /* project.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; name = project.yml; path = ./mc/mcUIReusable/project.yml; sourceTree = "<group>"; };
 		60D69FE8A32B0C4CEC2441D2 /* GenericIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericIdentifier.swift; sourceTree = "<group>"; };
 		61BF26EC7E03F22734AD7B31 /* UniqueStringGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniqueStringGenerator.swift; sourceTree = "<group>"; };
 		627E4F8DC4AC94AD65C6DFDB /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
@@ -1381,7 +1381,7 @@
 		6E7DC93399F2350687223EB5 /* NSRange.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSRange.swift; sourceTree = "<group>"; };
 		6E7F8B50E88F8627CD6F715F /* ActivityIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorView.swift; sourceTree = "<group>"; };
 		6F13DE078B5D3432F7C57031 /* NSAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSAppearance.swift; sourceTree = "<group>"; };
-		6F83F8A57BB209DC73D777E9 /* project.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; name = project.yml; path = ../../../../Projects/mc/mcTypography/project.yml; sourceTree = "<group>"; };
+		6F83F8A57BB209DC73D777E9 /* project.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; name = project.yml; path = ./mc/mcTypography/project.yml; sourceTree = "<group>"; };
 		6FB2A8AAF234BEACF8556F17 /* NSAttributedString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSAttributedString.swift; sourceTree = "<group>"; };
 		6FED9C9EBCB770C1B2FFE546 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		7009891CF715E5C946816383 /* FontFamily.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontFamily.swift; sourceTree = "<group>"; };
@@ -1396,7 +1396,7 @@
 		760F7C8C1B9E5B99A4C6C848 /* libmcMediaExtensions.a */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = archive.ar; path = libmcMediaExtensions.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		762BEECE691CEFCFD13B3700 /* libmcMediaAU.a */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = archive.ar; path = libmcMediaAU.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		764B51027040EA689ADD2882 /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
-		76BCF694BE0F20CDCF0F8606 /* project.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; name = project.yml; path = ../../../../Projects/mc/mcGraphicsExtensions/project.yml; sourceTree = "<group>"; };
+		76BCF694BE0F20CDCF0F8606 /* project.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; name = project.yml; path = ./mc/mcGraphicsExtensions/project.yml; sourceTree = "<group>"; };
 		77B91EDA7C7576C09956FA13 /* MouseTrackingStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MouseTrackingStatus.swift; sourceTree = "<group>"; };
 		78462DEAC1777C35AA3DFEA3 /* libmcFoundationTestability.a */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = archive.ar; path = libmcFoundationTestability.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		78D8D6CF41CD76D6F2393AA3 /* NSColor.ColorType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSColor.ColorType.swift; sourceTree = "<group>"; };
@@ -1441,7 +1441,7 @@
 		93FFB4F412C0AEEB754AC9FD /* ReusableTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableTableViewCell.swift; sourceTree = "<group>"; };
 		9427DF301E919B0E38B357F1 /* UIView+Subviews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Subviews.swift"; sourceTree = "<group>"; };
 		95C8B7BA31E3DE16C4538878 /* CGSize+Scale.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGSize+Scale.swift"; sourceTree = "<group>"; };
-		9716F20A80C4AF842A6B6CB4 /* project.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; name = project.yml; path = ../../../../Projects/mc/mcFoundationExtensions/project.yml; sourceTree = "<group>"; };
+		9716F20A80C4AF842A6B6CB4 /* project.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; name = project.yml; path = ./mc/mcFoundationExtensions/project.yml; sourceTree = "<group>"; };
 		9744A63BA364FEEEB83FCADC /* ObjCSync.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjCSync.swift; sourceTree = "<group>"; };
 		985C528BE24CCBC3CA1F60EA /* CompletionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletionHandler.swift; sourceTree = "<group>"; };
 		99A3E5D347A198DFC2B0A677 /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
@@ -1457,7 +1457,7 @@
 		9E2F448E877FBAABF5A7534D /* RoundedInnerShadowLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedInnerShadowLayer.swift; sourceTree = "<group>"; };
 		9E355440AB6026FB2D21273D /* AccessibilityKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessibilityKey.swift; sourceTree = "<group>"; };
 		9EB30082B9FFF8F502D4D0CB /* NSDataDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSDataDetector.swift; sourceTree = "<group>"; };
-		9EE591CE2457BEA68DA1A41C /* project.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; name = project.yml; path = ../../../../Projects/mc/mcFoundationFormatters/project.yml; sourceTree = "<group>"; };
+		9EE591CE2457BEA68DA1A41C /* project.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; name = project.yml; path = ./mc/mcFoundationFormatters/project.yml; sourceTree = "<group>"; };
 		A0F8F994AE9D41176A542F34 /* UIGestureRecognizerState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIGestureRecognizerState.swift; sourceTree = "<group>"; };
 		A104A4A41E5FB02E96B90535 /* UITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableView.swift; sourceTree = "<group>"; };
 		A1268CF75C2ABF18AC3D6050 /* Process.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Process.swift; sourceTree = "<group>"; };
@@ -1465,7 +1465,7 @@
 		A24B0D12A7BBC329C5DF032D /* SpinLock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinLock.swift; sourceTree = "<group>"; };
 		A2EA7A8C00A86BB1A851E052 /* DispatchSemaphore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DispatchSemaphore.swift; sourceTree = "<group>"; };
 		A4ED0D8CB14EBA8F09F8D500 /* QuickLookFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickLookFactory.swift; sourceTree = "<group>"; };
-		A8CC9EDAC03FB746B541D5FE /* project.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; name = project.yml; path = ../../../../Projects/mc/mcUIExtensions/project.yml; sourceTree = "<group>"; };
+		A8CC9EDAC03FB746B541D5FE /* project.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; name = project.yml; path = ./mc/mcUIExtensions/project.yml; sourceTree = "<group>"; };
 		AA3E4F56EF170DC9CA52E5A5 /* UIPanGestureRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIPanGestureRecognizer.swift; sourceTree = "<group>"; };
 		AAD3699283C9A8A106AC01A2 /* ReusableScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableScene.swift; sourceTree = "<group>"; };
 		AB2840604C4E57D04D929EC3 /* CollectionView.AppKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionView.AppKit.swift; sourceTree = "<group>"; };
@@ -1483,7 +1483,7 @@
 		B0D69190F592BA32A93DFD9F /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		B0D9A7738F4209A97F9B9283 /* ScrollableStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollableStackView.swift; sourceTree = "<group>"; };
 		B13086C9E603ED074F37BE1D /* CGSize+Resize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGSize+Resize.swift"; sourceTree = "<group>"; };
-		B1699EE890F6BDC682A6BC1A /* project.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; name = project.yml; path = ../../../../Projects/mc/mcRuntime/project.yml; sourceTree = "<group>"; };
+		B1699EE890F6BDC682A6BC1A /* project.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; name = project.yml; path = ./mc/mcRuntime/project.yml; sourceTree = "<group>"; };
 		B17BCC54A2128185A3F8106F /* NSGestureRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSGestureRecognizer.swift; sourceTree = "<group>"; };
 		B1D8DC0CFB371E0AC5675D24 /* Abort.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Abort.swift; sourceTree = "<group>"; };
 		B27337108320E09A405EF54B /* AlertAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertAction.swift; sourceTree = "<group>"; };
@@ -1544,7 +1544,7 @@
 		D27D39137C32A3B9E4BF6BF1 /* IntegerFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntegerFormatter.swift; sourceTree = "<group>"; };
 		D2A89ACF1E9F401537E66F7C /* NSTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSTextField.swift; sourceTree = "<group>"; };
 		D2ABBA099CA51131CC4FFB3E /* libmcTypography.a */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = archive.ar; path = libmcTypography.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		D2B71B99B76AFD0F0DDBBD4A /* project.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; name = project.yml; path = ../../../../Projects/mc/mcUI/project.yml; sourceTree = "<group>"; };
+		D2B71B99B76AFD0F0DDBBD4A /* project.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; name = project.yml; path = ./mc/mcUI/project.yml; sourceTree = "<group>"; };
 		D324D11680E8263AFA9932C8 /* AttributedStringProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttributedStringProperties.swift; sourceTree = "<group>"; };
 		D32F3755B5299B2B05E92369 /* TextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextView.swift; sourceTree = "<group>"; };
 		D3F98C68486EFE9E2FA3A6A1 /* StackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackViewController.swift; sourceTree = "<group>"; };
@@ -1567,11 +1567,11 @@
 		DAADCA6067B3D73AC071487D /* NSView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSView.swift; sourceTree = "<group>"; };
 		DAAF9765C4C78D1C64CB6634 /* UIViewControllerPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerPreview.swift; sourceTree = "<group>"; };
 		DB16A80260CD049B8CA12088 /* NSButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSButton.swift; sourceTree = "<group>"; };
-		DB34C69DCCC82C43F70D0E4E /* project.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; name = project.yml; path = ../../../../Projects/mc/mcFoundationLogging/project.yml; sourceTree = "<group>"; };
+		DB34C69DCCC82C43F70D0E4E /* project.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; name = project.yml; path = ./mc/mcFoundationLogging/project.yml; sourceTree = "<group>"; };
 		DB3B620E358078421116F256 /* UIKeyboardType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIKeyboardType.swift; sourceTree = "<group>"; };
 		DB576A1C9BAD88570DAC666A /* DispatchUntil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DispatchUntil.swift; sourceTree = "<group>"; };
 		DB9108BD1C8342A078AF43A0 /* NSTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSTableView.swift; sourceTree = "<group>"; };
-		DB9513C8969B0DC90EE0C671 /* project.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; name = project.yml; path = ../../../../Projects/mc/mcFoundationObservables/project.yml; sourceTree = "<group>"; };
+		DB9513C8969B0DC90EE0C671 /* project.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; name = project.yml; path = ./mc/mcFoundationObservables/project.yml; sourceTree = "<group>"; };
 		DBA163E2FC6367E5C87E20D3 /* View.AppKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.AppKit.swift; sourceTree = "<group>"; };
 		DD6899BEF7E52E5BA1A68D9E /* libmcMediaExtensions.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libmcMediaExtensions.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDC2C5D0D1FE40BA3B3B644A /* ImageView.AppKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageView.AppKit.swift; sourceTree = "<group>"; };
@@ -1606,7 +1606,7 @@
 		EB669234B07704349F0AC3E7 /* EquatableClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquatableClass.swift; sourceTree = "<group>"; };
 		ECAD6D073A40BC9415ADCD52 /* NSTableColumn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSTableColumn.swift; sourceTree = "<group>"; };
 		ED2C4B0D84738AA7F348179A /* Label.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Label.swift; sourceTree = "<group>"; };
-		ED9789520200494EE80C843F /* project.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; name = project.yml; path = ../../../../Projects/mc/mcTypes/project.yml; sourceTree = "<group>"; };
+		ED9789520200494EE80C843F /* project.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; name = project.yml; path = ./mc/mcTypes/project.yml; sourceTree = "<group>"; };
 		EDC293053514E1C547CD1BAC /* CarbonIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarbonIcon.swift; sourceTree = "<group>"; };
 		EDDEFEDC0B58EF94CE808BC8 /* SystemImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemImage.swift; sourceTree = "<group>"; };
 		EE7F8E261F01C4BA83A8FA90 /* Math.BezierPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Math.BezierPath.swift; sourceTree = "<group>"; };
@@ -1771,7 +1771,7 @@
 				26981FFFF9AD6F1403A6B32F /* UnsafeMutableAudioBufferListPointer.swift */,
 			);
 			name = Sources;
-			path = ../../../../Projects/mc/mcMediaExtensions/Sources;
+			path = ./mc/mcMediaExtensions/Sources;
 			sourceTree = "<group>";
 		};
 		2BD2041217118B7C09021655 /* Extension Types */ = {
@@ -1802,7 +1802,7 @@
 				6DC8D98CF046F888571B87D6 /* ValueObserver.swift */,
 			);
 			name = Sources;
-			path = ../../../../Projects/mc/mcFoundationObservables/Sources;
+			path = ./mc/mcFoundationObservables/Sources;
 			sourceTree = "<group>";
 		};
 		3C12C94DB899768B0DE5B1DB /* mcRuntime */ = {
@@ -1839,7 +1839,7 @@
 				1056AC60366E8168066B037D /* Logger.swift */,
 			);
 			name = Sources;
-			path = ../../../../Projects/mc/mcUIExtensions/Sources;
+			path = ./mc/mcUIExtensions/Sources;
 			sourceTree = "<group>";
 		};
 		4C080E38D2092D30244FAAD2 /* Geometry */ = {
@@ -1881,7 +1881,7 @@
 				9DEEFB3150D258909D21A690 /* QuickLookProxyType.swift */,
 			);
 			name = Sources;
-			path = ../../../../Projects/mc/mcFoundationTestability/Sources;
+			path = ./mc/mcFoundationTestability/Sources;
 			sourceTree = "<group>";
 		};
 		56AE3BF0472CBDA73FB1A495 /* mcGraphicsExtensions */ = {
@@ -2159,7 +2159,7 @@
 				333B1A7227196F7F57F5418D /* Logger.swift */,
 			);
 			name = Sources;
-			path = ../../../../Projects/mc/mcUIReusable/Sources;
+			path = ./mc/mcUIReusable/Sources;
 			sourceTree = "<group>";
 		};
 		865288353AF251BCAC31BA8E /* Errors */ = {
@@ -2187,7 +2187,7 @@
 				E29B053BC508F21E0C710408 /* UIAccessibilityIdentification.swift */,
 			);
 			name = Sources;
-			path = ../../../../Projects/mc/mcRuntime/Sources;
+			path = ./mc/mcRuntime/Sources;
 			sourceTree = "<group>";
 		};
 		93D68F98B213DB9B8DE97A78 /* Sources */ = {
@@ -2200,7 +2200,7 @@
 				84FE1394F7345776997C57CC /* TerminalStyleStringFormatter.swift */,
 			);
 			name = Sources;
-			path = ../../../../Projects/mc/mcFoundationFormatters/Sources;
+			path = ./mc/mcFoundationFormatters/Sources;
 			sourceTree = "<group>";
 		};
 		9991911580595C778EE03FB7 /* mcUI */ = {
@@ -2238,7 +2238,7 @@
 				75019431106AD8DBFEF6FE59 /* Sources */,
 			);
 			name = Sources;
-			path = ../../../../Projects/mc/mcTypes/Sources;
+			path = ./mc/mcTypes/Sources;
 			sourceTree = "<group>";
 		};
 		A6679550647D37A90EA4F6FA /* Sources */ = {
@@ -2253,7 +2253,7 @@
 				EA2DFCB088D8485A521DFB51 /* Logger.swift */,
 			);
 			name = Sources;
-			path = ../../../../Projects/mc/mcUI/Sources;
+			path = ./mc/mcUI/Sources;
 			sourceTree = "<group>";
 		};
 		A704652F74697B99960D16E3 /* Sources */ = {
@@ -2269,7 +2269,7 @@
 				E127BF3F899780D535825150 /* NSColorSpace.Model.swift */,
 			);
 			name = Sources;
-			path = ../../../../Projects/mc/mcGraphicsExtensions/Sources;
+			path = ./mc/mcGraphicsExtensions/Sources;
 			sourceTree = "<group>";
 		};
 		AA9CCF114D69FC7819BC62DA /* Extensions */ = {
@@ -2296,7 +2296,7 @@
 				0FF848B47C7760EB5E75D818 /* Previews */,
 			);
 			name = Sources;
-			path = ../../../../Projects/mc/mcUIPreviews/Sources;
+			path = ./mc/mcUIPreviews/Sources;
 			sourceTree = "<group>";
 		};
 		BD14ADDF46B6B63F039683E9 /* Sources */ = {
@@ -2386,7 +2386,7 @@
 				B56007D1297B9EB722287C66 /* WKNavigationType.swift */,
 			);
 			name = Sources;
-			path = ../../../../Projects/mc/mcFoundationExtensions/Sources;
+			path = ./mc/mcFoundationExtensions/Sources;
 			sourceTree = "<group>";
 		};
 		C4B7B3C3F472101CAD52B88E /* Sources */ = {
@@ -2397,7 +2397,7 @@
 				AC562C21D5CAC9E56DD44B29 /* Logger.swift */,
 			);
 			name = Sources;
-			path = ../../../../Projects/mc/mcMediaAU/Sources;
+			path = ./mc/mcMediaAU/Sources;
 			sourceTree = "<group>";
 		};
 		C596A1B571EA587F6408843B /* Common */ = {
@@ -2471,7 +2471,7 @@
 				7A8AA2CF920A187600BA3633 /* Math.swift */,
 			);
 			name = Sources;
-			path = ../../../../Projects/mc/mcMath/Sources;
+			path = ./mc/mcMath/Sources;
 			sourceTree = "<group>";
 		};
 		DA75EE09CE53689E1DEA0A26 = {
@@ -2525,7 +2525,7 @@
 				50374D27752B925EB5FF7E7A /* UnfairLock.swift */,
 			);
 			name = Sources;
-			path = ../../../../Projects/mc/mcConcurrencyLocking/Sources;
+			path = ./mc/mcConcurrencyLocking/Sources;
 			sourceTree = "<group>";
 		};
 		E8E1B56128AB176809311CF7 /* mcFoundationLogging */ = {
@@ -2605,7 +2605,7 @@
 				68C41A697E993FF2C2AC329D /* log */,
 			);
 			name = Sources;
-			path = ../../../../Projects/mc/mcFoundationLogging/Sources;
+			path = ./mc/mcFoundationLogging/Sources;
 			sourceTree = "<group>";
 		};
 		F10C0BFFA7F52BFEC51AE607 /* Extensions */ = {
@@ -2652,7 +2652,7 @@
 				7009891CF715E5C946816383 /* FontFamily.swift */,
 			);
 			name = Sources;
-			path = ../../../../Projects/mc/mcTypography/Sources;
+			path = ./mc/mcTypography/Sources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
