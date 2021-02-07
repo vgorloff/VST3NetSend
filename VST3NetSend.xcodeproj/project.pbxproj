@@ -8,22 +8,22 @@
 
 /* Begin PBXBuildFile section */
 		807F741D238C92F6007B14FA /* VST3NetSendKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = FR_D6F3D685F76402720A8F31BC1560FFAB /* VST3NetSendKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		80B1D72F248B8980008D40CB /* mcConcurrencyLocking.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 80FED5C1248B190500E3AC6E /* mcConcurrencyLocking.a */; };
-		80B1D730248B8980008D40CB /* mcFoundationExtensions.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 80FED5C5248B190500E3AC6E /* mcFoundationExtensions.a */; };
-		80B1D731248B8980008D40CB /* mcFoundationFormatters.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 80B1D723248B856E008D40CB /* mcFoundationFormatters.a */; };
-		80B1D732248B8980008D40CB /* mcFoundationLogging.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 80FED5C9248B190500E3AC6E /* mcFoundationLogging.a */; };
-		80B1D733248B8980008D40CB /* mcFoundationObservables.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 80FED5CD248B190500E3AC6E /* mcFoundationObservables.a */; };
-		80B1D734248B8980008D40CB /* mcFoundationTestability.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 80FED5FE248B198500E3AC6E /* mcFoundationTestability.a */; };
-		80B1D735248B8980008D40CB /* mcGraphicsExtensions.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 80FED5D1248B190500E3AC6E /* mcGraphicsExtensions.a */; };
-		80B1D736248B8980008D40CB /* mcMath.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 80B1D727248B856E008D40CB /* mcMath.a */; };
-		80B1D737248B8980008D40CB /* mcMediaAU.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 80FED60C248B19CA00E3AC6E /* mcMediaAU.a */; };
-		80B1D738248B8980008D40CB /* mcMediaExtensions.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 80FED602248B198500E3AC6E /* mcMediaExtensions.a */; };
-		80B1D739248B8980008D40CB /* mcRuntime.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 80FED5D5248B190500E3AC6E /* mcRuntime.a */; };
-		80B1D73A248B8980008D40CB /* mcTypes.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 80FED5D9248B190500E3AC6E /* mcTypes.a */; };
-		80B1D73B248B8980008D40CB /* mcTypography.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 80FED5DD248B190500E3AC6E /* mcTypography.a */; };
-		80B1D73C248B8980008D40CB /* mcUI.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 80FED5E9248B190500E3AC6E /* mcUI.a */; };
-		80B1D73D248B8980008D40CB /* mcUIExtensions.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 80FED5E1248B190500E3AC6E /* mcUIExtensions.a */; };
-		80B1D73E248B8980008D40CB /* mcUIReusable.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 80FED5E5248B190500E3AC6E /* mcUIReusable.a */; };
+		80B1D72F248B8980008D40CB /* libmcConcurrencyLocking.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 80FED5C1248B190500E3AC6E /* libmcConcurrencyLocking.a */; };
+		80B1D730248B8980008D40CB /* libmcFoundationExtensions.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 80FED5C5248B190500E3AC6E /* libmcFoundationExtensions.a */; };
+		80B1D731248B8980008D40CB /* libmcFoundationFormatters.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 80B1D723248B856E008D40CB /* libmcFoundationFormatters.a */; };
+		80B1D732248B8980008D40CB /* libmcFoundationLogging.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 80FED5C9248B190500E3AC6E /* libmcFoundationLogging.a */; };
+		80B1D733248B8980008D40CB /* libmcFoundationObservables.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 80FED5CD248B190500E3AC6E /* libmcFoundationObservables.a */; };
+		80B1D734248B8980008D40CB /* libmcFoundationTestability.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 80FED5FE248B198500E3AC6E /* libmcFoundationTestability.a */; };
+		80B1D735248B8980008D40CB /* libmcGraphicsExtensions.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 80FED5D1248B190500E3AC6E /* libmcGraphicsExtensions.a */; };
+		80B1D736248B8980008D40CB /* libmcMath.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 80B1D727248B856E008D40CB /* libmcMath.a */; };
+		80B1D737248B8980008D40CB /* libmcMediaAU.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 80FED60C248B19CA00E3AC6E /* libmcMediaAU.a */; };
+		80B1D738248B8980008D40CB /* libmcMediaExtensions.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 80FED602248B198500E3AC6E /* libmcMediaExtensions.a */; };
+		80B1D739248B8980008D40CB /* libmcRuntime.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 80FED5D5248B190500E3AC6E /* libmcRuntime.a */; };
+		80B1D73A248B8980008D40CB /* libmcTypes.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 80FED5D9248B190500E3AC6E /* libmcTypes.a */; };
+		80B1D73B248B8980008D40CB /* libmcTypography.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 80FED5DD248B190500E3AC6E /* libmcTypography.a */; };
+		80B1D73C248B8980008D40CB /* libmcUI.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 80FED5E9248B190500E3AC6E /* libmcUI.a */; };
+		80B1D73D248B8980008D40CB /* libmcUIExtensions.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 80FED5E1248B190500E3AC6E /* libmcUIExtensions.a */; };
+		80B1D73E248B8980008D40CB /* libmcUIReusable.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 80FED5E5248B190500E3AC6E /* libmcUIReusable.a */; };
 		BF_081F4CBF1005BC8AA3CA4CD23BABE643 /* NetSendUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_FE807BF36CC3EE3373BBDBE5F9AEB16A /* NetSendUI.swift */; };
 		BF_23BD009028421075E93FD0F701E0745B /* NetSendProcessSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_1F65684AD5B2FD6582DBAC63167CE51E /* NetSendProcessSetup.swift */; };
 		BF_299DE7FBEFA25E0FEA9BCD3C09C9C197 /* VST3SDK.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FR_D029788E708BF27957B3DC81656DB49A /* VST3SDK.cpp */; };
@@ -304,6 +304,7 @@
 		8052F01624368ECF009DA7C0 /* VST3NetSend.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = VST3NetSend.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		80584E422433F34F00C1B2D1 /* VST3NetSend.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = VST3NetSend.xcconfig; sourceTree = "<group>"; };
 		80584E432433F38D00C1B2D1 /* VST3NetSendKit.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = VST3NetSendKit.xcconfig; sourceTree = "<group>"; };
+		80D589E025D07D1B00D3CE06 /* VST3SDK.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = VST3SDK.xcconfig; sourceTree = "<group>"; };
 		80E37AE9238B37A200B23015 /* Common.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Common.xcconfig; sourceTree = "<group>"; };
 		80E37AEA238B37A200B23015 /* Framework.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Framework.xcconfig; sourceTree = "<group>"; };
 		FR_00C3BCCE9285999BFB1DEB4A452D07FC /* NetSendParameters.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; path = NetSendParameters.h; sourceTree = "<group>"; };
@@ -333,22 +334,22 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				80B1D72F248B8980008D40CB /* mcConcurrencyLocking.a in Frameworks */,
-				80B1D730248B8980008D40CB /* mcFoundationExtensions.a in Frameworks */,
-				80B1D731248B8980008D40CB /* mcFoundationFormatters.a in Frameworks */,
-				80B1D732248B8980008D40CB /* mcFoundationLogging.a in Frameworks */,
-				80B1D733248B8980008D40CB /* mcFoundationObservables.a in Frameworks */,
-				80B1D734248B8980008D40CB /* mcFoundationTestability.a in Frameworks */,
-				80B1D735248B8980008D40CB /* mcGraphicsExtensions.a in Frameworks */,
-				80B1D736248B8980008D40CB /* mcMath.a in Frameworks */,
-				80B1D737248B8980008D40CB /* mcMediaAU.a in Frameworks */,
-				80B1D738248B8980008D40CB /* mcMediaExtensions.a in Frameworks */,
-				80B1D739248B8980008D40CB /* mcRuntime.a in Frameworks */,
-				80B1D73A248B8980008D40CB /* mcTypes.a in Frameworks */,
-				80B1D73B248B8980008D40CB /* mcTypography.a in Frameworks */,
-				80B1D73C248B8980008D40CB /* mcUI.a in Frameworks */,
-				80B1D73D248B8980008D40CB /* mcUIExtensions.a in Frameworks */,
-				80B1D73E248B8980008D40CB /* mcUIReusable.a in Frameworks */,
+				80B1D72F248B8980008D40CB /* libmcConcurrencyLocking.a in Frameworks */,
+				80B1D730248B8980008D40CB /* libmcFoundationExtensions.a in Frameworks */,
+				80B1D731248B8980008D40CB /* libmcFoundationFormatters.a in Frameworks */,
+				80B1D732248B8980008D40CB /* libmcFoundationLogging.a in Frameworks */,
+				80B1D733248B8980008D40CB /* libmcFoundationObservables.a in Frameworks */,
+				80B1D734248B8980008D40CB /* libmcFoundationTestability.a in Frameworks */,
+				80B1D735248B8980008D40CB /* libmcGraphicsExtensions.a in Frameworks */,
+				80B1D736248B8980008D40CB /* libmcMath.a in Frameworks */,
+				80B1D737248B8980008D40CB /* libmcMediaAU.a in Frameworks */,
+				80B1D738248B8980008D40CB /* libmcMediaExtensions.a in Frameworks */,
+				80B1D739248B8980008D40CB /* libmcRuntime.a in Frameworks */,
+				80B1D73A248B8980008D40CB /* libmcTypes.a in Frameworks */,
+				80B1D73B248B8980008D40CB /* libmcTypography.a in Frameworks */,
+				80B1D73C248B8980008D40CB /* libmcUI.a in Frameworks */,
+				80B1D73D248B8980008D40CB /* libmcUIExtensions.a in Frameworks */,
+				80B1D73E248B8980008D40CB /* libmcUIReusable.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -366,38 +367,38 @@
 		80080CBD248B158F001EBF35 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				80FED5BF248B190500E3AC6E /* mcConcurrencyLocking.a */,
-				80FED5C1248B190500E3AC6E /* mcConcurrencyLocking.a */,
-				80FED5C3248B190500E3AC6E /* mcFoundationExtensions.a */,
-				80FED5C5248B190500E3AC6E /* mcFoundationExtensions.a */,
-				80B1D721248B856E008D40CB /* mcFoundationFormatters.a */,
-				80B1D723248B856E008D40CB /* mcFoundationFormatters.a */,
-				80FED5C7248B190500E3AC6E /* mcFoundationLogging.a */,
-				80FED5C9248B190500E3AC6E /* mcFoundationLogging.a */,
-				80FED5CB248B190500E3AC6E /* mcFoundationObservables.a */,
-				80FED5CD248B190500E3AC6E /* mcFoundationObservables.a */,
-				80FED5FC248B198500E3AC6E /* mcFoundationTestability.a */,
-				80FED5FE248B198500E3AC6E /* mcFoundationTestability.a */,
-				80FED5CF248B190500E3AC6E /* mcGraphicsExtensions.a */,
-				80FED5D1248B190500E3AC6E /* mcGraphicsExtensions.a */,
-				80B1D725248B856E008D40CB /* mcMath.a */,
-				80B1D727248B856E008D40CB /* mcMath.a */,
-				80FED60A248B19CA00E3AC6E /* mcMediaAU.a */,
-				80FED60C248B19CA00E3AC6E /* mcMediaAU.a */,
-				80FED600248B198500E3AC6E /* mcMediaExtensions.a */,
-				80FED602248B198500E3AC6E /* mcMediaExtensions.a */,
-				80FED5D3248B190500E3AC6E /* mcRuntime.a */,
-				80FED5D5248B190500E3AC6E /* mcRuntime.a */,
-				80FED5D7248B190500E3AC6E /* mcTypes.a */,
-				80FED5D9248B190500E3AC6E /* mcTypes.a */,
-				80FED5DB248B190500E3AC6E /* mcTypography.a */,
-				80FED5DD248B190500E3AC6E /* mcTypography.a */,
-				80FED5DF248B190500E3AC6E /* mcUIExtensions.a */,
-				80FED5E1248B190500E3AC6E /* mcUIExtensions.a */,
-				80FED5E3248B190500E3AC6E /* mcUIReusable.a */,
-				80FED5E5248B190500E3AC6E /* mcUIReusable.a */,
-				80FED5E7248B190500E3AC6E /* mcUI.a */,
-				80FED5E9248B190500E3AC6E /* mcUI.a */,
+				80FED5BF248B190500E3AC6E /* libmcConcurrencyLocking.a */,
+				80FED5C1248B190500E3AC6E /* libmcConcurrencyLocking.a */,
+				80FED5C3248B190500E3AC6E /* libmcFoundationExtensions.a */,
+				80FED5C5248B190500E3AC6E /* libmcFoundationExtensions.a */,
+				80B1D721248B856E008D40CB /* libmcFoundationFormatters.a */,
+				80B1D723248B856E008D40CB /* libmcFoundationFormatters.a */,
+				80FED5C7248B190500E3AC6E /* libmcFoundationLogging.a */,
+				80FED5C9248B190500E3AC6E /* libmcFoundationLogging.a */,
+				80FED5CB248B190500E3AC6E /* libmcFoundationObservables.a */,
+				80FED5CD248B190500E3AC6E /* libmcFoundationObservables.a */,
+				80FED5FC248B198500E3AC6E /* libmcFoundationTestability.a */,
+				80FED5FE248B198500E3AC6E /* libmcFoundationTestability.a */,
+				80FED5CF248B190500E3AC6E /* libmcGraphicsExtensions.a */,
+				80FED5D1248B190500E3AC6E /* libmcGraphicsExtensions.a */,
+				80B1D725248B856E008D40CB /* libmcMath.a */,
+				80B1D727248B856E008D40CB /* libmcMath.a */,
+				80FED60A248B19CA00E3AC6E /* libmcMediaAU.a */,
+				80FED60C248B19CA00E3AC6E /* libmcMediaAU.a */,
+				80FED600248B198500E3AC6E /* libmcMediaExtensions.a */,
+				80FED602248B198500E3AC6E /* libmcMediaExtensions.a */,
+				80FED5D3248B190500E3AC6E /* libmcRuntime.a */,
+				80FED5D5248B190500E3AC6E /* libmcRuntime.a */,
+				80FED5D7248B190500E3AC6E /* libmcTypes.a */,
+				80FED5D9248B190500E3AC6E /* libmcTypes.a */,
+				80FED5DB248B190500E3AC6E /* libmcTypography.a */,
+				80FED5DD248B190500E3AC6E /* libmcTypography.a */,
+				80FED5DF248B190500E3AC6E /* libmcUIExtensions.a */,
+				80FED5E1248B190500E3AC6E /* libmcUIExtensions.a */,
+				80FED5E3248B190500E3AC6E /* libmcUIReusable.a */,
+				80FED5E5248B190500E3AC6E /* libmcUIReusable.a */,
+				80FED5E7248B190500E3AC6E /* libmcUI.a */,
+				80FED5E9248B190500E3AC6E /* libmcUI.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -460,6 +461,7 @@
 				FR_77917ED78AB9C1C0BFA50D014E347FC3 /* Version.xcconfig */,
 				80584E422433F34F00C1B2D1 /* VST3NetSend.xcconfig */,
 				80584E432433F38D00C1B2D1 /* VST3NetSendKit.xcconfig */,
+				80D589E025D07D1B00D3CE06 /* VST3SDK.xcconfig */,
 			);
 			path = Configuration;
 			sourceTree = "<group>";
@@ -576,258 +578,226 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		80B1D721248B856E008D40CB /* mcFoundationFormatters.a */ = {
+		80B1D721248B856E008D40CB /* libmcFoundationFormatters.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
-			name = mcFoundationFormatters.a;
 			path = libmcFoundationFormatters.a;
 			remoteRef = 80B1D720248B856E008D40CB /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		80B1D723248B856E008D40CB /* mcFoundationFormatters.a */ = {
+		80B1D723248B856E008D40CB /* libmcFoundationFormatters.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
-			name = mcFoundationFormatters.a;
 			path = libmcFoundationFormatters.a;
 			remoteRef = 80B1D722248B856E008D40CB /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		80B1D725248B856E008D40CB /* mcMath.a */ = {
+		80B1D725248B856E008D40CB /* libmcMath.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
-			name = mcMath.a;
 			path = libmcMath.a;
 			remoteRef = 80B1D724248B856E008D40CB /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		80B1D727248B856E008D40CB /* mcMath.a */ = {
+		80B1D727248B856E008D40CB /* libmcMath.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
-			name = mcMath.a;
 			path = libmcMath.a;
 			remoteRef = 80B1D726248B856E008D40CB /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		80FED5BF248B190500E3AC6E /* mcConcurrencyLocking.a */ = {
+		80FED5BF248B190500E3AC6E /* libmcConcurrencyLocking.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
-			name = mcConcurrencyLocking.a;
 			path = libmcConcurrencyLocking.a;
 			remoteRef = 80FED5BE248B190500E3AC6E /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		80FED5C1248B190500E3AC6E /* mcConcurrencyLocking.a */ = {
+		80FED5C1248B190500E3AC6E /* libmcConcurrencyLocking.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
-			name = mcConcurrencyLocking.a;
 			path = libmcConcurrencyLocking.a;
 			remoteRef = 80FED5C0248B190500E3AC6E /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		80FED5C3248B190500E3AC6E /* mcFoundationExtensions.a */ = {
+		80FED5C3248B190500E3AC6E /* libmcFoundationExtensions.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
-			name = mcFoundationExtensions.a;
 			path = libmcFoundationExtensions.a;
 			remoteRef = 80FED5C2248B190500E3AC6E /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		80FED5C5248B190500E3AC6E /* mcFoundationExtensions.a */ = {
+		80FED5C5248B190500E3AC6E /* libmcFoundationExtensions.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
-			name = mcFoundationExtensions.a;
 			path = libmcFoundationExtensions.a;
 			remoteRef = 80FED5C4248B190500E3AC6E /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		80FED5C7248B190500E3AC6E /* mcFoundationLogging.a */ = {
+		80FED5C7248B190500E3AC6E /* libmcFoundationLogging.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
-			name = mcFoundationLogging.a;
 			path = libmcFoundationLogging.a;
 			remoteRef = 80FED5C6248B190500E3AC6E /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		80FED5C9248B190500E3AC6E /* mcFoundationLogging.a */ = {
+		80FED5C9248B190500E3AC6E /* libmcFoundationLogging.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
-			name = mcFoundationLogging.a;
 			path = libmcFoundationLogging.a;
 			remoteRef = 80FED5C8248B190500E3AC6E /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		80FED5CB248B190500E3AC6E /* mcFoundationObservables.a */ = {
+		80FED5CB248B190500E3AC6E /* libmcFoundationObservables.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
-			name = mcFoundationObservables.a;
 			path = libmcFoundationObservables.a;
 			remoteRef = 80FED5CA248B190500E3AC6E /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		80FED5CD248B190500E3AC6E /* mcFoundationObservables.a */ = {
+		80FED5CD248B190500E3AC6E /* libmcFoundationObservables.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
-			name = mcFoundationObservables.a;
 			path = libmcFoundationObservables.a;
 			remoteRef = 80FED5CC248B190500E3AC6E /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		80FED5CF248B190500E3AC6E /* mcGraphicsExtensions.a */ = {
+		80FED5CF248B190500E3AC6E /* libmcGraphicsExtensions.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
-			name = mcGraphicsExtensions.a;
 			path = libmcGraphicsExtensions.a;
 			remoteRef = 80FED5CE248B190500E3AC6E /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		80FED5D1248B190500E3AC6E /* mcGraphicsExtensions.a */ = {
+		80FED5D1248B190500E3AC6E /* libmcGraphicsExtensions.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
-			name = mcGraphicsExtensions.a;
 			path = libmcGraphicsExtensions.a;
 			remoteRef = 80FED5D0248B190500E3AC6E /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		80FED5D3248B190500E3AC6E /* mcRuntime.a */ = {
+		80FED5D3248B190500E3AC6E /* libmcRuntime.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
-			name = mcRuntime.a;
 			path = libmcRuntime.a;
 			remoteRef = 80FED5D2248B190500E3AC6E /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		80FED5D5248B190500E3AC6E /* mcRuntime.a */ = {
+		80FED5D5248B190500E3AC6E /* libmcRuntime.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
-			name = mcRuntime.a;
 			path = libmcRuntime.a;
 			remoteRef = 80FED5D4248B190500E3AC6E /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		80FED5D7248B190500E3AC6E /* mcTypes.a */ = {
+		80FED5D7248B190500E3AC6E /* libmcTypes.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
-			name = mcTypes.a;
 			path = libmcTypes.a;
 			remoteRef = 80FED5D6248B190500E3AC6E /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		80FED5D9248B190500E3AC6E /* mcTypes.a */ = {
+		80FED5D9248B190500E3AC6E /* libmcTypes.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
-			name = mcTypes.a;
 			path = libmcTypes.a;
 			remoteRef = 80FED5D8248B190500E3AC6E /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		80FED5DB248B190500E3AC6E /* mcTypography.a */ = {
+		80FED5DB248B190500E3AC6E /* libmcTypography.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
-			name = mcTypography.a;
 			path = libmcTypography.a;
 			remoteRef = 80FED5DA248B190500E3AC6E /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		80FED5DD248B190500E3AC6E /* mcTypography.a */ = {
+		80FED5DD248B190500E3AC6E /* libmcTypography.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
-			name = mcTypography.a;
 			path = libmcTypography.a;
 			remoteRef = 80FED5DC248B190500E3AC6E /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		80FED5DF248B190500E3AC6E /* mcUIExtensions.a */ = {
+		80FED5DF248B190500E3AC6E /* libmcUIExtensions.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
-			name = mcUIExtensions.a;
 			path = libmcUIExtensions.a;
 			remoteRef = 80FED5DE248B190500E3AC6E /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		80FED5E1248B190500E3AC6E /* mcUIExtensions.a */ = {
+		80FED5E1248B190500E3AC6E /* libmcUIExtensions.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
-			name = mcUIExtensions.a;
 			path = libmcUIExtensions.a;
 			remoteRef = 80FED5E0248B190500E3AC6E /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		80FED5E3248B190500E3AC6E /* mcUIReusable.a */ = {
+		80FED5E3248B190500E3AC6E /* libmcUIReusable.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
-			name = mcUIReusable.a;
 			path = libmcUIReusable.a;
 			remoteRef = 80FED5E2248B190500E3AC6E /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		80FED5E5248B190500E3AC6E /* mcUIReusable.a */ = {
+		80FED5E5248B190500E3AC6E /* libmcUIReusable.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
-			name = mcUIReusable.a;
 			path = libmcUIReusable.a;
 			remoteRef = 80FED5E4248B190500E3AC6E /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		80FED5E7248B190500E3AC6E /* mcUI.a */ = {
+		80FED5E7248B190500E3AC6E /* libmcUI.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
-			name = mcUI.a;
 			path = libmcUI.a;
 			remoteRef = 80FED5E6248B190500E3AC6E /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		80FED5E9248B190500E3AC6E /* mcUI.a */ = {
+		80FED5E9248B190500E3AC6E /* libmcUI.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
-			name = mcUI.a;
 			path = libmcUI.a;
 			remoteRef = 80FED5E8248B190500E3AC6E /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		80FED5FC248B198500E3AC6E /* mcFoundationTestability.a */ = {
+		80FED5FC248B198500E3AC6E /* libmcFoundationTestability.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
-			name = mcFoundationTestability.a;
 			path = libmcFoundationTestability.a;
 			remoteRef = 80FED5FB248B198500E3AC6E /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		80FED5FE248B198500E3AC6E /* mcFoundationTestability.a */ = {
+		80FED5FE248B198500E3AC6E /* libmcFoundationTestability.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
-			name = mcFoundationTestability.a;
 			path = libmcFoundationTestability.a;
 			remoteRef = 80FED5FD248B198500E3AC6E /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		80FED600248B198500E3AC6E /* mcMediaExtensions.a */ = {
+		80FED600248B198500E3AC6E /* libmcMediaExtensions.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
-			name = mcMediaExtensions.a;
 			path = libmcMediaExtensions.a;
 			remoteRef = 80FED5FF248B198500E3AC6E /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		80FED602248B198500E3AC6E /* mcMediaExtensions.a */ = {
+		80FED602248B198500E3AC6E /* libmcMediaExtensions.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
-			name = mcMediaExtensions.a;
 			path = libmcMediaExtensions.a;
 			remoteRef = 80FED601248B198500E3AC6E /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		80FED60A248B19CA00E3AC6E /* mcMediaAU.a */ = {
+		80FED60A248B19CA00E3AC6E /* libmcMediaAU.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
-			name = mcMediaAU.a;
 			path = libmcMediaAU.a;
 			remoteRef = 80FED609248B19CA00E3AC6E /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		80FED60C248B19CA00E3AC6E /* mcMediaAU.a */ = {
+		80FED60C248B19CA00E3AC6E /* libmcMediaAU.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
-			name = mcMediaAU.a;
 			path = libmcMediaAU.a;
 			remoteRef = 80FED60B248B19CA00E3AC6E /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;

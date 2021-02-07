@@ -6,7 +6,7 @@
 //  Copyright (c) 2013 Vlad Gorloff. All rights reserved.
 //
 
-#include "public.sdk/source/main/pluginfactoryvst3.h"
+#include "public.sdk/source/main/pluginfactory.h"
 #include "NetSendProcessor.h"
 
 #define GV_PLUGIN_NAME  "WaveLabs VST3NetSend"
