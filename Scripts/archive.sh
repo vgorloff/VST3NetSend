@@ -15,3 +15,4 @@ cd "$AppArchiveRoot" && zip -q --symlinks -r VST3NetSend.vst3.dSYMs.zip dSYMs
 mv -v VST3NetSend.vst3.dSYMs.zip "$AppBuildRoot"
 
 echo "Archive: Done!"
+echo "Dont forget to Notarize binary!"
