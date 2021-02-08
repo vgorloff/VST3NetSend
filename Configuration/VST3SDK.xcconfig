@@ -1,0 +1,13 @@
+//
+//  VST3SDK.xcconfig
+//  VST3NetSend
+//
+//  Created by Vlad Gorlov on 07.02.21.
+//  Copyright © 2021 WaveLabs. All rights reserved.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+MCA_VST_SDK_VERSION = 3.7.1
+MCA_VST_SDK_PATH = /usr/local/vst/VSTSDKv$(MCA_VST_SDK_VERSION)/VST3_SDK

@@ -31,14 +31,23 @@ public final class DecibelFormatter: Formatter {
 
    override public func getObjectValue(_ obj: AutoreleasingUnsafeMutablePointer<AnyObject?>?, for string: String,
                                        errorDescription error: AutoreleasingUnsafeMutablePointer<NSString?>?) -> Bool {
-      var doubleResult = 0.0
       var returnValue = false
       let scanner = Scanner(string: string.replacingOccurrences(of: ",", with: "."))
-      if scanner.scanDouble(&doubleResult), scanner.isAtEnd {
+      var doubleResult: Double?
+      if #available(OSX 10.15, iOS 13.0, *) {
+         doubleResult = scanner.scanDouble()
+      } else {
+         var value = 0.0
+         if scanner.scanDouble(&value) {
+            doubleResult = value
+         }
+      }
+
+      if let doubleResult = doubleResult, scanner.isAtEnd {
          returnValue = true
-         doubleResult = Math.valueInRange(doubleResult, min: minValue, max: maxValue)
+         let result = Math.valueInRange(doubleResult, min: minValue, max: maxValue)
          if obj != nil {
-            obj?.pointee = NSNumber(value: doubleResult)
+            obj?.pointee = NSNumber(value: result)
          }
       } else {
          if error != nil {
