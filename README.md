@@ -9,9 +9,9 @@ VST3 version of macOS system-supplied AUNetSend audio plugin.
 
 ## Usage
 
-1. [Download binary](https://github.com/vgorloff/VST3NetSend/releases/latest). Copy it to "~/Library/Audio/Plug-Ins/VST3" or "/Library/Audio/Plug-Ins/VST3" folder.
+1. Download Signed and Notarized [binary](https://github.com/vgorloff/VST3NetSend/releases/latest). Copy it to "~/Library/Audio/Plug-Ins/VST3" or "/Library/Audio/Plug-Ins/VST3" folder.
 2. Launch Cubase/Nuendo®. Add instance to insert slot: **_Network -> MCA VST3NetSend_**.
-3. Launch AudioUnit host (e.g.Apple Logic) and insert **_AUNetReceive_** plug-in. Select _VST3NetSend_ instance and connect to it.
+3. Launch AudioUnit host (e.g. Apple Logic) and insert **_AUNetReceive_** plug-in. Select _VST3NetSend_ instance and connect to it.
 
 ## Features
 
@@ -39,13 +39,9 @@ To solve this problem enter IP-address manually.
 
 ## How to build
 
-To build plugin the following tools, libs and SDKs needed:
-
-- [Xcode 12.4](https://developer.apple.com/xcode/)
-- [VST3 SDK 3.7.1](http://www.steinberg.net/en/company/developer.html)
-
-1. Download VST3 SDK.
-1. Make a symbolic link to downloaded VST3 SDK like shown below:
+1. Download [Xcode 12.4](https://developer.apple.com/xcode/).
+2. Download [VST3 SDK 3.7.1](http://www.steinberg.net/en/company/developer.html).
+3. Make a symbolic link to downloaded VST3 SDK as shown below:
 
     ```sh
     # Create root folder for VST SDKs (if not exists)
@@ -55,6 +51,6 @@ To build plugin the following tools, libs and SDKs needed:
     sudo ln -vsi /Path/To/Custom/Location/VSTSDKv3.7.1 /usr/local/vst/VSTSDKv3.7.1
     ```
 
-3. Open Xcode project and build it. **Note:** Xcode build _Debug_ version by default. You may want to use "Product -> Build For -> Profiling" in order to have optimized version.
+4. Open Xcode project and build it. **Note:** Xcode builds _Debug_ version by default. You may want to use "Product -> Build For -> Profiling" in order to have optimized version.
 
 Once build completed, plugin can be found at `~/Library/Audio/Plug-Ins/VST3/Development/VST3NetSend.vst3`.
