@@ -17,7 +17,7 @@ INSTALL_PATH = /Library/Audio/Plug-Ins/VST3/Development
 SKIP_INSTALL = NO
 
 GCC_PREFIX_HEADER = Sources/VST/Prefix.h
-EXPORTED_SYMBOLS_FILE = $(GV_VST_SDK)/public.sdk/source/main/macexport.exp
+EXPORTED_SYMBOLS_FILE = $(MCA_VST_SDK_PATH)/public.sdk/source/main/macexport.exp
 OTHER_LDFLAGS = -framework AudioToolbox -framework CoreAudio -framework Cocoa -framework AudioUnit
 
 DEFINES_MODULE = YES
