@@ -37,8 +37,9 @@
 // Others
 #include "pluginterfaces/base/ustring.cpp"
 #include "public.sdk/source/common/pluginview.cpp"
+#include "public.sdk/source/common/commoniids.cpp"
 #include "public.sdk/source/main/macmain.cpp"
-#include "public.sdk/source/main/pluginfactoryvst3.cpp"
+#include "public.sdk/source/main/pluginfactory.cpp"
 #include "public.sdk/source/vst/vstaudioeffect.cpp"
 #include "public.sdk/source/vst/vstbus.cpp"
 #include "public.sdk/source/vst/vstcomponent.cpp"

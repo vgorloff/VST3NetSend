@@ -4,7 +4,10 @@ include:
   - ../../../Projects/mc/mcMediaExtensions/project.yml
   - ../../../Projects/mc/mcFoundationFormatters/project.yml
   - ../../../Projects/mc/mcMediaAU/project.yml
+  - ../../../Projects/mc/mcUIPreviews/project.yml
 name: Shared
+fileGroups:
+   - project.yml
 aggregateTargets:
   Shared:
     targets:
@@ -12,3 +15,4 @@ aggregateTargets:
       - mcMediaExtensions_macOS
       - mcFoundationFormatters_macOS
       - mcMediaAU_macOS
+      - mcUIPreviews_macOS

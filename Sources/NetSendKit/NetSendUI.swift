@@ -14,18 +14,18 @@ import mcFoundationFormatters
 import mcMediaExtensions
 
 @objc public class NetSendUI: NSView {
-   
+
    private let defaultPort = 52800
-   
+
    @objc public var onChange: ((NetSendParameter) -> Void)?
-   
+
    @objc public var status: Int = 0 {
       didSet {
          let title = AUNetStatus(auNetStatus: status)?.title ?? "Unknown"
          statusValue.text = title
       }
    }
-   
+
    @objc public var port: Int {
       get {
          return portValue.integerValue
@@ -33,7 +33,7 @@ import mcMediaExtensions
          portValue.integerValue = newValue
       }
    }
-   
+
    @objc public var dataFormat: Int {
       get {
          return dataFormatValue.selectedTag()
@@ -42,7 +42,7 @@ import mcMediaExtensions
          dataFormatValue.select(item)
       }
    }
-   
+
    @objc public var connectionFlag: Double = 0 {
       didSet {
          // Value == "0" in AU means "Connected"
@@ -54,7 +54,7 @@ import mcMediaExtensions
          connectionButton.doubleValue = connectionFlag
       }
    }
-   
+
    @objc public var password: String {
       get {
          return passwordValue.text
@@ -62,7 +62,7 @@ import mcMediaExtensions
          passwordValue.text = newValue
       }
    }
-   
+
    @objc public var bonjourName: String {
       get {
          return bonjourNameValue.text
@@ -70,29 +70,29 @@ import mcMediaExtensions
          bonjourNameValue.text = newValue
       }
    }
-   
+
    private lazy var boxTop = Box()
    private lazy var boxOptions = Box()
-   
+
    private lazy var connectionButton = Button()
-   
+
    private lazy var statusLabel = Label(title: "Status:")
    private lazy var statusValue = Label()
-   
+
    private lazy var portLabel = Label(title: "Port:")
    private lazy var portValue = TextField()
-   
+
    private lazy var dataFormatLabel = Label(title: "Data format:")
    private lazy var dataFormatValue = PopUpButton()
-   
+
    private lazy var bonjourNameLabel = Label(title: "Bonjour name:")
    private lazy var bonjourNameValue = TextField()
-   
+
    private lazy var passwordLabel = Label(title: "Password:")
    private lazy var passwordValue = SecureTextField()
-   
+
    private let labelFont = NSFont.systemFont(ofSize: NSFont.systemFontSize(for: .small), weight: .regular)
-   
+
    public override func draw(_ dirtyRect: NSRect) {
       NSColor.controlColor.setFill()
       dirtyRect.fill()
@@ -106,7 +106,7 @@ import mcMediaExtensions
       setupObservers()
       setupDefaults()
    }
-   
+
    deinit {
       log.deinitialize()
    }
@@ -114,16 +114,16 @@ import mcMediaExtensions
    required init?(coder decoder: NSCoder) {
       fatalError()
    }
-   
+
    private func setupDefaults() {
       status = -1
       connectionFlag = 0
       port = defaultPort
       dataFormat = 0
    }
-   
+
    private func setupUI() {
-            
+
       let label = Label(title: "Options")
       label.font = labelFont
       let title = StackView(views: label, NSView())
@@ -132,68 +132,68 @@ import mcMediaExtensions
       stackView.addArrangedSubviews(boxTop, title, boxOptions)
       stackView.spacing = 6
       stackView.setCustomSpacing(2, after: title)
-      
+
       addSubviews(stackView)
       anchor.pin.toBounds(insets: .init(dimension: 15), stackView).activate()
-      
+
       let stackViewOptions = StackView(axis: .vertical)
       stackViewOptions.spacing = 6
       stackViewOptions.translatesAutoresizingMaskIntoConstraints = true
-      
+
       boxOptions.borderType = .lineBorder
       boxOptions.titlePosition = .noTitle
       boxOptions.contentView = stackViewOptions
       boxOptions.contentViewMargins = NSSize(dimension: 8)
-      
+
       let stackViewTop = StackView(axis: .vertical)
       stackViewTop.spacing = 6
       stackViewTop.translatesAutoresizingMaskIntoConstraints = true
-      
+
       boxTop.borderType = .lineBorder
       boxTop.titlePosition = .noTitle
       boxTop.contentView = stackViewTop
       boxTop.contentViewMargins = NSSize(dimension: 8)
-      
+
       anchor.equalWidth(viewA: boxOptions, viewB: boxTop).activate()
-      
+
       connectionButton.controlSize = .small
       connectionButton.font = labelFont
       connectionButton.setButtonType(.toggle)
-      
+
       passwordLabel.alignment = .right
       passwordLabel.font = labelFont
       passwordLabel.usesSingleLineMode = true
-      
+
       passwordValue.controlSize = .small
       passwordValue.font = labelFont
       passwordValue.cell?.sendsActionOnEndEditing = true
-      
+
       portLabel.alignment = .right
       portLabel.font = labelFont
       portLabel.usesSingleLineMode = true
-      
+
       portValue.controlSize = .small
       portValue.font = labelFont
       portValue.cell?.sendsActionOnEndEditing = true
       portValue.cell?.formatter = IntegerFormatter()
-      
+
       dataFormatLabel.alignment = .right
       dataFormatLabel.font = labelFont
       dataFormatLabel.usesSingleLineMode = true
-      
+
       dataFormatValue.controlSize = .small
       dataFormatValue.font = labelFont
-      
+
       statusLabel.alignment = .right
       statusLabel.font = labelFont
       statusLabel.usesSingleLineMode = true
-   
+
       statusValue.font = labelFont
-      
+
       bonjourNameLabel.alignment = .right
       bonjourNameLabel.font = labelFont
       bonjourNameLabel.usesSingleLineMode = true
-      
+
       bonjourNameValue.controlSize = .small
       bonjourNameValue.font = labelFont
       bonjourNameValue.cell?.sendsActionOnEndEditing = true
@@ -209,25 +209,25 @@ import mcMediaExtensions
          stackView.addArrangedSubviews(passwordLabel, passwordValue)
          stackViewOptions.addArrangedSubviews(stackView)
       }
-      
+
       do {
          let stackView = StackView(spacing: spacing)
          stackView.addArrangedSubviews(statusLabel, statusValue, NSView(), connectionButton)
          stackViewTop.addArrangedSubviews(stackView)
       }
-      
+
       do {
          let stackView = StackView(spacing: spacing)
          stackView.addArrangedSubviews(portLabel, portValue)
          stackViewTop.addArrangedSubviews(stackView)
       }
-      
+
       do {
          let stackView = StackView(spacing: spacing)
          stackView.addArrangedSubviews(dataFormatLabel, dataFormatValue)
          stackViewTop.addArrangedSubviews(stackView)
       }
-      
+
       let customMenu = NSMenu()
       customMenu.addItem(NSMenuItem(title: "32 bit floating point PCM", tag: 0))
       customMenu.addItem(NSMenuItem(title: "24 bit integer PCM", tag: 1))
@@ -253,7 +253,7 @@ import mcMediaExtensions
       customMenu.addItem(NSMenuItem(title: "AAC Low Delay 32 kbps per channel", tag: 17))
       dataFormatValue.menu = customMenu
    }
-   
+
    private func setupLayout() {
       anchor.equalWidth(viewA: portLabel, viewB: statusLabel).activate()
       anchor.equalWidth(viewA: portLabel, viewB: dataFormatLabel).activate()
