@@ -9,9 +9,9 @@
 import Foundation
 
 @objc public enum NetSendParameter: Int, CustomStringConvertible {
-   
+
    case dataFormat, port, bonjourName, password, connectionFlag
-   
+
    public var description: String {
       switch self {
       case .bonjourName:
