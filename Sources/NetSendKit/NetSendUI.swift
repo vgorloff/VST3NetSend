@@ -7,11 +7,11 @@
 //
 
 import Cocoa
-import mcUIExtensions
-import mcUIReusable
-import mcUI
-import mcFoundationFormatters
-import mcMediaExtensions
+import mcxUIExtensions
+import mcxUIReusable
+import mcxUI
+import mcxFoundationFormatters
+import mcxMediaExtensions
 
 @objc public class NetSendUI: NSView {
 

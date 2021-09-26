@@ -8,23 +8,23 @@
 
 /* Begin PBXBuildFile section */
 		807F741D238C92F6007B14FA /* VST3NetSendKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = FR_D6F3D685F76402720A8F31BC1560FFAB /* VST3NetSendKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		80B1D72F248B8980008D40CB /* libmcConcurrencyLocking.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 80FED5C1248B190500E3AC6E /* libmcConcurrencyLocking.a */; };
-		80B1D730248B8980008D40CB /* libmcFoundationExtensions.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 80FED5C5248B190500E3AC6E /* libmcFoundationExtensions.a */; };
-		80B1D731248B8980008D40CB /* libmcFoundationFormatters.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 80B1D723248B856E008D40CB /* libmcFoundationFormatters.a */; };
-		80B1D732248B8980008D40CB /* libmcFoundationLogging.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 80FED5C9248B190500E3AC6E /* libmcFoundationLogging.a */; };
-		80B1D733248B8980008D40CB /* libmcFoundationObservables.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 80FED5CD248B190500E3AC6E /* libmcFoundationObservables.a */; };
-		80B1D734248B8980008D40CB /* libmcFoundationTestability.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 80FED5FE248B198500E3AC6E /* libmcFoundationTestability.a */; };
-		80B1D735248B8980008D40CB /* libmcGraphicsExtensions.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 80FED5D1248B190500E3AC6E /* libmcGraphicsExtensions.a */; };
-		80B1D736248B8980008D40CB /* libmcMath.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 80B1D727248B856E008D40CB /* libmcMath.a */; };
-		80B1D737248B8980008D40CB /* libmcMediaAU.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 80FED60C248B19CA00E3AC6E /* libmcMediaAU.a */; };
-		80B1D738248B8980008D40CB /* libmcMediaExtensions.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 80FED602248B198500E3AC6E /* libmcMediaExtensions.a */; };
-		80B1D739248B8980008D40CB /* libmcRuntime.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 80FED5D5248B190500E3AC6E /* libmcRuntime.a */; };
-		80B1D73A248B8980008D40CB /* libmcTypes.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 80FED5D9248B190500E3AC6E /* libmcTypes.a */; };
-		80B1D73B248B8980008D40CB /* libmcTypography.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 80FED5DD248B190500E3AC6E /* libmcTypography.a */; };
-		80B1D73C248B8980008D40CB /* libmcUI.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 80FED5E9248B190500E3AC6E /* libmcUI.a */; };
-		80B1D73D248B8980008D40CB /* libmcUIExtensions.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 80FED5E1248B190500E3AC6E /* libmcUIExtensions.a */; };
-		80B1D73E248B8980008D40CB /* libmcUIReusable.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 80FED5E5248B190500E3AC6E /* libmcUIReusable.a */; };
-		80DCF9CE25D0877B007CE2E2 /* libmcUIPreviews.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 80DCF9CD25D0877B007CE2E2 /* libmcUIPreviews.a */; };
+		80B4CD2A270105E200E969EE /* libmcxConcurrencyLocking.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 80B4CD09270105DD00E969EE /* libmcxConcurrencyLocking.a */; };
+		80B4CD2B270105E200E969EE /* libmcxFoundationExtensions.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 80B4CD0B270105DD00E969EE /* libmcxFoundationExtensions.a */; };
+		80B4CD2C270105E200E969EE /* libmcxFoundationFormatters.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 80B4CD0D270105DD00E969EE /* libmcxFoundationFormatters.a */; };
+		80B4CD2D270105E200E969EE /* libmcxFoundationLogging.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 80B4CD0F270105DD00E969EE /* libmcxFoundationLogging.a */; };
+		80B4CD2E270105E200E969EE /* libmcxFoundationObservables.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 80B4CD11270105DD00E969EE /* libmcxFoundationObservables.a */; };
+		80B4CD2F270105E200E969EE /* libmcxFoundationTestability.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 80B4CD13270105DD00E969EE /* libmcxFoundationTestability.a */; };
+		80B4CD30270105E200E969EE /* libmcxGraphicsExtensions.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 80B4CD15270105DD00E969EE /* libmcxGraphicsExtensions.a */; };
+		80B4CD31270105E200E969EE /* libmcxMath.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 80B4CD17270105DD00E969EE /* libmcxMath.a */; };
+		80B4CD32270105E200E969EE /* libmcxMediaAU.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 80B4CD19270105DD00E969EE /* libmcxMediaAU.a */; };
+		80B4CD33270105E200E969EE /* libmcxMediaExtensions.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 80B4CD1B270105DD00E969EE /* libmcxMediaExtensions.a */; };
+		80B4CD34270105E200E969EE /* libmcxRuntime.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 80B4CD1D270105DD00E969EE /* libmcxRuntime.a */; };
+		80B4CD35270105E200E969EE /* libmcxTypes.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 80B4CD1F270105DD00E969EE /* libmcxTypes.a */; };
+		80B4CD36270105E200E969EE /* libmcxTypography.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 80B4CD21270105DD00E969EE /* libmcxTypography.a */; };
+		80B4CD37270105E200E969EE /* libmcxUI.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 80B4CD23270105DD00E969EE /* libmcxUI.a */; };
+		80B4CD38270105E200E969EE /* libmcxUIExtensions.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 80B4CD25270105DD00E969EE /* libmcxUIExtensions.a */; };
+		80B4CD39270105E200E969EE /* libmcxUIPreviews.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 80B4CD27270105DD00E969EE /* libmcxUIPreviews.a */; };
+		80B4CD3A270105E200E969EE /* libmcxUIReusable.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 80B4CD29270105DD00E969EE /* libmcxUIReusable.a */; };
 		80DCF9D125D087A9007CE2E2 /* NetSendUI.Previews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80DCF9D025D087A9007CE2E2 /* NetSendUI.Previews.swift */; };
 		BF_081F4CBF1005BC8AA3CA4CD23BABE643 /* NetSendUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_FE807BF36CC3EE3373BBDBE5F9AEB16A /* NetSendUI.swift */; };
 		BF_23BD009028421075E93FD0F701E0745B /* NetSendProcessSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_1F65684AD5B2FD6582DBAC63167CE51E /* NetSendProcessSetup.swift */; };
@@ -54,34 +54,6 @@
 			remoteGlobalIDString = NT_0A42EA35381E2A25F216A49C0655721F;
 			remoteInfo = VST3NetSendKit;
 		};
-		80B1D720248B856E008D40CB /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 80080CBC248B158F001EBF35 /* Shared.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 1658789B4364833D3DF374DE;
-			remoteInfo = mcFoundationFormatters_iOS;
-		};
-		80B1D722248B856E008D40CB /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 80080CBC248B158F001EBF35 /* Shared.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 9B817E57F920A545D6B4AEDD;
-			remoteInfo = mcFoundationFormatters_macOS;
-		};
-		80B1D724248B856E008D40CB /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 80080CBC248B158F001EBF35 /* Shared.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 42BC349D601BC034EEBE7C01;
-			remoteInfo = mcMath_iOS;
-		};
-		80B1D726248B856E008D40CB /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 80080CBC248B158F001EBF35 /* Shared.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = B918ABC83EE699C821952ECF;
-			remoteInfo = mcMath_macOS;
-		};
 		80B1D72C248B8738008D40CB /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 80080CBC248B158F001EBF35 /* Shared.xcodeproj */;
@@ -89,215 +61,124 @@
 			remoteGlobalIDString = 85CA98C059B40D950DCD0CC7;
 			remoteInfo = Shared;
 		};
-		80DCF9CA25D0877B007CE2E2 /* PBXContainerItemProxy */ = {
+		80B4CD08270105DD00E969EE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 80080CBC248B158F001EBF35 /* Shared.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = 74ED93455F19BE00D81C02D1;
-			remoteInfo = mcUIPreviews_iOS;
+			remoteGlobalIDString = 5F2784A2BB2DF88E9275D3B5;
+			remoteInfo = mcxConcurrencyLocking;
 		};
-		80DCF9CC25D0877B007CE2E2 /* PBXContainerItemProxy */ = {
+		80B4CD0A270105DD00E969EE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 80080CBC248B158F001EBF35 /* Shared.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = 33157F64B502CB945190B8C3;
-			remoteInfo = mcUIPreviews_macOS;
+			remoteGlobalIDString = 9D41B563546C69B180C44676;
+			remoteInfo = mcxFoundationExtensions;
 		};
-		80FED5BE248B190500E3AC6E /* PBXContainerItemProxy */ = {
+		80B4CD0C270105DD00E969EE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 80080CBC248B158F001EBF35 /* Shared.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = DE45CBA3602B89ED35C67536;
-			remoteInfo = mcConcurrencyLocking_iOS;
+			remoteGlobalIDString = 16A778A84F6CC02849AA3FF5;
+			remoteInfo = mcxFoundationFormatters;
 		};
-		80FED5C0248B190500E3AC6E /* PBXContainerItemProxy */ = {
+		80B4CD0E270105DD00E969EE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 80080CBC248B158F001EBF35 /* Shared.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = A3D15361A77D9ACEDB68B279;
-			remoteInfo = mcConcurrencyLocking_macOS;
+			remoteGlobalIDString = 8CE6BCEA3B2433CB43A1D21D;
+			remoteInfo = mcxFoundationLogging;
 		};
-		80FED5C2248B190500E3AC6E /* PBXContainerItemProxy */ = {
+		80B4CD10270105DD00E969EE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 80080CBC248B158F001EBF35 /* Shared.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = 8C43A767B5FFBCEA5FD81BCB;
-			remoteInfo = mcFoundationExtensions_iOS;
+			remoteGlobalIDString = 6FA6026DCB3D934147A567D9;
+			remoteInfo = mcxFoundationObservables;
 		};
-		80FED5C4248B190500E3AC6E /* PBXContainerItemProxy */ = {
+		80B4CD12270105DD00E969EE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 80080CBC248B158F001EBF35 /* Shared.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = B1BECB85E82315FFD82A5569;
-			remoteInfo = mcFoundationExtensions_macOS;
+			remoteGlobalIDString = C97AECEE577B0B89F615204B;
+			remoteInfo = mcxFoundationTestability;
 		};
-		80FED5C6248B190500E3AC6E /* PBXContainerItemProxy */ = {
+		80B4CD14270105DD00E969EE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 80080CBC248B158F001EBF35 /* Shared.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = 10C974B67C0B750EE6366A96;
-			remoteInfo = mcFoundationLogging_iOS;
+			remoteGlobalIDString = E233720CFEF48B82526CBECA;
+			remoteInfo = mcxGraphicsExtensions;
 		};
-		80FED5C8248B190500E3AC6E /* PBXContainerItemProxy */ = {
+		80B4CD16270105DD00E969EE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 80080CBC248B158F001EBF35 /* Shared.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = 5662130C1E007D386606EDB0;
-			remoteInfo = mcFoundationLogging_macOS;
+			remoteGlobalIDString = 98F87CD4F64B08846978BC79;
+			remoteInfo = mcxMath;
 		};
-		80FED5CA248B190500E3AC6E /* PBXContainerItemProxy */ = {
+		80B4CD18270105DD00E969EE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 80080CBC248B158F001EBF35 /* Shared.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = B111C7875B65B10AB1BCCAAF;
-			remoteInfo = mcFoundationObservables_iOS;
+			remoteGlobalIDString = 9A290E9AA4DAC10C04EA13E5;
+			remoteInfo = mcxMediaAU;
 		};
-		80FED5CC248B190500E3AC6E /* PBXContainerItemProxy */ = {
+		80B4CD1A270105DD00E969EE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 80080CBC248B158F001EBF35 /* Shared.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = 208D29132DD9B51A70046AA7;
-			remoteInfo = mcFoundationObservables_macOS;
+			remoteGlobalIDString = 1130F5DA5A4314A315B2A6E6;
+			remoteInfo = mcxMediaExtensions;
 		};
-		80FED5CE248B190500E3AC6E /* PBXContainerItemProxy */ = {
+		80B4CD1C270105DD00E969EE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 80080CBC248B158F001EBF35 /* Shared.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = 1A455D6DCCF27861B1B38E30;
-			remoteInfo = mcGraphicsExtensions_iOS;
+			remoteGlobalIDString = 3FC06CBCAA24E63BC06B65C3;
+			remoteInfo = mcxRuntime;
 		};
-		80FED5D0248B190500E3AC6E /* PBXContainerItemProxy */ = {
+		80B4CD1E270105DD00E969EE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 80080CBC248B158F001EBF35 /* Shared.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = CE62E2CD798BC381FDBFAA09;
-			remoteInfo = mcGraphicsExtensions_macOS;
+			remoteGlobalIDString = 5DEDD2EBBF379EB69C1BD86C;
+			remoteInfo = mcxTypes;
 		};
-		80FED5D2248B190500E3AC6E /* PBXContainerItemProxy */ = {
+		80B4CD20270105DD00E969EE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 80080CBC248B158F001EBF35 /* Shared.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = 4DBA5BCE0DDE9C0AC1117A0A;
-			remoteInfo = mcRuntime_iOS;
+			remoteGlobalIDString = E124C1C63F1495813B508676;
+			remoteInfo = mcxTypography;
 		};
-		80FED5D4248B190500E3AC6E /* PBXContainerItemProxy */ = {
+		80B4CD22270105DD00E969EE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 80080CBC248B158F001EBF35 /* Shared.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = CBE79C50AA18DFBDD665FC84;
-			remoteInfo = mcRuntime_macOS;
+			remoteGlobalIDString = 222CE7A9445541B36BA57AD1;
+			remoteInfo = mcxUI;
 		};
-		80FED5D6248B190500E3AC6E /* PBXContainerItemProxy */ = {
+		80B4CD24270105DD00E969EE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 80080CBC248B158F001EBF35 /* Shared.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = 38E108B22154C8760CAD419B;
-			remoteInfo = mcTypes_iOS;
+			remoteGlobalIDString = 373ACC3891E662C5B9A064B0;
+			remoteInfo = mcxUIExtensions;
 		};
-		80FED5D8248B190500E3AC6E /* PBXContainerItemProxy */ = {
+		80B4CD26270105DD00E969EE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 80080CBC248B158F001EBF35 /* Shared.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = D09244D8DABA6A36E7BFCA01;
-			remoteInfo = mcTypes_macOS;
+			remoteGlobalIDString = D332DEA24A773B5548BBF4E8;
+			remoteInfo = mcxUIPreviews;
 		};
-		80FED5DA248B190500E3AC6E /* PBXContainerItemProxy */ = {
+		80B4CD28270105DD00E969EE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 80080CBC248B158F001EBF35 /* Shared.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = B1912F48DEF02D8C8C8EC410;
-			remoteInfo = mcTypography_iOS;
-		};
-		80FED5DC248B190500E3AC6E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 80080CBC248B158F001EBF35 /* Shared.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = D2B69D982E5329D658B03F54;
-			remoteInfo = mcTypography_macOS;
-		};
-		80FED5DE248B190500E3AC6E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 80080CBC248B158F001EBF35 /* Shared.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = B6EA6C9F1ED183ECCDD8DC50;
-			remoteInfo = mcUIExtensions_iOS;
-		};
-		80FED5E0248B190500E3AC6E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 80080CBC248B158F001EBF35 /* Shared.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 1A94714A126250FEB34EFC7D;
-			remoteInfo = mcUIExtensions_macOS;
-		};
-		80FED5E2248B190500E3AC6E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 80080CBC248B158F001EBF35 /* Shared.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 22C415A4D94F7D2A797853AC;
-			remoteInfo = mcUIReusable_iOS;
-		};
-		80FED5E4248B190500E3AC6E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 80080CBC248B158F001EBF35 /* Shared.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 0DD01EDA6E1EF7991C4343B8;
-			remoteInfo = mcUIReusable_macOS;
-		};
-		80FED5E6248B190500E3AC6E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 80080CBC248B158F001EBF35 /* Shared.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 7068891E4BA3BB06A13E1AAF;
-			remoteInfo = mcUI_iOS;
-		};
-		80FED5E8248B190500E3AC6E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 80080CBC248B158F001EBF35 /* Shared.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 34463D5649D92182348A13DE;
-			remoteInfo = mcUI_macOS;
-		};
-		80FED5FB248B198500E3AC6E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 80080CBC248B158F001EBF35 /* Shared.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 3D6B671042DEED4380C165C5;
-			remoteInfo = mcFoundationTestability_iOS;
-		};
-		80FED5FD248B198500E3AC6E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 80080CBC248B158F001EBF35 /* Shared.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = A204176EAED482CB45997CBB;
-			remoteInfo = mcFoundationTestability_macOS;
-		};
-		80FED5FF248B198500E3AC6E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 80080CBC248B158F001EBF35 /* Shared.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 5A9BCF68B319F1DB0C8093CA;
-			remoteInfo = mcMediaExtensions_iOS;
-		};
-		80FED601248B198500E3AC6E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 80080CBC248B158F001EBF35 /* Shared.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 85A3907B0110B49C0F4C3F32;
-			remoteInfo = mcMediaExtensions_macOS;
-		};
-		80FED609248B19CA00E3AC6E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 80080CBC248B158F001EBF35 /* Shared.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 1D44CEFB6F14B419812AEAC0;
-			remoteInfo = mcMediaAU_iOS;
-		};
-		80FED60B248B19CA00E3AC6E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 80080CBC248B158F001EBF35 /* Shared.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 24A11929474372309E11B4FB;
-			remoteInfo = mcMediaAU_macOS;
+			remoteGlobalIDString = C4A2C53C188E00C7895ED2AF;
+			remoteInfo = mcxUIReusable;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -350,23 +231,23 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				80DCF9CE25D0877B007CE2E2 /* libmcUIPreviews.a in Frameworks */,
-				80B1D72F248B8980008D40CB /* libmcConcurrencyLocking.a in Frameworks */,
-				80B1D730248B8980008D40CB /* libmcFoundationExtensions.a in Frameworks */,
-				80B1D731248B8980008D40CB /* libmcFoundationFormatters.a in Frameworks */,
-				80B1D732248B8980008D40CB /* libmcFoundationLogging.a in Frameworks */,
-				80B1D733248B8980008D40CB /* libmcFoundationObservables.a in Frameworks */,
-				80B1D734248B8980008D40CB /* libmcFoundationTestability.a in Frameworks */,
-				80B1D735248B8980008D40CB /* libmcGraphicsExtensions.a in Frameworks */,
-				80B1D736248B8980008D40CB /* libmcMath.a in Frameworks */,
-				80B1D737248B8980008D40CB /* libmcMediaAU.a in Frameworks */,
-				80B1D738248B8980008D40CB /* libmcMediaExtensions.a in Frameworks */,
-				80B1D739248B8980008D40CB /* libmcRuntime.a in Frameworks */,
-				80B1D73A248B8980008D40CB /* libmcTypes.a in Frameworks */,
-				80B1D73B248B8980008D40CB /* libmcTypography.a in Frameworks */,
-				80B1D73C248B8980008D40CB /* libmcUI.a in Frameworks */,
-				80B1D73D248B8980008D40CB /* libmcUIExtensions.a in Frameworks */,
-				80B1D73E248B8980008D40CB /* libmcUIReusable.a in Frameworks */,
+				80B4CD2A270105E200E969EE /* libmcxConcurrencyLocking.a in Frameworks */,
+				80B4CD2B270105E200E969EE /* libmcxFoundationExtensions.a in Frameworks */,
+				80B4CD2C270105E200E969EE /* libmcxFoundationFormatters.a in Frameworks */,
+				80B4CD2D270105E200E969EE /* libmcxFoundationLogging.a in Frameworks */,
+				80B4CD2E270105E200E969EE /* libmcxFoundationObservables.a in Frameworks */,
+				80B4CD2F270105E200E969EE /* libmcxFoundationTestability.a in Frameworks */,
+				80B4CD30270105E200E969EE /* libmcxGraphicsExtensions.a in Frameworks */,
+				80B4CD31270105E200E969EE /* libmcxMath.a in Frameworks */,
+				80B4CD32270105E200E969EE /* libmcxMediaAU.a in Frameworks */,
+				80B4CD33270105E200E969EE /* libmcxMediaExtensions.a in Frameworks */,
+				80B4CD34270105E200E969EE /* libmcxRuntime.a in Frameworks */,
+				80B4CD35270105E200E969EE /* libmcxTypes.a in Frameworks */,
+				80B4CD36270105E200E969EE /* libmcxTypography.a in Frameworks */,
+				80B4CD37270105E200E969EE /* libmcxUI.a in Frameworks */,
+				80B4CD38270105E200E969EE /* libmcxUIExtensions.a in Frameworks */,
+				80B4CD39270105E200E969EE /* libmcxUIPreviews.a in Frameworks */,
+				80B4CD3A270105E200E969EE /* libmcxUIReusable.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -384,40 +265,23 @@
 		80080CBD248B158F001EBF35 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				80FED5BF248B190500E3AC6E /* libmcConcurrencyLocking.a */,
-				80FED5C1248B190500E3AC6E /* libmcConcurrencyLocking.a */,
-				80FED5C3248B190500E3AC6E /* libmcFoundationExtensions.a */,
-				80FED5C5248B190500E3AC6E /* libmcFoundationExtensions.a */,
-				80B1D721248B856E008D40CB /* libmcFoundationFormatters.a */,
-				80B1D723248B856E008D40CB /* libmcFoundationFormatters.a */,
-				80FED5C7248B190500E3AC6E /* libmcFoundationLogging.a */,
-				80FED5C9248B190500E3AC6E /* libmcFoundationLogging.a */,
-				80FED5CB248B190500E3AC6E /* libmcFoundationObservables.a */,
-				80FED5CD248B190500E3AC6E /* libmcFoundationObservables.a */,
-				80FED5FC248B198500E3AC6E /* libmcFoundationTestability.a */,
-				80FED5FE248B198500E3AC6E /* libmcFoundationTestability.a */,
-				80FED5CF248B190500E3AC6E /* libmcGraphicsExtensions.a */,
-				80FED5D1248B190500E3AC6E /* libmcGraphicsExtensions.a */,
-				80B1D725248B856E008D40CB /* libmcMath.a */,
-				80B1D727248B856E008D40CB /* libmcMath.a */,
-				80FED60A248B19CA00E3AC6E /* libmcMediaAU.a */,
-				80FED60C248B19CA00E3AC6E /* libmcMediaAU.a */,
-				80FED600248B198500E3AC6E /* libmcMediaExtensions.a */,
-				80FED602248B198500E3AC6E /* libmcMediaExtensions.a */,
-				80FED5D3248B190500E3AC6E /* libmcRuntime.a */,
-				80FED5D5248B190500E3AC6E /* libmcRuntime.a */,
-				80FED5D7248B190500E3AC6E /* libmcTypes.a */,
-				80FED5D9248B190500E3AC6E /* libmcTypes.a */,
-				80FED5DB248B190500E3AC6E /* libmcTypography.a */,
-				80FED5DD248B190500E3AC6E /* libmcTypography.a */,
-				80FED5DF248B190500E3AC6E /* libmcUIExtensions.a */,
-				80FED5E1248B190500E3AC6E /* libmcUIExtensions.a */,
-				80DCF9CB25D0877B007CE2E2 /* libmcUIPreviews.a */,
-				80DCF9CD25D0877B007CE2E2 /* libmcUIPreviews.a */,
-				80FED5E3248B190500E3AC6E /* libmcUIReusable.a */,
-				80FED5E5248B190500E3AC6E /* libmcUIReusable.a */,
-				80FED5E7248B190500E3AC6E /* libmcUI.a */,
-				80FED5E9248B190500E3AC6E /* libmcUI.a */,
+				80B4CD09270105DD00E969EE /* libmcxConcurrencyLocking.a */,
+				80B4CD0B270105DD00E969EE /* libmcxFoundationExtensions.a */,
+				80B4CD0D270105DD00E969EE /* libmcxFoundationFormatters.a */,
+				80B4CD0F270105DD00E969EE /* libmcxFoundationLogging.a */,
+				80B4CD11270105DD00E969EE /* libmcxFoundationObservables.a */,
+				80B4CD13270105DD00E969EE /* libmcxFoundationTestability.a */,
+				80B4CD15270105DD00E969EE /* libmcxGraphicsExtensions.a */,
+				80B4CD17270105DD00E969EE /* libmcxMath.a */,
+				80B4CD19270105DD00E969EE /* libmcxMediaAU.a */,
+				80B4CD1B270105DD00E969EE /* libmcxMediaExtensions.a */,
+				80B4CD1D270105DD00E969EE /* libmcxRuntime.a */,
+				80B4CD1F270105DD00E969EE /* libmcxTypes.a */,
+				80B4CD21270105DD00E969EE /* libmcxTypography.a */,
+				80B4CD23270105DD00E969EE /* libmcxUI.a */,
+				80B4CD25270105DD00E969EE /* libmcxUIExtensions.a */,
+				80B4CD27270105DD00E969EE /* libmcxUIPreviews.a */,
+				80B4CD29270105DD00E969EE /* libmcxUIReusable.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -597,242 +461,123 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		80B1D721248B856E008D40CB /* libmcFoundationFormatters.a */ = {
+		80B4CD09270105DD00E969EE /* libmcxConcurrencyLocking.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
-			path = libmcFoundationFormatters.a;
-			remoteRef = 80B1D720248B856E008D40CB /* PBXContainerItemProxy */;
+			path = libmcxConcurrencyLocking.a;
+			remoteRef = 80B4CD08270105DD00E969EE /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		80B1D723248B856E008D40CB /* libmcFoundationFormatters.a */ = {
+		80B4CD0B270105DD00E969EE /* libmcxFoundationExtensions.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
-			path = libmcFoundationFormatters.a;
-			remoteRef = 80B1D722248B856E008D40CB /* PBXContainerItemProxy */;
+			path = libmcxFoundationExtensions.a;
+			remoteRef = 80B4CD0A270105DD00E969EE /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		80B1D725248B856E008D40CB /* libmcMath.a */ = {
+		80B4CD0D270105DD00E969EE /* libmcxFoundationFormatters.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
-			path = libmcMath.a;
-			remoteRef = 80B1D724248B856E008D40CB /* PBXContainerItemProxy */;
+			path = libmcxFoundationFormatters.a;
+			remoteRef = 80B4CD0C270105DD00E969EE /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		80B1D727248B856E008D40CB /* libmcMath.a */ = {
+		80B4CD0F270105DD00E969EE /* libmcxFoundationLogging.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
-			path = libmcMath.a;
-			remoteRef = 80B1D726248B856E008D40CB /* PBXContainerItemProxy */;
+			path = libmcxFoundationLogging.a;
+			remoteRef = 80B4CD0E270105DD00E969EE /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		80DCF9CB25D0877B007CE2E2 /* libmcUIPreviews.a */ = {
+		80B4CD11270105DD00E969EE /* libmcxFoundationObservables.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
-			path = libmcUIPreviews.a;
-			remoteRef = 80DCF9CA25D0877B007CE2E2 /* PBXContainerItemProxy */;
+			path = libmcxFoundationObservables.a;
+			remoteRef = 80B4CD10270105DD00E969EE /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		80DCF9CD25D0877B007CE2E2 /* libmcUIPreviews.a */ = {
+		80B4CD13270105DD00E969EE /* libmcxFoundationTestability.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
-			path = libmcUIPreviews.a;
-			remoteRef = 80DCF9CC25D0877B007CE2E2 /* PBXContainerItemProxy */;
+			path = libmcxFoundationTestability.a;
+			remoteRef = 80B4CD12270105DD00E969EE /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		80FED5BF248B190500E3AC6E /* libmcConcurrencyLocking.a */ = {
+		80B4CD15270105DD00E969EE /* libmcxGraphicsExtensions.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
-			path = libmcConcurrencyLocking.a;
-			remoteRef = 80FED5BE248B190500E3AC6E /* PBXContainerItemProxy */;
+			path = libmcxGraphicsExtensions.a;
+			remoteRef = 80B4CD14270105DD00E969EE /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		80FED5C1248B190500E3AC6E /* libmcConcurrencyLocking.a */ = {
+		80B4CD17270105DD00E969EE /* libmcxMath.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
-			path = libmcConcurrencyLocking.a;
-			remoteRef = 80FED5C0248B190500E3AC6E /* PBXContainerItemProxy */;
+			path = libmcxMath.a;
+			remoteRef = 80B4CD16270105DD00E969EE /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		80FED5C3248B190500E3AC6E /* libmcFoundationExtensions.a */ = {
+		80B4CD19270105DD00E969EE /* libmcxMediaAU.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
-			path = libmcFoundationExtensions.a;
-			remoteRef = 80FED5C2248B190500E3AC6E /* PBXContainerItemProxy */;
+			path = libmcxMediaAU.a;
+			remoteRef = 80B4CD18270105DD00E969EE /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		80FED5C5248B190500E3AC6E /* libmcFoundationExtensions.a */ = {
+		80B4CD1B270105DD00E969EE /* libmcxMediaExtensions.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
-			path = libmcFoundationExtensions.a;
-			remoteRef = 80FED5C4248B190500E3AC6E /* PBXContainerItemProxy */;
+			path = libmcxMediaExtensions.a;
+			remoteRef = 80B4CD1A270105DD00E969EE /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		80FED5C7248B190500E3AC6E /* libmcFoundationLogging.a */ = {
+		80B4CD1D270105DD00E969EE /* libmcxRuntime.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
-			path = libmcFoundationLogging.a;
-			remoteRef = 80FED5C6248B190500E3AC6E /* PBXContainerItemProxy */;
+			path = libmcxRuntime.a;
+			remoteRef = 80B4CD1C270105DD00E969EE /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		80FED5C9248B190500E3AC6E /* libmcFoundationLogging.a */ = {
+		80B4CD1F270105DD00E969EE /* libmcxTypes.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
-			path = libmcFoundationLogging.a;
-			remoteRef = 80FED5C8248B190500E3AC6E /* PBXContainerItemProxy */;
+			path = libmcxTypes.a;
+			remoteRef = 80B4CD1E270105DD00E969EE /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		80FED5CB248B190500E3AC6E /* libmcFoundationObservables.a */ = {
+		80B4CD21270105DD00E969EE /* libmcxTypography.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
-			path = libmcFoundationObservables.a;
-			remoteRef = 80FED5CA248B190500E3AC6E /* PBXContainerItemProxy */;
+			path = libmcxTypography.a;
+			remoteRef = 80B4CD20270105DD00E969EE /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		80FED5CD248B190500E3AC6E /* libmcFoundationObservables.a */ = {
+		80B4CD23270105DD00E969EE /* libmcxUI.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
-			path = libmcFoundationObservables.a;
-			remoteRef = 80FED5CC248B190500E3AC6E /* PBXContainerItemProxy */;
+			path = libmcxUI.a;
+			remoteRef = 80B4CD22270105DD00E969EE /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		80FED5CF248B190500E3AC6E /* libmcGraphicsExtensions.a */ = {
+		80B4CD25270105DD00E969EE /* libmcxUIExtensions.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
-			path = libmcGraphicsExtensions.a;
-			remoteRef = 80FED5CE248B190500E3AC6E /* PBXContainerItemProxy */;
+			path = libmcxUIExtensions.a;
+			remoteRef = 80B4CD24270105DD00E969EE /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		80FED5D1248B190500E3AC6E /* libmcGraphicsExtensions.a */ = {
+		80B4CD27270105DD00E969EE /* libmcxUIPreviews.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
-			path = libmcGraphicsExtensions.a;
-			remoteRef = 80FED5D0248B190500E3AC6E /* PBXContainerItemProxy */;
+			path = libmcxUIPreviews.a;
+			remoteRef = 80B4CD26270105DD00E969EE /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		80FED5D3248B190500E3AC6E /* libmcRuntime.a */ = {
+		80B4CD29270105DD00E969EE /* libmcxUIReusable.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
-			path = libmcRuntime.a;
-			remoteRef = 80FED5D2248B190500E3AC6E /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		80FED5D5248B190500E3AC6E /* libmcRuntime.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libmcRuntime.a;
-			remoteRef = 80FED5D4248B190500E3AC6E /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		80FED5D7248B190500E3AC6E /* libmcTypes.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libmcTypes.a;
-			remoteRef = 80FED5D6248B190500E3AC6E /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		80FED5D9248B190500E3AC6E /* libmcTypes.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libmcTypes.a;
-			remoteRef = 80FED5D8248B190500E3AC6E /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		80FED5DB248B190500E3AC6E /* libmcTypography.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libmcTypography.a;
-			remoteRef = 80FED5DA248B190500E3AC6E /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		80FED5DD248B190500E3AC6E /* libmcTypography.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libmcTypography.a;
-			remoteRef = 80FED5DC248B190500E3AC6E /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		80FED5DF248B190500E3AC6E /* libmcUIExtensions.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libmcUIExtensions.a;
-			remoteRef = 80FED5DE248B190500E3AC6E /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		80FED5E1248B190500E3AC6E /* libmcUIExtensions.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libmcUIExtensions.a;
-			remoteRef = 80FED5E0248B190500E3AC6E /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		80FED5E3248B190500E3AC6E /* libmcUIReusable.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libmcUIReusable.a;
-			remoteRef = 80FED5E2248B190500E3AC6E /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		80FED5E5248B190500E3AC6E /* libmcUIReusable.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libmcUIReusable.a;
-			remoteRef = 80FED5E4248B190500E3AC6E /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		80FED5E7248B190500E3AC6E /* libmcUI.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libmcUI.a;
-			remoteRef = 80FED5E6248B190500E3AC6E /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		80FED5E9248B190500E3AC6E /* libmcUI.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libmcUI.a;
-			remoteRef = 80FED5E8248B190500E3AC6E /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		80FED5FC248B198500E3AC6E /* libmcFoundationTestability.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libmcFoundationTestability.a;
-			remoteRef = 80FED5FB248B198500E3AC6E /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		80FED5FE248B198500E3AC6E /* libmcFoundationTestability.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libmcFoundationTestability.a;
-			remoteRef = 80FED5FD248B198500E3AC6E /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		80FED600248B198500E3AC6E /* libmcMediaExtensions.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libmcMediaExtensions.a;
-			remoteRef = 80FED5FF248B198500E3AC6E /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		80FED602248B198500E3AC6E /* libmcMediaExtensions.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libmcMediaExtensions.a;
-			remoteRef = 80FED601248B198500E3AC6E /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		80FED60A248B19CA00E3AC6E /* libmcMediaAU.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libmcMediaAU.a;
-			remoteRef = 80FED609248B19CA00E3AC6E /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		80FED60C248B19CA00E3AC6E /* libmcMediaAU.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libmcMediaAU.a;
-			remoteRef = 80FED60B248B19CA00E3AC6E /* PBXContainerItemProxy */;
+			path = libmcxUIReusable.a;
+			remoteRef = 80B4CD28270105DD00E969EE /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */

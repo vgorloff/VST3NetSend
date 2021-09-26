@@ -7,9 +7,9 @@
 //
 
 import SwiftUI
-import mcUIPreviews
-import mcTypes
 import AudioToolbox
+import mcxUIPreviews
+import mcxTypes
 
 @available(macOS 11.0, *)
 struct NetSendUI_Previews: PreviewProvider {

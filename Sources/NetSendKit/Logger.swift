@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import mcFoundationLogging
+import mcxFoundationLogging
 
 enum ModuleLogCategory: String, LogCategory {
    case media, core
