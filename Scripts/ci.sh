@@ -16,5 +16,5 @@ ci_prepare() {
 }
 
 ci_prepare
-xcodebuild -quiet -project "$AppProjectFilePath" -scheme "$AppSchema" CODE_SIGNING_REQUIRED=NO CODE_SIGN_STYLE=Manual DEVELOPMENT_TEAM= CODE_SIGN_IDENTITY= build
+xcodebuild -project "$AppProjectFilePath" -scheme "$AppSchema" CODE_SIGNING_REQUIRED=NO CODE_SIGN_STYLE=Manual DEVELOPMENT_TEAM= CODE_SIGN_IDENTITY= build
 
