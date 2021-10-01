@@ -16,5 +16,5 @@ ci_prepare() {
 }
 
 ci_prepare
-xcodebuild -quiet -project "$AppProjectFilePath" -scheme "$AppSchema" CODE_SIGNING_REQUIRED=NO CODE_SIGN_STYLE=Manual DEVELOPMENT_TEAM= CODE_SIGN_IDENTITY= MCA_VST_SDK_PATH=Vendor/Steinberg build
+xcodebuild -quiet -project "$AppProjectFilePath" -scheme "$AppSchema" CODE_SIGNING_REQUIRED=NO CODE_SIGN_STYLE=Manual DEVELOPMENT_TEAM= CODE_SIGN_IDENTITY= MCA_VST_SDK_PATH=Vendor/Steinberg/vst3sdk build
 
