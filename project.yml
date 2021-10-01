@@ -1,18 +1,21 @@
 include:
   - ../../../Projects/mc/templates.yml
-  - ../../../Projects/mc/mcUIReusable/project.yml
-  - ../../../Projects/mc/mcMediaExtensions/project.yml
-  - ../../../Projects/mc/mcFoundationFormatters/project.yml
-  - ../../../Projects/mc/mcMediaAU/project.yml
-  - ../../../Projects/mc/mcUIPreviews/project.yml
+  - ../../../Projects/mc/mcxUIReusable/project.yml
+  - ../../../Projects/mc/mcxMediaExtensions/project.yml
+  - ../../../Projects/mc/mcxFoundationFormatters/project.yml
+  - ../../../Projects/mc/mcxMediaAU/project.yml
+  - ../../../Projects/mc/mcxUIPreviews/project.yml
 name: Shared
+settings:
+  AWL_LIB_SRC: Vendor/mc
+  MACOSX_DEPLOYMENT_TARGET: 10.12
 fileGroups:
    - project.yml
 aggregateTargets:
   Shared:
     targets:
-      - mcUIReusable_macOS
-      - mcMediaExtensions_macOS
-      - mcFoundationFormatters_macOS
-      - mcMediaAU_macOS
-      - mcUIPreviews_macOS
+      - mcxUIReusable
+      - mcxMediaExtensions
+      - mcxFoundationFormatters
+      - mcxMediaAU
+      - mcxUIPreviews
