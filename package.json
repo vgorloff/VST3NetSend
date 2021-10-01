@@ -1,0 +1,7 @@
+{
+   "name": "vst3-net-send",
+   "type": "module",
+   "dependencies": {
+      "gulp": "^4.0.2"
+   }
+}
