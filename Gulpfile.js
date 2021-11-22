@@ -134,23 +134,23 @@ function makeStandalone() {
    for (const match of matches) {
       const from = `${vendorDirPath}/${match}`;
       const to = vendorPath + match.replace('mc-shared', '');
-      fs.mkdirSync(to, { recursive: true });
-      console.log(`➔ Copying '${from}' to '${to}'`);
-      cp.execSync(`ditto --noextattr --norsrc --noqtn --noacl ${from} ${to}`, { stdio: 'inherit' });
+      const swiftFiles = glob.sync(`${from}/**/*.swift`);
+      for (const file of swiftFiles) {
+         const contents = fs.readFileSync(file).toString();
+         if (contents.includes('MCA-OSS-VSTNS')) {
+            const dstName = path.join(to, file.replace(from, ''));
+            const dstDir = path.dirname(dstName);
+            fs.mkdirSync(dstDir, { recursive: true });
+            // console.log(`➔ Copying '${file}' to '${dstName}'`);
+            fs.copyFileSync(file, dstName);
+         }
+      }
 
       const fromSpec = from.replace('/Sources', '/project.yml');
       const toSpec = to.replace('/Sources', '/project.yml');
       fs.copyFileSync(fromSpec, toSpec);
    }
    fs.copyFileSync(`${vendorDirPath}/mc-shared/templates.yml`, `${vendorPath}/templates.yml`);
-   const swiftFiles = glob.sync(`${vendorPath}/**/*.swift`);
-   for (const file of swiftFiles) {
-      const contents = fs.readFileSync(file).toString();
-      if (!contents.includes('MCA-OSS-VSTNS')) {
-         console.log(`➔ Removing file "${file}"`);
-         fs.rmSync(file, { force: true });
-      }
-   }
 }
 
 //~~~
