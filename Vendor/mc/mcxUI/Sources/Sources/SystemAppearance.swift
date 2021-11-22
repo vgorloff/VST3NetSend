@@ -1,6 +1,6 @@
 //
 //  SystemAppearance.swift
-//  WaveLabs
+//  MCA-OSS-VSTNS
 //
 //  Created by Vlad Gorlov on 09.08.18.
 //  Copyright © 2018 Vlad Gorlov. All rights reserved.

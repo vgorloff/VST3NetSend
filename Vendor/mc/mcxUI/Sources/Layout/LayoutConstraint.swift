@@ -1,6 +1,6 @@
 //
 //  LayoutConstraint.swift
-//  WaveLabs
+//  MCA-OSS-VSTNS
 //
 //  Created by Vlad Gorlov on 04/05/16.
 //  Copyright © 2016 Vlad Gorlov. All rights reserved.
@@ -12,6 +12,7 @@ import UIKit
 import AppKit
 #endif
 import mcxTypes
+import mcxFoundationExtensions
 
 private enum Target {
    case center, margins, bounds
@@ -24,7 +25,8 @@ private enum Target {
 public class __LayoutConstraintHeight: InstanceHolder<LayoutConstraint> {
 
    public func to(_ constant: CGFloat, relation: LayoutConstraint.LayoutRelation = .equal,
-                  multiplier: CGFloat = 1, _ views: LayoutConstraint.ViewType...) -> [NSLayoutConstraint] {
+                  multiplier: CGFloat = 1, _ views: LayoutConstraint.ViewType...) -> [NSLayoutConstraint]
+   {
       return views.map {
          NSLayoutConstraint(item: $0, attribute: .height, relatedBy: relation, toItem: nil, attribute: .notAnAttribute,
                             multiplier: multiplier, constant: constant)
@@ -38,7 +40,8 @@ public class __LayoutConstraintSize: InstanceHolder<LayoutConstraint> {
                   relationForHeight: LayoutConstraint.LayoutRelation = .equal,
                   relationForWidth: LayoutConstraint.LayoutRelation = .equal,
                   multiplierForHeight: CGFloat = 1, multiplierForWidth: CGFloat = 1,
-                  _ view: LayoutConstraint.ViewType) -> [NSLayoutConstraint] {
+                  _ view: LayoutConstraint.ViewType) -> [NSLayoutConstraint]
+   {
       let constraintW = NSLayoutConstraint(item: view, attribute: .width, relatedBy: relationForWidth,
                                            toItem: nil, attribute: .notAnAttribute,
                                            multiplier: multiplierForWidth, constant: size.width)
@@ -100,7 +103,8 @@ public class __LayoutConstraintPin: InstanceHolder<LayoutConstraint> {
    }
 
    public func top(_ view: LayoutConstraint.ViewType, relatedBy: LayoutConstraint.LayoutRelation = .equal,
-                   multiplier: CGFloat = 1, constant: CGFloat = 0) -> [NSLayoutConstraint] {
+                   multiplier: CGFloat = 1, constant: CGFloat = 0) -> [NSLayoutConstraint]
+   {
       if let superview = view.superview {
          return [NSLayoutConstraint(item: view, attribute: .top, relatedBy: .equal, toItem: superview, attribute: .top,
                                     multiplier: multiplier, constant: constant)]
@@ -113,14 +117,16 @@ public class __LayoutConstraintPin: InstanceHolder<LayoutConstraint> {
 public class __LayoutConstraintCenter: InstanceHolder<LayoutConstraint> {
 
    public func xy(viewA: LayoutConstraint.ViewType, viewB: LayoutConstraint.ViewType, multiplierX: CGFloat = 1, constantX: CGFloat = 0,
-                  multiplierY: CGFloat = 1, constantY: CGFloat = 0) -> [NSLayoutConstraint] {
+                  multiplierY: CGFloat = 1, constantY: CGFloat = 0) -> [NSLayoutConstraint]
+   {
       let constraintX = x(viewA: viewA, viewB: viewB, multiplier: multiplierX, constant: constantX)
       let constraintY = y(viewA: viewA, viewB: viewB, multiplier: multiplierY, constant: constantY)
       return [constraintX, constraintY]
    }
 
    public func xy(_ view: LayoutConstraint.ViewType, multiplierX: CGFloat = 1, constantX: CGFloat = 0,
-                  multiplierY: CGFloat = 1, constantY: CGFloat = 0) -> [NSLayoutConstraint] {
+                  multiplierY: CGFloat = 1, constantY: CGFloat = 0) -> [NSLayoutConstraint]
+   {
       if let viewB = view.superview {
          return xy(viewA: view, viewB: viewB,
                    multiplierX: multiplierX, constantX: constantX, multiplierY: multiplierY, constantY: constantY)
@@ -130,7 +136,8 @@ public class __LayoutConstraintCenter: InstanceHolder<LayoutConstraint> {
    }
 
    public func y(viewA: LayoutConstraint.ViewType, viewB: LayoutConstraint.ViewType, multiplier: CGFloat = 1,
-                 constant: CGFloat = 0) -> NSLayoutConstraint {
+                 constant: CGFloat = 0) -> NSLayoutConstraint
+   {
       return NSLayoutConstraint(item: viewA, attribute: .centerY, relatedBy: .equal, toItem: viewB, attribute: .centerY,
                                 multiplier: multiplier, constant: constant)
    }
@@ -157,7 +164,8 @@ public class __LayoutConstraintCenter: InstanceHolder<LayoutConstraint> {
    }
 
    public func x(viewA: LayoutConstraint.ViewType, viewB: LayoutConstraint.ViewType, multiplier: CGFloat = 1,
-                 constant: CGFloat = 0) -> NSLayoutConstraint {
+                 constant: CGFloat = 0) -> NSLayoutConstraint
+   {
       return NSLayoutConstraint(item: viewA, attribute: .centerX, relatedBy: .equal, toItem: viewB, attribute: .centerX,
                                 multiplier: multiplier, constant: constant)
    }
@@ -427,7 +435,8 @@ extension LayoutConstraint {
 extension LayoutConstraint {
 
    public func withFormat(_ format: String, options: LayoutFormatOptions = [],
-                          metrics: [String: Float] = [:], _ views: [ViewType]) -> [NSLayoutConstraint] {
+                          metrics: [String: Float] = [:], _ views: [ViewType]) -> [NSLayoutConstraint]
+   {
 
       let parsedInfo = parseFormat(format: format, views: views)
       let metrics = metrics.mapValues { NSNumber(value: $0) }
@@ -437,12 +446,14 @@ extension LayoutConstraint {
    }
 
    public func withFormat(_ format: String, options: LayoutFormatOptions = [],
-                          metrics: [String: Float] = [:], _ views: ViewType...) -> [NSLayoutConstraint] {
+                          metrics: [String: Float] = [:], _ views: ViewType...) -> [NSLayoutConstraint]
+   {
       return withFormat(format, options: options, metrics: metrics, views)
    }
 
    public func withFormat(_ format: String, options: LayoutFormatOptions = [],
-                          metrics: [String: Float] = [:], forEveryViewIn: ViewType...) -> [NSLayoutConstraint] {
+                          metrics: [String: Float] = [:], forEveryViewIn: ViewType...) -> [NSLayoutConstraint]
+   {
 
       let result = forEveryViewIn.map { withFormat(format, options: options, metrics: metrics, $0) }.reduce([]) { $0 + $1 }
       return result
@@ -463,7 +474,8 @@ extension LayoutConstraint {
    // MARK: - Dimensions
 
    public func constrainWidth(constant: CGFloat, relation: LayoutRelation = .equal,
-                              multiplier: CGFloat = 1, _ views: ViewType...) -> [NSLayoutConstraint] {
+                              multiplier: CGFloat = 1, _ views: ViewType...) -> [NSLayoutConstraint]
+   {
       return views.map {
          NSLayoutConstraint(item: $0, attribute: .width, relatedBy: relation, toItem: nil, attribute: .notAnAttribute,
                             multiplier: multiplier, constant: constant)
@@ -471,13 +483,15 @@ extension LayoutConstraint {
    }
 
    public func equalWidth(viewA: ViewType, viewB: ViewType, relation: LayoutRelation = .equal,
-                          multiplier: CGFloat = 1, constant: CGFloat = 0) -> NSLayoutConstraint {
+                          multiplier: CGFloat = 1, constant: CGFloat = 0) -> NSLayoutConstraint
+   {
       return NSLayoutConstraint(item: viewA, attribute: .width, relatedBy: relation, toItem: viewB, attribute: .width,
                                 multiplier: multiplier, constant: constant)
    }
 
    public func equalHeight(viewA: ViewType, viewB: ViewType, relation: LayoutRelation = .equal,
-                           multiplier: CGFloat = 1, constant: CGFloat = 0) -> NSLayoutConstraint {
+                           multiplier: CGFloat = 1, constant: CGFloat = 0) -> NSLayoutConstraint
+   {
       return NSLayoutConstraint(item: viewA, attribute: .height, relatedBy: relation, toItem: viewB, attribute: .height,
                                 multiplier: multiplier, constant: constant)
    }
@@ -523,13 +537,15 @@ extension LayoutConstraint {
    }
 
    public func pinLeadings(viewA: ViewType, viewB: ViewType, multiplier: CGFloat = 1,
-                           constant: CGFloat = 0) -> NSLayoutConstraint {
+                           constant: CGFloat = 0) -> NSLayoutConstraint
+   {
       return NSLayoutConstraint(item: viewA, attribute: .leading, relatedBy: .equal, toItem: viewB, attribute: .leading,
                                 multiplier: multiplier, constant: constant)
    }
 
    public func pinTrailings(viewA: ViewType, viewB: ViewType, multiplier: CGFloat = 1,
-                            constant: CGFloat = 0) -> NSLayoutConstraint {
+                            constant: CGFloat = 0) -> NSLayoutConstraint
+   {
       return NSLayoutConstraint(item: viewA, attribute: .trailing, relatedBy: .equal, toItem: viewB, attribute: .trailing,
                                 multiplier: multiplier, constant: constant)
    }
@@ -543,31 +559,36 @@ extension LayoutConstraint {
    }
 
    public func pinCenterToLeading(viewA: ViewType, viewB: ViewType, multiplier: CGFloat = 1,
-                                  constant: CGFloat = 0) -> NSLayoutConstraint {
+                                  constant: CGFloat = 0) -> NSLayoutConstraint
+   {
       return NSLayoutConstraint(item: viewA, attribute: .centerX, relatedBy: .equal, toItem: viewB, attribute: .leading,
                                 multiplier: multiplier, constant: constant)
    }
 
    public func pinCenterToTrailing(viewA: ViewType, viewB: ViewType, multiplier: CGFloat = 1,
-                                   constant: CGFloat = 0) -> NSLayoutConstraint {
+                                   constant: CGFloat = 0) -> NSLayoutConstraint
+   {
       return NSLayoutConstraint(item: viewA, attribute: .centerX, relatedBy: .equal, toItem: viewB, attribute: .trailing,
                                 multiplier: multiplier, constant: constant)
    }
 
    public func pinTops(viewA: ViewType, viewB: ViewType, relatedBy: LayoutRelation = .equal,
-                       multiplier: CGFloat = 1, constant: CGFloat = 0) -> NSLayoutConstraint {
+                       multiplier: CGFloat = 1, constant: CGFloat = 0) -> NSLayoutConstraint
+   {
       return NSLayoutConstraint(item: viewA, attribute: .top, relatedBy: .equal, toItem: viewB, attribute: .top,
                                 multiplier: multiplier, constant: constant)
    }
 
    public func pinBottoms(viewA: ViewType, viewB: ViewType, relatedBy: LayoutRelation = .equal,
-                          multiplier: CGFloat = 1, constant: CGFloat = 0) -> NSLayoutConstraint {
+                          multiplier: CGFloat = 1, constant: CGFloat = 0) -> NSLayoutConstraint
+   {
       return NSLayoutConstraint(item: viewA, attribute: .bottom, relatedBy: .equal, toItem: viewB, attribute: .bottom,
                                 multiplier: multiplier, constant: constant)
    }
 
    public func pinBottom(_ view: ViewType, relatedBy: LayoutRelation = .equal,
-                         multiplier: CGFloat = 1, constant: CGFloat = 0) -> [NSLayoutConstraint] {
+                         multiplier: CGFloat = 1, constant: CGFloat = 0) -> [NSLayoutConstraint]
+   {
       if let superview = view.superview {
          return [NSLayoutConstraint(item: view, attribute: .bottom, relatedBy: .equal, toItem: superview, attribute: .bottom,
                                     multiplier: multiplier, constant: constant)]
@@ -577,13 +598,15 @@ extension LayoutConstraint {
    }
 
    public func pinTopToBottom(viewA: ViewType, viewB: ViewType, multiplier: CGFloat = 1,
-                              constant: CGFloat = 0) -> NSLayoutConstraint {
+                              constant: CGFloat = 0) -> NSLayoutConstraint
+   {
       return NSLayoutConstraint(item: viewA, attribute: .top, relatedBy: .equal, toItem: viewB, attribute: .bottom,
                                 multiplier: multiplier, constant: constant)
    }
 
    public func pinBottomToTop(viewA: ViewType, viewB: ViewType, multiplier: CGFloat = 1,
-                              constant: CGFloat = 0) -> NSLayoutConstraint {
+                              constant: CGFloat = 0) -> NSLayoutConstraint
+   {
       return NSLayoutConstraint(item: viewA, attribute: .bottom, relatedBy: .equal, toItem: viewB, attribute: .top,
                                 multiplier: multiplier, constant: constant)
    }

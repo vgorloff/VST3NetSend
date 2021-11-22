@@ -1,6 +1,6 @@
 //
 //  CGSize.swift
-//  WaveLabs
+//  MCA-OSS-VSTNS
 //
 //  Created by Vlad Gorlov on 06.06.2020.
 //  Copyright © 2020 Vlad Gorlov. All rights reserved.
@@ -70,10 +70,10 @@ extension CGSize {
 
 extension Array where Element == CGSize {
 
-    public func sorted() -> [Element] {
-        let result: [CGSize] = sorted(by: { a, b in
-            return a.width == b.width ? a.height < b.height : a.width < b.width
-        })
-        return result
-    }
+   public func sorted() -> [Element] {
+      let result: [CGSize] = sorted(by: { a, b in
+         a.width == b.width ? a.height < b.height : a.width < b.width
+      })
+      return result
+   }
 }

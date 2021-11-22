@@ -1,6 +1,6 @@
 //
 //  UIViewPreview.swift
-//  WaveLabs
+//  MCA-OSS-VSTNS
 //
 //  Created by Vlad Gorlov on 29.10.19.
 //  Copyright © 2018 Vlad Gorlov. All rights reserved.

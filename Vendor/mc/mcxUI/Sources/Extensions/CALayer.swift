@@ -1,6 +1,6 @@
 //
 //  CALayer.swift
-//  WaveLabs
+//  MCA-OSS-VSTNS
 //
 //  Created by Vlad Gorlov on 18.11.17.
 //  Copyright © 2017 Vlad Gorlov. All rights reserved.

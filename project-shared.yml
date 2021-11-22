@@ -1,0 +1,18 @@
+include:
+  - Vendor/mc-shared/mcxUIReusable/project.yml
+  - Vendor/mc-shared/mcxMediaExtensions/project.yml
+  - Vendor/mc-shared/mcxFoundationFormatters/project.yml
+  - Vendor/mc-shared/mcxMediaAU/project.yml
+  - Vendor/mc-shared/mcxUIPreviews/project.yml
+name: Shared
+settings:
+  AWL_LIB_SRC: Vendor/mc-shared
+  MACOSX_DEPLOYMENT_TARGET: 10.12
+aggregateTargets:
+  Shared:
+    targets:
+      - mcxUIReusable
+      - mcxMediaExtensions
+      - mcxFoundationFormatters
+      - mcxMediaAU
+      - mcxUIPreviews

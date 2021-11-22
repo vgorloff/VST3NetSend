@@ -1,6 +1,6 @@
 //
 //  AUNetStatus.swift
-//  WaveLabs
+//  MCA-OSS-VSTNS
 //
 //  Created by Vlad Gorlov on 04.04.20.
 //  Copyright © 2020 Vlad Gorlov. All rights reserved.

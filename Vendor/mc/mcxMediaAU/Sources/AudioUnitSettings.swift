@@ -1,6 +1,6 @@
 //
 //  AudioUnitSettings.swift
-//  WaveLabs
+//  MCA-OSS-VSTNS
 //
 //  Created by Vlad Gorlov on 24.03.16.
 //  Copyright © 2016 Vlad Gorlov. All rights reserved.
@@ -29,7 +29,8 @@ public enum AudioUnitSettings {
    }
 
    public static func setProperty<T>(for unit: AudioUnit, propertyID: AudioUnitPropertyID, scope: Scope,
-                                     element: AudioUnitElement, data: T) throws {
+                                     element: AudioUnitElement, data: T) throws
+   {
       var value = data
       let dataSize = UInt32(MemoryLayout<T>.size)
       let status = AudioUnitSetProperty(unit, propertyID, scope.value, element, &value, dataSize)
@@ -39,7 +40,8 @@ public enum AudioUnitSettings {
    }
 
    public static func getPropertyInfo(for unit: AudioUnit, propertyID: AudioUnitPropertyID, scope: Scope,
-                                      element: AudioUnitElement) throws -> (dataSize: UInt32, isWritable: Bool) {
+                                      element: AudioUnitElement) throws -> (dataSize: UInt32, isWritable: Bool)
+   {
       var dataSize: UInt32 = 0
       var isWritable = DarwinBoolean(false)
       let status = AudioUnitGetPropertyInfo(unit, propertyID, scope.value, element, &dataSize, &isWritable)
@@ -50,7 +52,8 @@ public enum AudioUnitSettings {
    }
 
    public static func getProperty<T>(for unit: AudioUnit, propertyID: AudioUnitPropertyID, scope: Scope,
-                                     element: AudioUnitElement) throws -> T {
+                                     element: AudioUnitElement) throws -> T
+   {
       let propertyInfo = try getPropertyInfo(for: unit, propertyID: propertyID, scope: scope, element: element)
       let expectedDataSize = UInt32(MemoryLayout<T>.size)
       if expectedDataSize != propertyInfo.dataSize {
@@ -77,7 +80,8 @@ public enum AudioUnitSettings {
    }
 
    public static func getParameter(for unit: AudioUnit, parameterID: AudioUnitParameterID, scope: Scope,
-                                   element: AudioUnitElement) throws -> Float32 {
+                                   element: AudioUnitElement) throws -> Float32
+   {
       var value: Float32 = 0
       let status = AudioUnitGetParameter(unit, parameterID, scope.value, element, &value)
       if status != noErr {

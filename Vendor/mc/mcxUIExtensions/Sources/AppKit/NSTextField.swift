@@ -1,6 +1,6 @@
 //
 //  NSTextField.swift
-//  WaveLabs
+//  MCA-OSS-VSTNS
 //
 //  Created by Vlad Gorlov on 06.06.2020.
 //  Copyright © 2020 Vlad Gorlov. All rights reserved.
@@ -35,11 +35,11 @@ extension NSTextField {
       }
    }
 
-   // Just a stub
    public var placeholder: String? {
       get {
-         return nil
+         return placeholderString
       } set {
+         placeholderString = newValue
       }
    }
 }

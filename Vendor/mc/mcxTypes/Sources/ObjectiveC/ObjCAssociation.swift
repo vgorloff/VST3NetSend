@@ -1,6 +1,6 @@
 //
 //  ObjCAssociation.swift
-//  WaveLabs
+//  MCA-OSS-VSTNS
 //
 //  Created by Vlad Gorlov on 03.01.16.
 //  Copyright © 2016 Vlad Gorlov. All rights reserved.

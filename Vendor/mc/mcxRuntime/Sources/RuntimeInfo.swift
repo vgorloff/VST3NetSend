@@ -1,6 +1,6 @@
 //
 //  RuntimeInfo.swift
-//  WaveLabs
+//  MCA-OSS-VSTNS
 //
 //  Created by Vlad Gorlov on 02.04.18.
 //  Copyright © 2018 Vlad Gorlov. All rights reserved.

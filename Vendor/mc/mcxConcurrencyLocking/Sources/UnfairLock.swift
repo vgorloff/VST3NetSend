@@ -1,6 +1,6 @@
 //
 //  UnfairLock.swift
-//  WaveLabs
+//  MCA-OSS-VSTNS
 //
 //  Created by Vlad Gorlov on 11.07.17.
 //  Copyright © 2017 Vlad Gorlov. All rights reserved.

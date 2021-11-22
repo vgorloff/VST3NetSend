@@ -1,6 +1,6 @@
 //
 //  PreviewFontRegistration.swift
-//  Shared
+//  MCA-OSS-VSTNS
 //
 //  Created by Vlad Gorlov on 07.02.21.
 //

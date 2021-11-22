@@ -1,6 +1,6 @@
 //
 //  Dictionary.swift
-//  WaveLabs
+//  MCA-OSS-VSTNS
 //
 //  Created by Vlad Gorlov on 25.10.15.
 //  Copyright © 2015 Vlad Gorlov. All rights reserved.

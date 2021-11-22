@@ -1,6 +1,6 @@
 //
 //  EdgeInsets.swift
-//  WaveLabs
+//  MCA-OSS-VSTNS
 //
 //  Created by Vlad Gorlov on 21.07.17.
 //  Copyright © 2016 Vlad Gorlov. All rights reserved.

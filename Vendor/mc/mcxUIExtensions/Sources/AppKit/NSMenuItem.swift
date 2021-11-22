@@ -1,6 +1,6 @@
 //
 //  NSMenuItem.swift
-//  WaveLabs
+//  MCA-OSS-VSTNS
 //
 //  Created by Vlad Gorlov on 06.06.2020.
 //  Copyright © 2020 Vlad Gorlov. All rights reserved.
@@ -22,6 +22,11 @@ extension NSMenuItem {
    public convenience init(title: String, tag: Int) {
       self.init()
       self.tag = tag
+      self.title = title
+   }
+
+   public convenience init(title: String) {
+      self.init()
       self.title = title
    }
 

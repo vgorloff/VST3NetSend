@@ -1,0 +1,10 @@
+include:
+  - ../templates.yml
+  - ../mcxMath/project.yml
+name: mcxFoundationFormatters
+targets:
+  mcxFoundationFormatters:
+    templates:
+       - mcLib
+    dependencies:
+      - target: mcxMath

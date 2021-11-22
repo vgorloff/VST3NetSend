@@ -1,6 +1,6 @@
 //
 //  NotificationObserver.swift
-//  WaveLabs
+//  MCA-OSS-VSTNS
 //
 //  Created by Vlad Gorlov on 29/04/16.
 //  Copyright © 2016 Vlad Gorlov. All rights reserved.

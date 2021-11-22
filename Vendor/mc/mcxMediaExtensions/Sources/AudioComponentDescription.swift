@@ -1,6 +1,6 @@
 //
 //  AudioComponentDescription.swift
-//  WaveLabs
+//  MCA-OSS-VSTNS
 //
 //  Created by Vlad Gorlov on 23.06.17.
 //  Copyright © 2017 Vlad Gorlov. All rights reserved.
@@ -10,7 +10,8 @@ import AVFoundation
 
 extension AudioComponentDescription {
    public init(type: OSType, subType: OSType, manufacturer: OSType = kAudioUnitManufacturer_Apple,
-               flags: UInt32 = 0, flagsMask: UInt32 = 0) {
+               flags: UInt32 = 0, flagsMask: UInt32 = 0)
+   {
       self.init(componentType: type, componentSubType: subType, componentManufacturer: manufacturer,
                 componentFlags: flags, componentFlagsMask: flagsMask)
    }

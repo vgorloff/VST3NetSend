@@ -1,6 +1,6 @@
 //
 //  Log.swift
-//  WaveLabs
+//  MCA-OSS-VSTNS
 //
 //  Created by Vlad Gorlov on 29.01.15.
 //  Copyright © 2015 Vlad Gorlov. All rights reserved.
@@ -43,7 +43,8 @@ private let defaultLog = Log<DefaultLogCategory>(subsystem: "default")
 /// - parameter closure: Expression to execute.
 /// - returns: nil if error happens, otherwise returns some value.
 public func configure<T>(reportingTo log: DefaultLogCategory, function: String = #function, file: String = #file,
-                         line: Int32 = #line, dso: UnsafeRawPointer? = #dsohandle, closure: () throws -> T?) -> T? {
+                         line: Int32 = #line, dso: UnsafeRawPointer? = #dsohandle, closure: () throws -> T?) -> T?
+{
    do {
       return try closure()
    } catch {
@@ -53,7 +54,8 @@ public func configure<T>(reportingTo log: DefaultLogCategory, function: String =
 }
 
 public func configure(reportingTo log: DefaultLogCategory, function: String = #function, file: String = #file,
-                      line: Int32 = #line, dso: UnsafeRawPointer? = #dsohandle, closure: () throws -> Void) {
+                      line: Int32 = #line, dso: UnsafeRawPointer? = #dsohandle, closure: () throws -> Void)
+{
    do {
       try closure()
    } catch {
@@ -65,7 +67,8 @@ public func configure(reportingTo log: DefaultLogCategory, function: String = #f
 /// - parameter closure: Expression to execute.
 /// - returns: nil if error happens, otherwise returns some value.
 public func configure<T>(reportingTo log: DefaultLogCategory, function: String = #function, file: String = #file,
-                         line: Int32 = #line, dso: UnsafeRawPointer? = #dsohandle, closure: @autoclosure () throws -> T?) -> T? {
+                         line: Int32 = #line, dso: UnsafeRawPointer? = #dsohandle, closure: @autoclosure () throws -> T?) -> T?
+{
    do {
       return try closure()
    } catch {
@@ -98,12 +101,14 @@ extension Log {
 
    public func trace<T: CustomStringConvertible>(_ message: T, shouldSaveToFile: Bool = false,
                                                  function: String = #function, file: String = #file,
-                                                 line: Int32 = #line, dso: UnsafeRawPointer? = #dsohandle) {
+                                                 line: Int32 = #line, dso: UnsafeRawPointer? = #dsohandle)
+   {
       trace(message.description, shouldSaveToFile: shouldSaveToFile, function: function, file: file, line: line, dso: dso)
    }
 
    public func trace(_ message: String, shouldSaveToFile: Bool = false, function: String = #function, file: String = #file,
-                     line: Int32 = #line, dso: UnsafeRawPointer? = #dsohandle) {
+                     line: Int32 = #line, dso: UnsafeRawPointer? = #dsohandle)
+   {
       guard isTracingEnabled || LogBundle.isCommandLine else {
          return
       }
@@ -133,31 +138,36 @@ extension Log {
 extension Log {
 
    public func initialize(_ message: String? = nil, function: String = #function, file: String = #file,
-                          line: Int32 = #line, dso: UnsafeRawPointer? = #dsohandle) {
+                          line: Int32 = #line, dso: UnsafeRawPointer? = #dsohandle)
+   {
       logInit(message, function: function, file: file, line: line, dso: dso)
    }
 
    public func deinitialize(_ message: String? = nil, function: String = #function, file: String = #file, line: Int32 = #line,
-                            dso: UnsafeRawPointer? = #dsohandle) {
+                            dso: UnsafeRawPointer? = #dsohandle)
+   {
       logDeinit(message, function: function, file: file, line: line, dso: dso)
    }
 
    public func fault(_ category: T, _ message: String, function: String = #function, file: String = #file, line: Int32 = #line,
-                     dso: UnsafeRawPointer? = #dsohandle) {
+                     dso: UnsafeRawPointer? = #dsohandle)
+   {
       if #available(OSX 10.12, iOS 10.0, *) {
          log(type: .fault, category: category, message: message, function: function, file: file, line: line, dso: dso)
       }
    }
 
    public func error(_ category: T, _ message: String, function: String = #function, file: String = #file, line: Int32 = #line,
-                     dso: UnsafeRawPointer? = #dsohandle) {
+                     dso: UnsafeRawPointer? = #dsohandle)
+   {
       if #available(OSX 10.12, iOS 10.0, *) {
          log(type: .error, category: category, message: message, function: function, file: file, line: line, dso: dso)
       }
    }
 
    public func error(_ category: T, _ error: Swift.Error, function: String = #function, file: String = #file, line: Int32 = #line,
-                     dso: UnsafeRawPointer? = #dsohandle) {
+                     dso: UnsafeRawPointer? = #dsohandle)
+   {
       if #available(OSX 10.12, iOS 10.0, *) {
          log(type: .error, category: category, message: String(describing: error),
              function: function, file: file, line: line, dso: dso)
@@ -165,21 +175,24 @@ extension Log {
    }
 
    public func info(_ category: T, _ message: String, function: String = #function, file: String = #file, line: Int32 = #line,
-                    dso: UnsafeRawPointer? = #dsohandle) {
+                    dso: UnsafeRawPointer? = #dsohandle)
+   {
       if #available(OSX 10.12, iOS 10.0, *) {
          log(type: .info, category: category, message: message, function: function, file: file, line: line, dso: dso)
       }
    }
 
    public func `default`(_ category: T, _ message: String, function: String = #function, file: String = #file,
-                         line: Int32 = #line, dso: UnsafeRawPointer? = #dsohandle) {
+                         line: Int32 = #line, dso: UnsafeRawPointer? = #dsohandle)
+   {
       if #available(OSX 10.12, iOS 10.0, *) {
          log(type: .default, category: category, message: message, function: function, file: file, line: line, dso: dso)
       }
    }
 
    public func debug(_ category: T, _ message: String, function: String = #function, file: String = #file, line: Int32 = #line,
-                     dso: UnsafeRawPointer? = #dsohandle) {
+                     dso: UnsafeRawPointer? = #dsohandle)
+   {
       if #available(OSX 10.12, iOS 10.0, *) {
          log(type: .debug, category: category, message: message, function: function, file: file, line: line, dso: dso)
       }
@@ -189,20 +202,23 @@ extension Log {
 extension Log {
 
    public func initialize(_ message: String? = nil, if expression: @autoclosure () -> Bool, function: String = #function,
-                          file: String = #file, line: Int32 = #line, dso: UnsafeRawPointer? = #dsohandle) {
+                          file: String = #file, line: Int32 = #line, dso: UnsafeRawPointer? = #dsohandle)
+   {
       guard expression() else { return }
       logInit(message, function: function, file: file, line: line, dso: dso)
    }
 
    public func deinitialize(_ message: String? = nil, if expression: @autoclosure () -> Bool, function: String = #function,
-                            file: String = #file, line: Int32 = #line, dso: UnsafeRawPointer? = #dsohandle) {
+                            file: String = #file, line: Int32 = #line, dso: UnsafeRawPointer? = #dsohandle)
+   {
       guard expression() else { return }
       logDeinit(message, function: function, file: file, line: line, dso: dso)
    }
 
    public func fault(_ category: T, _ message: String, if expression: @autoclosure () -> Bool,
                      function: String = #function, file: String = #file, line: Int32 = #line,
-                     dso: UnsafeRawPointer? = #dsohandle) {
+                     dso: UnsafeRawPointer? = #dsohandle)
+   {
       guard expression() else { return }
       if #available(OSX 10.12, iOS 10.0, *) {
          fault(category, message, function: function, file: file, line: line, dso: dso)
@@ -211,7 +227,8 @@ extension Log {
 
    public func error(_ category: T, _ message: String, if expression: @autoclosure () -> Bool,
                      function: String = #function, file: String = #file, line: Int32 = #line,
-                     dso: UnsafeRawPointer? = #dsohandle) {
+                     dso: UnsafeRawPointer? = #dsohandle)
+   {
       guard expression() else { return }
       if #available(OSX 10.12, iOS 10.0, *) {
          error(category, message, function: function, file: file, line: line, dso: dso)
@@ -220,7 +237,8 @@ extension Log {
 
    public func error(_ category: T, _ error: Swift.Error, if expression: @autoclosure () -> Bool,
                      function: String = #function, file: String = #file, line: Int32 = #line,
-                     dso: UnsafeRawPointer? = #dsohandle) {
+                     dso: UnsafeRawPointer? = #dsohandle)
+   {
       guard expression() else { return }
       if #available(OSX 10.12, iOS 10.0, *) {
          log(type: .error, category: category, message: String(describing: error),
@@ -230,7 +248,8 @@ extension Log {
 
    public func info(_ category: T, _ message: String, if expression: @autoclosure () -> Bool,
                     function: String = #function, file: String = #file, line: Int32 = #line,
-                    dso: UnsafeRawPointer? = #dsohandle) {
+                    dso: UnsafeRawPointer? = #dsohandle)
+   {
       guard expression() else { return }
       if #available(OSX 10.12, iOS 10.0, *) {
          info(category, message, function: function, file: file, line: line, dso: dso)
@@ -239,7 +258,8 @@ extension Log {
 
    public func debug(_ category: T, _ message: String, if expression: @autoclosure () -> Bool,
                      function: String = #function, file: String = #file, line: Int32 = #line,
-                     dso: UnsafeRawPointer? = #dsohandle) {
+                     dso: UnsafeRawPointer? = #dsohandle)
+   {
       guard expression() else { return }
       if #available(OSX 10.12, iOS 10.0, *) {
          debug(category, message, function: function, file: file, line: line, dso: dso)
@@ -248,7 +268,8 @@ extension Log {
 
    public func `default`(_ category: T, _ message: String, if expression: @autoclosure () -> Bool,
                          function: String = #function, file: String = #file, line: Int32 = #line,
-                         dso: UnsafeRawPointer? = #dsohandle) {
+                         dso: UnsafeRawPointer? = #dsohandle)
+   {
       guard expression() else { return }
       if #available(OSX 10.12, iOS 10.0, *) {
          `default`(category, message, function: function, file: file, line: line, dso: dso)
@@ -294,7 +315,8 @@ extension Log {
 
    // swiftlint:disable:next function_parameter_count
    private func log(type: OSLogType, category: T, message: String,
-                    function: String, file: String, line: Int32, dso: UnsafeRawPointer?) {
+                    function: String, file: String, line: Int32, dso: UnsafeRawPointer?)
+   {
       if #available(OSX 10.12, iOS 10.0, *) {
          if BuildInfo.isAppStore, type == .debug {
             return

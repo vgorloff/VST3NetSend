@@ -1,6 +1,6 @@
 //
 //  String.swift
-//  WaveLabs
+//  MCA-OSS-VSTNS
 //
 //  Created by Vlad Gorlov on 25.10.15.
 //  Copyright © 2015 Vlad Gorlov. All rights reserved.
@@ -152,7 +152,8 @@ public class __StringAsRange: InstanceHolder<String> {
 
    public func rangesDelimitedBy(character: Character,
                                  searchDirection: SearchDirection = .forward,
-                                 inRange range: Range<String.Index>? = nil) -> [Range<String.Index>] {
+                                 inRange range: Range<String.Index>? = nil) -> [Range<String.Index>]
+   {
       let defaultSearchRange = range ?? instance.startIndex ..< instance.endIndex
       guard let matchingRange = firstRangeDelimitedBy(character: character, searchDirection: searchDirection, range: defaultSearchRange) else {
          return []
@@ -171,13 +172,15 @@ public class __StringAsRange: InstanceHolder<String> {
 
    public func firstRangeDelimitedBy(character: Character,
                                      searchDirection: SearchDirection = .forward,
-                                     range: Range<String.Index>? = nil) -> Range<String.Index>? {
+                                     range: Range<String.Index>? = nil) -> Range<String.Index>?
+   {
       firstRangeDelimitedBy(lowerCharacter: character, upperCharacter: character, searchDirection: searchDirection, range: range)
    }
 
    public func firstRangeDelimitedBy(lowerCharacter: Character, upperCharacter: Character,
                                      searchDirection: SearchDirection = .forward,
-                                     range: Range<String.Index>? = nil) -> Range<String.Index>? {
+                                     range: Range<String.Index>? = nil) -> Range<String.Index>?
+   {
       let defaultSearchRange = range ?? instance.startIndex ..< instance.endIndex
       let lowerCharSet = CharacterSet(charactersIn: String(lowerCharacter))
       let upperCharSet = CharacterSet(charactersIn: String(upperCharacter))

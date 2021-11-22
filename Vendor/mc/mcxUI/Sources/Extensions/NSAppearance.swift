@@ -1,6 +1,6 @@
 //
 //  NSAppearance.swift
-//  WaveLabs
+//  MCA-OSS-VSTNS
 //
 //  Created by Vlad Gorlov on 10.03.19.
 //  Copyright © 2019 Vlad Gorlov. All rights reserved.

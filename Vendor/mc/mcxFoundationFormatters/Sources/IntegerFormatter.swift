@@ -1,6 +1,6 @@
 //
 //  IntegerFormatter.swift
-//  WaveLabs
+//  MCA-OSS-VSTNS
 //
 //  Created by Vlad Gorlov on 25/09/2016.
 //  Copyright © 2016 Vlad Gorlov. All rights reserved.
@@ -26,7 +26,8 @@ public final class IntegerFormatter: Formatter {
    }
 
    override public func getObjectValue(_ obj: AutoreleasingUnsafeMutablePointer<AnyObject?>?, for string: String,
-                                       errorDescription error: AutoreleasingUnsafeMutablePointer<NSString?>?) -> Bool {
+                                       errorDescription error: AutoreleasingUnsafeMutablePointer<NSString?>?) -> Bool
+   {
 
       var integerResult = 0
       var returnValue = false

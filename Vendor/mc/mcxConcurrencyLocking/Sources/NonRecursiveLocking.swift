@@ -1,6 +1,6 @@
 //
 //  NonRecursiveLocking.swift
-//  WaveLabs
+//  MCA-OSS-VSTNS
 //
 //  Created by Vlad Gorlov on 26.12.15.
 //  Copyright © 2015 Vlad Gorlov. All rights reserved.
