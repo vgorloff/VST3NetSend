@@ -886,20 +886,6 @@
 			name = mcxUIPreviews;
 			sourceTree = "<group>";
 		};
-		"TEMP_2ECB2507-9A6C-4D56-82BD-5FCC35E99ECD" /* Composites */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Composites;
-			sourceTree = "<group>";
-		};
-		"TEMP_D879C923-7D74-4843-820F-0D923D7E05E8" /* Convenience */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Convenience;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
