@@ -5,6 +5,7 @@ import gulp from 'gulp';
 import os from 'os';
 import url from 'url';
 import plist from 'plist';
+import glob from 'glob';
 
 const rootDirPath = path.dirname(url.fileURLToPath(import.meta.url));
 
@@ -113,7 +114,52 @@ function notarizationHistory() {
    _run(cmd);
 }
 
+function makeStandalone() {
+   const projectPath = `${rootDirPath}/Shared.xcodeproj/project.pbxproj`;
+   const vendorDirPath = `${rootDirPath}/Vendor`;
+   const vendorPath = `${vendorDirPath}/mc`;
+   const regex = /mc-shared\/\w+\/Sources/g;
+
+   const contents = fs.readFileSync(projectPath).toString();
+   const matches = contents.match(regex);
+
+   if (matches == undefined) {
+      console.log('➔ Nothing to do!');
+      return;
+   }
+   if (fs.existsSync(vendorPath)) {
+      fs.rmdirSync(vendorPath, { recursive: true, force: true });
+   }
+   fs.mkdirSync(vendorPath, { recursive: true });
+   for (const match of matches) {
+      const from = `${vendorDirPath}/${match}`;
+      const to = vendorPath + match.replace('mc-shared', '');
+      fs.mkdirSync(to, { recursive: true });
+      console.log(`➔ Copying '${from}' to '${to}'`);
+      cp.execSync(`ditto --noextattr --norsrc --noqtn --noacl ${from} ${to}`, { stdio: 'inherit' });
+
+      const fromSpec = from.replace('/Sources', '/project.yml');
+      const toSpec = to.replace('/Sources', '/project.yml');
+      fs.copyFileSync(fromSpec, toSpec);
+   }
+   fs.copyFileSync(`${vendorDirPath}/mc-shared/templates.yml`, `${vendorPath}/templates.yml`);
+   const swiftFiles = glob.sync(`${vendorPath}/**/*.swift`);
+   for (const file of swiftFiles) {
+      const contents = fs.readFileSync(file).toString();
+      if (!contents.includes('MCA-OSS-VSTNS')) {
+         console.log(`➔ Removing file "${file}"`);
+         fs.rmSync(file, { force: true });
+      }
+   }
+}
+
 //~~~
+
+gulp.task('default', (cb) => {
+   console.log('✅ Available tasks:');
+   cp.execSync('gulp -T', { stdio: 'inherit' });
+   cb();
+});
 
 gulp.task('note-subm', (cb) => {
    notarizationSubmit();
@@ -125,9 +171,15 @@ gulp.task('note-hist', (cb) => {
    cb();
 });
 
-gulp.task('default', (cb) => {
-   console.log('✅ Available tasks:');
-   cp.execSync('gulp -T', { stdio: 'inherit' });
+gulp.task('st', (cb) => {
+   _run(`xcodegen --spec project-shared.yml`);
+   makeStandalone();
+   _run(`xcodegen --spec project.yml`);
+   cb();
+});
+
+gulp.task('gen', (cb) => {
+   _run(`xcodegen --spec project-shared.yml`);
    cb();
 });
 

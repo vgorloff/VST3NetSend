@@ -7,7 +7,6 @@
 //
 
 import Cocoa
-import mcxUIExtensions
 import mcxUIReusable
 import mcxUI
 import mcxFoundationFormatters
